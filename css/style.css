@@ -1,0 +1,5 @@
+body{margin:0;font-family:Arial,sans-serif;background:#FFF8F0;color:#333}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+background:linear-gradient(135deg,#6B0F1A,#8b1d2c);color:#fff;text-align:center;padding:20px}
+.btn{padding:12px 24px;background:#D4AF37;color:#000;text-decoration:none;border-radius:30px;font-weight:bold}
+section{padding:60px 20px;max-width:900px;margin:auto}

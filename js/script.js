@@ -29,12 +29,36 @@ $("#calendarBtn")?.addEventListener("click",()=>{
  window.open(url,"_blank","noopener");
 });
 
-$("#rsvpForm")?.addEventListener("submit",async e=>{
- e.preventDefault(); const f=new FormData(e.currentTarget);
- if(!SITE_CONFIG.rsvpWebAppUrl){toast("RSVP endpoint is not connected yet. Add it in js/config.js.");return;}
- try{
-  const res=await fetch(SITE_CONFIG.rsvpWebAppUrl,{method:"POST",body:f});
-  if(!res.ok)throw new Error();
-  e.currentTarget.reset();toast("Thank you! Your RSVP was submitted.");
- }catch(err){toast("Could not submit RSVP. Please try again.");}
+$("#rsvpForm")?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  const data = new FormData(form);
+
+  if (!SITE_CONFIG.rsvpWebAppUrl) {
+    toast("RSVP endpoint is not connected yet.");
+    return;
+  }
+
+  const button = form.querySelector("button[type='submit']");
+  button.disabled = true;
+  button.textContent = "Sending...";
+
+  try {
+    await fetch(SITE_CONFIG.rsvpWebAppUrl, {
+      method: "POST",
+      body: data,
+      mode: "no-cors"
+    });
+
+    form.reset();
+    toast("❤️ RSVP received! Thank you.");
+
+  } catch (error) {
+    console.error(error);
+    toast("Could not submit RSVP. Please try again.");
+  } finally {
+    button.disabled = false;
+    button.textContent = "Send RSVP";
+  }
 });

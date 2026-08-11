@@ -10,7 +10,7 @@
 - Google Maps venue
 - Share button
 - Google Calendar button
-- RSVP form frontend + Google Apps Script backend template
+- RSVP form frontend + Google Apps Script backend template added
 - GitHub Pages ready
 
 ## GitHub Pages

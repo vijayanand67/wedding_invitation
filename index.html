@@ -15,23 +15,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="no-scroll">
 <div class="petals" aria-hidden="true"></div>
 
-<div id="welcome" class="welcome" aria-label="Wedding invitation cover">
-  <button id="openInvitation" class="welcome-envelope" aria-label="Open wedding invitation">
-    <div class="envelope">
+<div id="welcome" class="premium-cover" aria-label="Wedding invitation cover">
+  <button id="openInvitation" class="premium-envelope-button" aria-label="Tap seal to open invitation">
+    <div class="premium-envelope">
+      <div class="premium-floral floral-top" aria-hidden="true">❧ ✦ ❧</div>
       <div class="envelope-flap"></div>
-      <div class="envelope-body">
-        <div class="cover-content">
-          <p class="cover-script">Wedding Invitation</p>
-        </div>
-        <span class="wax-seal" aria-hidden="true">V <b>♥</b> H</span>
+      <div class="envelope-front">
+        <div class="cover-title">Wedding Invitation</div>
+        <div class="cover-rule">✦</div>
+        <div class="cover-instruction">Tap seal to open</div>
+        <div class="cover-rule">✦</div>
+        <div class="wax-seal">V <span>♥</span> H</div>
       </div>
-      <div class="envelope-bottom"></div>
+      <div class="premium-floral floral-bottom" aria-hidden="true">❧ ✦ ❧</div>
     </div>
-    <span class="tap-to-open">Tap seal to open</span>
   </button>
+  <div class="cover-hint">Tap the seal</div>
 </div>
 
 <header class="topbar">

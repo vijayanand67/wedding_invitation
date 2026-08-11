@@ -18,14 +18,23 @@
 <body>
 <div class="petals" aria-hidden="true"></div>
 
-<div id="welcome" class="welcome">
-  <div class="welcome-card">
-    <div class="ring-mark">♢</div>
-    <p class="eyebrow">YOU ARE INVITED</p>
-    <h1>Vijay <span>♥</span> Hemalatha</h1>
-    <p data-en="Two families, one beautiful celebration." data-ta="இரண்டு குடும்பங்கள், ஒரு அழகான கொண்டாட்டம்.">Two families, one beautiful celebration.</p>
-    <button id="openInvitation" class="gold-btn">Open Invitation</button>
-  </div>
+<div id="welcome" class="welcome" aria-label="Wedding invitation cover">
+  <button id="openInvitation" class="welcome-envelope" aria-label="Open wedding invitation">
+    <div class="envelope">
+      <div class="envelope-flap"></div>
+      <div class="envelope-body">
+        <div class="cover-content">
+          <p class="cover-script">Wedding Invitation</p>
+          <div class="cover-divider"></div>
+          <h1>Vijay <span>♥</span> Hemalatha</h1>
+          <p class="cover-date">07 · 09 · 2026</p>
+        </div>
+        <span class="wax-seal" aria-hidden="true">V <b>♥</b> H</span>
+      </div>
+      <div class="envelope-bottom"></div>
+    </div>
+    <span class="tap-to-open">Tap seal to open</span>
+  </button>
 </div>
 
 <header class="topbar">

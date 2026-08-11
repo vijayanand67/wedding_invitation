@@ -25,6 +25,7 @@ Upload the **contents** of this folder to the root of your repository, commit to
 6. Copy the `/exec` URL into `js/config.js`:
    rsvpWebAppUrl: "YOUR_EXEC_URL"
 7. Commit the changed config file.
+8. Added
 
 ## Music
 The included `wedding-instrumental.wav` is an original simple instrumental generated for this project. It is not a commercial Tamil song. If you want a specific song, use music you have permission/licensing to publish.

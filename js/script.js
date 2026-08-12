@@ -49,12 +49,14 @@ $("#rsvpForm")?.addEventListener("submit", async (e) => {
     body.set("guests", data.get("guests") || "");
     body.set("wishes", data.get("wishes") || "");
 
+    const rsvpBody = new URLSearchParams();
+    rsvpBody.set("name", data.get("name") || "");
+    rsvpBody.set("guests", data.get("guests") || "");
+    rsvpBody.set("wishes", data.get("wishes") || "");
     await fetch(SITE_CONFIG.rsvpWebAppUrl, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-      },
-      body: body.toString(),
+      headers: {"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"},
+      body: rsvpBody.toString(),
       mode: "no-cors",
       redirect: "follow"
     });

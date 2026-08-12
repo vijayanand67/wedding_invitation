@@ -1,0 +1,20 @@
+Responsive desktop/tablet/mobile update
+
+Fixed the desktop presentation so the wedding invitation no longer behaves like
+a narrow mobile canvas on large screens.
+
+Breakpoints:
+- <= 390px: very small phones
+- <= 600px: mobile
+- 601px-1024px: tablet
+- >= 769px: desktop
+- >= 1200px: large desktop
+
+The layout now:
+- centers the main invitation content on desktop
+- uses a readable max-width instead of stretching text across the screen
+- prevents horizontal overflow
+- keeps the hero/background full-width
+- scales couple names, countdown and actions responsively
+- keeps the envelope/seal centered
+- preserves touch, mouse and keyboard interactions

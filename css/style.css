@@ -1628,3 +1628,119 @@ body.wedding-cover-lock{
 .premium-couple-name .premium-heart {
   color: #D74450 !important;
 }
+
+/* =========================================================
+   LANDING PAGE — PREMIUM TAP-TO-OPEN CONTROL
+   ========================================================= */
+#welcome.wedding-cover::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:30%;
+  z-index:2;
+  pointer-events:none;
+  background:linear-gradient(transparent,rgba(24,3,10,.28));
+}
+.wedding-cover__seal{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:5px!important;
+  color:#fff8f0!important;
+  background:rgba(48,7,20,.70)!important;
+  border:1.5px solid rgba(255,240,220,.82)!important;
+  box-shadow:0 0 0 5px rgba(255,240,220,.12),0 12px 35px rgba(0,0,0,.32),inset 0 0 0 1px rgba(255,255,255,.10)!important;
+  backdrop-filter:blur(6px)!important;
+  -webkit-backdrop-filter:blur(6px)!important;
+  transition:transform .25s ease,background .25s ease,box-shadow .25s ease!important;
+  animation:coverSealPulse 2.2s ease-in-out infinite!important;
+}
+.wedding-cover__seal::before{
+  content:"";
+  position:absolute;
+  inset:-8px;
+  border-radius:50%;
+  border:1px solid rgba(255,240,220,.30);
+  animation:coverSealRing 2.2s ease-out infinite;
+  pointer-events:none;
+}
+.wedding-cover__seal-icon{
+  display:grid;
+  place-items:center;
+  width:31%;
+  aspect-ratio:1;
+  border:1px solid rgba(255,240,220,.55);
+  border-radius:50%;
+  font:600 clamp(1.15rem,3.2vw,1.7rem)/1 Georgia,serif;
+  color:#f5b4bd;
+  text-shadow:0 2px 8px rgba(0,0,0,.35);
+}
+.wedding-cover__seal-label{
+  position:relative;
+  z-index:1;
+  display:block;
+  white-space:nowrap;
+  font:600 clamp(.55rem,1.8vw,.72rem)/1 Poppins,sans-serif;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#fff8f0;
+  text-shadow:0 2px 8px rgba(0,0,0,.45);
+}
+.wedding-cover__seal:hover{
+  background:rgba(78,12,31,.82)!important;
+  box-shadow:0 0 0 6px rgba(255,240,220,.14),0 16px 42px rgba(0,0,0,.38),inset 0 0 0 1px rgba(255,255,255,.12)!important;
+  animation-play-state:paused!important;
+}
+.wedding-cover__seal:active{
+  transform:translate(-50%,-50%) scale(.92)!important;
+  animation:none!important;
+}
+.wedding-cover__seal:focus-visible{
+  outline:3px solid rgba(255,240,220,.95)!important;
+  outline-offset:7px!important;
+}
+@keyframes coverSealPulse{
+  0%,100%{box-shadow:0 0 0 5px rgba(255,240,220,.12),0 12px 35px rgba(0,0,0,.32),inset 0 0 0 1px rgba(255,255,255,.10);}
+  50%{box-shadow:0 0 0 9px rgba(255,240,220,.18),0 15px 42px rgba(0,0,0,.38),inset 0 0 0 1px rgba(255,255,255,.12);}
+}
+@keyframes coverSealRing{
+  0%{transform:scale(.92);opacity:.65}
+  70%,100%{transform:scale(1.25);opacity:0}
+}
+@media(max-width:500px){
+  .wedding-cover__seal{
+    width:94px!important;height:94px!important;
+    min-width:94px!important;min-height:94px!important;
+    max-width:94px!important;max-height:94px!important;
+    top:58%!important;
+  }
+  .wedding-cover__seal-label{font-size:.57rem!important;letter-spacing:.10em}
+}
+@media(prefers-reduced-motion:reduce){
+  .wedding-cover__seal,.wedding-cover__seal::before{animation:none!important}
+}
+
+/* Unified couple-name typography — identical size, font and weight. */
+.premium-couple-name .premium-name:first-child,
+.premium-couple-name .premium-name:last-child{
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(2rem,5.7vw,4.35rem)!important;
+  font-weight:600!important;
+  line-height:.92!important;
+  letter-spacing:-.02em!important;
+}
+@media(max-width:600px){
+  .premium-couple-name .premium-name:first-child,
+  .premium-couple-name .premium-name:last-child{
+    font-size:clamp(1.72rem,9.5vw,2.8rem)!important;
+  }
+}
+@media(max-width:390px){
+  .premium-couple-name .premium-name:first-child,
+  .premium-couple-name .premium-name:last-child{
+    font-size:clamp(1.55rem,9vw,2.15rem)!important;
+  }
+}

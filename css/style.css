@@ -1773,3 +1773,78 @@ body.wedding-cover-lock{
 #openInvitation:focus-visible{outline:3px solid #fff1e5;outline-offset:5px}
 @media(prefers-reduced-motion:reduce){#openInvitation{animation:none}}
 @media(max-width:600px){#openInvitation{width:94px;height:94px}.open-hint{font-size:.68rem}}
+
+/* FINAL REQUESTED DESIGN + RSVP FIX */
+
+.couple-name,
+.premium-couple-name .couple-name,
+.hero-names .couple-name {
+  font-family: "Cormorant Garamond","Playfair Display",Georgia,serif !important;
+  font-size: inherit !important;
+  font-weight: 600 !important;
+  line-height: .92 !important;
+  letter-spacing: -.02em !important;
+}
+
+/* Exact same color/design for both names */
+.premium-couple-name .groom-name,
+.premium-couple-name .bride-name,
+.hero-names .groom-name,
+.hero-names .bride-name {
+  color: #FFF1E5 !important;
+  text-shadow: 0 2px 12px rgba(45,4,18,.5) !important;
+}
+.invitation-card .premium-couple-name .groom-name,
+.invitation-card .premium-couple-name .bride-name,
+.invitation .premium-couple-name .groom-name,
+.invitation .premium-couple-name .bride-name {
+  color: #64283B !important;
+  text-shadow: none !important;
+}
+
+/* V ❤️ H monogram inside the existing clickable opening seal */
+#openInvitation .vh-monogram {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .13em;
+  font-family: "Cormorant Garamond","Playfair Display",Georgia,serif;
+  font-size: clamp(1.35rem, 6vw, 2.15rem);
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: #FFF1E5;
+  text-shadow: 0 2px 8px rgba(0,0,0,.3);
+}
+#openInvitation .vh-monogram b {
+  color: #D74450;
+  font-family: Georgia,serif;
+  font-size: .72em;
+  font-weight: 400;
+}
+#openInvitation {
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+/* RSVP success is shown beside the submit button */
+.rsvp-status {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 12px;
+  min-height: 1.2em;
+  font: 500 .82rem/1.3 "Poppins",sans-serif;
+}
+.rsvp-status.success { color: #2f7654; }
+.rsvp-status.sending { color: #7b5b4a; }
+.rsvp-status.error { color: #a83443; }
+button[aria-busy="true"] { opacity: .72; cursor: wait; }
+
+@media(max-width:600px){
+  .rsvp-status {
+    display: block;
+    margin: 9px auto 0;
+    text-align: center;
+  }
+}

@@ -65,30 +65,42 @@ $("#rsvpForm")?.addEventListener("submit", async (e) => {
 
 (() => {
   const cover = document.getElementById("welcome");
-  const seal = document.getElementById("openInvitation");
-  if (!cover || !seal) return;
+  
 
-  document.documentElement.classList.add("cover-locked");
-  document.body.classList.add("no-scroll");
+/* Final invitation cover controller */
+(function () {
+  function initInvitationCover() {
+    var cover = document.getElementById("welcome");
+    var seal = document.getElementById("openInvitation");
+    if (!cover || !seal || cover.dataset.coverReady === "1") return;
 
-  const openCover = (event) => {
-    event.preventDefault();
-    if (cover.classList.contains("opening")) return;
+    cover.dataset.coverReady = "1";
+    document.documentElement.classList.add("invitation-html-locked");
+    document.body.classList.add("invitation-locked");
 
-    cover.classList.add("opening");
+    seal.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      if (cover.classList.contains("is-opening") || cover.classList.contains("is-hidden")) return;
 
-    window.setTimeout(() => {
-      cover.classList.add("opened");
-      cover.classList.remove("opening");
-      document.documentElement.classList.remove("cover-locked");
-      document.body.classList.remove("no-scroll");
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      cover.classList.add("is-opening");
 
-      window.setTimeout(() => {
-        cover.style.display = "none";
-      }, 700);
-    }, 900);
-  };
+      window.setTimeout(function () {
+        cover.classList.add("is-hidden");
+        document.documentElement.classList.remove("invitation-html-locked");
+        document.body.classList.remove("invitation-locked");
+        window.scrollTo(0, 0);
 
-  seal.addEventListener("click", openCover);
+        window.setTimeout(function () {
+          cover.style.display = "none";
+        }, 700);
+      }, 900);
+    }, { passive: false });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initInvitationCover);
+  } else {
+    initInvitationCover();
+  }
 })();

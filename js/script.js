@@ -62,13 +62,33 @@ $("#rsvpForm")?.addEventListener("submit", async (e) => {
   }
 });
 
-document.getElementById("openInvitation")?.addEventListener("click", () => {
+
+(() => {
   const cover = document.getElementById("welcome");
-  if (!cover) return;
-  cover.classList.add("opening");
-  setTimeout(() => {
-    cover.classList.add("hide");
-    document.body.classList.remove("no-scroll");
-    window.scrollTo({top:0, behavior:"smooth"});
-  }, 900);
-});
+  const seal = document.getElementById("openInvitation");
+  if (!cover || !seal) return;
+
+  document.documentElement.classList.add("cover-locked");
+  document.body.classList.add("no-scroll");
+
+  const openCover = (event) => {
+    event.preventDefault();
+    if (cover.classList.contains("opening")) return;
+
+    cover.classList.add("opening");
+
+    window.setTimeout(() => {
+      cover.classList.add("opened");
+      cover.classList.remove("opening");
+      document.documentElement.classList.remove("cover-locked");
+      document.body.classList.remove("no-scroll");
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+
+      window.setTimeout(() => {
+        cover.style.display = "none";
+      }, 700);
+    }, 900);
+  };
+
+  seal.addEventListener("click", openCover);
+})();

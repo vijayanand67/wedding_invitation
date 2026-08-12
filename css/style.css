@@ -1848,3 +1848,37 @@ button[aria-busy="true"] { opacity: .72; cursor: wait; }
     text-align: center;
   }
 }
+
+/* FINAL RELEASE OVERRIDES */
+.premium-couple-name .groom-name,.premium-couple-name .bride-name,
+.hero-names .groom-name,.hero-names .bride-name,
+.couple-names .groom-name,.couple-names .bride-name{
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:1em!important;font-weight:600!important;line-height:.92!important;letter-spacing:-.02em!important;
+}
+.premium-couple-name .groom-name,.premium-couple-name .bride-name,
+.hero-names .groom-name,.hero-names .bride-name{
+  color:#FFF1E5!important;text-shadow:0 2px 12px rgba(45,4,18,.48)!important;
+}
+.invitation-card .premium-couple-name .groom-name,.invitation-card .premium-couple-name .bride-name,
+.invitation .premium-couple-name .groom-name,.invitation .premium-couple-name .bride-name{
+  color:#64283B!important;text-shadow:none!important;
+}
+#openInvitation{
+ position:relative!important;z-index:30!important;width:clamp(92px,22vw,128px)!important;height:clamp(92px,22vw,128px)!important;
+ min-width:92px!important;min-height:92px!important;border-radius:50%!important;display:inline-flex!important;
+ align-items:center!important;justify-content:center!important;cursor:pointer!important;touch-action:manipulation!important;
+ color:#FFF1E5!important;background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.2),#6B213D 58%,#3A0A1B 100%)!important;
+ border:2px solid rgba(255,241,229,.82)!important;box-shadow:0 0 0 7px rgba(255,255,255,.08),0 14px 36px rgba(30,3,15,.45)!important;
+ animation:finalSealPulse 2.3s ease-in-out infinite!important;overflow:hidden!important;
+}
+#openInvitation::before{content:"";position:absolute;inset:7px;border:1px solid rgba(255,241,229,.55);border-radius:50%}
+#openInvitation .vh-monogram{position:relative;z-index:2;display:inline-flex;align-items:center;gap:.12em;font-family:"Cormorant Garamond","Playfair Display",Georgia,serif;font-size:clamp(1.45rem,6vw,2.2rem);font-weight:600}
+#openInvitation .vh-monogram b{color:#D74450;font-family:Georgia,serif;font-size:.72em;font-weight:400}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@keyframes finalSealPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+#openInvitation:focus-visible{outline:3px solid #FFF1E5!important;outline-offset:5px}
+@media(prefers-reduced-motion:reduce){#openInvitation{animation:none!important}}
+.rsvp-status{display:inline-block;vertical-align:middle;margin-left:12px;min-height:1.2em;font:500 .82rem/1.3 "Poppins",sans-serif}
+.rsvp-status.success{color:#2F7654}.rsvp-status.sending{color:#7B5B4A}.rsvp-status.error{color:#A83443}
+@media(max-width:600px){.rsvp-status{display:block;margin:9px auto 0;text-align:center}#openInvitation{width:94px!important;height:94px!important}}

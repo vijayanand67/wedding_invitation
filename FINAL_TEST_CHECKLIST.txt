@@ -1,0 +1,10 @@
+FINAL RELEASE
+RSVP URL: https://script.google.com/macros/s/AKfycbwX9ajYDQQtMhhJfmDoTn-Lfpj4Lxf6o26yiYTW3_MjdoSHnFoM9Unt5KCNjcyN2sr-Gw/exec
+Venue: Ramaswamy Mahal / S.R. Sami Party Hall
+RSVP handler: single clean POST handler; success beside button.
+Calendar: Google Calendar links receive venue in location and details.
+Landing: V❤️H inside full clickable opening seal; no Tap-to-Open helper.
+Couple names: identical font/size/weight/color styling.
+GA4: G-8TZML0ZF41.
+
+IMPORTANT: Redeploy rsvp-google-app-script.gs as a Web App (Execute as Me; Anyone access) after replacing the Apps Script code.

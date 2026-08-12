@@ -1,0 +1,15 @@
+RSVP IMPORTANT:
+The website now uses the new /exec URL and the JavaScript syntax has been cleaned up.
+
+You MUST deploy the Apps Script code in rsvp-google-apps-script.gs:
+Deploy -> New deployment -> Web app
+Execute as: Me
+Who has access: Anyone
+
+If you replace the Apps Script code after a deployment, create a new deployment
+or edit the existing Web App deployment and select the latest version.
+
+Test the /exec URL in a browser. It should return JSON saying:
+Vijay & Hemalatha RSVP Web App is live
+
+Then submit one test RSVP from the website and check Sheet1/RSVP.

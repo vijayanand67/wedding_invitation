@@ -15,30 +15,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="no-scroll">
+<body class="invitation-locked">
 <div class="petals" aria-hidden="true"></div>
 
-<div id="welcome" class="premium-cover" role="dialog" aria-modal="true" aria-label="Wedding invitation opening">
-  <div class="premium-cover-bg" aria-hidden="true"></div>
-  <div class="premium-envelope-wrap">
-    <div class="premium-envelope" id="premiumEnvelope">
-      <div class="premium-floral premium-floral-top" aria-hidden="true"></div>
-      <div class="premium-envelope-flap"></div>
+<div id="welcome" class="invitation-cover" aria-label="Wedding invitation opening">
+  <div class="cover-sparkles" aria-hidden="true"></div>
 
-      <div class="premium-envelope-body">
-        <div class="premium-cover-title">Wedding Invitation</div>
-        <div class="premium-cover-rule">✦</div>
-        <div class="premium-cover-instruction">Tap seal to open</div>
-        <div class="premium-cover-rule small">✦</div>
+  <div class="envelope-scene">
+    <div class="envelope">
+      <div class="envelope-back"></div>
 
-        <button id="openInvitation" class="premium-wax-seal" type="button" aria-label="Tap V heart H seal to open">
-          <span>V</span><b>♥</b><span>H</span>
-        </button>
+      <div class="envelope-flap">
+        <div class="flap-highlight"></div>
       </div>
 
-      <div class="premium-floral premium-floral-bottom" aria-hidden="true"></div>
+      <div class="envelope-card">
+        <div class="card-title">Wedding Invitation</div>
+        <div class="card-line">✦</div>
+        <div class="card-subtitle">V <span>♥</span> H</div>
+        <div class="card-line small">✦</div>
+        <div class="card-instruction">Tap seal to open</div>
+      </div>
+
+      <button id="openInvitation" class="wax-seal" type="button"
+              aria-label="Tap V heart H seal to open">
+        <span>V</span><b>♥</b><span>H</span>
+      </button>
+
+      <div class="gold-leaves leaves-top" aria-hidden="true"></div>
+      <div class="gold-leaves leaves-bottom" aria-hidden="true"></div>
     </div>
-    <p class="premium-cover-hint">Tap the seal to open</p>
+
+    <div class="cover-tap-text">Tap the seal to open</div>
   </div>
 </div>
 

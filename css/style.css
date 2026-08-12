@@ -749,3 +749,110 @@ body.wedding-cover-lock{
     object-fit:contain!important;
   }
 }
+
+
+/* =========================================================
+   PREMIUM COUPLE NAME REDESIGN
+   Vijay Anand ♥ Hemalatha
+   Responsive: mobile / tablet / desktop
+   ========================================================= */
+
+.hero-names{
+  width:100%;
+  margin:clamp(8px,1.5vw,16px) auto clamp(18px,2.5vw,28px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:nowrap;
+  white-space:nowrap;
+  gap:clamp(7px,1.25vw,18px);
+  color:#fffdf9;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif;
+  font-size:clamp(2rem,7.15vw,6.15rem);
+  font-weight:600;
+  line-height:.9;
+  letter-spacing:-.025em;
+  text-shadow:0 3px 18px rgba(22,3,10,.45);
+}
+
+.hero-names .hero-name{
+  display:inline-block;
+  min-width:0;
+}
+
+.hero-names .hero-heart{
+  display:inline-grid;
+  place-items:center;
+  flex:0 0 auto;
+  color:#e7b84d;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:.72em;
+  line-height:1;
+  transform:translateY(.01em);
+  text-shadow:
+    0 0 16px rgba(231,184,77,.32),
+    0 2px 8px rgba(0,0,0,.35);
+}
+
+.couple-names{
+  white-space:nowrap;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif !important;
+  letter-spacing:-.02em;
+}
+
+.couple-names span{
+  color:#d8a93f !important;
+  margin:0 .12em;
+}
+
+@media (min-width:851px){
+  .hero-content{
+    width:min(1180px,94%);
+  }
+
+  .hero-names{
+    font-size:clamp(3.7rem,6.4vw,6.15rem);
+  }
+}
+
+@media (max-width:850px){
+  .hero-names{
+    font-size:clamp(2rem,7.6vw,4rem);
+    gap:clamp(5px,1.4vw,10px);
+    letter-spacing:-.03em;
+  }
+
+  .hero-content{
+    width:min(96%,720px);
+    padding-inline:8px;
+  }
+}
+
+@media (max-width:500px){
+  .hero-names{
+    font-size:clamp(1.85rem,7.55vw,2.95rem);
+    gap:5px;
+    margin-bottom:20px;
+  }
+
+  .hero-names .hero-heart{
+    font-size:.68em;
+  }
+
+  .couple-names{
+    font-size:clamp(2rem,8vw,3.2rem) !important;
+  }
+}
+
+@media (max-width:360px){
+  .hero-names{
+    font-size:1.72rem;
+    gap:4px;
+  }
+}
+
+/* Prevent the couple name from wrapping even when browser text scaling
+   or unusually narrow mobile viewports are used. */
+@media (prefers-reduced-motion:reduce){
+  .hero-names{scroll-behavior:auto}
+}

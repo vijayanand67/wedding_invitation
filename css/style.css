@@ -625,3 +625,127 @@ body.reference-cover-locked{
     height:104px!important;
   }
 }
+
+/* =========================================================
+   WEDDING COVER — RESPONSIVE FINAL FIX
+   ========================================================= */
+html.wedding-cover-html-lock,
+body.wedding-cover-lock{
+  overflow:hidden!important;
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  overscroll-behavior:none!important;
+  touch-action:pan-x pan-y;
+}
+
+#welcome.wedding-cover{
+  position:fixed!important;
+  inset:0!important;
+  width:100vw!important;
+  height:100vh!important;
+  height:100dvh!important;
+  min-height:100vh!important;
+  min-height:100dvh!important;
+  max-height:none!important;
+  z-index:2147483647!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+  background:#270711!important;
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  transition:opacity .55s ease,visibility .55s ease!important;
+}
+#welcome.wedding-cover.is-closing{
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+.wedding-cover__art{
+  position:relative!important;
+  width:100%!important;
+  height:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+}
+.wedding-cover__art img{
+  position:absolute!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:0!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  user-select:none!important;
+  -webkit-user-select:none!important;
+  -webkit-user-drag:none!important;
+  pointer-events:none!important;
+}
+.wedding-cover__seal{
+  position:absolute!important;
+  z-index:10!important;
+  left:50%!important;
+  top:58.3%!important;
+  width:clamp(78px,21vw,112px)!important;
+  height:clamp(78px,21vw,112px)!important;
+  min-width:78px!important;
+  min-height:78px!important;
+  max-width:112px!important;
+  max-height:112px!important;
+  margin:0!important;
+  padding:0!important;
+  transform:translate(-50%,-50%)!important;
+  border:0!important;
+  outline:0!important;
+  border-radius:50%!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  cursor:pointer!important;
+  pointer-events:auto!important;
+  touch-action:manipulation!important;
+  -webkit-tap-highlight-color:transparent!important;
+}
+.wedding-cover__seal:focus-visible{
+  outline:3px solid rgba(255,221,146,.95)!important;
+  outline-offset:6px!important;
+}
+.wedding-cover__seal:active{
+  transform:translate(-50%,-50%) scale(.92)!important;
+}
+@media (max-aspect-ratio: 3/5){
+  .wedding-cover__art img{
+    object-fit:cover!important;
+  }
+  .wedding-cover__seal{top:58%!important}
+}
+@media (min-width:768px){
+  .wedding-cover__art img{
+    object-fit:contain!important;
+    background:#270711!important;
+  }
+  .wedding-cover__seal{
+    top:57.4%!important;
+    width:clamp(88px,9vw,116px)!important;
+    height:clamp(88px,9vw,116px)!important;
+  }
+}
+@media (min-width:1200px){
+  .wedding-cover__art img{
+    width:auto!important;
+    height:100%!important;
+    max-width:100%!important;
+    object-fit:contain!important;
+  }
+}

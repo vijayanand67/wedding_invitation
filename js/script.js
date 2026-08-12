@@ -63,44 +63,52 @@ $("#rsvpForm")?.addEventListener("submit", async (e) => {
 });
 
 
-(() => {
-  const cover = document.getElementById("welcome");
-  
 
-/* Final invitation cover controller */
+
+/* =========================================================
+   REFERENCE COVER CONTROLLER — FINAL
+   ========================================================= */
 (function () {
-  function initInvitationCover() {
+  function setupReferenceCover() {
     var cover = document.getElementById("welcome");
     var seal = document.getElementById("openInvitation");
-    if (!cover || !seal || cover.dataset.coverReady === "1") return;
 
-    cover.dataset.coverReady = "1";
-    document.documentElement.classList.add("invitation-html-locked");
-    document.body.classList.add("invitation-locked");
+    if (!cover || !seal) return;
 
-    seal.addEventListener("click", function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-      if (cover.classList.contains("is-opening") || cover.classList.contains("is-hidden")) return;
+    document.documentElement.classList.add("reference-cover-html-locked");
+    document.body.classList.add("reference-cover-locked");
 
-      cover.classList.add("is-opening");
+    if (seal.dataset.ready === "1") return;
+    seal.dataset.ready = "1";
+
+    function openInvitation(event) {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      if (cover.classList.contains("is-closing")) return;
+
+      cover.classList.add("is-closing");
 
       window.setTimeout(function () {
-        cover.classList.add("is-hidden");
-        document.documentElement.classList.remove("invitation-html-locked");
-        document.body.classList.remove("invitation-locked");
+        cover.style.display = "none";
+        document.documentElement.classList.remove("reference-cover-html-locked");
+        document.body.classList.remove("reference-cover-locked");
         window.scrollTo(0, 0);
+      }, 600);
+    }
 
-        window.setTimeout(function () {
-          cover.style.display = "none";
-        }, 700);
-      }, 900);
+    seal.addEventListener("click", openInvitation, false);
+    seal.addEventListener("touchend", function (event) {
+      event.preventDefault();
+      openInvitation(event);
     }, { passive: false });
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initInvitationCover);
+    document.addEventListener("DOMContentLoaded", setupReferenceCover);
   } else {
-    initInvitationCover();
+    setupReferenceCover();
   }
 })();

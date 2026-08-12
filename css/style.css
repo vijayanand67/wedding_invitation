@@ -1033,3 +1033,173 @@ body.wedding-cover-lock{
     font-size:clamp(2.4rem,4.6vw,3.35rem) !important;
   }
 }
+
+
+/* FINAL RESPONSIVE COUPLE-NAME FIX
+   The invitation page uses a fluid clamp() size and never allows
+   the couple's names to overflow the card. */
+.invitation-couple-names,
+.couple-names {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: clamp(0.22rem, 1.2vw, 0.7rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  margin-inline: auto;
+  padding-inline: clamp(0.35rem, 2vw, 1.25rem);
+  color: #5a2130 !important;
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif !important;
+  font-size: clamp(1.65rem, 5.1vw, 4.25rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.025em;
+  font-weight: 600 !important;
+}
+
+.invitation-couple-names .couple-heart,
+.invitation-couple-names .hero-heart,
+.couple-names .couple-heart,
+.couple-names .hero-heart {
+  flex: 0 0 auto;
+  color: #b83a3a !important;
+  font-size: 0.72em;
+  line-height: 1;
+  margin-inline: 0.04em;
+}
+
+.invitation-couple-names .hero-name,
+.couple-names .hero-name {
+  min-width: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .invitation-couple-names,
+  .couple-names {
+    font-size: clamp(1.42rem, 6.4vw, 2.35rem) !important;
+    gap: 0.2rem;
+    padding-inline: 0.15rem;
+    letter-spacing: -0.035em;
+  }
+}
+
+@media (max-width: 390px) {
+  .invitation-couple-names,
+  .couple-names {
+    font-size: clamp(1.25rem, 6.1vw, 1.9rem) !important;
+    gap: 0.12rem;
+  }
+}
+
+/* Parent names and other invitation names: consistent premium burgundy. */
+.invitation-card h1,
+.invitation-card h2,
+.invitation-card h3,
+.invitation-card .parent-name,
+.invitation-card .parents-name,
+.invitation-card .family-name {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  color: #5a2130;
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+}
+
+@media (max-width: 600px) {
+  .invitation-card .parent-name,
+  .invitation-card .parents-name,
+  .invitation-card .family-name {
+    font-size: clamp(1.05rem, 4.8vw, 1.45rem);
+  }
+}
+
+
+/* =========================================================
+   STACKED COUPLE NAMES — INVITATION & JOURNEY PAGES
+   Vijay Anand
+          ♥
+   Hemalatha
+   ========================================================= */
+
+.stacked-couple-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-inline: auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+.invitation-couple-names.stacked-couple-names {
+  margin: clamp(12px, 2vw, 22px) auto clamp(20px, 3vw, 30px);
+  padding-inline: 10px;
+  color: #5a2130 !important;
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif !important;
+  font-size: clamp(2rem, 5.2vw, 4rem) !important;
+  font-weight: 600 !important;
+  line-height: .92 !important;
+  letter-spacing: -.02em;
+}
+
+.page-couple-name.stacked-couple-names {
+  margin: 18px auto 24px;
+  color: #f1d58b;
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 600;
+  line-height: .9;
+  letter-spacing: -.02em;
+  text-shadow: 0 3px 16px rgba(0,0,0,.3);
+}
+
+.stacked-name {
+  display: block;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.stacked-heart {
+  display: block;
+  color: #c83b3b !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .72em;
+  line-height: .8;
+  margin: .16em 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+
+.invitation-couple-names .stacked-heart {
+  color: #b7353b !important;
+}
+
+@media (max-width: 600px) {
+  .invitation-couple-names.stacked-couple-names {
+    font-size: clamp(2rem, 10.5vw, 3.1rem) !important;
+    line-height: .9 !important;
+    padding-inline: 4px;
+  }
+
+  .page-couple-name.stacked-couple-names {
+    font-size: clamp(1.9rem, 10vw, 2.8rem);
+    line-height: .9;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .invitation-couple-names.stacked-couple-names {
+    font-size: 1.9rem !important;
+  }
+
+  .page-couple-name.stacked-couple-names {
+    font-size: 1.8rem;
+  }
+}

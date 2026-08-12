@@ -15,39 +15,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="invitation-locked">
+<body class="reference-cover-locked">
 <div class="petals" aria-hidden="true"></div>
 
-<div id="welcome" class="invitation-cover" aria-label="Wedding invitation opening">
-  <div class="cover-sparkles" aria-hidden="true"></div>
-
-  <div class="envelope-scene">
-    <div class="envelope">
-      <div class="envelope-back"></div>
-
-      <div class="envelope-flap">
-        <div class="flap-highlight"></div>
-      </div>
-
-      <div class="envelope-card">
-        <div class="card-title">Wedding Invitation</div>
-        <div class="card-line">✦</div>
-        <div class="card-subtitle">V <span>♥</span> H</div>
-        <div class="card-line small">✦</div>
-        <div class="card-instruction">Tap seal to open</div>
-      </div>
-
-      <button id="openInvitation" class="wax-seal" type="button"
-              aria-label="Tap V heart H seal to open">
-        <span>V</span><b>♥</b><span>H</span>
-      </button>
-
-      <div class="gold-leaves leaves-top" aria-hidden="true"></div>
-      <div class="gold-leaves leaves-bottom" aria-hidden="true"></div>
-    </div>
-
-    <div class="cover-tap-text">Tap the seal to open</div>
-  </div>
+<div id="welcome" class="reference-cover" role="dialog" aria-modal="true"
+     aria-label="Wedding invitation opening">
+  <img class="reference-cover-image"
+       src="assets/images/wedding-envelope-cover.jpg"
+       alt="Wedding invitation envelope with V heart H wax seal">
+  <button id="openInvitation" class="reference-seal-button" type="button"
+          aria-label="Tap the V heart H seal to open the invitation"></button>
+  <div class="reference-cover-status" aria-hidden="true">Tap the seal to open</div>
 </div>
 
 <header class="topbar">

@@ -1,6 +1,5 @@
 const $=s=>document.querySelector(s);
 const toast=m=>{const t=$("#toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),3000)};
-$("#openInvitation")?.addEventListener("click",()=>$("#welcome").classList.add("hide"));
 $("#menuToggle")?.addEventListener("click",()=>document.querySelector(".topbar").classList.toggle("nav-open"));
 document.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",()=>document.querySelector(".topbar").classList.remove("nav-open")));
 
@@ -61,4 +60,15 @@ $("#rsvpForm")?.addEventListener("submit", async (e) => {
     button.disabled = false;
     button.textContent = "Send RSVP";
   }
+});
+
+document.getElementById("openInvitation")?.addEventListener("click", () => {
+  const cover = document.getElementById("welcome");
+  if (!cover) return;
+  cover.classList.add("opening");
+  setTimeout(() => {
+    cover.classList.add("hide");
+    document.body.classList.remove("no-scroll");
+    window.scrollTo({top:0, behavior:"smooth"});
+  }, 900);
 });

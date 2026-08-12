@@ -65,50 +65,49 @@ $("#rsvpForm")?.addEventListener("submit", async (e) => {
 
 
 
-/* =========================================================
-   REFERENCE COVER CONTROLLER — FINAL
-   ========================================================= */
+
+/* Wedding invitation cover controller — final */
 (function () {
-  function setupReferenceCover() {
+  function initWeddingCover() {
     var cover = document.getElementById("welcome");
     var seal = document.getElementById("openInvitation");
-
     if (!cover || !seal) return;
 
-    document.documentElement.classList.add("reference-cover-html-locked");
-    document.body.classList.add("reference-cover-locked");
+    document.documentElement.classList.add("wedding-cover-html-lock");
+    document.body.classList.add("wedding-cover-lock");
 
-    if (seal.dataset.ready === "1") return;
-    seal.dataset.ready = "1";
+    if (seal.getAttribute("data-wedding-cover-ready") === "true") return;
+    seal.setAttribute("data-wedding-cover-ready", "true");
 
-    function openInvitation(event) {
-      if (event) {
-        event.preventDefault();
-        event.stopPropagation();
+    var opened = false;
+
+    function openCover(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
       }
-
-      if (cover.classList.contains("is-closing")) return;
+      if (opened) return;
+      opened = true;
 
       cover.classList.add("is-closing");
 
       window.setTimeout(function () {
-        cover.style.display = "none";
-        document.documentElement.classList.remove("reference-cover-html-locked");
-        document.body.classList.remove("reference-cover-locked");
+        cover.remove();
+        document.documentElement.classList.remove("wedding-cover-html-lock");
+        document.body.classList.remove("wedding-cover-lock");
         window.scrollTo(0, 0);
       }, 600);
     }
 
-    seal.addEventListener("click", openInvitation, false);
-    seal.addEventListener("touchend", function (event) {
-      event.preventDefault();
-      openInvitation(event);
-    }, { passive: false });
+    seal.addEventListener("click", openCover, false);
+    seal.addEventListener("pointerup", function (e) {
+      if (e.pointerType === "touch") openCover(e);
+    }, false);
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupReferenceCover);
+    document.addEventListener("DOMContentLoaded", initWeddingCover, {once:true});
   } else {
-    setupReferenceCover();
+    initWeddingCover();
   }
 })();

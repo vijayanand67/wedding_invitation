@@ -122,3 +122,92 @@ $("#rsvpForm")?.addEventListener("submit", async (e) => {
     initWeddingCover();
   }
 })();
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+    const status = document.getElementById("rsvpStatus") || createRsvpStatus();
+
+    const name = String(form.querySelector('[name="name"]')?.value || "").trim();
+    const guests = String(form.querySelector('[name="guests"]')?.value || "").trim();
+    const wishes = String(form.querySelector('[name="wishes"]')?.value || "").trim();
+
+    if (!name || !guests) {
+      status.textContent = "Please enter your name and number of guests.";
+      status.className = "rsvp-status error";
+      return;
+    }
+
+    status.textContent = "Sending…";
+    status.className = "rsvp-status sending";
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.setAttribute("aria-busy", "true");
+    }
+
+    try {
+      const body = new URLSearchParams();
+      body.set("name", name);
+      body.set("guests", guests);
+      body.set("wishes", wishes);
+
+      // no-cors is intentional: Google Apps Script Web Apps accept the POST,
+      // while browsers may not expose the response because of CORS.
+      await fetch(SITE_CONFIG.rsvpWebAppUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"},
+        body: body.toString(),
+        redirect: "follow"
+      });
+
+      status.textContent = "❤️ RSVP submitted successfully";
+      status.className = "rsvp-status success";
+      form.reset();
+    } catch (err) {
+      status.textContent = "Unable to submit RSVP. Please try again.";
+      status.className = "rsvp-status error";
+      console.error("RSVP submission failed:", err);
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.removeAttribute("aria-busy");
+      }
+    }
+  });
+
+  function createRsvpStatus() {
+    const el = document.createElement("span");
+    el.id = "rsvpStatus";
+    el.className = "rsvp-status";
+    const formButton = form.querySelector('button[type="submit"], input[type="submit"]');
+    if (formButton && formButton.parentElement) {
+      formButton.insertAdjacentElement("afterend", el);
+    } else {
+      form.appendChild(el);
+    }
+    return el;
+  }
+
+/* Calendar mahal/location patch */
+(function () {
+  const MAHAL_NAME = "Wedding Mahal";
+  const LOCATION_TEXT = MAHAL_NAME;
+
+  window.WEDDING_CALENDAR_LOCATION = LOCATION_TEXT;
+
+  // For Google Calendar links generated as URLs, append the mahal as location
+  // when the existing link is already present.
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[href*="calendar.google.com"], a[href*="google.com/calendar"]').forEach(function (a) {
+      try {
+        const u = new URL(a.href);
+        if (!u.searchParams.get("location")) {
+          u.searchParams.set("location", LOCATION_TEXT);
+          a.href = u.toString();
+        }
+      } catch (_) {}
+    });
+  });
+})();

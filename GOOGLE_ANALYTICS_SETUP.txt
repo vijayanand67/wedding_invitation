@@ -1,0 +1,32 @@
+Google Analytics 4 (GA4) setup
+
+1. Create a Google Analytics 4 property in Google Analytics.
+2. Create a Web data stream for your invitation website.
+3. Copy the Measurement ID (format: G-XXXXXXXXXX).
+4. Open index.html.
+5. Replace BOTH occurrences of:
+   G-8TZML0ZF41
+   with your real Measurement ID.
+6. Deploy the website.
+7. Open the invitation once yourself and check Google Analytics > Reports > Realtime.
+
+Tracked automatically:
+- page_view
+- user/session activity
+- device category (mobile/tablet/desktop)
+- browser and operating system
+- approximate geographic location
+- traffic source/referrer
+- engagement/time on page
+
+Custom invitation events:
+- view_invitation — when "View Invitation" is tapped
+- add_to_calendar — when "Add to Calendar" is tapped
+
+Important:
+GA4 is intended for aggregate analytics. It does not automatically give you a
+visitor's name, phone number, email address, or exact identity. Do not send
+personally identifiable information to GA4.
+
+If you share this invitation publicly, consider adding an appropriate privacy/
+consent notice depending on your audience and applicable privacy requirements.

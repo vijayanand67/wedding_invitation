@@ -44,10 +44,19 @@ $("#rsvpForm")?.addEventListener("submit", async (e) => {
   button.textContent = "Sending...";
 
   try {
+    const body = new URLSearchParams();
+    body.set("name", data.get("name") || "");
+    body.set("guests", data.get("guests") || "");
+    body.set("wishes", data.get("wishes") || "");
+
     await fetch(SITE_CONFIG.rsvpWebAppUrl, {
       method: "POST",
-      body: data,
-      mode: "no-cors"
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+      },
+      body: body.toString(),
+      mode: "no-cors",
+      redirect: "follow"
     });
 
     form.reset();

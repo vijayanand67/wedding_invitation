@@ -1744,3 +1744,32 @@ body.wedding-cover-lock{
     font-size:clamp(1.55rem,9vw,2.15rem)!important;
   }
 }
+
+/* FINAL PREMIUM OVERRIDES */
+.premium-couple-name .groom-name,
+.premium-couple-name .bride-name,
+.hero-names .groom-name,
+.hero-names .bride-name {
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif !important;
+  font-size:1em !important;
+  font-weight:600 !important;
+  line-height:.92 !important;
+  letter-spacing:-.02em !important;
+}
+#openInvitation {
+  position:relative; z-index:20; width:clamp(90px,22vw,128px);
+  height:clamp(90px,22vw,128px); min-width:90px; min-height:90px;
+  border-radius:50%; cursor:pointer; touch-action:manipulation;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.2),rgba(95,22,42,.95) 58%,rgba(45,6,18,.99));
+  color:#fff4e8; border:2px solid rgba(255,255,255,.8);
+  box-shadow:0 0 0 7px rgba(255,255,255,.08),0 12px 34px rgba(22,3,12,.45);
+  animation:sealPulse 2.3s ease-in-out infinite;
+  user-select:none; -webkit-tap-highlight-color:transparent;
+}
+#openInvitation::before{content:"";position:absolute;inset:7px;border:1px solid rgba(255,241,229,.55);border-radius:50%}
+.open-hint{margin:0 auto 10px;text-align:center;color:#fff4e8;font-family:Poppins,sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 2px 8px rgba(0,0,0,.4);pointer-events:none}
+@keyframes sealPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+#openInvitation:focus-visible{outline:3px solid #fff1e5;outline-offset:5px}
+@media(prefers-reduced-motion:reduce){#openInvitation{animation:none}}
+@media(max-width:600px){#openInvitation{width:94px;height:94px}.open-hint{font-size:.68rem}}

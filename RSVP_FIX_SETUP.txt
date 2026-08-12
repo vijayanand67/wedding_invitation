@@ -1,0 +1,39 @@
+RSVP FIX — IMPORTANT
+
+The Google Sheet screenshot showed the active tab is "Sheet1", while the previous
+Apps Script was hard-coded to a tab named "RSVP". That mismatch prevented rows
+from being written.
+
+This version fixes that:
+- Uses the "RSVP" tab if it exists.
+- Otherwise uses "Sheet1".
+- Otherwise uses the first sheet tab.
+- Ensures headers are:
+  Timestamp | Name | Guests | Wishes
+
+IMPORTANT: You must redeploy the Apps Script after replacing the Apps Script code.
+
+Google Sheet:
+1. Open the RSVP Google Sheet.
+2. Extensions -> Apps Script.
+3. Replace the old code with rsvp-google-apps-script.gs.
+4. Save.
+5. Deploy -> Manage deployments.
+6. Edit the Web app deployment (or create a new Web app).
+7. Execute as: Me.
+8. Who has access: Anyone.
+9. Deploy.
+10. If Google gives a NEW /exec URL, update js/config.js with that URL.
+11. Commit/push the updated source to GitHub Pages.
+
+Test:
+1. Open the deployed wedding website.
+2. Go to RSVP.
+3. Enter a test name, guests and wishes.
+4. Submit.
+5. Check Sheet1 (or RSVP if you created that tab).
+6. A new row should appear:
+   Timestamp | Name | Guests | Wishes
+
+The frontend is configured with the existing Apps Script /exec URL and sends
+the form fields as URL-encoded POST data.

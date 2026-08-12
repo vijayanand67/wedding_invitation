@@ -1,0 +1,28 @@
+FINAL SETUP
+
+RSVP:
+1. Open the Google Sheet.
+2. Extensions -> Apps Script.
+3. Replace the deployed script with rsvp-google-apps-script.gs.
+4. Save.
+5. Deploy -> Manage deployments -> Edit Web app.
+6. Execute as: Me.
+7. Who has access: Anyone.
+8. If a new /exec URL is generated, update js/config.js.
+9. Submit a test RSVP and check Sheet1/RSVP.
+
+IMPORTANT:
+The website cannot update a Google Sheet unless the Apps Script Web App is
+deployed and accessible. The source code alone does not update the deployed
+Apps Script.
+
+Calendar:
+The website includes a calendar-location patch. Set MAHAL_NAME in js/script.js
+to the exact mahal name if your existing invitation has a specific venue name.
+
+Landing:
+The circular opening control now shows V ♥ H only. The helper "Tap to seal/open"
+text has been removed. The full circle remains clickable/tappable.
+
+Couple names:
+Groom and bride use the same font, size, weight and color.

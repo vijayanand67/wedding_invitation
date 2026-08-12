@@ -30,52 +30,27 @@ $("#calendarBtn")?.addEventListener("click",()=>{
 
 $("#rsvpForm")?.addEventListener("submit", async (e) => {
   e.preventDefault();
-
-  const form = e.currentTarget;
-  const data = new FormData(form);
-
-  if (!SITE_CONFIG.rsvpWebAppUrl) {
-    toast("RSVP endpoint is not connected yet.");
-    return;
-  }
-
-  const button = form.querySelector("button[type='submit']");
-  button.disabled = true;
-  button.textContent = "Sending...";
-
-  try {
-    const body = new URLSearchParams();
-    body.set("name", data.get("name") || "");
-    body.set("guests", data.get("guests") || "");
-    body.set("wishes", data.get("wishes") || "");
-
-    const rsvpBody = new URLSearchParams();
-    rsvpBody.set("name", data.get("name") || "");
-    rsvpBody.set("guests", data.get("guests") || "");
-    rsvpBody.set("wishes", data.get("wishes") || "");
-    await fetch(SITE_CONFIG.rsvpWebAppUrl, {
-      method: "POST",
-      headers: {"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"},
-      body: rsvpBody.toString(),
-      mode: "no-cors",
-      redirect: "follow"
-    });
-
-    form.reset();
-    toast("❤️ RSVP received! Thank you.");
-
-  } catch (error) {
-    console.error(error);
-    toast("Could not submit RSVP. Please try again.");
-  } finally {
-    button.disabled = false;
-    button.textContent = "Send RSVP";
+  const form=e.currentTarget;
+  const button=form.querySelector("button[type='submit']");
+  let status=document.getElementById("rsvpStatus");
+  if(!status){status=document.createElement("span");status.id="rsvpStatus";status.className="rsvp-status";button?.insertAdjacentElement("afterend",status);}
+  const name=String(form.querySelector('[name="name"]')?.value||"").trim();
+  const guests=String(form.querySelector('[name="guests"]')?.value||"").trim();
+  const wishes=String(form.querySelector('[name="wishes"]')?.value||"").trim();
+  if(!name||!guests){status.textContent="Please enter your name and number of guests.";status.className="rsvp-status error";return;}
+  if(!SITE_CONFIG.rsvpWebAppUrl){status.textContent="RSVP is not connected.";status.className="rsvp-status error";return;}
+  if(button){button.disabled=true;button.textContent="Sending...";}
+  status.textContent="Sending...";status.className="rsvp-status sending";
+  try{
+    const body=new URLSearchParams({name,guests,wishes});
+    await fetch(SITE_CONFIG.rsvpWebAppUrl,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},body:body.toString(),redirect:"follow",keepalive:true});
+    status.textContent="❤️ RSVP submitted successfully";status.className="rsvp-status success";form.reset();
+  }catch(err){
+    console.error("RSVP submission failed:",err);status.textContent="Unable to submit RSVP. Please try again.";status.className="rsvp-status error";
+  }finally{
+    if(button){button.disabled=false;button.textContent="Send RSVP";}
   }
 });
-
-
-
-
 
 /* Wedding invitation cover controller — final */
 (function () {
@@ -190,24 +165,21 @@ form.addEventListener("submit", async (e) => {
     return el;
   }
 
-/* Calendar mahal/location patch */
-(function () {
-  const MAHAL_NAME = "Wedding Mahal";
-  const LOCATION_TEXT = MAHAL_NAME;
 
-  window.WEDDING_CALENDAR_LOCATION = LOCATION_TEXT;
 
-  // For Google Calendar links generated as URLs, append the mahal as location
-  // when the existing link is already present.
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('a[href*="calendar.google.com"], a[href*="google.com/calendar"]').forEach(function (a) {
-      try {
-        const u = new URL(a.href);
-        if (!u.searchParams.get("location")) {
-          u.searchParams.set("location", LOCATION_TEXT);
-          a.href = u.toString();
-        }
-      } catch (_) {}
+(function(){
+  const venue='Ramaswamy Mahal / S.R. Sami Party Hall';
+  function updateCalendar(){
+    document.querySelectorAll('a[href*="calendar.google.com"]').forEach(function(a){
+      try{
+        const u=new URL(a.href);
+        u.searchParams.set("location",venue);
+        const d=u.searchParams.get("details")||"";
+        if(!d.includes(venue)) u.searchParams.set("details",(d?d+"\\n\\n":"")+"Venue: "+venue);
+        a.href=u.toString();
+      }catch(_ ){}
     });
-  });
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",updateCalendar,{once:true});
+  else updateCalendar();
 })();

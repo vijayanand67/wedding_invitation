@@ -15,17 +15,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="reference-cover-locked">
+<body class="wedding-cover-lock">
 <div class="petals" aria-hidden="true"></div>
 
-<div id="welcome" class="reference-cover" role="dialog" aria-modal="true"
-     aria-label="Wedding invitation opening">
-  <img class="reference-cover-image"
-       src="assets/images/wedding-envelope-cover.jpg"
-       alt="Wedding invitation envelope with V heart H wax seal">
-  <button id="openInvitation" class="reference-seal-button" type="button"
-          aria-label="Tap the V heart H seal to open the invitation"></button>
-  <div class="reference-cover-status" aria-hidden="true">Tap the seal to open</div>
+<div id="welcome" class="wedding-cover" aria-label="Wedding invitation opening">
+  <div class="wedding-cover__art">
+    <img src="assets/images/wedding-envelope-cover.jpg"
+         alt="Wedding Invitation — V heart H"
+         draggable="false">
+    <button id="openInvitation"
+            class="wedding-cover__seal"
+            type="button"
+            aria-label="Open wedding invitation by tapping the V heart H seal"></button>
+  </div>
 </div>
 
 <header class="topbar">

@@ -1337,3 +1337,183 @@ body.wedding-cover-lock{
     max-width: 850px;
   }
 }
+
+
+/* =========================================================
+   PREMIUM TWO-TONE COUPLE NAMES
+   Groom: Vijay Anand  |  Bride: Hemalatha
+   ========================================================= */
+
+.premium-couple-name {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.025em;
+}
+
+.premium-couple-name .premium-name {
+  display: block;
+  white-space: nowrap;
+  line-height: .92;
+  font-weight: 600;
+  transition: color .25s ease, text-shadow .25s ease;
+}
+
+/* Groom — refined champagne gold */
+.premium-couple-name .premium-name:first-child {
+  color: #E7C56A !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,.22);
+}
+
+/* Bride — soft blush rose */
+.premium-couple-name .premium-name:last-child {
+  color: #F2A6B3 !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,.22);
+}
+
+/* Heart — rich ruby red */
+.premium-couple-name .premium-heart {
+  color: #D6404A !important;
+  font-size: .62em;
+  line-height: .8;
+  margin: .16em 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,.24);
+}
+
+/* Cream invitation page: deeper, more readable two-tone palette */
+.invitation-card .premium-couple-name .premium-name:first-child,
+.invitation .premium-couple-name .premium-name:first-child,
+.invitation-section .premium-couple-name .premium-name:first-child,
+.page-couple-name .premium-couple-name .premium-name:first-child {
+  color: #7A3E24 !important;
+  text-shadow: none;
+}
+
+.invitation-card .premium-couple-name .premium-name:last-child,
+.invitation .premium-couple-name .premium-name:last-child,
+.invitation-section .premium-couple-name .premium-name:last-child,
+.page-couple-name .premium-couple-name .premium-name:last-child {
+  color: #8F3E57 !important;
+  text-shadow: none;
+}
+
+.invitation-card .premium-couple-name .premium-heart,
+.invitation .premium-couple-name .premium-heart,
+.invitation-section .premium-couple-name .premium-heart,
+.page-couple-name .premium-couple-name .premium-heart {
+  color: #B52F3B !important;
+}
+
+/* Responsive typography */
+@media (max-width: 600px) {
+  .premium-couple-name .premium-name {
+    font-size: 1em;
+  }
+
+  .premium-couple-name {
+    letter-spacing: -0.035em;
+  }
+}
+
+@media (max-width: 390px) {
+  .premium-couple-name {
+    letter-spacing: -0.04em;
+  }
+}
+
+
+/* =========================================================
+   FINAL NO-GOLD COUPLE NAME FIX
+   Designed to blend with the existing burgundy/cream theme.
+   ========================================================= */
+
+.premium-couple-name {
+  width: min(100%, 680px) !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding-inline: clamp(8px, 3vw, 22px) !important;
+  margin-inline: auto !important;
+  overflow: hidden !important;
+  text-align: center !important;
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em !important;
+  line-height: .9 !important;
+}
+
+.premium-couple-name .premium-name {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: clip !important;
+  font-size: clamp(1.95rem, 5.3vw, 4rem) !important;
+  line-height: .9 !important;
+  font-weight: 600 !important;
+}
+
+/* Hero: warm ivory + soft rose — no gold */
+.hero .premium-couple-name .premium-name:first-child,
+.hero-content .premium-couple-name .premium-name:first-child {
+  color: #FFF4E8 !important;
+  text-shadow: 0 2px 10px rgba(45, 5, 18, .48) !important;
+}
+
+.hero .premium-couple-name .premium-name:last-child,
+.hero-content .premium-couple-name .premium-name:last-child {
+  color: #F3B7C2 !important;
+  text-shadow: 0 2px 10px rgba(45, 5, 18, .48) !important;
+}
+
+.hero .premium-couple-name .premium-heart,
+.hero-content .premium-couple-name .premium-heart {
+  color: #D84A55 !important;
+}
+
+/* Cream invitation page: burgundy + muted rose */
+.invitation-card .premium-couple-name .premium-name:first-child,
+.invitation .premium-couple-name .premium-name:first-child,
+.invitation-section .premium-couple-name .premium-name:first-child,
+.page-couple-name .premium-couple-name .premium-name:first-child {
+  color: #642238 !important;
+}
+
+.invitation-card .premium-couple-name .premium-name:last-child,
+.invitation .premium-couple-name .premium-name:last-child,
+.invitation-section .premium-couple-name .premium-name:last-child,
+.page-couple-name .premium-couple-name .premium-name:last-child {
+  color: #9B5266 !important;
+}
+
+.invitation-card .premium-couple-name .premium-heart,
+.invitation .premium-couple-name .premium-heart,
+.invitation-section .premium-couple-name .premium-heart,
+.page-couple-name .premium-couple-name .premium-heart {
+  color: #B83242 !important;
+}
+
+/* Extra-safe mobile sizing so the names never touch/cross the card edges. */
+@media (max-width: 600px) {
+  .premium-couple-name {
+    width: 100% !important;
+    padding-inline: 10px !important;
+    letter-spacing: -0.025em !important;
+  }
+
+  .premium-couple-name .premium-name {
+    font-size: clamp(1.7rem, 9vw, 2.65rem) !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .premium-couple-name {
+    padding-inline: 8px !important;
+  }
+
+  .premium-couple-name .premium-name {
+    font-size: clamp(1.55rem, 8.7vw, 2.15rem) !important;
+  }
+}

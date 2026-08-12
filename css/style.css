@@ -1203,3 +1203,142 @@ body.wedding-cover-lock{
     font-size: 1.8rem;
   }
 }
+
+
+/* =========================================================
+   FINAL COUPLE NAME DESIGN
+   Vijay Anand
+          ♥
+   Hemalatha
+   ========================================================= */
+
+.stacked-hero-names,
+.stacked-invitation-names,
+.final-stacked-name {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  overflow: visible !important;
+  white-space: normal !important;
+}
+
+.stacked-hero-names {
+  margin: clamp(8px, 2vw, 18px) auto clamp(14px, 2.5vw, 26px) !important;
+  padding: 0 12px !important;
+  gap: 0 !important;
+  color: #f4d28a !important;
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif !important;
+  font-size: clamp(2.55rem, 7vw, 5.7rem) !important;
+  font-weight: 600 !important;
+  line-height: .78 !important;
+  letter-spacing: -.025em !important;
+  text-shadow: 0 3px 14px rgba(0,0,0,.45) !important;
+}
+
+.stacked-invitation-names {
+  margin: 8px auto 22px !important;
+  padding: 0 12px !important;
+  gap: 0 !important;
+  color: #5a2130 !important;
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif !important;
+  font-size: clamp(2.2rem, 5vw, 4.1rem) !important;
+  font-weight: 600 !important;
+  line-height: .82 !important;
+  letter-spacing: -.02em !important;
+}
+
+.final-stacked-name {
+  margin: 14px auto 24px !important;
+  padding: 0 10px !important;
+  color: #f4d28a !important;
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif !important;
+  font-size: clamp(2rem, 5vw, 3.7rem) !important;
+  font-weight: 600 !important;
+  line-height: .82 !important;
+  letter-spacing: -.02em !important;
+}
+
+.stacked-name {
+  display: block !important;
+  width: 100% !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+}
+
+.stacked-heart {
+  display: block !important;
+  width: auto !important;
+  margin: .16em 0 !important;
+  color: #c83b3b !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: .58em !important;
+  line-height: .75 !important;
+  text-align: center !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,.28) !important;
+}
+
+.stacked-invitation-names .stacked-heart {
+  color: #b8323a !important;
+  text-shadow: none !important;
+}
+
+/* Parent/family names: same refined burgundy palette, but smaller and
+   independently responsive so long names never force the card wider. */
+.invitation-card .parent-name,
+.invitation-card .parents-name,
+.invitation-card .family-name {
+  max-width: 92% !important;
+  margin-inline: auto !important;
+  overflow-wrap: anywhere !important;
+  color: #5a2130 !important;
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif !important;
+}
+
+@media (max-width: 600px) {
+  .stacked-hero-names {
+    font-size: clamp(2.15rem, 11vw, 3.25rem) !important;
+    line-height: .78 !important;
+    padding-inline: 6px !important;
+  }
+
+  .stacked-invitation-names {
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+    line-height: .8 !important;
+    padding-inline: 4px !important;
+  }
+
+  .final-stacked-name {
+    font-size: clamp(1.9rem, 9.5vw, 2.8rem) !important;
+    line-height: .8 !important;
+  }
+
+  .stacked-heart {
+    font-size: .56em !important;
+    margin: .18em 0 !important;
+  }
+
+  .invitation-card .parent-name,
+  .invitation-card .parents-name,
+  .invitation-card .family-name {
+    font-size: clamp(1.05rem, 4.8vw, 1.45rem) !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .stacked-hero-names {
+    font-size: 2.05rem !important;
+  }
+
+  .stacked-invitation-names {
+    font-size: 1.9rem !important;
+  }
+
+  .final-stacked-name {
+    font-size: 1.8rem !important;
+  }
+}

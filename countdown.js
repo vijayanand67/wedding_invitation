@@ -1,4 +1,0 @@
-const weddingDate=new Date("2026-09-07T06:00:00+05:30").getTime(),el=document.getElementById("countdown");
-function tick(){const d=weddingDate-Date.now();if(d<=0){el.innerHTML='<div class="unit"><b>♥</b><small>Wedding Day</small></div>';return}
-const days=Math.floor(d/864e5),h=Math.floor(d%864e5/36e5),m=Math.floor(d%36e5/6e4),s=Math.floor(d%6e4/1e3);
-el.innerHTML=`<div class="unit"><b>${days}</b><small>Days</small></div><div class="unit"><b>${String(h).padStart(2,"0")}</b><small>Hours</small></div><div class="unit"><b>${String(m).padStart(2,"0")}</b><small>Minutes</small></div><div class="unit"><b>${String(s).padStart(2,"0")}</b><small>Seconds</small></div>`}tick();setInterval(tick,1000);

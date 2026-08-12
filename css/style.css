@@ -856,3 +856,180 @@ body.wedding-cover-lock{
 @media (prefers-reduced-motion:reduce){
   .hero-names{scroll-behavior:auto}
 }
+
+
+/* =========================================================
+   FINAL PREMIUM NAME SYSTEM
+   Optimized for iPhone, Android, tablet and desktop.
+   ========================================================= */
+
+.brand{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.18em;
+  white-space:nowrap;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif !important;
+  font-size:clamp(.98rem,2vw,1.28rem);
+  font-weight:600;
+  letter-spacing:-.01em;
+  color:#f7ead0 !important;
+  text-shadow:0 1px 7px rgba(0,0,0,.25);
+}
+.brand .brand-name{color:#f7ead0}
+.brand .brand-heart{
+  color:#c7353d !important;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.03em;
+  line-height:1;
+  text-shadow:0 1px 7px rgba(0,0,0,.3);
+}
+
+/* Hero: always one line, but fluidly scales to fit the viewport. */
+.hero-content{
+  width:min(1120px,94vw) !important;
+  padding-top:clamp(28px,5vh,58px) !important;
+}
+.hero-names{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  box-sizing:border-box;
+  display:flex;
+  align-items:baseline;
+  justify-content:center;
+  flex-wrap:nowrap;
+  white-space:nowrap;
+  gap:clamp(4px,1vw,16px);
+  margin:clamp(8px,1.5vh,16px) auto clamp(16px,2.5vh,26px);
+  color:#f4dfaa;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif;
+  font-size:clamp(1.72rem,7.25vw,5.65rem);
+  font-weight:600;
+  line-height:.92;
+  letter-spacing:-.035em;
+  text-shadow:0 3px 16px rgba(24,3,10,.65);
+  overflow:visible;
+}
+.hero-names .hero-name{
+  display:block;
+  min-width:0;
+  flex:0 1 auto;
+}
+.hero-names .hero-heart{
+  display:inline-block;
+  flex:0 0 auto;
+  color:#c7353d;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:.66em;
+  line-height:1;
+  transform:translateY(-.02em);
+  text-shadow:0 0 14px rgba(199,53,61,.35),0 2px 8px rgba(0,0,0,.45);
+}
+
+/* Invitation card: dark burgundy name + red heart on cream card. */
+.invitation-card .couple-names{
+  width:100%;
+  max-width:100%;
+  box-sizing:border-box;
+  margin:clamp(10px,2vw,18px) auto clamp(20px,3vw,30px);
+  text-align:center;
+  white-space:nowrap;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif !important;
+  font-size:clamp(1.75rem,7vw,3.35rem) !important;
+  font-weight:700 !important;
+  line-height:1;
+  letter-spacing:-.025em;
+  color:#64152b !important;
+  overflow:visible;
+}
+.invitation-card .couple-names span{
+  color:#b72d37 !important;
+  margin:0 .08em;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:.78em;
+  vertical-align:.02em;
+}
+
+/* All family/parent names use the same elegant display family and stay readable. */
+.families strong{
+  display:block;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif !important;
+  font-size:clamp(1.05rem,2.4vw,1.45rem) !important;
+  font-weight:700;
+  line-height:1.35;
+  color:#4e2931;
+  overflow-wrap:anywhere;
+}
+.families span{
+  font-family:Poppins,Arial,sans-serif;
+  font-size:clamp(.62rem,1.2vw,.72rem);
+  color:#97764a;
+}
+
+/* Small phones: preserve the single-line couple name without clipping. */
+@media (max-width:500px){
+  .topbar{
+    padding:13px 4vw;
+  }
+  .brand{
+    font-size:clamp(.86rem,4vw,1rem);
+    gap:.12em;
+  }
+  .hero{
+    min-height:650px;
+  }
+  .hero-content{
+    width:94vw !important;
+    padding-inline:0 !important;
+    padding-top:26px !important;
+  }
+  .hero-names{
+    font-size:clamp(1.62rem,7.25vw,2.85rem);
+    gap:4px;
+    letter-spacing:-.04em;
+    margin-bottom:18px;
+  }
+  .hero-names .hero-heart{
+    font-size:.64em;
+  }
+  .invitation-card .couple-names{
+    font-size:clamp(1.62rem,7.2vw,2.65rem) !important;
+    letter-spacing:-.035em;
+  }
+  .families{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  .families>div{
+    padding:15px 10px;
+  }
+  .families strong{
+    font-size:1.18rem !important;
+  }
+}
+
+/* Very narrow devices. */
+@media (max-width:360px){
+  .brand{font-size:.82rem}
+  .hero-names{
+    font-size:1.55rem;
+    gap:3px;
+  }
+  .invitation-card .couple-names{
+    font-size:1.52rem !important;
+  }
+  .families strong{
+    font-size:1.08rem !important;
+  }
+}
+
+/* Tablet/desktop: more breathing room while preserving the one-line rule. */
+@media (min-width:768px){
+  .hero-names{
+    font-size:clamp(3.3rem,6.2vw,5.65rem);
+  }
+  .invitation-card .couple-names{
+    font-size:clamp(2.4rem,4.6vw,3.35rem) !important;
+  }
+}

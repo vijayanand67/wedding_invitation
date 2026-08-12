@@ -514,3 +514,114 @@ body.invitation-locked{
 @media(min-width:431px){
   .envelope-scene{width:min(78vw,520px)}
 }
+
+/* =========================================================
+   REFERENCE COVER — FINAL
+   Exact supplied envelope artwork + functional seal
+   ========================================================= */
+html.reference-cover-html-locked,
+body.reference-cover-locked{
+  overflow:hidden!important;
+  width:100%!important;
+  height:100%!important;
+  overscroll-behavior:none!important;
+}
+
+#welcome.reference-cover{
+  position:fixed!important;
+  inset:0!important;
+  z-index:2147483647!important;
+  width:100vw!important;
+  height:100dvh!important;
+  min-height:100dvh!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:0!important;
+  display:block!important;
+  overflow:hidden!important;
+  background:#25050f!important;
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  transition:opacity .55s ease,visibility .55s ease!important;
+}
+
+#welcome.reference-cover.is-closing{
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+
+.reference-cover-image{
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:0!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  user-select:none!important;
+  -webkit-user-drag:none!important;
+}
+
+.reference-seal-button{
+  position:absolute!important;
+  left:50%!important;
+  top:57.1%!important;
+  width:min(24vw,108px)!important;
+  height:min(24vw,108px)!important;
+  min-width:76px!important;
+  min-height:76px!important;
+  max-width:112px!important;
+  max-height:112px!important;
+  transform:translate(-50%,-50%)!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:50%!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  cursor:pointer!important;
+  z-index:10!important;
+  -webkit-tap-highlight-color:transparent!important;
+  touch-action:manipulation!important;
+}
+
+.reference-seal-button:focus-visible{
+  outline:3px solid rgba(255,224,151,.9)!important;
+  outline-offset:5px!important;
+}
+
+.reference-cover-status{
+  position:absolute!important;
+  left:50%!important;
+  bottom:10.5%!important;
+  transform:translateX(-50%)!important;
+  z-index:5!important;
+  display:none!important;
+  color:#edd7ad!important;
+  font:500 12px/1 Arial,sans-serif!important;
+  letter-spacing:.16em!important;
+  text-transform:uppercase!important;
+  pointer-events:none!important;
+}
+
+@media(max-width:600px){
+  .reference-seal-button{
+    width:24vw!important;
+    height:24vw!important;
+    min-width:72px!important;
+    min-height:72px!important;
+  }
+}
+
+@media(min-width:601px){
+  .reference-seal-button{
+    width:104px!important;
+    height:104px!important;
+  }
+}

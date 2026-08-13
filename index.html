@@ -376,7 +376,7 @@ animation:vhTap 2s ease-in-out infinite!important;
 </style>
 <style>
 
-/* Final instruction: no transparent circular click overlay and no Tap the Seal text. */
+/* Final instruction: no transparent circular click overlay and no  text. */
 #welcome #openInvitation{
   background: transparent !important;
   border: 0 !important;
@@ -398,6 +398,58 @@ animation:vhTap 2s ease-in-out infinite!important;
   display:none !important;
   content:none !important;
   animation:none !important;
+}
+
+</style>
+<style>
+
+/* FINAL FIRST-PAGE CLEANUP */
+.welcome-open-box,
+.open-box,
+.tap-seal-box,
+.tap-seal-to-open,
+.seal-open-button,
+.cover-clean-panel,
+.vh-old-open-box,
+.vh-seal-hint,
+.vh-tap,
+.vh-orbit,
+.vh-mark,
+.vh-heart,
+.vh-seal-spark,
+#openInvitation .vh-seal-hint,
+#openInvitation .vh-tap,
+#openInvitation .vh-mark,
+#openInvitation .vh-orbit {
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  animation:none!important;
+}
+
+/* Do not draw a transparent circular click target or rectangular button. */
+#welcome #openInvitation,
+#welcome #openInvitation.wedding-cover__seal,
+#welcome #openInvitation.vh-seal-open {
+  width:0!important;
+  height:0!important;
+  min-width:0!important;
+  min-height:0!important;
+  padding:0!important;
+  border:0!important;
+  outline:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  pointer-events:none!important;
+  overflow:hidden!important;
+  color:transparent!important;
+}
+
+/* Preserve the invitation artwork as the first-page visual. */
+#welcome .wedding-cover__art img {
+  pointer-events:none!important;
+  user-select:none!important;
+  -webkit-user-drag:none!important;
 }
 
 </style>
@@ -528,7 +580,7 @@ animation:vhTap 2s ease-in-out infinite!important;
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".vh-seal-open").forEach(function (seal) {
     seal.setAttribute("role", "button");
-    seal.setAttribute("aria-label", "Tap the seal to open the wedding invitation");
+    seal.setAttribute("aria-label", "  the wedding invitation");
     if (!seal.hasAttribute("tabindex")) seal.setAttribute("tabindex", "0");
 
     function activateSeal(e) {

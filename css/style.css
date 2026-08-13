@@ -2241,3 +2241,211 @@ button:disabled {
     justify-content: center;
   }
 }
+
+/* =========================================================
+   FINAL UX FIXES — ENVELOPE / MUSIC / RSVP
+   ========================================================= */
+
+/* Keep the envelope as a centered, predictable focal point on every device. */
+#welcome.wedding-cover {
+  z-index: 2147483647 !important;
+}
+.wedding-cover__art {
+  position: relative !important;
+  width: min(100vw, 900px) !important;
+  height: 100dvh !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.wedding-cover__art img {
+  width: auto !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+.wedding-cover__seal {
+  left: 50% !important;
+  top: 61.5% !important;
+  transform: translate(-50%, -50%) !important;
+  width: clamp(92px, 10vw, 132px) !important;
+  height: clamp(92px, 10vw, 132px) !important;
+  min-width: 92px !important;
+  min-height: 92px !important;
+  max-width: 132px !important;
+  max-height: 132px !important;
+  background: transparent !important;
+  border: 2px solid rgba(255,241,229,.72) !important;
+  box-shadow: 0 0 0 6px rgba(255,241,229,.08), 0 10px 28px rgba(0,0,0,.24) !important;
+  color: #fff1e5 !important;
+}
+.wedding-cover__seal::before {
+  inset: -7px !important;
+}
+.wedding-cover__seal .vh-monogram {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: .12em !important;
+  font: 600 clamp(1.35rem, 3.4vw, 2.05rem)/1 "Cormorant Garamond","Playfair Display",Georgia,serif !important;
+  color: #fff1e5 !important;
+}
+.wedding-cover__seal .vh-monogram b {
+  color: #d74450 !important;
+  font-family: Georgia,serif !important;
+  font-size: .72em !important;
+}
+@media (max-width: 600px) {
+  .wedding-cover__art {
+    width: 100vw !important;
+    height: 100dvh !important;
+  }
+  .wedding-cover__art img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .wedding-cover__seal {
+    top: 61.5% !important;
+    width: 98px !important;
+    height: 98px !important;
+    min-width: 98px !important;
+    min-height: 98px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .wedding-cover__art {
+    width: min(100vw, 850px) !important;
+  }
+}
+
+/* Music panel */
+.music-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(25,3,12,.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+.music-panel.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.music-panel-card {
+  position: relative;
+  width: min(92vw, 430px);
+  padding: 34px 28px 28px;
+  border: 1px solid rgba(219,173,83,.55);
+  border-radius: 22px;
+  background: linear-gradient(145deg,#4c1026,#260713);
+  color: #fff3e7;
+  text-align: center;
+  box-shadow: 0 24px 70px rgba(0,0,0,.42);
+}
+.music-panel-card h3 {
+  margin: 8px 0 4px;
+  font: 600 2rem/1.1 "Cormorant Garamond","Playfair Display",serif;
+}
+.music-panel-card p {
+  margin: 6px 0 18px;
+}
+.music-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.music-link {
+  display: inline-flex;
+  text-decoration: none;
+}
+.music-note {
+  margin-top: 18px !important;
+  font-size: .72rem;
+  opacity: .75;
+}
+.music-note code {
+  font-size: .7rem;
+}
+
+/* RSVP — requested success wording only; no sending state */
+.rsvp-status {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 12px;
+  min-height: 1.2em;
+  font: 500 .82rem/1.3 "Poppins",sans-serif;
+}
+.rsvp-status.success { color: #b9efcf; }
+.rsvp-status.error { color: #ffd0d7; }
+.rsvp-status.sending { display: none !important; }
+@media (max-width: 600px) {
+  .rsvp-status {
+    display: block;
+    margin: 9px auto 0;
+    text-align: center;
+  }
+}
+
+/* Hide the printed "Tap seal to open" artwork text with an intentional
+   premium leather plaque. The source image is kept intact. */
+.cover-clean-panel{
+  position:absolute!important;
+  z-index:8!important;
+  left:50%!important;
+  top:45.8%!important;
+  transform:translate(-50%,-50%)!important;
+  width:min(43vw,360px)!important;
+  height:clamp(54px,6.4vw,82px)!important;
+  border:1px solid rgba(219,173,83,.28)!important;
+  border-radius:10px!important;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(118,38,58,.20),transparent 60%),
+    linear-gradient(180deg,rgba(39,7,18,.94),rgba(52,11,24,.94))!important;
+  box-shadow:0 10px 28px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.06)!important;
+  pointer-events:none!important;
+}
+.cover-clean-panel::before,
+.cover-clean-panel::after{
+  content:"✦";
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  color:rgba(219,173,83,.68);
+  font-size:.72rem;
+}
+.cover-clean-panel::before{left:24%}
+.cover-clean-panel::after{right:24%}
+@media(max-width:600px){
+  .cover-clean-panel{
+    width:min(58vw,300px)!important;
+    height:58px!important;
+    top:45.8%!important;
+  }
+}
+
+.wedding-cover__seal{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.wedding-cover__seal::before{
+  border:1px solid transparent!important;
+  box-shadow:none!important;
+}

@@ -1,0 +1,15 @@
+FIRST PAGE ARTWORK
+
+The first/landing page now uses the supplied premium burgundy-and-gold
+envelope artwork as the responsive cover.
+
+The artwork includes:
+- Wedding Invitation heading
+- You Are Cordially Invited
+- V ♥ H wax seal
+- Tap the Seal To Open
+- Gold botanical decoration
+
+The clickable hit area is positioned over the V ♥ H seal and scales for
+mobile, tablet and desktop screens. The artwork is preserved on desktop
+with contain mode and fills mobile screens with centered cover mode.

@@ -50,6 +50,110 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+Tamil:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style>
+
+/* Premium V♥H seal opening interaction */
+.vh-seal-open {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  isolation: isolate;
+}
+.vh-seal-open::before,
+.vh-seal-open::after {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.vh-seal-open::before {
+  border: 1px solid rgba(212, 165, 75, .65);
+  box-shadow: 0 0 22px rgba(212, 165, 75, .35);
+  animation: vhSealPulse 2.2s ease-in-out infinite;
+}
+.vh-seal-open::after {
+  inset: -34px;
+  border: 1px solid rgba(212, 165, 75, .28);
+  animation: vhSealRing 2.8s ease-out infinite;
+}
+.vh-seal-open .vh-seal-hint {
+  position: absolute;
+  top: calc(100% + 28px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  color: #e7c77a;
+  font: 600 14px/1.2 Georgia, "Times New Roman", serif;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 12px rgba(0,0,0,.7);
+  pointer-events: none;
+  animation: vhHintGlow 2s ease-in-out infinite;
+}
+.vh-seal-hint::before,
+.vh-seal-hint::after {
+  content: "✦";
+  margin: 0 10px;
+  font-size: 10px;
+}
+.vh-seal-spark {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #f4d58b;
+  box-shadow: 0 0 10px #d6a84c;
+  pointer-events: none;
+  animation: vhSpark 2.4s ease-in-out infinite;
+}
+.vh-seal-spark.s1 { top: -24px; left: 18%; animation-delay: .1s; }
+.vh-seal-spark.s2 { top: 12%; right: -22px; animation-delay: .6s; }
+.vh-seal-spark.s3 { bottom: -20px; left: 28%; animation-delay: 1.1s; }
+.vh-seal-spark.s4 { bottom: 16%; left: -24px; animation-delay: 1.6s; }
+
+@keyframes vhSealPulse {
+  0%,100% { transform: scale(.96); opacity: .55; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+@keyframes vhSealRing {
+  0% { transform: scale(.82); opacity: .75; }
+  75%,100% { transform: scale(1.18); opacity: 0; }
+}
+@keyframes vhHintGlow {
+  0%,100% { opacity: .72; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 1; transform: translateX(-50%) translateY(-3px); }
+}
+@keyframes vhSpark {
+  0%,100% { transform: translateY(0) scale(.7); opacity: .35; }
+  50% { transform: translateY(-8px) scale(1.25); opacity: 1; }
+}
+
+/* Remove the old rectangular seal instruction and bottom decorative action icon
+   without affecting the actual invitation-opening handler. */
+.vh-old-open-box,
+.tap-seal-box,
+.tap-seal-to-open,
+.seal-open-button,
+.bottom-open-icon {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .vh-seal-open .vh-seal-hint {
+    top: calc(100% + 25px);
+    font-size: 12px;
+    letter-spacing: .14em;
+  }
+  .vh-seal-open::before { inset: -14px; }
+  .vh-seal-open::after { inset: -27px; }
+}
+
+</style>
 </head>
 <body class="wedding-cover-lock">
 <div class="petals" aria-hidden="true"></div>
@@ -61,9 +165,9 @@
          draggable="false">
     <div class="cover-clean-panel" aria-hidden="true"></div>
     <button id="openInvitation"
-            class="wedding-cover__seal"
+            class="wedding-cover__seal vh-seal-open"
             type="button"
-            aria-label=" the wedding invitation"><span class="sr-only">Open wedding invitation</span></button>
+            aria-label=" the wedding invitation"><span class="vh-seal-hint" aria-hidden="true">Tap the Seal</span><span class="vh-seal-spark s1" aria-hidden="true"></span><span class="vh-seal-spark s2" aria-hidden="true"></span><span class="vh-seal-spark s3" aria-hidden="true"></span><span class="vh-seal-spark s4" aria-hidden="true"></span><span class="sr-only">Open wedding invitation</span></button>
   </div>
 </div>
 
@@ -167,5 +271,29 @@
 <div id="lightbox" class="lightbox"><button id="closeLightbox">×</button><img id="lightboxImg" alt=""></div>
 <audio id="bgMusic" loop preload="none" src="assets/music/wedding-instrumental.wav"></audio>
 <script src="js/config.js"></script><script src="js/script.js"></script><script src="js/countdown.js"></script>
+<script>
+
+/* V♥H seal interaction bridge */
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".vh-seal-open").forEach(function (seal) {
+    seal.setAttribute("role", "button");
+    seal.setAttribute("aria-label", "Tap the seal to open the wedding invitation");
+    if (!seal.hasAttribute("tabindex")) seal.setAttribute("tabindex", "0");
+
+    function activateSeal(e) {
+      if (e && e.type === "keydown" && e.key !== "Enter" && e.key !== " ") return;
+      var legacy = document.querySelector(
+        '[onclick*="open"], [onclick*="Open"], [data-action*="open"], [data-action*="Open"], ' +
+        '.open-invitation, .openInvitation, #openInvitation, #open-invitation'
+      );
+      if (legacy && legacy !== seal) {
+        legacy.click();
+      }
+    }
+    seal.addEventListener("keydown", activateSeal);
+  });
+});
+
+</script>
 </body>
 </html>

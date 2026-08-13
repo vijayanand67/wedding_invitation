@@ -38,3 +38,10 @@ Google Maps: https://maps.app.goo.gl/3fDBbH3gCMUNVAgSA?g_st=ic
 ## Events
 Reception: 06 September 2026, 6:30 PM onwards
 Wedding Ceremony: 07 September 2026, 6:00 AM–7:30 AM
+
+
+## Latest first-page update
+- Applied the user-supplied second reference design as the first-page artwork.
+- Removed the visible rectangular opening box and CSS-generated duplicate V♥H.
+- V♥H and Tap the Seal are shown exactly by the supplied artwork.
+- A transparent circular tap target is layered over the central seal so the existing opening action is preserved.

@@ -279,13 +279,108 @@ animation:vhTap 2s ease-in-out infinite!important;
 #welcome #openInvitation .vh-mark,#welcome #openInvitation .vh-heart,#welcome #openInvitation .vh-orbit,
 #welcome #openInvitation .vh-tap{animation:none!important}
 }
-</style></head>
+</style><style>
+
+/* FINAL FIRST-PAGE DESIGN: supplied reference artwork + transparent circular click target */
+#welcome.wedding-cover{
+  background:#270711!important;
+}
+#welcome .wedding-cover__art{
+  width:100%!important;
+  height:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+}
+#welcome .wedding-cover__art img{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  display:block!important;
+  pointer-events:none!important;
+  user-select:none!important;
+  -webkit-user-drag:none!important;
+}
+/* No visible box, no CSS-generated V♥H: the supplied artwork contains both. */
+#welcome #openInvitation,
+#welcome #openInvitation.wedding-cover__seal,
+#welcome #openInvitation.vh-seal-open{
+  position:absolute!important;
+  left:50%!important;
+  top:56.4%!important;
+  width:clamp(132px,43vw,188px)!important;
+  height:clamp(132px,43vw,188px)!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-width:none!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:0!important;
+  transform:translate(-50%,-50%)!important;
+  border:0!important;
+  outline:0!important;
+  border-radius:50%!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:transparent!important;
+  font-size:0!important;
+  overflow:visible!important;
+  cursor:pointer!important;
+  z-index:50!important;
+  animation:none!important;
+  -webkit-tap-highlight-color:transparent!important;
+}
+#welcome #openInvitation::before,
+#welcome #openInvitation::after{
+  display:none!important;
+  content:none!important;
+}
+#welcome #openInvitation .vh-mark,
+#welcome #openInvitation .vh-monogram,
+#welcome #openInvitation .vh-heart,
+#welcome #openInvitation .vh-orbit,
+#welcome #openInvitation .vh-tap,
+#welcome #openInvitation .vh-seal-hint,
+#welcome #openInvitation .vh-seal-spark{
+  display:none!important;
+}
+#welcome #openInvitation:focus-visible{
+  outline:2px solid rgba(246,211,133,.8)!important;
+  outline-offset:7px!important;
+}
+@media(max-aspect-ratio:3/5){
+  #welcome .wedding-cover__art img{
+    object-fit:cover!important;
+    object-position:center center!important;
+  }
+  #welcome #openInvitation{top:56.4%!important;}
+}
+@media(min-width:768px){
+  #welcome .wedding-cover__art img{
+    object-fit:contain!important;
+    background:#270711!important;
+  }
+  #welcome #openInvitation{
+    top:56.4%!important;
+    width:clamp(150px,16vw,205px)!important;
+    height:clamp(150px,16vw,205px)!important;
+  }
+}
+
+</style>
+</head>
 <body class="wedding-cover-lock">
 <div class="petals" aria-hidden="true"></div>
 
 <div id="welcome" class="wedding-cover" aria-label="Wedding invitation opening">
   <div class="wedding-cover__art">
-    <img src=""
+    <img src="assets/images/wedding-invitation-vh-design.jpg"
          alt="Wedding Invitation — V heart H"
          draggable="false">
     <button id="openInvitation"

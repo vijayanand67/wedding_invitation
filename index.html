@@ -3545,6 +3545,316 @@ h1,h2,h3,h4,
 }
 
 </style>
+<style>
+
+/* ==============================================================
+   PREMIUM SECOND + THIRD PAGE REDESIGN
+   Invitation / family page + journey page
+   ============================================================= */
+
+/* Shared luxury page treatment */
+#invite,
+#journey{
+  position:relative!important;
+  overflow:hidden!important;
+}
+#invite{
+  background:
+    radial-gradient(circle at 12% 12%,rgba(215,173,85,.10),transparent 24%),
+    radial-gradient(circle at 88% 82%,rgba(109,32,54,.08),transparent 28%),
+    linear-gradient(180deg,#fffaf3 0%,#f8eee3 100%)!important;
+}
+#journey{
+  background:
+    radial-gradient(circle at 88% 10%,rgba(215,173,85,.10),transparent 25%),
+    radial-gradient(circle at 8% 90%,rgba(109,32,54,.08),transparent 28%),
+    linear-gradient(180deg,#fbf5ed 0%,#f4e7dc 100%)!important;
+}
+#invite::before,
+#journey::before{
+  content:""!important;
+  position:absolute!important;
+  inset:18px!important;
+  border:1px solid rgba(174,126,49,.18)!important;
+  border-radius:30px!important;
+  pointer-events:none!important;
+}
+#invite::after,
+#journey::after{
+  content:"✦"!important;
+  position:absolute!important;
+  right:7%!important;
+  top:7%!important;
+  color:rgba(174,126,49,.16)!important;
+  font-size:28px!important;
+  text-shadow:80px 90px 0 rgba(174,126,49,.10),-70px 180px 0 rgba(109,32,54,.08)!important;
+  pointer-events:none!important;
+}
+
+/* Headings */
+#invite .section-heading,
+#journey .section-heading{
+  position:relative!important;
+  z-index:2!important;
+}
+#invite .section-heading .eyebrow,
+#journey .section-heading .eyebrow{
+  color:#a87932!important;
+}
+#invite .section-heading h2,
+#journey .section-heading h2{
+  color:#4a1022!important;
+  text-shadow:0 2px 14px rgba(74,16,34,.08)!important;
+}
+#invite .section-heading > p:not(.eyebrow),
+#journey .section-heading > p:not(.eyebrow){
+  color:#60444d!important;
+}
+
+/* Invitation card */
+#invite .invitation-card{
+  position:relative!important;
+  z-index:2!important;
+  max-width:940px!important;
+  margin-inline:auto!important;
+  padding:clamp(28px,5vw,58px)!important;
+  background:
+    linear-gradient(145deg,rgba(255,252,246,.98),rgba(248,236,222,.96))!important;
+  border:1px solid rgba(176,128,50,.34)!important;
+  border-radius:30px!important;
+  box-shadow:0 24px 65px rgba(69,29,42,.12),inset 0 1px 0 rgba(255,255,255,.92)!important;
+}
+#invite .invitation-card::before{
+  content:""!important;
+  position:absolute!important;
+  inset:11px!important;
+  border:1px solid rgba(176,128,50,.17)!important;
+  border-radius:23px!important;
+  pointer-events:none!important;
+}
+#invite .invitation-card > *{
+  position:relative!important;
+  z-index:1!important;
+}
+#invite .invitation-card .ornament{
+  color:#b38336!important;
+  text-shadow:0 2px 10px rgba(176,128,50,.15)!important;
+}
+#invite .small-caps{
+  color:#8f6228!important;
+  font-weight:700!important;
+  letter-spacing:.28em!important;
+}
+#invite .invitation-card .premium-couple-name{
+  margin-block:18px 30px!important;
+}
+#invite .invitation-card .premium-couple-name .premium-name{
+  color:#4a1022!important;
+  -webkit-text-fill-color:#4a1022!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(38px,5vw,58px)!important;
+  font-weight:600!important;
+  line-height:.98!important;
+  text-shadow:0 2px 8px rgba(74,16,34,.10)!important;
+}
+#invite .invitation-card .premium-heart{
+  color:#b83d52!important;
+  font-size:clamp(22px,3vw,30px)!important;
+  text-shadow:0 3px 10px rgba(184,61,82,.18)!important;
+}
+
+/* Parents: equal, balanced presentation */
+#invite .families{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;
+  align-items:stretch!important;
+  gap:clamp(16px,3vw,34px)!important;
+  width:min(820px,100%)!important;
+  margin:0 auto 30px!important;
+}
+#invite .family-panel{
+  position:relative!important;
+  min-width:0!important;
+  padding:clamp(18px,3vw,28px)!important;
+  text-align:center!important;
+  background:rgba(255,250,241,.72)!important;
+  border:1px solid rgba(176,128,50,.27)!important;
+  border-radius:20px!important;
+  box-shadow:0 10px 28px rgba(69,29,42,.055)!important;
+}
+#invite .family-panel::after{
+  content:""!important;
+  position:absolute!important;
+  left:50%!important;
+  bottom:-1px!important;
+  width:42%!important;
+  height:2px!important;
+  transform:translateX(-50%)!important;
+  background:linear-gradient(90deg,transparent,#c89a4a,transparent)!important;
+}
+#invite .family-label{
+  display:block!important;
+  color:#9a6a2c!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:clamp(10px,1.3vw,12px)!important;
+  font-weight:700!important;
+  letter-spacing:.18em!important;
+}
+#invite .family-rule{
+  width:54px!important;
+  height:1px!important;
+  margin:12px auto 15px!important;
+  background:linear-gradient(90deg,transparent,#c99b50,transparent)!important;
+}
+#invite .family-names{
+  display:block!important;
+  color:#4f3039!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(20px,2.4vw,27px)!important;
+  font-weight:600!important;
+  line-height:1.45!important;
+}
+#invite .family-divider{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  color:#b38336!important;
+  font-size:18px!important;
+}
+#invite .family-divider::before,
+#invite .family-divider::after{
+  content:""!important;
+  width:1px!important;
+  height:56%!important;
+  background:linear-gradient(180deg,transparent,rgba(176,128,50,.45),transparent)!important;
+}
+#invite .family-divider span{
+  padding:10px!important;
+  color:#b38336!important;
+}
+#invite .invitation-note{
+  color:#65464e!important;
+}
+
+/* Third page: journey */
+#journey .journey-grid{
+  position:relative!important;
+  z-index:2!important;
+  align-items:stretch!important;
+  gap:clamp(24px,4vw,50px)!important;
+}
+#journey .memory-photo{
+  position:relative!important;
+  overflow:hidden!important;
+  border:1px solid rgba(176,128,50,.32)!important;
+  border-radius:26px!important;
+  box-shadow:0 22px 55px rgba(69,29,42,.12)!important;
+}
+#journey .memory-photo::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  background:linear-gradient(180deg,rgba(55,8,24,.02),rgba(55,8,24,.16))!important;
+  pointer-events:none!important;
+}
+#journey .memory-photo img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  filter:saturate(.94) contrast(1.02)!important;
+}
+#journey .timeline{
+  position:relative!important;
+  padding-left:clamp(18px,3vw,32px)!important;
+}
+#journey .timeline::before{
+  content:""!important;
+  position:absolute!important;
+  left:4px!important;
+  top:12px!important;
+  bottom:12px!important;
+  width:1px!important;
+  background:linear-gradient(180deg,transparent,#c89a4a 12%,#c89a4a 88%,transparent)!important;
+}
+#journey .timeline > div{
+  position:relative!important;
+  margin-bottom:clamp(18px,3vw,30px)!important;
+  padding:clamp(18px,2.5vw,24px)!important;
+  background:rgba(255,250,241,.76)!important;
+  border:1px solid rgba(176,128,50,.25)!important;
+  border-radius:20px!important;
+  box-shadow:0 12px 34px rgba(69,29,42,.065)!important;
+}
+#journey .timeline > div:last-child{margin-bottom:0!important}
+#journey .timeline > div::before{
+  content:""!important;
+  position:absolute!important;
+  left:-31px!important;
+  top:25px!important;
+  width:12px!important;height:12px!important;
+  border-radius:50%!important;
+  background:#f4d58f!important;
+  border:3px solid #7a2840!important;
+  box-shadow:0 0 0 4px rgba(200,154,74,.12)!important;
+}
+#journey .timeline b{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:34px!important;height:34px!important;
+  margin-bottom:8px!important;
+  border-radius:50%!important;
+  background:linear-gradient(145deg,#5b172b,#7d2942)!important;
+  color:#f7d994!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:11px!important;
+  letter-spacing:.05em!important;
+  box-shadow:0 7px 18px rgba(80,19,40,.18)!important;
+}
+#journey .timeline h3{
+  color:#4a1022!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(25px,3vw,34px)!important;
+  font-weight:650!important;
+}
+#journey .timeline p{
+  color:#60444d!important;
+  font-family:"Poppins",sans-serif!important;
+}
+
+/* Mobile/tablet balance */
+@media(max-width:767px){
+  #invite::before,#journey::before{inset:10px!important;border-radius:20px!important}
+  #invite .invitation-card{padding:25px 18px!important;border-radius:22px!important}
+  #invite .families{
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+  }
+  #invite .family-divider{
+    flex-direction:row!important;
+    gap:12px!important;
+  }
+  #invite .family-divider::before,
+  #invite .family-divider::after{
+    width:32%!important;
+    height:1px!important;
+  }
+  #invite .family-divider span{padding:4px 8px!important}
+  #invite .family-names{font-size:22px!important}
+  #journey .timeline{padding-left:24px!important}
+  #journey .timeline::before{left:6px!important}
+  #journey .timeline > div::before{left:-26px!important}
+}
+@media(min-width:768px) and (max-width:1100px){
+  #invite .families{gap:16px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  #invite .family-panel,
+  #journey .timeline > div{transition:none!important}
+}
+
+</style>
 </head>
 <body class="wedding-cover-lock">
 
@@ -3635,19 +3945,41 @@ h1,h2,h3,h4,
 </section>
 
 <section id="invite" class="section">
-<div class="section-heading reveal"><p class="eyebrow">WITH OUR FAMILIES</p><h2>Wedding Invitation</h2><p>Together with our families, we warmly invite you to celebrate our wedding.</p></div>
-<div class="invitation-card reveal">
-<div class="ornament">✦</div><p class="small-caps">THE WEDDING OF</p><div class="premium-couple-name" aria-label="Vijay Anand and Hemalatha">
-  <span class="premium-name couple-name groom-name">Vijay Anand</span>
-  <span class="premium-heart" aria-hidden="true">♥</span>
-  <span class="premium-name couple-name bride-name">Hemalatha</span>
-</div>
-<div class="families">
-<div><span>Groom's Parents</span><strong>Mr. K. Manimaran<br>Mrs. M. Parimala</strong>
-<div><span>Bride's Parents</span><strong>Mr. S. Mohanasundaram<br>Mrs. M. Thenmozhi</strong></div>
-</div>
-<div class="ornament">✦</div><p class="invitation-note">Your presence and blessings will make our celebration truly special.</p>
-</div>
+  <div class="section-heading reveal">
+    <p class="eyebrow">WITH OUR FAMILIES</p>
+    <h2>Wedding Invitation</h2>
+    <p>Together with our families, we warmly invite you to celebrate our wedding.</p>
+  </div>
+
+  <div class="invitation-card reveal">
+    <div class="ornament">✦</div>
+    <p class="small-caps">THE WEDDING OF</p>
+
+    <div class="premium-couple-name" aria-label="Vijay Anand and Hemalatha">
+      <span class="premium-name couple-name groom-name">Vijay Anand</span>
+      <span class="premium-heart" aria-hidden="true">♥</span>
+      <span class="premium-name couple-name bride-name">Hemalatha</span>
+    </div>
+
+    <div class="families" aria-label="Parents of the couple">
+      <article class="family-panel">
+        <span class="family-label">GROOM'S PARENTS</span>
+        <div class="family-rule" aria-hidden="true"></div>
+        <strong class="family-names">Mr. K. Manimaran<br>Mrs. M. Parimala</strong>
+      </article>
+
+      <div class="family-divider" aria-hidden="true"><span>✦</span></div>
+
+      <article class="family-panel">
+        <span class="family-label">BRIDE'S PARENTS</span>
+        <div class="family-rule" aria-hidden="true"></div>
+        <strong class="family-names">Mr. S. Mohanasundaram<br>Mrs. M. Thenmozhi</strong>
+      </article>
+    </div>
+
+    <div class="ornament">✦</div>
+    <p class="invitation-note">Your presence and blessings will make our celebration truly special.</p>
+  </div>
 </section>
 
 <section id="journey" class="section">

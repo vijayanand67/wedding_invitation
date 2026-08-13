@@ -2449,3 +2449,14 @@ button:disabled {
   border:1px solid transparent!important;
   box-shadow:none!important;
 }
+
+/* 2026-08-13 FINAL: invisible full-seal hit target; V♥H remains in artwork */
+.wedding-cover__seal{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.wedding-cover__seal::before{
+  border-color:transparent!important;
+  box-shadow:none!important;
+}

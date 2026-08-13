@@ -5303,6 +5303,86 @@ main .section > *{position:relative!important;z-index:1!important}
   }
 }
 </style>
+
+<style>
+/* Final cleanup: no parents on Save the Date, no circle markers on Journey. */
+#events .celebration-families{
+  display:none!important;
+}
+#journey .timeline .journey-marker{
+  display:none!important;
+}
+#journey .timeline>div{
+  padding-left:0!important;
+}
+</style>
+
+<style>
+/* Final requested refinement: borderless countdown, no countdown title. */
+#home .hero-countdown,
+#events .ceremony-countdown{
+  width:min(500px,82vw)!important;
+  margin:10px auto 0!important;
+  padding:5px 0 4px!important;
+  border:0!important;
+  border-top:0!important;
+  border-bottom:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+
+#home .hero-countdown .invite-countdown,
+#events .ceremony-countdown .invite-countdown{
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+#home .hero-countdown .unit,
+#events .ceremony-countdown .unit{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:5px 3px!important;
+}
+
+/* No bullet/circle markers in Our Journey Begins. */
+#journey .timeline>div,
+#journey .timeline>div:last-child{
+  padding-left:0!important;
+  border-bottom:1px solid rgba(177,128,49,.18)!important;
+}
+
+#journey .timeline .journey-marker{
+  display:none!important;
+}
+
+/* Save the Date: parents are completely absent; keep the card balanced. */
+#events .celebration-families{
+  display:none!important;
+}
+
+#events .celebration-note{
+  margin-top:24px!important;
+}
+
+@media(max-width:700px){
+  #home .hero-countdown,
+  #events .ceremony-countdown{
+    width:min(330px,calc(100vw - 48px))!important;
+    margin-top:7px!important;
+    padding:3px 0!important;
+  }
+
+  #home .hero-countdown .unit,
+  #events .ceremony-countdown .unit{
+    padding:4px 2px!important;
+  }
+}
+</style>
 </head>
 <body class="wedding-cover-lock">
 
@@ -5388,7 +5468,7 @@ main .section > *{position:relative!important;z-index:1!important}
 <p class="hero-sub" data-en="With love, blessings, and joy, we begin our forever together." data-ta="அன்பும், ஆசீர்வாதங்களும், மகிழ்ச்சியுடனும் எங்கள் வாழ்நாள் பயணத்தை தொடங்குகிறோம்.">With love, blessings, and joy, we begin our forever together.</p>
 <div class="date-script">07 September 2026</div>
 <div class="hero-countdown" aria-label="Countdown to the wedding">
-  <p class="hero-countdown-label">COUNTDOWN TO OUR WEDDING</p>
+  
   <div id="countdown" class="invite-countdown">
     <div class="unit"><b>--</b><small>Days</small></div>
     <div class="unit"><b>--</b><small>Hours</small></div>
@@ -5441,10 +5521,10 @@ main .section > *{position:relative!important;z-index:1!important}
 <div class="journey-grid">
 <div class="memory-photo reveal"><img src="assets/images/childhood.jpg" alt="Memory"></div>
 <div class="timeline reveal">
-<div><span class="journey-marker" aria-hidden="true">✦</span><h3>Two Families</h3><p>A beautiful union blessed by our families.</p></div>
-<div><span class="journey-marker" aria-hidden="true">✦</span><h3>Engagement</h3><p>A joyful celebration that brought our families closer.</p></div>
-<div><span class="journey-marker" aria-hidden="true">✦</span><h3>A Promise for a Lifetime</h3><p>With love, blessings and joy, we begin our new chapter.</p></div>
-<div><span class="journey-marker" aria-hidden="true">✦</span><h3>Forever Begins</h3><p>07 September 2026</p></div>
+<div><h3>Two Families</h3><p>A beautiful union blessed by our families.</p></div>
+<div><h3>Engagement</h3><p>A joyful celebration that brought our families closer.</p></div>
+<div><h3>A Promise for a Lifetime</h3><p>With love, blessings and joy, we begin our new chapter.</p></div>
+<div><h3>Forever Begins</h3><p>07 September 2026</p></div>
 </div></div>
 </section>
 
@@ -5481,20 +5561,7 @@ main .section > *{position:relative!important;z-index:1!important}
       <h4>Ramaswamy Mahal / S.R. Sami Party Hall</h4>
       <a class="text-link" href="https://maps.app.goo.gl/3fDBbH3gCMUNVAgSA?g_st=ic" target="_blank" rel="noopener">📍 Get Directions</a>
     </div>
-
-    <div class="celebration-families" aria-label="Parents of the couple">
-      <div class="family-column">
-        <span class="family-label">GROOM'S PARENTS</span>
-        <strong class="family-names">Mr. K. Manimaran<br>Mrs. M. Parimala</strong>
-      </div>
-      <div class="family-center-rule" aria-hidden="true"><span>✦</span></div>
-      <div class="family-column">
-        <span class="family-label">BRIDE'S PARENTS</span>
-        <strong class="family-names">Mr. S. Mohanasundaram<br>Mrs. M. Thenmozhi</strong>
-      </div>
-    </div>
-
-    <p class="celebration-note">With the love and blessings of our families, we warmly invite you to celebrate with us.</p>
+<p class="celebration-note">With the love and blessings of our families, we warmly invite you to celebrate with us.</p>
   </div>
 </section>
 

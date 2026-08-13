@@ -3886,7 +3886,7 @@ main .section:not(#rsvp){
     linear-gradient(180deg,#fffaf2 0%,#f8eee2 100%)!important;
 }
 main .section:not(#rsvp)::after{
-  content:"✦  ॐ  ✦"!important;
+  content:"✦  ✦  ✦"!important;
   position:absolute!important;
   left:50%!important;
   top:18px!important;
@@ -4150,6 +4150,369 @@ main .section > *{position:relative!important;z-index:1!important}
 }
 
 </style>
+<style>
+
+/* ==============================================================
+   SECOND PAGE — CLEAN LUXURY WEDDING INVITATION
+   No religious icons. Unified family presentation. Live countdown.
+   ============================================================== */
+
+#invite{
+  padding-top:clamp(64px,8vw,100px)!important;
+  padding-bottom:clamp(70px,8vw,105px)!important;
+  overflow:hidden!important;
+}
+
+#invite .section-heading{
+  max-width:760px!important;
+  margin-inline:auto!important;
+}
+
+#invite .section-heading h2{
+  font-size:clamp(42px,6vw,72px)!important;
+  line-height:.98!important;
+  margin-bottom:14px!important;
+}
+
+#invite .invitation-card{
+  width:min(920px,calc(100% - 32px))!important;
+  margin:clamp(26px,5vw,48px) auto 0!important;
+  padding:clamp(28px,5vw,56px) clamp(20px,6vw,70px)!important;
+  border-radius:28px!important;
+  text-align:center!important;
+  background:
+    linear-gradient(rgba(255,251,244,.90),rgba(255,248,238,.90)),
+    url("assets/images/wedding-invitation-cover-clean.jpg") center/cover no-repeat!important;
+  border:1px solid rgba(177,128,49,.38)!important;
+  box-shadow:0 24px 70px rgba(55,18,31,.14),inset 0 0 0 8px rgba(255,255,255,.24)!important;
+  position:relative!important;
+}
+
+#invite .invitation-card::before{
+  content:""!important;
+  position:absolute!important;
+  inset:14px!important;
+  border:1px solid rgba(177,128,49,.22)!important;
+  border-radius:20px!important;
+  pointer-events:none!important;
+}
+
+#invite .invitation-card > *{
+  position:relative!important;
+  z-index:1!important;
+}
+
+#invite .invitation-card .ornament{
+  color:#b27b2d!important;
+  font-size:20px!important;
+  letter-spacing:.45em!important;
+  margin:0 0 14px!important;
+}
+
+#invite .small-caps{
+  color:#8b612b!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:12px!important;
+  font-weight:700!important;
+  letter-spacing:.30em!important;
+  margin:0 0 14px!important;
+}
+
+#invite .premium-couple-name{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:clamp(12px,2.5vw,28px)!important;
+  flex-wrap:wrap!important;
+  margin:0 auto!important;
+}
+
+#invite .premium-name{
+  color:#4a1022!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(34px,5vw,60px)!important;
+  font-weight:600!important;
+  line-height:1.05!important;
+  text-shadow:0 2px 12px rgba(74,16,34,.08)!important;
+}
+
+#invite .premium-heart{
+  color:#b33b51!important;
+  font-size:clamp(20px,3vw,30px)!important;
+  line-height:1!important;
+}
+
+#invite .invite-countdown-wrap{
+  width:min(650px,100%)!important;
+  margin:clamp(26px,4vw,38px) auto!important;
+  padding:16px 14px 18px!important;
+  border-top:1px solid rgba(177,128,49,.25)!important;
+  border-bottom:1px solid rgba(177,128,49,.25)!important;
+}
+
+#invite .countdown-label{
+  margin:0 0 12px!important;
+  color:#9a6c31!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:11px!important;
+  font-weight:700!important;
+  letter-spacing:.24em!important;
+}
+
+#invite .invite-countdown{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:10px!important;
+}
+
+#invite .invite-countdown .unit{
+  min-width:0!important;
+  padding:12px 8px 10px!important;
+  border:1px solid rgba(177,128,49,.36)!important;
+  border-radius:14px!important;
+  background:rgba(255,252,246,.60)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75)!important;
+}
+
+#invite .invite-countdown .unit b{
+  display:block!important;
+  color:#4a1022!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(26px,4vw,42px)!important;
+  font-weight:650!important;
+  line-height:1!important;
+  font-variant-numeric:tabular-nums!important;
+}
+
+#invite .invite-countdown .unit small{
+  display:block!important;
+  margin-top:6px!important;
+  color:#80645a!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:9px!important;
+  font-weight:600!important;
+  letter-spacing:.10em!important;
+  text-transform:uppercase!important;
+}
+
+/* One unified family area — no two cards/boxes. */
+#invite .family-unified{
+  width:min(760px,100%)!important;
+  margin:clamp(26px,4vw,38px) auto!important;
+  padding:22px 0!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;
+  align-items:center!important;
+  gap:clamp(16px,4vw,38px)!important;
+  border-top:1px solid rgba(177,128,49,.22)!important;
+  border-bottom:1px solid rgba(177,128,49,.22)!important;
+}
+
+#invite .family-column{
+  min-width:0!important;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  text-align:center!important;
+}
+
+#invite .family-label{
+  display:block!important;
+  color:#9a6c31!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:10px!important;
+  font-weight:700!important;
+  letter-spacing:.16em!important;
+  margin-bottom:9px!important;
+}
+
+#invite .family-names{
+  display:block!important;
+  color:#553841!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(18px,2.4vw,24px)!important;
+  font-weight:600!important;
+  line-height:1.45!important;
+}
+
+#invite .family-center-rule{
+  width:1px!important;
+  height:66px!important;
+  background:linear-gradient(180deg,transparent,#c49a55 25%,#c49a55 75%,transparent)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+#invite .family-center-rule span{
+  display:block!important;
+  color:#b27b2d!important;
+  background:#faf1e4!important;
+  padding:6px 0!important;
+  font-size:12px!important;
+}
+
+#invite .invitation-details{
+  margin:28px auto 22px!important;
+  max-width:700px!important;
+}
+
+#invite .detail-date{
+  margin:0!important;
+  color:#4a1022!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(26px,3.6vw,38px)!important;
+  font-weight:600!important;
+}
+
+#invite .detail-time,
+#invite .detail-venue{
+  margin:7px 0 0!important;
+  color:#70555a!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:clamp(12px,1.7vw,15px)!important;
+}
+
+#invite .invitation-note{
+  max-width:650px!important;
+  margin:12px auto 0!important;
+  color:#72585f!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(17px,2vw,21px)!important;
+  font-style:italic!important;
+}
+
+/* Explicitly suppress religious glyphs if any legacy decorative child remains on this page. */
+#invite .religious-icon,
+#invite .om-icon,
+#invite .ganesha-icon,
+#invite .kalash-icon,
+#invite .temple-icon{
+  display:none!important;
+}
+
+@media(max-width:700px){
+  #invite .invitation-card{
+    width:min(94%,620px)!important;
+    border-radius:22px!important;
+    padding:30px 18px 34px!important;
+  }
+  #invite .invitation-card::before{
+    inset:9px!important;
+    border-radius:15px!important;
+  }
+  #invite .premium-couple-name{
+    flex-direction:column!important;
+    gap:3px!important;
+  }
+  #invite .premium-heart{
+    margin:1px 0!important;
+  }
+  #invite .invite-countdown{
+    gap:6px!important;
+  }
+  #invite .invite-countdown .unit{
+    padding:10px 4px 9px!important;
+    border-radius:11px!important;
+  }
+  #invite .family-unified{
+    grid-template-columns:1fr!important;
+    gap:16px!important;
+    padding:20px 8px!important;
+  }
+  #invite .family-center-rule{
+    width:80px!important;
+    height:1px!important;
+    margin:auto!important;
+  }
+  #invite .family-center-rule span{
+    padding:0 7px!important;
+  }
+  #invite .family-names{
+    font-size:19px!important;
+  }
+}
+
+@media(max-width:380px){
+  #invite .invite-countdown .unit b{font-size:23px!important}
+  #invite .invite-countdown .unit small{font-size:8px!important;letter-spacing:.05em!important}
+  #invite .countdown-label{font-size:9px!important;letter-spacing:.16em!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  #invite *{scroll-behavior:auto!important}
+}
+
+</style>
+<style>
+
+/* Explicit wedding date + ceremony time treatment on page 2 */
+#invite .invitation-details{
+  width:min(760px,100%)!important;
+  margin:28px auto 22px!important;
+}
+#invite .event-detail-row{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;
+  align-items:center!important;
+  gap:clamp(14px,3vw,30px)!important;
+  padding:16px 0 18px!important;
+  border-top:1px solid rgba(177,128,49,.25)!important;
+  border-bottom:1px solid rgba(177,128,49,.25)!important;
+}
+#invite .event-detail-item{
+  min-width:0!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  gap:5px!important;
+}
+#invite .event-detail-label{
+  color:#9a6c31!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:9px!important;
+  font-weight:700!important;
+  letter-spacing:.22em!important;
+}
+#invite .event-detail-item .detail-date,
+#invite .event-detail-item .detail-time{
+  margin:0!important;
+  color:#4a1022!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(22px,3vw,31px)!important;
+  font-weight:650!important;
+  line-height:1.1!important;
+  text-align:center!important;
+}
+#invite .event-detail-separator{
+  color:#b27b2d!important;
+  font-size:12px!important;
+}
+#invite .detail-venue{
+  margin:15px 0 0!important;
+  color:#70555a!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:clamp(12px,1.7vw,15px)!important;
+  line-height:1.5!important;
+}
+@media(max-width:700px){
+  #invite .event-detail-row{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+    padding:14px 8px!important;
+  }
+  #invite .event-detail-separator{
+    display:block!important;
+    line-height:1!important;
+  }
+  #invite .event-detail-item .detail-date,
+  #invite .event-detail-item .detail-time{
+    font-size:24px!important;
+  }
+}
+
+</style>
 </head>
 <body class="wedding-cover-lock">
 
@@ -4247,7 +4610,7 @@ main .section > *{position:relative!important;z-index:1!important}
   </div>
 
   <div class="invitation-card reveal">
-    <div class="ornament">✦</div>
+    <div class="ornament" aria-hidden="true">✦</div>
     <p class="small-caps">THE WEDDING OF</p>
 
     <div class="premium-couple-name" aria-label="Vijay Anand and Hemalatha">
@@ -4256,23 +4619,46 @@ main .section > *{position:relative!important;z-index:1!important}
       <span class="premium-name couple-name bride-name">Hemalatha</span>
     </div>
 
-    <div class="families" aria-label="Parents of the couple">
-      <article class="family-panel">
-        <span class="family-label">GROOM'S PARENTS</span>
-        <div class="family-rule" aria-hidden="true"></div>
-        <strong class="family-names">Mr. K. Manimaran<br>Mrs. M. Parimala</strong>
-      </article>
-
-      <div class="family-divider" aria-hidden="true"><span>✦</span></div>
-
-      <article class="family-panel">
-        <span class="family-label">BRIDE'S PARENTS</span>
-        <div class="family-rule" aria-hidden="true"></div>
-        <strong class="family-names">Mr. S. Mohanasundaram<br>Mrs. M. Thenmozhi</strong>
-      </article>
+    <div class="invite-countdown-wrap">
+      <p class="countdown-label">UNTIL OUR WEDDING DAY</p>
+      <div id="countdown" class="invite-countdown" aria-label="Countdown to the wedding">
+      <div class="unit"><b>--</b><small>Days</small></div>
+      <div class="unit"><b>--</b><small>Hours</small></div>
+      <div class="unit"><b>--</b><small>Minutes</small></div>
+      <div class="unit"><b>--</b><small>Seconds</small></div>
+    </div>
     </div>
 
-    <div class="ornament">✦</div>
+    <div class="family-unified" aria-label="Parents of the couple">
+      <div class="family-column">
+        <span class="family-label">GROOM'S PARENTS</span>
+        <strong class="family-names">Mr. K. Manimaran<br>Mrs. M. Parimala</strong>
+      </div>
+
+      <div class="family-center-rule" aria-hidden="true"><span>✦</span></div>
+
+      <div class="family-column">
+        <span class="family-label">BRIDE'S PARENTS</span>
+        <strong class="family-names">Mr. S. Mohanasundaram<br>Mrs. M. Thenmozhi</strong>
+      </div>
+    </div>
+
+    <div class="invitation-details">
+      <div class="event-detail-row">
+        <div class="event-detail-item">
+          <span class="event-detail-label">DATE</span>
+          <strong class="detail-date">07 September 2026</strong>
+        </div>
+        <span class="event-detail-separator" aria-hidden="true">✦</span>
+        <div class="event-detail-item">
+          <span class="event-detail-label">TIME</span>
+          <strong class="detail-time">6:00 AM – 7:30 AM</strong>
+        </div>
+      </div>
+      <p class="detail-venue">Ramaswamy Mahal / S.R. Sami Party Hall</p>
+    </div>
+
+    <div class="ornament" aria-hidden="true">✦</div>
     <p class="invitation-note">Your presence and blessings will make our celebration truly special.</p>
   </div>
 </section>

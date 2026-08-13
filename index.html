@@ -3254,6 +3254,297 @@ h1,h2,h3,h4,
 }
 
 </style>
+<style>
+
+/* ==============================================================
+   PREMIUM CEREMONY + RSVP COLOR REDESIGN
+   Burgundy / antique-gold / champagne palette to match the
+   luxury first-page invitation theme.
+   Existing HTML and RSVP JavaScript are intentionally unchanged.
+   ============================================================== */
+
+:root{
+  --premium-burgundy:#4a1022;
+  --premium-burgundy-deep:#2b0714;
+  --premium-wine:#6d2036;
+  --premium-gold:#d7ad55;
+  --premium-gold-light:#f2d99a;
+  --premium-champagne:#fff4dc;
+  --premium-ivory:#fffaf1;
+  --premium-rose:#b8757d;
+  --premium-ink:#3d2029;
+}
+
+/* Ceremony / celebrations section */
+#events{
+  position:relative!important;
+  overflow:hidden!important;
+  background:
+    radial-gradient(circle at 15% 20%,rgba(215,173,85,.09),transparent 28%),
+    radial-gradient(circle at 86% 72%,rgba(109,32,54,.08),transparent 32%),
+    linear-gradient(180deg,#fffaf2 0%,#fbf2e7 100%)!important;
+}
+#events::before{
+  content:""!important;
+  position:absolute!important;
+  inset:18px!important;
+  border:1px solid rgba(181,132,53,.18)!important;
+  border-radius:28px!important;
+  pointer-events:none!important;
+}
+#events .section-heading{
+  position:relative!important;
+  z-index:2!important;
+}
+#events .section-heading .eyebrow{
+  color:#a87932!important;
+  text-shadow:none!important;
+}
+#events .section-heading h2{
+  color:var(--premium-burgundy)!important;
+  text-shadow:0 2px 14px rgba(74,16,34,.08)!important;
+}
+#events .event-grid{
+  position:relative!important;
+  z-index:2!important;
+  gap:clamp(18px,3vw,30px)!important;
+}
+#events .event-card{
+  position:relative!important;
+  overflow:hidden!important;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.97),rgba(255,248,237,.96))!important;
+  border:1px solid rgba(179,133,54,.34)!important;
+  border-radius:24px!important;
+  box-shadow:0 16px 45px rgba(68,22,37,.10),inset 0 1px 0 rgba(255,255,255,.85)!important;
+  color:var(--premium-ink)!important;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease!important;
+}
+#events .event-card::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  height:4px!important;
+  background:linear-gradient(90deg,#9b6828,#f0d38f,#9b6828)!important;
+}
+#events .event-card::after{
+  content:""!important;
+  position:absolute!important;
+  width:180px!important;height:180px!important;
+  right:-95px!important;bottom:-105px!important;
+  border-radius:50%!important;
+  border:1px solid rgba(215,173,85,.14)!important;
+  box-shadow:0 0 0 16px rgba(215,173,85,.035),0 0 0 32px rgba(215,173,85,.02)!important;
+  pointer-events:none!important;
+}
+#events .event-card:hover{
+  transform:translateY(-4px)!important;
+  border-color:rgba(179,133,54,.55)!important;
+  box-shadow:0 22px 55px rgba(68,22,37,.15),0 0 0 1px rgba(215,173,85,.10)!important;
+}
+#events .event-card.featured{
+  background:
+    linear-gradient(145deg,#fff9eb 0%,#f9eadb 100%)!important;
+  border-color:rgba(177,126,43,.58)!important;
+  box-shadow:0 20px 58px rgba(80,23,41,.15),0 0 0 1px rgba(215,173,85,.12)!important;
+}
+#events .event-card .event-icon{
+  width:52px!important;height:52px!important;
+  display:grid!important;place-items:center!important;
+  margin:0 auto 16px!important;
+  border-radius:50%!important;
+  border:1px solid rgba(180,130,48,.48)!important;
+  background:linear-gradient(145deg,#5b172b,#7d2942)!important;
+  color:#f6d88e!important;
+  box-shadow:0 8px 22px rgba(80,19,40,.18),inset 0 1px 0 rgba(255,255,255,.18)!important;
+}
+#events .event-card.featured .event-icon{
+  background:linear-gradient(145deg,#8b2d45,#561328)!important;
+  color:#ffe8ac!important;
+  box-shadow:0 8px 24px rgba(80,19,40,.24),0 0 22px rgba(215,173,85,.15)!important;
+}
+#events .event-card .eyebrow{
+  color:#9b6828!important;
+  font-size:11px!important;
+  font-weight:700!important;
+  letter-spacing:.20em!important;
+}
+#events .event-card h3{
+  color:var(--premium-burgundy)!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(28px,3vw,36px)!important;
+  font-weight:650!important;
+  letter-spacing:.01em!important;
+}
+#events .event-card .time{
+  display:inline-block!important;
+  margin:.25rem 0 .75rem!important;
+  padding:.35rem .75rem!important;
+  border:1px solid rgba(180,130,48,.28)!important;
+  border-radius:999px!important;
+  background:rgba(215,173,85,.10)!important;
+  color:#8a5b27!important;
+  font-family:"Poppins",sans-serif!important;
+  font-weight:700!important;
+}
+#events .event-card > p:not(.eyebrow):not(.time){
+  color:#5b3b43!important;
+  font-family:"Poppins",sans-serif!important;
+  line-height:1.65!important;
+}
+#events .event-card .text-link{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:6px!important;
+  margin-top:8px!important;
+  color:#7d2740!important;
+  font-weight:650!important;
+  text-decoration:none!important;
+  border-bottom:1px solid rgba(125,39,64,.25)!important;
+  transition:color .2s ease,border-color .2s ease!important;
+}
+#events .event-card .text-link:hover{
+  color:#a06a2e!important;
+  border-color:#a06a2e!important;
+}
+
+/* RSVP section */
+#rsvp{
+  position:relative!important;
+  overflow:hidden!important;
+  background:
+    radial-gradient(circle at 88% 15%,rgba(215,173,85,.12),transparent 25%),
+    radial-gradient(circle at 10% 85%,rgba(109,32,54,.10),transparent 28%),
+    linear-gradient(145deg,#3a0c1c 0%,#51152a 52%,#2b0715 100%)!important;
+  color:var(--premium-champagne)!important;
+}
+#rsvp::before{
+  content:""!important;
+  position:absolute!important;
+  inset:16px!important;
+  border:1px solid rgba(239,210,151,.22)!important;
+  border-radius:28px!important;
+  pointer-events:none!important;
+}
+#rsvp::after{
+  content:""!important;
+  position:absolute!important;
+  width:340px!important;height:340px!important;
+  right:-170px!important;top:-170px!important;
+  border-radius:50%!important;
+  border:1px solid rgba(239,210,151,.10)!important;
+  box-shadow:0 0 0 26px rgba(239,210,151,.025),0 0 0 52px rgba(239,210,151,.018)!important;
+  pointer-events:none!important;
+}
+#rsvp .section-heading{
+  position:relative!important;
+  z-index:2!important;
+}
+#rsvp .section-heading .eyebrow{
+  color:#e3bd70!important;
+  text-shadow:0 2px 10px rgba(0,0,0,.30)!important;
+}
+#rsvp .section-heading h2{
+  color:#fff2d0!important;
+  text-shadow:0 2px 16px rgba(0,0,0,.32)!important;
+}
+#rsvp .section-heading > p:not(.eyebrow){
+  color:#f0dcb8!important;
+  font-family:"Poppins",sans-serif!important;
+}
+#rsvp .rsvp-form{
+  position:relative!important;
+  z-index:2!important;
+  display:grid!important;
+  gap:18px!important;
+  padding:clamp(22px,4vw,38px)!important;
+  background:rgba(32,5,15,.42)!important;
+  border:1px solid rgba(239,210,151,.26)!important;
+  border-radius:26px!important;
+  box-shadow:0 24px 60px rgba(19,2,9,.28),inset 0 1px 0 rgba(255,255,255,.07)!important;
+  backdrop-filter:blur(8px)!important;
+  -webkit-backdrop-filter:blur(8px)!important;
+}
+#rsvp .rsvp-form label{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:8px!important;
+  color:#f8e8c8!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:13px!important;
+  font-weight:600!important;
+  letter-spacing:.02em!important;
+}
+#rsvp .rsvp-form input,
+#rsvp .rsvp-form textarea{
+  width:100%!important;
+  box-sizing:border-box!important;
+  color:#fff8e9!important;
+  background:rgba(255,248,233,.075)!important;
+  border:1px solid rgba(239,210,151,.32)!important;
+  border-radius:13px!important;
+  padding:13px 15px!important;
+  outline:none!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:15px!important;
+  box-shadow:inset 0 1px 8px rgba(0,0,0,.12)!important;
+  transition:border-color .2s ease,box-shadow .2s ease,background .2s ease!important;
+}
+#rsvp .rsvp-form input::placeholder,
+#rsvp .rsvp-form textarea::placeholder{
+  color:rgba(255,240,214,.58)!important;
+}
+#rsvp .rsvp-form input:hover,
+#rsvp .rsvp-form textarea:hover{
+  border-color:rgba(239,210,151,.55)!important;
+  background:rgba(255,248,233,.095)!important;
+}
+#rsvp .rsvp-form input:focus,
+#rsvp .rsvp-form textarea:focus{
+  border-color:#e7bf70!important;
+  background:rgba(255,248,233,.12)!important;
+  box-shadow:0 0 0 3px rgba(231,191,112,.14),0 8px 20px rgba(0,0,0,.12)!important;
+}
+#rsvp .rsvp-form textarea{
+  min-height:125px!important;
+  resize:vertical!important;
+}
+#rsvp .rsvp-form .gold-btn{
+  width:100%!important;
+  min-height:52px!important;
+  border:1px solid #f0d28b!important;
+  border-radius:999px!important;
+  background:linear-gradient(135deg,#c8953e,#e4c16f 48%,#b77d2c)!important;
+  color:#2e0916!important;
+  font-family:"Poppins",sans-serif!important;
+  font-weight:800!important;
+  letter-spacing:.02em!important;
+  box-shadow:0 12px 28px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.48)!important;
+  transition:transform .2s ease,filter .2s ease,box-shadow .2s ease!important;
+}
+#rsvp .rsvp-form .gold-btn:hover{
+  transform:translateY(-2px)!important;
+  filter:brightness(1.07)!important;
+  box-shadow:0 16px 34px rgba(0,0,0,.30),0 0 22px rgba(231,191,112,.18)!important;
+}
+#rsvp .rsvp-form .gold-btn:active{
+  transform:translateY(0) scale(.985)!important;
+}
+
+/* Mobile refinements */
+@media(max-width:767px){
+  #events::before,#rsvp::before{inset:10px!important;border-radius:20px!important}
+  #events .event-card{border-radius:20px!important}
+  #events .event-card h3{font-size:30px!important}
+  #rsvp .rsvp-form{padding:20px!important;border-radius:20px!important;gap:16px!important}
+  #rsvp .rsvp-form input,#rsvp .rsvp-form textarea{font-size:16px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  #events .event-card,
+  #rsvp .rsvp-form .gold-btn{transition:none!important}
+}
+
+</style>
 </head>
 <body class="wedding-cover-lock">
 

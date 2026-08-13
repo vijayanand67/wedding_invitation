@@ -4513,6 +4513,137 @@ main .section > *{position:relative!important;z-index:1!important}
 }
 
 </style>
+<style>
+
+/* ==============================================================
+   FINAL REFINEMENT — SECOND & THIRD PAGES
+   ============================================================== */
+
+/* Countdown belongs to the Wedding Ceremony details. */
+#events .ceremony-countdown{
+  width:min(620px,100%);
+  margin:22px auto 20px;
+  padding:16px 14px 18px;
+  border-top:1px solid rgba(177,128,49,.28);
+  border-bottom:1px solid rgba(177,128,49,.28);
+  background:rgba(255,252,246,.48);
+  border-radius:16px;
+}
+
+#events .ceremony-countdown-label{
+  margin:0 0 11px!important;
+  color:#9a6c31!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:10px!important;
+  font-weight:700!important;
+  letter-spacing:.22em!important;
+  text-align:center!important;
+}
+
+#events .ceremony-countdown .invite-countdown{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:8px!important;
+}
+
+#events .ceremony-countdown .unit{
+  min-width:0!important;
+  padding:10px 7px 9px!important;
+  border:1px solid rgba(177,128,49,.32)!important;
+  border-radius:12px!important;
+  background:rgba(255,255,255,.60)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8)!important;
+}
+
+#events .ceremony-countdown .unit b{
+  display:block!important;
+  color:#4a1022!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(24px,3.5vw,36px)!important;
+  font-weight:650!important;
+  line-height:1!important;
+  font-variant-numeric:tabular-nums!important;
+}
+
+#events .ceremony-countdown .unit small{
+  display:block!important;
+  margin-top:5px!important;
+  color:#80645a!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:8px!important;
+  font-weight:600!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+}
+
+/* Remove the duplicate date/location block from the family invitation card. */
+#invite .invitation-details{
+  display:none!important;
+}
+
+/* Third page = clean continuation, no decorative background artwork. */
+#journey{
+  background:#fbf5ed!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
+
+#journey::before,
+#journey::after{
+  content:none!important;
+  display:none!important;
+}
+
+#journey .section-heading,
+#journey .journey-grid{
+  position:relative!important;
+  z-index:1!important;
+}
+
+#journey .section-heading h2{
+  color:#4b1b2a!important;
+}
+
+#journey .section-heading>p{
+  color:#5b454c!important;
+}
+
+@media(max-width:700px){
+  #events .ceremony-countdown{
+    width:100%;
+    margin-top:18px;
+    padding:14px 9px 15px;
+  }
+
+  #events .ceremony-countdown .invite-countdown{
+    gap:5px!important;
+  }
+
+  #events .ceremony-countdown .unit{
+    padding:9px 3px 8px!important;
+    border-radius:10px!important;
+  }
+
+  #events .ceremony-countdown .unit b{
+    font-size:22px!important;
+  }
+
+  #events .ceremony-countdown .unit small{
+    font-size:7px!important;
+    letter-spacing:.04em!important;
+  }
+}
+
+@media(max-width:380px){
+  #events .ceremony-countdown .unit b{
+    font-size:20px!important;
+  }
+  #events .ceremony-countdown .unit small{
+    font-size:6.5px!important;
+  }
+}
+
+</style>
 </head>
 <body class="wedding-cover-lock">
 
@@ -4642,23 +4773,7 @@ main .section > *{position:relative!important;z-index:1!important}
         <strong class="family-names">Mr. S. Mohanasundaram<br>Mrs. M. Thenmozhi</strong>
       </div>
     </div>
-
-    <div class="invitation-details">
-      <div class="event-detail-row">
-        <div class="event-detail-item">
-          <span class="event-detail-label">DATE</span>
-          <strong class="detail-date">07 September 2026</strong>
-        </div>
-        <span class="event-detail-separator" aria-hidden="true">✦</span>
-        <div class="event-detail-item">
-          <span class="event-detail-label">TIME</span>
-          <strong class="detail-time">6:00 AM – 7:30 AM</strong>
-        </div>
-      </div>
-      <p class="detail-venue">Ramaswamy Mahal / S.R. Sami Party Hall</p>
-    </div>
-
-    <div class="ornament" aria-hidden="true">✦</div>
+<div class="ornament" aria-hidden="true">✦</div>
     <p class="invitation-note">Your presence and blessings will make our celebration truly special.</p>
   </div>
 </section>
@@ -4680,7 +4795,16 @@ main .section > *{position:relative!important;z-index:1!important}
 <div class="section-heading reveal"><p class="eyebrow">SAVE THE DATE</p><h2>Wedding Celebrations</h2></div>
 <div class="event-grid">
 <article class="event-card reveal"><div class="event-icon">✦</div><p class="eyebrow">06 SEP 2026</p><h3>Reception</h3><p class="time">6:30 PM onwards</p><p>Ramaswamy Mahal / S.R. Sami Party Hall</p><a class="text-link" href="https://maps.app.goo.gl/3fDBbH3gCMUNVAgSA?g_st=ic" target="_blank" rel="noopener">📍 Get Directions</a></article>
-<article class="event-card featured reveal"><div class="event-icon">♥</div><p class="eyebrow">07 SEP 2026</p><h3>Wedding Ceremony</h3><p class="time">6:00 AM – 7:30 AM</p><p>Ramaswamy Mahal / S.R. Sami Party Hall</p><a class="text-link" href="https://maps.app.goo.gl/3fDBbH3gCMUNVAgSA?g_st=ic" target="_blank" rel="noopener">📍 Get Directions</a></article>
+<article class="event-card featured reveal"><div class="event-icon">♥</div><p class="eyebrow">07 SEP 2026</p><h3>Wedding Ceremony</h3><p class="time">6:00 AM – 7:30 AM</p>
+<div class="ceremony-countdown" aria-label="Countdown to the wedding ceremony">
+  <p class="ceremony-countdown-label">COUNTDOWN TO OUR WEDDING</p>
+  <div id="countdown" class="invite-countdown">
+    <div class="unit"><b>--</b><small>Days</small></div>
+    <div class="unit"><b>--</b><small>Hours</small></div>
+    <div class="unit"><b>--</b><small>Minutes</small></div>
+    <div class="unit"><b>--</b><small>Seconds</small></div>
+  </div>
+</div><p>Ramaswamy Mahal / S.R. Sami Party Hall</p><a class="text-link" href="https://maps.app.goo.gl/3fDBbH3gCMUNVAgSA?g_st=ic" target="_blank" rel="noopener">📍 Get Directions</a></article>
 </div></section>
 
 <section id="venue" class="section venue">

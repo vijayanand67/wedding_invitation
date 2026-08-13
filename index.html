@@ -203,19 +203,100 @@
 }
 
 </style>
-</head>
+<style>
+/* FINAL V HEART H CIRCULAR SEAL */
+.tap-seal-box,.tap-seal-to-open,.seal-open-button,.cover-clean-panel,.vh-old-open-box,
+.welcome-open-box,.open-box,.vh-seal-hint,#openInvitation .vh-seal-hint,#openInvitation .tap-label{
+display:none!important;visibility:hidden!important;opacity:0!important;
+}
+#welcome #openInvitation{
+position:absolute!important;width:176px!important;height:176px!important;
+min-width:176px!important;min-height:176px!important;padding:0!important;
+border-radius:50%!important;border:2px solid rgba(245,204,115,.9)!important;
+background:radial-gradient(circle at 50% 42%,#6f3b1e 0 32%,#2b1010 58%,#100507 100%)!important;
+box-shadow:0 0 0 6px rgba(91,42,22,.8),0 0 0 9px rgba(231,178,67,.75),
+0 0 28px rgba(240,183,61,.75),0 0 58px rgba(240,183,61,.3)!important;
+display:flex!important;align-items:center!important;justify-content:center!important;
+overflow:visible!important;cursor:pointer!important;touch-action:manipulation!important;
+-webkit-tap-highlight-color:transparent!important;z-index:20!important;color:transparent!important;
+font-size:0!important;animation:vhFloat 3s ease-in-out infinite!important;
+}
+#welcome #openInvitation::before{
+content:""!important;position:absolute!important;inset:11px!important;border-radius:50%!important;
+border:1px solid rgba(255,224,145,.75)!important;
+box-shadow:inset 0 0 12px rgba(239,181,60,.4),0 0 12px rgba(239,181,60,.3)!important;
+animation:vhSpin 3s linear infinite!important;
+}
+#welcome #openInvitation::after{
+content:""!important;position:absolute!important;inset:-22px!important;border-radius:50%!important;
+border:1px solid rgba(245,204,115,.4)!important;box-shadow:0 0 20px rgba(245,204,115,.25)!important;
+animation:vhPulseRing 2.6s ease-out infinite!important;
+}
+#welcome #openInvitation .vh-mark{
+position:relative!important;z-index:5!important;display:flex!important;align-items:center!important;
+justify-content:center!important;gap:13px!important;color:#f6dfaa!important;
+font-family:Georgia,"Times New Roman",serif!important;font-size:42px!important;
+font-weight:600!important;line-height:1!important;text-shadow:0 2px 5px #000,0 0 10px rgba(246,198,89,.4)!important;
+animation:vhMark 4.8s ease-in-out infinite!important;
+}
+#welcome #openInvitation .vh-heart{
+display:inline-block!important;color:#f2a9a2!important;font-size:40px!important;
+text-shadow:0 0 10px rgba(255,107,96,.5),0 2px 5px #000!important;
+animation:vhHeart 1.55s ease-in-out infinite!important;
+}
+#welcome #openInvitation .vh-orbit{
+position:absolute!important;inset:-3px!important;border-radius:50%!important;
+pointer-events:none!important;animation:vhOrbit 7s linear infinite!important;
+}
+#welcome #openInvitation .vh-orbit:before,#welcome #openInvitation .vh-orbit:after{
+content:"✦"!important;position:absolute!important;color:#f2cb79!important;font-size:11px!important;
+text-shadow:0 0 9px rgba(242,203,121,.9)!important;
+}
+#welcome #openInvitation .vh-orbit:before{top:-11px;left:50%;transform:translateX(-50%)}
+#welcome #openInvitation .vh-orbit:after{bottom:-11px;left:50%;transform:translateX(-50%)}
+#welcome #openInvitation .vh-tap{
+position:absolute!important;top:calc(100% + 27px)!important;left:50%!important;
+transform:translateX(-50%)!important;white-space:nowrap!important;color:#f1d08a!important;
+font-family:Georgia,"Times New Roman",serif!important;font-size:17px!important;font-style:italic!important;
+letter-spacing:.06em!important;text-shadow:0 2px 9px #000!important;pointer-events:none!important;
+animation:vhTap 2s ease-in-out infinite!important;
+}
+@keyframes vhFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-5px) scale(1.02)}}
+@keyframes vhSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes vhPulseRing{0%{transform:scale(.82);opacity:.75}70%,100%{transform:scale(1.18);opacity:0}}
+@keyframes vhOrbit{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes vhMark{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg) translateY(-2px)}}
+@keyframes vhHeart{0%,100%{transform:scale(.92)}50%{transform:scale(1.12)}}
+@keyframes vhTap{0%,100%{opacity:.72;transform:translateX(-50%)}50%{opacity:1;transform:translateX(-50%) translateY(-3px)}}
+@media(max-width:600px){
+#welcome #openInvitation{width:156px!important;height:156px!important;min-width:156px!important;min-height:156px!important}
+#welcome #openInvitation .vh-mark{font-size:35px!important;gap:10px!important}
+#welcome #openInvitation .vh-heart{font-size:34px!important}
+#welcome #openInvitation .vh-tap{font-size:15px!important}
+}
+@media(prefers-reduced-motion:reduce){
+#welcome #openInvitation,#welcome #openInvitation:before,#welcome #openInvitation:after,
+#welcome #openInvitation .vh-mark,#welcome #openInvitation .vh-heart,#welcome #openInvitation .vh-orbit,
+#welcome #openInvitation .vh-tap{animation:none!important}
+}
+</style></head>
 <body class="wedding-cover-lock">
 <div class="petals" aria-hidden="true"></div>
 
 <div id="welcome" class="wedding-cover" aria-label="Wedding invitation opening">
   <div class="wedding-cover__art">
-    <img src="assets/images/wedding-envelope-cover-vh.png"
+    <img src=""
          alt="Wedding Invitation — V heart H"
          draggable="false">
     <button id="openInvitation"
             class="wedding-cover__seal vh-seal-open"
             type="button"
-            aria-label="Open the wedding invitation"><span class="sr-only">Open wedding invitation</span></button>
+            aria-label="Open the wedding invitation">
+<span class="vh-orbit" aria-hidden="true"></span>
+<span class="vh-mark" aria-hidden="true"><span>V</span><span class="vh-heart">♥</span><span>H</span></span>
+<span class="vh-tap" aria-hidden="true">Tap the Seal</span>
+<span class="sr-only">Open wedding invitation</span>
+</button>
   </div>
 </div>
 

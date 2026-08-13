@@ -3855,6 +3855,301 @@ h1,h2,h3,h4,
 }
 
 </style>
+<style>
+
+/* ==============================================================
+   HINDU WEDDING LUXURY THEME — GLOBAL POLISH
+   Extends the existing burgundy / gold visual identity across
+   pages without changing existing content or JavaScript.
+   ============================================================== */
+
+:root{
+  --hw-burgundy:#4a1022;
+  --hw-burgundy-deep:#260611;
+  --hw-wine:#6b2038;
+  --hw-gold:#c9973e;
+  --hw-gold-bright:#efd18a;
+  --hw-champagne:#fff0cf;
+  --hw-ivory:#fffaf1;
+  --hw-rose:#b86676;
+  --hw-brown:#5a3b40;
+  --hw-shadow:rgba(54,14,28,.13);
+}
+
+/* Shared section canvas: warm ivory + very subtle mandala geometry */
+main .section:not(#rsvp){
+  position:relative!important;
+  isolation:isolate!important;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(201,151,62,.045) 0 18%,transparent 18.5% 34%,rgba(201,151,62,.022) 34.5% 35%,transparent 35.5%),
+    radial-gradient(circle at 50% 50%,transparent 0 46%,rgba(201,151,62,.028) 46.2% 46.5%,transparent 46.8%),
+    linear-gradient(180deg,#fffaf2 0%,#f8eee2 100%)!important;
+}
+main .section:not(#rsvp)::after{
+  content:"✦  ॐ  ✦"!important;
+  position:absolute!important;
+  left:50%!important;
+  top:18px!important;
+  transform:translateX(-50%)!important;
+  color:rgba(160,112,39,.16)!important;
+  font-family:"Cormorant Garamond",Georgia,serif!important;
+  font-size:16px!important;
+  letter-spacing:.38em!important;
+  pointer-events:none!important;
+  z-index:0!important;
+}
+main .section > *{position:relative!important;z-index:1!important}
+
+/* Premium section heading language */
+.section-heading .eyebrow{
+  color:#a2702d!important;
+  font-family:"Poppins",sans-serif!important;
+  font-weight:700!important;
+  letter-spacing:.24em!important;
+}
+.section-heading h2{
+  color:var(--hw-burgundy)!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-weight:650!important;
+  letter-spacing:.01em!important;
+  text-shadow:0 2px 12px rgba(74,16,34,.08)!important;
+}
+.section-heading>p:not(.eyebrow){
+  color:#62474e!important;
+}
+
+/* Subtle Indian-inspired corner motifs */
+#invite::before,#journey::before,#events::before,#venue::before,#gallery::before{
+  content:""!important;
+  position:absolute!important;
+  width:125px!important;height:125px!important;
+  right:-58px!important;top:-58px!important;
+  border-radius:50%!important;
+  border:1px solid rgba(178,127,46,.16)!important;
+  box-shadow:
+    0 0 0 13px rgba(178,127,46,.025),
+    0 0 0 26px rgba(178,127,46,.022),
+    0 0 0 39px rgba(178,127,46,.018)!important;
+  pointer-events:none!important;
+  z-index:0!important;
+}
+
+/* Invitation/family page */
+#invite .invitation-card{
+  background:
+    radial-gradient(circle at 50% 0,rgba(239,209,138,.12),transparent 30%),
+    linear-gradient(145deg,#fffdf7,#f8ecdd)!important;
+  border:1px solid rgba(171,123,45,.40)!important;
+  box-shadow:0 24px 65px var(--hw-shadow),inset 0 1px 0 rgba(255,255,255,.95)!important;
+}
+#invite .invitation-card::before{
+  border-color:rgba(171,123,45,.20)!important;
+}
+#invite .family-panel{
+  background:rgba(255,251,243,.84)!important;
+  border-color:rgba(171,123,45,.30)!important;
+}
+#invite .family-label{
+  color:#97672a!important;
+}
+#invite .family-names{
+  color:#4d2d37!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+}
+#invite .family-divider span,
+#invite .invitation-card .ornament{
+  color:#b47e2e!important;
+}
+
+/* Journey / third page */
+#journey .timeline > div{
+  background:rgba(255,250,241,.86)!important;
+  border-color:rgba(171,123,45,.27)!important;
+}
+#journey .timeline h3{
+  color:var(--hw-burgundy)!important;
+}
+#journey .timeline b{
+  background:linear-gradient(145deg,#5a152d,#7c2944)!important;
+  color:#f4d58e!important;
+}
+#journey .timeline::before{
+  background:linear-gradient(180deg,transparent,#c9973e 12%,#c9973e 88%,transparent)!important;
+}
+
+/* Ceremony section — rich Hindu wedding palette */
+#events{
+  background:
+    radial-gradient(circle at 50% 12%,rgba(201,151,62,.11),transparent 24%),
+    linear-gradient(180deg,#fffaf2,#f6e9dc)!important;
+}
+#events .event-card{
+  background:linear-gradient(145deg,#fffdf8,#f8ecde)!important;
+  border-color:rgba(171,123,45,.36)!important;
+  box-shadow:0 18px 50px rgba(69,29,42,.10),inset 0 1px 0 rgba(255,255,255,.9)!important;
+}
+#events .event-card .event-icon{
+  background:linear-gradient(145deg,#5a152d,#7d2944)!important;
+  border-color:#d3a653!important;
+  color:#f4d58e!important;
+}
+#events .event-card.featured{
+  background:linear-gradient(145deg,#fff9ea,#f6e3d2)!important;
+  border-color:rgba(185,137,52,.56)!important;
+}
+#events .event-card h3{
+  color:#4a1022!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+}
+#events .event-card .time{
+  background:rgba(201,151,62,.11)!important;
+  border-color:rgba(171,123,45,.28)!important;
+  color:#8a5d27!important;
+}
+#events .text-link{
+  color:#7d2740!important;
+}
+
+/* Venue — luxury card + map frame */
+#venue{
+  background:
+    radial-gradient(circle at 12% 18%,rgba(201,151,62,.10),transparent 26%),
+    linear-gradient(180deg,#f8eee3,#fffaf2)!important;
+}
+#venue .venue-copy{
+  position:relative!important;
+  padding:clamp(24px,4vw,44px)!important;
+  border:1px solid rgba(171,123,45,.30)!important;
+  border-radius:26px!important;
+  background:rgba(255,251,243,.82)!important;
+  box-shadow:0 18px 50px rgba(69,29,42,.09)!important;
+}
+#venue .venue-copy h2,
+#venue .venue-copy h3{
+  color:var(--hw-burgundy)!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+}
+#venue .venue-copy h3{
+  font-size:clamp(25px,3vw,34px)!important;
+}
+#venue .venue-copy>p{
+  color:#5e444c!important;
+}
+#venue .map-card{
+  border:1px solid rgba(171,123,45,.34)!important;
+  border-radius:26px!important;
+  box-shadow:0 20px 55px rgba(69,29,42,.12)!important;
+  overflow:hidden!important;
+}
+#venue .gold-btn{
+  background:linear-gradient(135deg,#b77e2d,#e0b85d 50%,#ad7427)!important;
+  color:#2e0916!important;
+  border:1px solid #f0d28b!important;
+  box-shadow:0 12px 26px rgba(65,18,34,.20),inset 0 1px 0 rgba(255,255,255,.45)!important;
+}
+
+/* Gallery — framed memory cards */
+#gallery{
+  background:
+    radial-gradient(circle at 80% 20%,rgba(201,151,62,.09),transparent 25%),
+    linear-gradient(180deg,#fffaf2,#f5e9dc)!important;
+}
+#gallery .gallery-item,
+#gallery .gallery-placeholder{
+  border:1px solid rgba(171,123,45,.32)!important;
+  box-shadow:0 16px 44px rgba(69,29,42,.11)!important;
+}
+#gallery .gallery-item{
+  border-radius:20px!important;
+  overflow:hidden!important;
+}
+#gallery .gallery-item img{
+  filter:saturate(.94) contrast(1.03)!important;
+}
+#gallery .gallery-placeholder{
+  background:linear-gradient(145deg,#fffaf1,#f4e4d3)!important;
+  color:#6b4851!important;
+}
+
+/* RSVP — same burgundy/gold family as first page */
+#rsvp{
+  background:
+    radial-gradient(circle at 50% 0,rgba(201,151,62,.12),transparent 30%),
+    radial-gradient(circle at 90% 85%,rgba(184,102,118,.10),transparent 25%),
+    linear-gradient(145deg,#320918,#55152b 55%,#270611)!important;
+}
+#rsvp .rsvp-form{
+  background:rgba(35,5,16,.45)!important;
+  border-color:rgba(239,209,138,.28)!important;
+  box-shadow:0 24px 60px rgba(17,2,8,.30),inset 0 1px 0 rgba(255,255,255,.07)!important;
+  backdrop-filter:blur(9px)!important;
+  -webkit-backdrop-filter:blur(9px)!important;
+}
+#rsvp .rsvp-form label{
+  color:#f8e8c8!important;
+}
+#rsvp .rsvp-form input,
+#rsvp .rsvp-form textarea{
+  color:#fff8e9!important;
+  background:rgba(255,248,233,.075)!important;
+  border-color:rgba(239,209,138,.34)!important;
+}
+#rsvp .rsvp-form input:focus,
+#rsvp .rsvp-form textarea:focus{
+  border-color:#e8c371!important;
+  box-shadow:0 0 0 3px rgba(232,195,113,.14)!important;
+}
+#rsvp .rsvp-form .gold-btn{
+  background:linear-gradient(135deg,#bd8734,#e3c16c 50%,#b47727)!important;
+  color:#2d0715!important;
+  border-color:#f0d28b!important;
+}
+
+/* Top navigation joins the same luxury language */
+.topbar{
+  background:rgba(57,13,29,.96)!important;
+  border-bottom:1px solid rgba(239,209,138,.16)!important;
+  box-shadow:0 8px 28px rgba(38,6,17,.14)!important;
+}
+.brand-name{color:#fff1d2!important}
+.brand-heart{color:#d96270!important}
+.nav-btn{
+  border-color:rgba(239,209,138,.38)!important;
+  color:#f8e8c8!important;
+}
+.nav-btn:hover{
+  border-color:#e7c675!important;
+  color:#ffe6a6!important;
+  background:rgba(239,209,138,.08)!important;
+}
+
+/* Common buttons */
+.gold-btn{
+  border-radius:999px!important;
+  transition:transform .2s ease,filter .2s ease,box-shadow .2s ease!important;
+}
+.gold-btn:hover{
+  transform:translateY(-2px)!important;
+  filter:brightness(1.05)!important;
+}
+
+/* Mobile: preserve clean, uncluttered luxury layout */
+@media(max-width:767px){
+  main .section::after{top:12px!important;font-size:13px!important}
+  #invite::before,#journey::before,#events::before,#venue::before,#gallery::before{
+    width:85px!important;height:85px!important;
+    right:-43px!important;top:-43px!important;
+  }
+  #venue .venue-copy{padding:22px 18px!important;border-radius:21px!important}
+  #venue .map-card{border-radius:21px!important}
+  #gallery .gallery-item,#gallery .gallery-placeholder{border-radius:17px!important}
+  #rsvp .rsvp-form{border-radius:22px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .gold-btn,.event-card,.family-panel,.timeline>div{transition:none!important}
+}
+
+</style>
 </head>
 <body class="wedding-cover-lock">
 

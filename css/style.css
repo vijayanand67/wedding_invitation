@@ -2450,13 +2450,162 @@ button:disabled {
   box-shadow:none!important;
 }
 
-/* 2026-08-13 FINAL: invisible full-seal hit target; V♥H remains in artwork */
-.wedding-cover__seal{
-  background:transparent!important;
-  border:0!important;
-  box-shadow:none!important;
+/* =========================================================
+   SUPPLIED PREMIUM ENVELOPE ARTWORK — RESPONSIVE FIRST PAGE
+   Reference artwork: 1024 × 1536 portrait
+   ========================================================= */
+
+html.wedding-cover-html-lock,
+body.wedding-cover-lock {
+  overflow: hidden !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
-.wedding-cover__seal::before{
-  border-color:transparent!important;
-  box-shadow:none!important;
+
+#welcome.wedding-cover {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+  background: #21040d !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  z-index: 2147483647 !important;
+}
+
+#welcome.wedding-cover.is-closing {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.wedding-cover__art {
+  position: relative !important;
+  width: min(100vw, 768px) !important;
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  background: #21040d !important;
+}
+
+.wedding-cover__art > img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+}
+
+/* Desktop: preserve the complete portrait artwork rather than stretching/cropping it. */
+@media (min-width: 769px) {
+  .wedding-cover__art {
+    width: min(768px, 72vw) !important;
+  }
+
+  .wedding-cover__art > img {
+    object-fit: contain !important;
+  }
+}
+
+/* Tablet: use the complete artwork when possible. */
+@media (min-width: 601px) and (max-width: 768px) {
+  .wedding-cover__art {
+    width: min(100vw, 650px) !important;
+  }
+
+  .wedding-cover__art > img {
+    object-fit: contain !important;
+  }
+}
+
+/* Mobile: fill the screen while keeping the artwork centered. */
+@media (max-width: 600px) {
+  .wedding-cover__art {
+    width: 100vw !important;
+    height: 100dvh !important;
+  }
+
+  .wedding-cover__art > img {
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+}
+
+/* Invisible hit target aligned to the supplied artwork's V♥H seal. */
+#welcome #openInvitation.wedding-cover__seal {
+  position: absolute !important;
+  z-index: 50 !important;
+  left: 50% !important;
+  top: 59.4% !important;
+  transform: translate(-50%, -50%) !important;
+  width: clamp(94px, 15vw, 156px) !important;
+  height: clamp(94px, 15vw, 156px) !important;
+  min-width: 94px !important;
+  min-height: 94px !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: transparent !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  animation: suppliedSealPulse 2.6s ease-in-out infinite !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+#welcome #openInvitation.wedding-cover__seal::before,
+#welcome #openInvitation.wedding-cover__seal::after {
+  display: none !important;
+}
+
+#welcome #openInvitation.wedding-cover__seal:focus-visible {
+  outline: 3px solid rgba(255,241,229,.9) !important;
+  outline-offset: 8px !important;
+}
+
+@keyframes suppliedSealPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.035); }
+}
+
+@media (max-width: 600px) {
+  #welcome #openInvitation.wedding-cover__seal {
+    top: 59.4% !important;
+    width: 100px !important;
+    height: 100px !important;
+    min-width: 100px !important;
+    min-height: 100px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  #welcome #openInvitation.wedding-cover__seal {
+    width: 88px !important;
+    height: 88px !important;
+    min-width: 88px !important;
+    min-height: 88px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #welcome #openInvitation.wedding-cover__seal {
+    animation: none !important;
+  }
 }

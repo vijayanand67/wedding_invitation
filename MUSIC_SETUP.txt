@@ -1,0 +1,19 @@
+NEELA VAANAM MUSIC
+
+The music section is configured for:
+assets/music/neela-vanam.mp3
+
+Playback starts at 00:15.
+
+The full commercial recording is not bundled in this ZIP. The song is
+copyrighted and the website should use an audio file you are legally allowed
+to host.
+
+Official song reference:
+https://www.youtube.com/watch?v=lJLs2Ln6VZE&t=15s
+
+To enable direct in-site playback:
+1. Obtain the song legally.
+2. Rename the file to neela-vanam.mp3.
+3. Put it in assets/music/.
+4. Push it to GitHub Pages.

@@ -1,0 +1,21 @@
+RSVP FINAL SETUP
+
+The previous JavaScript had a duplicate submit handler and an undefined
+"form" variable. That has been removed.
+
+The new website submits the form natively to the Google Apps Script Web App
+through a hidden iframe, avoiding the browser CORS/no-cors response issue.
+
+Configured endpoint:
+https://script.google.com/macros/s/AKfycbwX9ajYDQQtMhhJfmDoTn-Lfpj4Lxf6o26yiYTW3_MjdoSHnFoM9Unt5KCNjcyN2sr-Gw/exec
+
+Google Apps Script must be deployed as:
+Execute as: Me
+Who has access: Anyone
+
+The success text shown by the website is exactly:
+RSVP data received successfully
+
+If the /exec URL itself displays Google's "unable to open the file" page,
+the deployment/account is not accessible and must be redeployed from a
+working Apps Script project.

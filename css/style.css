@@ -2405,40 +2405,7 @@ button:disabled {
 
 /* Hide the printed "Tap seal to open" artwork text with an intentional
    premium leather plaque. The source image is kept intact. */
-.cover-clean-panel{
-  position:absolute!important;
-  z-index:8!important;
-  left:50%!important;
-  top:45.8%!important;
-  transform:translate(-50%,-50%)!important;
-  width:min(43vw,360px)!important;
-  height:clamp(54px,6.4vw,82px)!important;
-  border:1px solid rgba(219,173,83,.28)!important;
-  border-radius:10px!important;
-  background:
-    radial-gradient(circle at 50% 50%,rgba(118,38,58,.20),transparent 60%),
-    linear-gradient(180deg,rgba(39,7,18,.94),rgba(52,11,24,.94))!important;
-  box-shadow:0 10px 28px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.06)!important;
-  pointer-events:none!important;
-}
-.cover-clean-panel::before,
-.cover-clean-panel::after{
-  content:"✦";
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  color:rgba(219,173,83,.68);
-  font-size:.72rem;
-}
-.cover-clean-panel::before{left:24%}
-.cover-clean-panel::after{right:24%}
-@media(max-width:600px){
-  .cover-clean-panel{
-    width:min(58vw,300px)!important;
-    height:58px!important;
-    top:45.8%!important;
-  }
-}
+.cover-clean-panel{display:none!important;}
 
 .wedding-cover__seal{
   background:transparent!important;

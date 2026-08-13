@@ -154,20 +154,68 @@
 }
 
 </style>
+<style>
+
+/* Final V♥H seal interaction: artwork contains the visible V ♥ H medallion. */
+#welcome #openInvitation.wedding-cover__seal {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow:
+    0 0 0 1px rgba(246, 211, 133, .32),
+    0 0 22px rgba(246, 193, 76, .28) !important;
+  animation: vhFinalSealGlow 2.4s ease-in-out infinite !important;
+}
+#welcome #openInvitation.wedding-cover__seal::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: -10px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(244, 207, 128, .55) !important;
+  box-shadow: 0 0 18px rgba(244, 207, 128, .30) !important;
+  pointer-events: none !important;
+  animation: vhFinalRing 2.4s ease-out infinite !important;
+}
+#welcome #openInvitation.wedding-cover__seal::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: -22px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(244, 207, 128, .20) !important;
+  pointer-events: none !important;
+  animation: vhFinalRing 2.8s ease-out infinite .5s !important;
+}
+@keyframes vhFinalSealGlow {
+  0%,100% { filter: brightness(1); }
+  50% { filter: brightness(1.10); }
+}
+@keyframes vhFinalRing {
+  0% { transform: scale(.88); opacity: .75; }
+  70%,100% { transform: scale(1.10); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #welcome #openInvitation.wedding-cover__seal,
+  #welcome #openInvitation.wedding-cover__seal::before,
+  #welcome #openInvitation.wedding-cover__seal::after {
+    animation: none !important;
+  }
+}
+
+</style>
 </head>
 <body class="wedding-cover-lock">
 <div class="petals" aria-hidden="true"></div>
 
 <div id="welcome" class="wedding-cover" aria-label="Wedding invitation opening">
   <div class="wedding-cover__art">
-    <img src="assets/images/wedding-envelope-cover.jpg"
+    <img src="assets/images/wedding-envelope-cover-vh.png"
          alt="Wedding Invitation — V heart H"
          draggable="false">
-    <div class="cover-clean-panel" aria-hidden="true"></div>
     <button id="openInvitation"
             class="wedding-cover__seal vh-seal-open"
             type="button"
-            aria-label=" the wedding invitation"><span class="vh-seal-hint" aria-hidden="true">Tap the Seal</span><span class="vh-seal-spark s1" aria-hidden="true"></span><span class="vh-seal-spark s2" aria-hidden="true"></span><span class="vh-seal-spark s3" aria-hidden="true"></span><span class="vh-seal-spark s4" aria-hidden="true"></span><span class="sr-only">Open wedding invitation</span></button>
+            aria-label="Open the wedding invitation"><span class="sr-only">Open wedding invitation</span></button>
   </div>
 </div>
 

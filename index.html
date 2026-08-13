@@ -2839,65 +2839,477 @@ h1,h2,h3,h4,
 }
 
 </style>
+<style>
+
+/* ==============================================================
+   ATTACHED-IMAGE-ONLY FIRST PAGE
+   The uploaded reference is the sole visual direction.
+   The invitation is rebuilt with responsive HTML/CSS elements;
+   the reference image is NOT used as a flat background.
+   ============================================================== */
+
+#welcome.attached-reference-cover{
+  position:fixed!important;
+  inset:0!important;
+  width:100vw!important;
+  height:100dvh!important;
+  min-height:100svh!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  z-index:999999!important;
+  background:
+    radial-gradient(ellipse at 50% 48%,rgba(100,27,27,.38) 0%,rgba(61,8,17,.18) 33%,transparent 62%),
+    radial-gradient(circle at 88% 10%,rgba(148,75,25,.12),transparent 26%),
+    linear-gradient(180deg,#26050d 0%,#3b0713 46%,#21040c 100%)!important;
+}
+
+/* Soft paper/leather texture using only CSS gradients */
+#welcome.attached-reference-cover::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  pointer-events:none!important;
+  z-index:0!important;
+  opacity:.50!important;
+  background:
+    repeating-radial-gradient(circle at 50% 55%,rgba(255,219,143,.035) 0 1px,transparent 1px 8px),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.012) 0 1px,transparent 1px 5px)!important;
+  mix-blend-mode:screen!important;
+}
+
+/* Decorative gold foliage, deliberately restrained to match the reference. */
+#welcome .attached-reference-background{
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  pointer-events:none!important;
+}
+#welcome .attached-branch{
+  position:absolute!important;
+  width:310px!important;
+  height:310px!important;
+  opacity:.92!important;
+  filter:drop-shadow(0 0 7px rgba(232,184,82,.25))!important;
+}
+#welcome .attached-branch::before{
+  content:""!important;
+  position:absolute!important;
+  width:3px!important;
+  height:285px!important;
+  left:52%!important;
+  top:-18px!important;
+  background:linear-gradient(180deg,transparent,#f1cf7d 15%,#b67a25 70%,transparent)!important;
+  transform:rotate(31deg)!important;
+  transform-origin:bottom!important;
+}
+#welcome .attached-branch::after{
+  content:""!important;
+  position:absolute!important;
+  width:3px!important;
+  height:225px!important;
+  left:46%!important;
+  top:38px!important;
+  background:linear-gradient(180deg,transparent,#e7bd67 20%,#a96e23 75%,transparent)!important;
+  transform:rotate(-28deg)!important;
+  transform-origin:bottom!important;
+}
+#welcome .attached-branch-top{right:-95px!important;top:-78px!important}
+#welcome .attached-branch-bottom{left:-115px!important;bottom:-95px!important;transform:rotate(180deg)!important;opacity:.76!important}
+
+#welcome .attached-spark{
+  position:absolute!important;
+  width:4px!important;height:4px!important;border-radius:50%!important;
+  background:#ffe7a9!important;
+  box-shadow:0 0 7px #ffe7a9,0 0 16px rgba(232,184,82,.75)!important;
+  animation:attachedSpark 3.4s ease-in-out infinite alternate!important;
+}
+#welcome .attached-spark.s1{right:31%;top:13%}
+#welcome .attached-spark.s2{right:21%;top:20%;animation-delay:.8s}
+#welcome .attached-spark.s3{right:15%;top:27%;animation-delay:1.5s}
+#welcome .attached-spark.s4{left:12%;bottom:18%;animation-delay:.5s}
+#welcome .attached-spark.s5{left:19%;bottom:11%;animation-delay:1.1s}
+#welcome .attached-spark.s6{left:26%;bottom:16%;animation-delay:1.9s}
+@keyframes attachedSpark{from{opacity:.35;transform:scale(.65)}to{opacity:1;transform:scale(1.3)}}
+
+/* Envelope V-folds from the reference composition */
+#welcome .attached-cover-fold{
+  position:absolute!important;
+  top:38%!important;
+  width:72%!important;
+  height:1.5px!important;
+  background:linear-gradient(90deg,transparent 0%,rgba(237,196,105,.15) 10%,#e5b757 48%,rgba(237,196,105,.15) 90%,transparent)!important;
+  box-shadow:0 0 7px rgba(232,184,82,.35)!important;
+  z-index:3!important;
+  pointer-events:none!important;
+}
+#welcome .attached-fold-left{
+  left:-8%!important;
+  transform:rotate(33deg)!important;
+  transform-origin:right center!important;
+}
+#welcome .attached-fold-right{
+  right:-8%!important;
+  transform:rotate(-33deg)!important;
+  transform-origin:left center!important;
+}
+
+/* Content */
+#welcome .attached-cover-content{
+  position:absolute!important;
+  inset:0!important;
+  z-index:10!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  pointer-events:none!important;
+}
+
+#welcome .attached-top-ornament{
+  margin-top:clamp(72px,10vh,150px)!important;
+  width:min(390px,72vw)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  color:#e8bd68!important;
+  font-family:Georgia,serif!important;
+  font-size:26px!important;
+  text-shadow:0 0 10px rgba(232,184,82,.35)!important;
+}
+#welcome .attached-top-ornament .orn-line{
+  height:1px!important;
+  flex:1!important;
+  background:linear-gradient(90deg,transparent,#e8bd68)!important;
+}
+#welcome .attached-top-ornament .orn-line:last-of-type{transform:scaleX(-1)!important}
+#welcome .attached-top-ornament .orn-leaf{transform:scaleX(1.25)!important}
+
+#welcome .attached-title{
+  margin:8px 15px 0!important;
+  padding:0!important;
+  font-family:"Great Vibes","Edwardian Script ITC","Snell Roundhand","Brush Script MT",cursive!important;
+  font-size:clamp(54px,8vw,96px)!important;
+  line-height:1!important;
+  font-weight:500!important;
+  font-style:normal!important;
+  letter-spacing:-.02em!important;
+  text-align:center!important;
+  white-space:nowrap!important;
+  color:#f5d88f!important;
+  -webkit-text-fill-color:#f5d88f!important;
+  text-shadow:0 2px 0 #6f3b1b,0 5px 16px rgba(0,0,0,.72),0 0 24px rgba(232,184,82,.16)!important;
+}
+
+#welcome .attached-divider{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  width:min(320px,66vw)!important;
+  margin-top:8px!important;
+  color:#e8bd68!important;
+}
+#welcome .attached-divider span{
+  flex:1!important;height:1px!important;
+  background:linear-gradient(90deg,transparent,#e8bd68)!important;
+}
+#welcome .attached-divider span:last-of-type{transform:scaleX(-1)!important}
+#welcome .attached-divider b{font-size:15px!important;font-weight:400!important;text-shadow:0 0 8px rgba(232,184,82,.45)!important}
+
+#welcome .attached-subtitle{
+  margin:10px 12px 0!important;
+  font-family:"Poppins",Arial,sans-serif!important;
+  font-size:clamp(10px,1.25vw,15px)!important;
+  line-height:1.3!important;
+  letter-spacing:.32em!important;
+  font-weight:500!important;
+  text-align:center!important;
+  color:#e6c477!important;
+  text-shadow:0 2px 8px rgba(0,0,0,.82)!important;
+}
+
+/* Main seal: premium medallion */
+#welcome #openInvitation.attached-vh-seal{
+  position:absolute!important;
+  left:50%!important;
+  top:57%!important;
+  width:clamp(188px,28vw,310px)!important;
+  height:clamp(188px,28vw,310px)!important;
+  min-width:188px!important;
+  min-height:188px!important;
+  max-width:310px!important;
+  max-height:310px!important;
+  transform:translate(-50%,-50%)!important;
+  margin:0!important;
+  padding:0!important;
+  border:1px solid rgba(250,225,164,.88)!important;
+  border-radius:50%!important;
+  background:
+    radial-gradient(circle at 50% 38%,rgba(110,56,27,.92),rgba(51,13,16,.98) 55%,#17040a 100%)!important;
+  box-shadow:
+    0 0 0 5px rgba(61,20,15,.80),
+    0 0 0 7px rgba(226,174,77,.78),
+    0 0 0 12px rgba(226,174,77,.16),
+    0 0 35px rgba(226,174,77,.50),
+    0 0 75px rgba(226,174,77,.17),
+    inset 0 0 32px rgba(255,224,155,.14)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:visible!important;
+  pointer-events:auto!important;
+  cursor:pointer!important;
+  touch-action:manipulation!important;
+  -webkit-tap-highlight-color:transparent!important;
+  z-index:30!important;
+  color:transparent!important;
+  font-size:0!important;
+  transition:transform .24s ease,filter .24s ease,box-shadow .24s ease!important;
+}
+#welcome #openInvitation.attached-vh-seal:hover{
+  transform:translate(-50%,-50%) scale(1.035)!important;
+  filter:brightness(1.08)!important;
+}
+#welcome #openInvitation.attached-vh-seal:active{
+  transform:translate(-50%,-50%) scale(.965)!important;
+}
+#welcome #openInvitation.attached-vh-seal:focus-visible{
+  outline:2px solid #f7dda1!important;
+  outline-offset:9px!important;
+}
+
+/* Inner seal face */
+#welcome .attached-seal-face{
+  position:absolute!important;
+  inset:14px!important;
+  border-radius:50%!important;
+  border:1px solid rgba(248,222,161,.45)!important;
+  box-shadow:inset 0 0 18px rgba(232,184,82,.18)!important;
+  pointer-events:none!important;
+  z-index:20!important;
+}
+#welcome .attached-vh{
+  position:absolute!important;
+  inset:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:clamp(7px,1vw,12px)!important;
+  white-space:nowrap!important;
+}
+#welcome .attached-vh span{
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(52px,8vw,84px)!important;
+  line-height:1!important;
+  font-weight:700!important;
+  color:#fff0c7!important;
+  text-shadow:0 2px 3px rgba(0,0,0,.95),0 0 14px rgba(255,224,155,.52)!important;
+}
+#welcome .attached-vh strong{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(45px,7vw,70px)!important;
+  line-height:1!important;
+  color:#f0525f!important;
+  font-weight:700!important;
+  text-shadow:0 2px 4px rgba(0,0,0,.92),0 0 15px rgba(255,84,98,.75),0 0 26px rgba(226,174,77,.24)!important;
+  animation:attachedHeart 2.6s ease-in-out infinite!important;
+}
+@keyframes attachedHeart{0%,100%{transform:scale(1)}50%{transform:scale(1.08);filter:brightness(1.13)}}
+
+#welcome .attached-mini-ornament{
+  position:absolute!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  color:#e8bd68!important;
+  font-family:Georgia,serif!important;
+  font-size:18px!important;
+  opacity:.92!important;
+}
+#welcome .attached-mini-ornament.top{top:8px!important}
+#welcome .attached-mini-ornament.bottom{bottom:7px!important;transform:translateX(-50%) rotate(180deg)!important}
+
+/* Animated outer decoration only — V♥H never rotates */
+#welcome .attached-seal-ring{
+  position:absolute!important;
+  border-radius:50%!important;
+  pointer-events:none!important;
+}
+#welcome .attached-seal-ring-a{
+  inset:-11px!important;
+  border:1.5px solid rgba(248,222,161,.88)!important;
+  border-left-color:transparent!important;
+  border-bottom-color:#e6b650!important;
+  z-index:14!important;
+  animation:attachedRingCW 7s linear infinite!important;
+}
+#welcome .attached-seal-ring-b{
+  inset:-27px!important;
+  border:1px solid rgba(248,222,161,.35)!important;
+  border-top-color:#f7d994!important;
+  border-right-color:transparent!important;
+  z-index:13!important;
+  animation:attachedRingCCW 11s linear infinite!important;
+}
+#welcome .attached-seal-orbit{
+  position:absolute!important;
+  inset:-5px!important;
+  border-radius:50%!important;
+  pointer-events:none!important;
+  z-index:16!important;
+  animation:attachedRingCW 8s linear infinite!important;
+}
+#welcome .attached-seal-orbit i{
+  position:absolute!important;
+  top:50%!important;left:50%!important;
+  width:5px!important;height:5px!important;margin:-2.5px!important;
+  border-radius:50%!important;
+  background:#fff0c5!important;
+  box-shadow:0 0 8px #fff0c5,0 0 18px rgba(232,184,82,.70)!important;
+}
+#welcome .attached-seal-orbit i:nth-child(1){transform:translate(-50%,-50%) rotate(0deg) translateY(-119px)}
+#welcome .attached-seal-orbit i:nth-child(2){transform:translate(-50%,-50%) rotate(60deg) translateY(-119px)}
+#welcome .attached-seal-orbit i:nth-child(3){transform:translate(-50%,-50%) rotate(120deg) translateY(-119px)}
+#welcome .attached-seal-orbit i:nth-child(4){transform:translate(-50%,-50%) rotate(180deg) translateY(-119px)}
+#welcome .attached-seal-orbit i:nth-child(5){transform:translate(-50%,-50%) rotate(240deg) translateY(-119px)}
+#welcome .attached-seal-orbit i:nth-child(6){transform:translate(-50%,-50%) rotate(300deg) translateY(-119px)}
+@keyframes attachedRingCW{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes attachedRingCCW{from{transform:rotate(360deg)}to{transform:rotate(0)}}
+
+/* Bottom decoration only; no instructional text */
+#welcome .attached-bottom-ornament{
+  position:absolute!important;
+  top:78%!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  width:min(290px,62vw)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  opacity:.84!important;
+}
+#welcome .attached-bottom-ornament .gold-line{
+  flex:1!important;height:1px!important;
+  background:linear-gradient(90deg,transparent,#e8bd68,transparent)!important;
+}
+#welcome .attached-bottom-ornament b{
+  color:#e8bd68!important;
+  font-size:15px!important;
+  font-weight:400!important;
+  text-shadow:0 0 8px rgba(232,184,82,.40)!important;
+}
+
+/* Mobile */
+@media(max-width:767px){
+  #welcome .attached-top-ornament{
+    margin-top:clamp(58px,9vh,82px)!important;
+    width:76vw!important;
+  }
+  #welcome .attached-title{
+    font-size:clamp(43px,11.5vw,60px)!important;
+    margin-top:6px!important;
+  }
+  #welcome .attached-subtitle{
+    font-size:9px!important;
+    letter-spacing:.25em!important;
+  }
+  #welcome .attached-cover-fold{top:38%!important}
+  #welcome #openInvitation.attached-vh-seal{
+    top:56%!important;
+    width:clamp(178px,53vw,225px)!important;
+    height:clamp(178px,53vw,225px)!important;
+    min-width:178px!important;min-height:178px!important;
+    max-width:225px!important;max-height:225px!important;
+  }
+  #welcome .attached-seal-face{inset:12px!important}
+  #welcome .attached-vh{gap:7px!important}
+  #welcome .attached-vh span{font-size:53px!important}
+  #welcome .attached-vh strong{font-size:46px!important}
+  #welcome .attached-seal-orbit i:nth-child(1){transform:translate(-50%,-50%) rotate(0deg) translateY(-96px)}
+  #welcome .attached-seal-orbit i:nth-child(2){transform:translate(-50%,-50%) rotate(60deg) translateY(-96px)}
+  #welcome .attached-seal-orbit i:nth-child(3){transform:translate(-50%,-50%) rotate(120deg) translateY(-96px)}
+  #welcome .attached-seal-orbit i:nth-child(4){transform:translate(-50%,-50%) rotate(180deg) translateY(-96px)}
+  #welcome .attached-seal-orbit i:nth-child(5){transform:translate(-50%,-50%) rotate(240deg) translateY(-96px)}
+  #welcome .attached-seal-orbit i:nth-child(6){transform:translate(-50%,-50%) rotate(300deg) translateY(-96px)}
+  #welcome .attached-bottom-ornament{top:75%!important;width:62vw!important}
+  #welcome .attached-branch{transform:scale(.72)!important}
+}
+@media(max-height:700px) and (max-width:767px){
+  #welcome .attached-top-ornament{margin-top:45px!important}
+  #welcome .attached-title{font-size:42px!important}
+  #welcome #openInvitation.attached-vh-seal{
+    top:54%!important;width:166px!important;height:166px!important;
+    min-width:166px!important;min-height:166px!important;
+  }
+  #welcome .attached-vh span{font-size:47px!important}
+  #welcome .attached-vh strong{font-size:41px!important}
+  #welcome .attached-bottom-ornament{top:72%!important}
+}
+@media(prefers-reduced-motion:reduce){
+  #welcome .attached-spark,
+  #welcome .attached-seal-ring-a,
+  #welcome .attached-seal-ring-b,
+  #welcome .attached-seal-orbit,
+  #welcome .attached-vh strong{animation:none!important}
+}
+
+</style>
 </head>
 <body class="wedding-cover-lock">
 
 
 
-<div id="welcome" class="wedding-cover wedding-cover-reference-redesign" aria-label="Wedding invitation opening">
-  <div class="reference-cover-art" aria-hidden="true">
-    <div class="reference-floral reference-floral-top"></div>
-    <div class="reference-floral reference-floral-bottom"></div>
-    <div class="reference-sparkles"></div>
-    <div class="reference-envelope-fold"></div>
-    <div class="reference-envelope-fold reference-envelope-fold-right"></div>
+
+<div id="welcome" class="wedding-cover attached-reference-cover" aria-label="Wedding invitation opening">
+  <div class="attached-reference-background" aria-hidden="true">
+    <div class="attached-branch attached-branch-top"></div>
+    <div class="attached-branch attached-branch-bottom"></div>
+    <span class="attached-spark s1"></span><span class="attached-spark s2"></span>
+    <span class="attached-spark s3"></span><span class="attached-spark s4"></span>
+    <span class="attached-spark s5"></span><span class="attached-spark s6"></span>
   </div>
 
-  <div class="reference-cover-content">
-    <div class="reference-ornament reference-ornament-top" aria-hidden="true">
-      <span></span><span></span><span></span>
+  <div class="attached-cover-fold attached-fold-left" aria-hidden="true"></div>
+  <div class="attached-cover-fold attached-fold-right" aria-hidden="true"></div>
+
+  <main class="attached-cover-content">
+    <div class="attached-top-ornament" aria-hidden="true">
+      <span class="orn-line"></span><span class="orn-leaf">❧</span><span class="orn-line"></span>
     </div>
 
-    <p class="reference-title">Wedding Invitation</p>
+    <h1 class="attached-title">Wedding Invitation</h1>
 
-    <div class="reference-ornament reference-ornament-under" aria-hidden="true">
-      <i></i><i></i><i></i>
+    <div class="attached-divider" aria-hidden="true">
+      <span></span><b>✦</b><span></span>
     </div>
 
-    <p class="reference-subtitle">YOU ARE CORDIALLY INVITED</p>
+    <p class="attached-subtitle">YOU ARE CORDIALLY INVITED</p>
 
     <button id="openInvitation"
-            class="wedding-cover__seal vh-seal-open reference-vh-seal"
+            class="wedding-cover__seal vh-seal-open attached-vh-seal"
             type="button"
-            aria-label="Open the wedding invitation">
-      <span class="reference-seal-glow" aria-hidden="true"></span>
-      <span class="final-seal-ring final-seal-ring-2" aria-hidden="true"></span>
-      <span class="final-seal-ring final-seal-ring-1" aria-hidden="true"></span>
-      <span class="final-seal-orbit" aria-hidden="true">
-        <i></i><i></i><i></i><i></i>
+            aria-label="Open wedding invitation">
+      <span class="attached-seal-ring attached-seal-ring-a" aria-hidden="true"></span>
+      <span class="attached-seal-ring attached-seal-ring-b" aria-hidden="true"></span>
+      <span class="attached-seal-orbit" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i>
       </span>
-      <span class="reference-seal-inner">
-        <span class="reference-seal-ornament reference-seal-ornament-top" aria-hidden="true">❧</span>
-        <span class="final-seal-core" aria-hidden="true">
-          <span class="final-seal-v">V</span>
-          <span class="final-seal-heart">♥</span>
-          <span class="final-seal-h">H</span>
+
+      <span class="attached-seal-face" aria-hidden="true">
+        <span class="attached-mini-ornament top">❧</span>
+        <span class="attached-vh">
+          <span>V</span><strong>♥</strong><span>H</span>
         </span>
-        <span class="reference-seal-ornament reference-seal-ornament-bottom" aria-hidden="true">❧</span>
+        <span class="attached-mini-ornament bottom">❧</span>
       </span>
       <span class="sr-only">Open wedding invitation</span>
     </button>
 
-    <div class="reference-bottom-ornament" aria-hidden="true">
-      <span class="reference-arrow">◆</span>
-      <span class="reference-line"></span>
-      <span class="reference-diamond">✦</span>
-      <span class="reference-line"></span>
-      <span class="reference-arrow">◆</span>
+    <div class="attached-bottom-ornament" aria-hidden="true">
+      <span class="gold-line"></span><b>✦</b><span class="gold-line"></span>
     </div>
-  </div>
+  </main>
 </div>
-
 <header class="topbar">
 <a class="brand" href="#home"><span class="brand-name">Vijay</span> <span class="brand-heart" aria-hidden="true">♥</span> <span class="brand-name">Hemalatha</span></a>
 <nav>

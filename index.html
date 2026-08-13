@@ -4644,6 +4644,117 @@ main .section > *{position:relative!important;z-index:1!important}
 }
 
 </style>
+<style>
+
+/* ==============================================================
+   FINAL COUNTDOWN + PAGE REFINEMENT
+   ============================================================== */
+
+#home .hero-countdown{
+  width:min(620px,92vw);
+  margin:clamp(16px,2.2vh,28px) auto 0;
+  padding:12px 14px 14px;
+  border:1px solid rgba(230,193,105,.46);
+  border-radius:18px;
+  background:rgba(36,6,17,.30);
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+  box-shadow:0 12px 30px rgba(0,0,0,.16), inset 0 1px 0 rgba(255,240,198,.16);
+}
+
+#home .hero-countdown-label{
+  margin:0 0 9px!important;
+  color:#f0d58f!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:9px!important;
+  font-weight:700!important;
+  letter-spacing:.24em!important;
+  text-align:center!important;
+}
+
+#home .hero-countdown .invite-countdown{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:7px!important;
+}
+
+#home .hero-countdown .unit{
+  min-width:0!important;
+  padding:9px 4px 8px!important;
+  border:1px solid rgba(226,185,82,.50)!important;
+  border-radius:11px!important;
+  background:rgba(54,9,24,.30)!important;
+  box-shadow:inset 0 1px 0 rgba(255,245,210,.10)!important;
+}
+
+#home .hero-countdown .unit b{
+  display:block!important;
+  color:#fff3d1!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(24px,4vw,36px)!important;
+  font-weight:650!important;
+  line-height:1!important;
+  font-variant-numeric:tabular-nums!important;
+  text-shadow:0 2px 10px rgba(0,0,0,.45)!important;
+}
+
+#home .hero-countdown .unit small{
+  display:block!important;
+  margin-top:4px!important;
+  color:#ead9b7!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:7px!important;
+  font-weight:600!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+}
+
+#journey{
+  background:#fbf5ed!important;
+  background-image:none!important;
+}
+
+#journey::before,
+#journey::after{
+  content:none!important;
+  display:none!important;
+}
+
+@media(max-width:700px){
+  #home .hero-countdown{
+    width:min(560px,calc(100vw - 42px));
+    margin-top:13px;
+    padding:10px 8px 11px;
+    border-radius:15px;
+  }
+  #home .hero-countdown-label{
+    font-size:7px!important;
+    letter-spacing:.18em!important;
+    margin-bottom:7px!important;
+  }
+  #home .hero-countdown .invite-countdown{gap:4px!important}
+  #home .hero-countdown .unit{
+    padding:8px 2px 7px!important;
+    border-radius:9px!important;
+  }
+  #home .hero-countdown .unit b{font-size:22px!important}
+  #home .hero-countdown .unit small{
+    font-size:6px!important;
+    letter-spacing:.03em!important;
+  }
+}
+
+@media(max-width:380px){
+  #home .hero-countdown{
+    width:calc(100vw - 30px);
+    padding-left:6px;
+    padding-right:6px;
+  }
+  #home .hero-countdown .unit b{font-size:19px!important}
+  #home .hero-countdown .unit small{font-size:5.5px!important}
+}
+
+</style>
 </head>
 <body class="wedding-cover-lock">
 
@@ -4728,6 +4839,15 @@ main .section > *{position:relative!important;z-index:1!important}
 <p class="hero-quote" data-en="Two families, one beautiful celebration." data-ta="இரண்டு குடும்பங்கள், ஒரு அழகான கொண்டாட்டம்.">Two families, one beautiful celebration.</p>
 <p class="hero-sub" data-en="With love, blessings, and joy, we begin our forever together." data-ta="அன்பும், ஆசீர்வாதங்களும், மகிழ்ச்சியுடனும் எங்கள் வாழ்நாள் பயணத்தை தொடங்குகிறோம்.">With love, blessings, and joy, we begin our forever together.</p>
 <div class="date-script">07 September 2026</div>
+<div class="hero-countdown" aria-label="Countdown to the wedding">
+  <p class="hero-countdown-label">COUNTDOWN TO OUR WEDDING</p>
+  <div id="countdown" class="invite-countdown">
+    <div class="unit"><b>--</b><small>Days</small></div>
+    <div class="unit"><b>--</b><small>Hours</small></div>
+    <div class="unit"><b>--</b><small>Minutes</small></div>
+    <div class="unit"><b>--</b><small>Seconds</small></div>
+  </div>
+</div>
 
 <div class="hero-actions"><a class="gold-btn" href="#invite">View Invitation</a><button id="calendarBtn" class="outline-btn">＋ Add to Calendar</button></div>
 </div><a class="scroll-cue" href="#invite">↓</a>
@@ -4749,18 +4869,7 @@ main .section > *{position:relative!important;z-index:1!important}
       <span class="premium-heart" aria-hidden="true">♥</span>
       <span class="premium-name couple-name bride-name">Hemalatha</span>
     </div>
-
-    <div class="invite-countdown-wrap">
-      <p class="countdown-label">UNTIL OUR WEDDING DAY</p>
-      <div id="countdown" class="invite-countdown" aria-label="Countdown to the wedding">
-      <div class="unit"><b>--</b><small>Days</small></div>
-      <div class="unit"><b>--</b><small>Hours</small></div>
-      <div class="unit"><b>--</b><small>Minutes</small></div>
-      <div class="unit"><b>--</b><small>Seconds</small></div>
-    </div>
-    </div>
-
-    <div class="family-unified" aria-label="Parents of the couple">
+<div class="family-unified" aria-label="Parents of the couple">
       <div class="family-column">
         <span class="family-label">GROOM'S PARENTS</span>
         <strong class="family-names">Mr. K. Manimaran<br>Mrs. M. Parimala</strong>

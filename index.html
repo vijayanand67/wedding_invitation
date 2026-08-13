@@ -1051,29 +1051,202 @@ a,button{
 }
 
 </style>
+<style>
+
+/* =========================================================
+   FINAL WEDDING INVITATION UI — AUTHORITATIVE OVERRIDES
+   ========================================================= */
+
+/* No instructional CTA text anywhere on the landing page. */
+#welcome .vh-seal-hint,
+#welcome .vh-tap,
+#welcome .cover-hint,
+#welcome .premium-cover-hint,
+#welcome .cover-instruction,
+#welcome .premium-cover-instruction,
+#welcome .tap-seal-box,
+#welcome .tap-seal-to-open,
+#welcome .seal-open-button,
+#welcome .bottom-open-icon {
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+}
+
+/* Prevent horizontal overflow and respect mobile safe areas. */
+html, body {
+  max-width:100%;
+  overflow-x:hidden!important;
+}
+#welcome {
+  padding-top:env(safe-area-inset-top);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+
+/* Landing page artwork: preserve the existing premium design. */
+#welcome.wedding-cover {
+  position:fixed!important;
+  inset:0!important;
+  width:100vw!important;
+  height:100dvh!important;
+  min-height:100svh!important;
+  overflow:hidden!important;
+  display:grid!important;
+  place-items:center!important;
+  background:#260711!important;
+  z-index:999999!important;
+  isolation:isolate!important;
+}
+#welcome .wedding-cover__art {
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  overflow:hidden!important;
+  z-index:1!important;
+}
+#welcome .wedding-cover__art img {
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  display:block!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  pointer-events:none!important;
+  user-select:none!important;
+  -webkit-user-drag:none!important;
+}
+
+/* Elegant vignette; keeps the artwork readable on every screen. */
+#welcome.wedding-cover::after {
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:2!important;
+  pointer-events:none!important;
+  background:
+    radial-gradient(circle at 50% 55%, transparent 0 25%, rgba(0,0,0,.10) 62%, rgba(0,0,0,.35) 100%),
+    linear-gradient(180deg,rgba(28,3,11,.10),transparent 35%,rgba(20,2,8,.18));
+}
+
+/* The actual circular CTA is visible, premium and fully clickable. */
+#welcome #openInvitation {
+  position:absolute!important;
+  left:50%!important;
+  top:55.4%!important;
+  width:clamp(190px,29vw,300px)!important;
+  height:clamp(190px,29vw,300px)!important;
+  min-width:190px!important;
+  min-height:190px!important;
+  max-width:300px!important;
+  max-height:300px!important;
+  transform:translate(-50%,-50%)!important;
+  margin:0!important;
+  padding:0!important;
+  border:1px solid rgba(247,220,157,.72)!important;
+  border-radius:50%!important;
+  background:radial-gradient(circle,rgba(25,4,10,.08) 0 60%,rgba(232,184,82,.04) 61% 100%)!important;
+  box-shadow:
+    0 0 0 2px rgba(232,184,82,.20),
+    0 0 22px rgba(232,184,82,.25),
+    0 0 48px rgba(232,184,82,.16)!important;
+  cursor:pointer!important;
+  pointer-events:auto!important;
+  touch-action:manipulation!important;
+  -webkit-tap-highlight-color:transparent!important;
+  color:transparent!important;
+  font-size:0!important;
+  z-index:10!important;
+  outline:none!important;
+  overflow:visible!important;
+  transition:transform .24s ease,filter .24s ease,box-shadow .24s ease!important;
+}
+#welcome #openInvitation:hover {
+  transform:translate(-50%,-50%) scale(1.035)!important;
+  filter:brightness(1.08)!important;
+  box-shadow:
+    0 0 0 2px rgba(247,220,157,.34),
+    0 0 28px rgba(232,184,82,.42),
+    0 0 58px rgba(232,184,82,.22)!important;
+}
+#welcome #openInvitation:active {
+  transform:translate(-50%,-50%) scale(.975)!important;
+}
+#welcome #openInvitation:focus-visible {
+  outline:2px solid #f7dc9d!important;
+  outline-offset:8px!important;
+}
+
+/* Rotating rings surround the seal; they never cover V♥H. */
+#welcome #openInvitation .final-seal-ring {
+  position:absolute!important;
+  border-radius:50%!important;
+  pointer-events:none!important;
+  z-index:1!important;
+}
+#welcome #openInvitation .final-seal-ring-1 {
+  inset:-8px!important;
+  border:1px solid rgba(247,220,157,.72)!important;
+  border-left-color:transparent!important;
+  border-bottom-color:rgba(232,184,82,.92)!important;
+  animation:finalRingRotate 7s linear infinite!important;
+}
+#welcome #openInvitation .final-seal-ring-2 {
+  inset:-20px!important;
+  border:1px solid rgba(232,184,82,.28)!important;
+  border-top-color:rgba(247,220,157,.82)!important;
+  border-right-color:transparent!important;
+  animation:finalRingRotateReverse 10s linear infinite!important;
+}
+
+/* Four lightweight orbiting particles. */
+#welcome #openInvitation .final-seal-orbit {
+  position:absolute!important;
+  inset:-3px!important;
+  border-radius:50%!important;
+  pointer-events:none!important;
+  z-index:2!important;
+  animation:finalOrbit 8s linear infinite!important;
+}
+#welcome #openInvitation .final-seal-orbit i {
+  position:absolute!important;
+  top:50%!important;
+  left:50%!important;
+  width:5px!important;
+  height:5px!important;
+  margin:-2.5px!important;
+  border-radius:50%!important;
+  background:#f7dc9d!important;
+  box-shadow:0 0 8px #f7dc9d,0 0 17px rgba(232,184,82,.62)!important;
+}
+#welcome #openInvitation .final-seal-orbit i:nth-child(1){transform:translate(-50%,-50%) rotate(0deg) translateY(-112px)}
+#welcome #openInvitation .final-seal-orbit i:nth-child(2){transform:translate(-50%,-50%) rotate(90deg) translateY(-112px)}
+#welcome #openInvitation .final-seal-orbit i:nth-child(3){transform:translate(-50%,-50%) rotate(180deg) translateY(-112px)}
+#welcome #openInvitation .final-seal-orbit i:nth-child(4){transform:translate(-50%,-50%) rotate(270deg) translateY(-112px)}
+
+50%{transform:scale(1.10)}}
+
+</style>
 </head>
 <body class="wedding-cover-lock">
 
 
 <div id="welcome" class="wedding-cover" aria-label="Wedding invitation opening">
   <div class="wedding-cover__art">
-    <img src="assets/images/wedding-invitation-vh-design.jpg"
+    <img src="assets/images/wedding-invitation-cover-clean.jpg"
          alt="Wedding Invitation — V heart H"
          draggable="false">
     <button id="openInvitation"
             class="wedding-cover__seal vh-seal-open"
             type="button"
             aria-label="Open the wedding invitation">
-<span class="spec-seal-orbit spec-orbit-a" aria-hidden="true"></span>
-<span class="spec-seal-orbit spec-orbit-b" aria-hidden="true"></span>
-<span class="spec-seal-particle p1" aria-hidden="true"></span>
-<span class="spec-seal-particle p2" aria-hidden="true"></span>
-<span class="spec-seal-particle p3" aria-hidden="true"></span>
-<span class="spec-seal-particle p4" aria-hidden="true"></span>
-<span class="spec-seal-core" aria-hidden="true">
-  <span class="spec-letter">V</span>
-  <span class="spec-heart">♥</span>
-  <span class="spec-letter">H</span>
+<span class="final-seal-ring final-seal-ring-1" aria-hidden="true"></span>
+<span class="final-seal-ring final-seal-ring-2" aria-hidden="true"></span>
+<span class="final-seal-orbit" aria-hidden="true">
+  <i></i><i></i><i></i><i></i>
 </span>
 <span class="sr-only">Open wedding invitation</span>
 </button>
@@ -1095,6 +1268,8 @@ a,button{
 
 <main>
 <section id="home" class="hero">
+<div class="hero-image" aria-hidden="true"></div>
+<div class="hero-overlay" aria-hidden="true"></div>
 
 <div class="hero-content reveal">
 <p class="eyebrow">A NEW BEGINNING</p>
@@ -1217,6 +1392,23 @@ document.addEventListener("DOMContentLoaded", function () {
   seal.addEventListener("keydown", function (e) {
     if ((e.key === "Enter" || e.key === " ") && !e.defaultPrevented) {
       e.preventDefault();
+      seal.click();
+    }
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const seal = document.getElementById("openInvitation");
+  if (!seal) return;
+  seal.setAttribute("role", "button");
+  seal.setAttribute("aria-label", "Open wedding invitation");
+  if (!seal.hasAttribute("tabindex")) seal.setAttribute("tabindex", "0");
+  seal.addEventListener("keydown", function (event) {
+    if ((event.key === "Enter" || event.key === " ") && !event.defaultPrevented) {
+      event.preventDefault();
       seal.click();
     }
   });

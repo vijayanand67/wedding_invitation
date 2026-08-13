@@ -45,3 +45,9 @@ Wedding Ceremony: 07 September 2026, 6:00 AM–7:30 AM
 - Removed the visible rectangular opening box and CSS-generated duplicate V♥H.
 - V♥H and Tap the Seal are shown exactly by the supplied artwork.
 - A transparent circular tap target is layered over the central seal so the existing opening action is preserved.
+
+
+## Latest adjustment
+- Removed the transparent circular click overlay.
+- Removed the visible "Tap the Seal" text.
+- The supplied first-page artwork remains unchanged.

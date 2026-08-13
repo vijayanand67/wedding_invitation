@@ -374,6 +374,33 @@ animation:vhTap 2s ease-in-out infinite!important;
 }
 
 </style>
+<style>
+
+/* Final instruction: no transparent circular click overlay and no Tap the Seal text. */
+#welcome #openInvitation{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  pointer-events: none !important;
+}
+#welcome #openInvitation::before,
+#welcome #openInvitation::after,
+#welcome #openInvitation .vh-mark,
+#welcome #openInvitation .vh-heart,
+#welcome #openInvitation .vh-orbit,
+#welcome #openInvitation .vh-tap,
+#welcome #openInvitation .vh-seal-hint,
+#welcome #openInvitation .vh-seal-spark{
+  display:none !important;
+  content:none !important;
+  animation:none !important;
+}
+
+</style>
 </head>
 <body class="wedding-cover-lock">
 <div class="petals" aria-hidden="true"></div>
@@ -389,7 +416,7 @@ animation:vhTap 2s ease-in-out infinite!important;
             aria-label="Open the wedding invitation">
 <span class="vh-orbit" aria-hidden="true"></span>
 <span class="vh-mark" aria-hidden="true"><span>V</span><span class="vh-heart">♥</span><span>H</span></span>
-<span class="vh-tap" aria-hidden="true">Tap the Seal</span>
+
 <span class="sr-only">Open wedding invitation</span>
 </button>
   </div>

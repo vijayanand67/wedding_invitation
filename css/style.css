@@ -2403,7 +2403,7 @@ button:disabled {
   }
 }
 
-/* Hide the printed "Tap seal to open" artwork text with an intentional
+/* Hide the printed "" artwork text with an intentional
    premium leather plaque. The source image is kept intact. */
 .cover-clean-panel{display:none!important;}
 

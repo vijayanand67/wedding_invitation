@@ -5009,6 +5009,300 @@ main .section > *{position:relative!important;z-index:1!important}
   }
 }
 </style>
+
+<style>
+/* ==============================================================
+   SAVE THE DATE — UNIFIED PREMIUM EVENT CARD
+   ============================================================== */
+#events{
+  padding-top:clamp(56px,7vw,86px)!important;
+  padding-bottom:clamp(56px,7vw,82px)!important;
+}
+
+#events .section-heading{
+  max-width:700px!important;
+  margin:0 auto clamp(24px,4vw,36px)!important;
+}
+
+#events .section-heading h2{
+  font-size:clamp(38px,5.6vw,64px)!important;
+  line-height:1!important;
+}
+
+#events .celebration-card{
+  width:min(940px,calc(100% - 28px))!important;
+  margin:0 auto!important;
+  padding:clamp(24px,4vw,46px)!important;
+  border:1px solid rgba(177,128,49,.38)!important;
+  border-radius:28px!important;
+  background:linear-gradient(145deg,rgba(255,251,244,.96),rgba(248,235,220,.96))!important;
+  box-shadow:0 22px 60px rgba(69,29,42,.12),inset 0 1px 0 rgba(255,255,255,.9)!important;
+  position:relative!important;
+  overflow:hidden!important;
+}
+
+#events .celebration-card::before{
+  content:""!important;
+  position:absolute!important;
+  inset:12px!important;
+  border:1px solid rgba(177,128,49,.18)!important;
+  border-radius:20px!important;
+  pointer-events:none!important;
+}
+
+#events .celebration-card>*{
+  position:relative!important;
+  z-index:1!important;
+}
+
+#events .celebration-events{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;
+  align-items:center!important;
+  gap:clamp(18px,4vw,48px)!important;
+}
+
+#events .celebration-event{
+  text-align:center!important;
+  padding:4px 8px!important;
+}
+
+#events .celebration-event .event-icon{
+  width:48px!important;
+  height:48px!important;
+  margin:0 auto 12px!important;
+  display:grid!important;
+  place-items:center!important;
+  border-radius:50%!important;
+  border:1px solid #d3a653!important;
+  background:linear-gradient(145deg,#5a152d,#7d2944)!important;
+  color:#f4d58e!important;
+  font-size:19px!important;
+  box-shadow:0 8px 20px rgba(69,16,34,.15)!important;
+}
+
+#events .celebration-event .eyebrow{
+  margin:0 0 5px!important;
+  color:#a87932!important;
+  font-size:10px!important;
+  letter-spacing:.17em!important;
+}
+
+#events .celebration-event h3{
+  margin:0!important;
+  color:#4a1022!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(28px,3.6vw,40px)!important;
+  line-height:1!important;
+}
+
+#events .celebration-event .time{
+  margin:8px 0 0!important;
+  color:#70555a!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:clamp(12px,1.5vw,15px)!important;
+}
+
+#events .celebration-divider{
+  width:1px!important;
+  height:112px!important;
+  background:linear-gradient(180deg,transparent,#c49a55 20%,#c49a55 80%,transparent)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+#events .celebration-divider span{
+  color:#b27b2d!important;
+  background:#f9eee1!important;
+  padding:7px 0!important;
+  font-size:12px!important;
+}
+
+#events .celebration-location{
+  max-width:720px!important;
+  margin:30px auto 0!important;
+  padding:17px 10px 18px!important;
+  text-align:center!important;
+  border-top:1px solid rgba(177,128,49,.25)!important;
+  border-bottom:1px solid rgba(177,128,49,.25)!important;
+}
+
+#events .location-label{
+  margin:0 0 5px!important;
+  color:#9a6c31!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:9px!important;
+  font-weight:700!important;
+  letter-spacing:.19em!important;
+}
+
+#events .celebration-location h4{
+  margin:0!important;
+  color:#553841!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(19px,2.5vw,25px)!important;
+  font-weight:600!important;
+}
+
+#events .celebration-location .text-link{
+  display:inline-block!important;
+  margin-top:8px!important;
+  color:#8e5f25!important;
+  font-size:11px!important;
+}
+
+#events .celebration-families{
+  width:min(760px,100%)!important;
+  margin:26px auto 0!important;
+  padding:20px 0!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;
+  align-items:center!important;
+  gap:clamp(16px,4vw,38px)!important;
+  border-bottom:1px solid rgba(177,128,49,.20)!important;
+}
+
+#events .celebration-families .family-column{
+  text-align:center!important;
+  min-width:0!important;
+}
+
+#events .family-label{
+  display:block!important;
+  margin-bottom:7px!important;
+  color:#9a6c31!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:9px!important;
+  font-weight:700!important;
+  letter-spacing:.14em!important;
+}
+
+#events .family-names{
+  display:block!important;
+  color:#553841!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(17px,2.1vw,22px)!important;
+  line-height:1.35!important;
+  font-weight:600!important;
+}
+
+#events .family-center-rule{
+  width:1px!important;
+  height:56px!important;
+  background:linear-gradient(180deg,transparent,#c49a55,transparent)!important;
+  display:flex!important;
+  align-items:center!important;
+}
+
+#events .family-center-rule span{
+  color:#b27b2d!important;
+  background:#f9eee1!important;
+  padding:6px 0!important;
+  font-size:11px!important;
+}
+
+#events .celebration-note{
+  max-width:600px!important;
+  margin:22px auto 0!important;
+  text-align:center!important;
+  color:#72585f!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(16px,2vw,20px)!important;
+  font-style:italic!important;
+}
+
+/* Our Celebration Begins / Journey — remove numeric labels. */
+#journey .timeline>div{
+  position:relative!important;
+  padding:18px 0 18px 42px!important;
+  border-bottom:1px solid rgba(177,128,49,.18)!important;
+}
+
+#journey .timeline>div:last-child{
+  border-bottom:0!important;
+}
+
+#journey .timeline .journey-marker{
+  position:absolute!important;
+  left:0!important;
+  top:22px!important;
+  width:27px!important;
+  height:27px!important;
+  display:grid!important;
+  place-items:center!important;
+  border:1px solid rgba(177,128,49,.55)!important;
+  border-radius:50%!important;
+  color:#b27b2d!important;
+  background:rgba(255,250,243,.8)!important;
+  font-size:10px!important;
+}
+
+#journey .timeline h3{
+  margin:0 0 5px!important;
+}
+
+#journey .timeline p{
+  margin:0!important;
+}
+
+@media(max-width:700px){
+  #events .celebration-card{
+    width:min(94%,620px)!important;
+    padding:24px 16px 28px!important;
+    border-radius:22px!important;
+  }
+
+  #events .celebration-events{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+  }
+
+  #events .celebration-divider{
+    width:72px!important;
+    height:1px!important;
+    margin:auto!important;
+  }
+
+  #events .celebration-divider span{
+    padding:0 7px!important;
+  }
+
+  #events .celebration-event .event-icon{
+    width:42px!important;
+    height:42px!important;
+    font-size:16px!important;
+    margin-bottom:9px!important;
+  }
+
+  #events .celebration-location{
+    margin-top:22px!important;
+  }
+
+  #events .celebration-families{
+    grid-template-columns:1fr!important;
+    gap:15px!important;
+  }
+
+  #events .family-center-rule{
+    width:72px!important;
+    height:1px!important;
+    margin:auto!important;
+  }
+
+  #events .family-center-rule span{
+    padding:0 7px!important;
+  }
+
+  #events .celebration-note{
+    margin-top:18px!important;
+  }
+
+  #journey .timeline>div{
+    padding-left:38px!important;
+  }
+}
+</style>
 </head>
 <body class="wedding-cover-lock">
 
@@ -5147,28 +5441,62 @@ main .section > *{position:relative!important;z-index:1!important}
 <div class="journey-grid">
 <div class="memory-photo reveal"><img src="assets/images/childhood.jpg" alt="Memory"></div>
 <div class="timeline reveal">
-<div><b>01</b><h3>Two Families</h3><p>A beautiful union blessed by our families.</p></div>
-<div><b>02</b><h3>Engagement</h3><p>A joyful celebration that brought our families closer.</p></div>
-<div><b>03</b><h3>A Promise for a Lifetime</h3><p>With love, blessings and joy, we begin our new chapter.</p></div>
-<div><b>04</b><h3>Forever Begins</h3><p>07 September 2026</p></div>
+<div><span class="journey-marker" aria-hidden="true">✦</span><h3>Two Families</h3><p>A beautiful union blessed by our families.</p></div>
+<div><span class="journey-marker" aria-hidden="true">✦</span><h3>Engagement</h3><p>A joyful celebration that brought our families closer.</p></div>
+<div><span class="journey-marker" aria-hidden="true">✦</span><h3>A Promise for a Lifetime</h3><p>With love, blessings and joy, we begin our new chapter.</p></div>
+<div><span class="journey-marker" aria-hidden="true">✦</span><h3>Forever Begins</h3><p>07 September 2026</p></div>
 </div></div>
 </section>
 
 <section id="events" class="section">
-<div class="section-heading reveal"><p class="eyebrow">SAVE THE DATE</p><h2>Wedding Celebrations</h2></div>
-<div class="event-grid">
-<article class="event-card reveal"><div class="event-icon">✦</div><p class="eyebrow">06 SEP 2026</p><h3>Reception</h3><p class="time">6:30 PM onwards</p><p>Ramaswamy Mahal / S.R. Sami Party Hall</p><a class="text-link" href="https://maps.app.goo.gl/3fDBbH3gCMUNVAgSA?g_st=ic" target="_blank" rel="noopener">📍 Get Directions</a></article>
-<article class="event-card featured reveal"><div class="event-icon">♥</div><p class="eyebrow">07 SEP 2026</p><h3>Wedding Ceremony</h3><p class="time">6:00 AM – 7:30 AM</p>
-<div class="ceremony-countdown" aria-label="Countdown to the wedding ceremony">
-  <p class="ceremony-countdown-label">COUNTDOWN TO OUR WEDDING</p>
-  <div id="countdown" class="invite-countdown">
-    <div class="unit"><b>--</b><small>Days</small></div>
-    <div class="unit"><b>--</b><small>Hours</small></div>
-    <div class="unit"><b>--</b><small>Minutes</small></div>
-    <div class="unit"><b>--</b><small>Seconds</small></div>
+  <div class="section-heading reveal">
+    <p class="eyebrow">SAVE THE DATE</p>
+    <h2>Wedding Celebrations</h2>
+    <p>Two beautiful moments, one unforgettable beginning.</p>
   </div>
-</div><p>Ramaswamy Mahal / S.R. Sami Party Hall</p><a class="text-link" href="https://maps.app.goo.gl/3fDBbH3gCMUNVAgSA?g_st=ic" target="_blank" rel="noopener">📍 Get Directions</a></article>
-</div></section>
+
+  <div class="celebration-card reveal">
+    <div class="celebration-events">
+      <article class="celebration-event">
+        <div class="event-icon">✦</div>
+        <p class="eyebrow">06 SEP 2026</p>
+        <h3>Reception</h3>
+        <p class="time">6:30 PM onwards</p>
+      </article>
+
+      <div class="celebration-divider" aria-hidden="true">
+        <span>✦</span>
+      </div>
+
+      <article class="celebration-event">
+        <div class="event-icon">♥</div>
+        <p class="eyebrow">07 SEP 2026</p>
+        <h3>Wedding Ceremony</h3>
+        <p class="time">6:00 AM – 7:30 AM</p>
+      </article>
+    </div>
+
+    <div class="celebration-location">
+      <p class="location-label">CELEBRATION VENUE</p>
+      <h4>Ramaswamy Mahal / S.R. Sami Party Hall</h4>
+      <a class="text-link" href="https://maps.app.goo.gl/3fDBbH3gCMUNVAgSA?g_st=ic" target="_blank" rel="noopener">📍 Get Directions</a>
+    </div>
+
+    <div class="celebration-families" aria-label="Parents of the couple">
+      <div class="family-column">
+        <span class="family-label">GROOM'S PARENTS</span>
+        <strong class="family-names">Mr. K. Manimaran<br>Mrs. M. Parimala</strong>
+      </div>
+      <div class="family-center-rule" aria-hidden="true"><span>✦</span></div>
+      <div class="family-column">
+        <span class="family-label">BRIDE'S PARENTS</span>
+        <strong class="family-names">Mr. S. Mohanasundaram<br>Mrs. M. Thenmozhi</strong>
+      </div>
+    </div>
+
+    <p class="celebration-note">With the love and blessings of our families, we warmly invite you to celebrate with us.</p>
+  </div>
+</section>
 
 <section id="venue" class="section venue">
 <div class="venue-copy reveal"><p class="eyebrow">JOIN US</p><h2>The Venue</h2><h3>Ramaswamy Mahal / S.R. Sami Party Hall</h3>

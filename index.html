@@ -453,9 +453,607 @@ animation:vhTap 2s ease-in-out infinite!important;
 }
 
 </style>
+<style>
+
+/* =========================================================
+   PREMIUM V ♥ H WEDDING INVITATION — FINAL DESIGN SYSTEM
+   Lightweight CSS-only motion, no external libraries.
+   ========================================================= */
+
+:root {
+  --vh-burgundy: #3a0b18;
+  --vh-burgundy-deep: #1c050d;
+  --vh-gold: #e8bd67;
+  --vh-gold-light: #f7dfaa;
+  --vh-rose: #efb7b2;
+}
+
+/* Never show old instructional text or old overlay variants. */
+.tap-seal-box,
+.tap-seal-to-open,
+.seal-open-button,
+.cover-clean-panel,
+.vh-old-open-box,
+.vh-seal-hint,
+.vh-tap,
+.tap-to-open,
+.tap-to-enter {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Landing page */
+#welcome.wedding-cover {
+  position: relative !important;
+  min-height: 100svh !important;
+  min-height: 100dvh !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(232,189,103,.10), transparent 32%),
+    radial-gradient(circle at 18% 20%, rgba(232,189,103,.08), transparent 24%),
+    linear-gradient(145deg, var(--vh-burgundy), var(--vh-burgundy-deep)) !important;
+  isolation: isolate !important;
+}
+
+/* Subtle premium texture/vignette without images or libraries. */
+#welcome.wedding-cover::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  background:
+    radial-gradient(circle at 50% 44%, transparent 0 25%, rgba(0,0,0,.18) 70%, rgba(0,0,0,.45) 100%),
+    repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,.018) 0 1px, transparent 1px 6px) !important;
+  opacity: .7 !important;
+}
+
+#welcome .wedding-cover__art {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+  overflow: hidden !important;
+}
+
+#welcome .wedding-cover__art img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+}
+
+/* If the existing artwork has its own first-page design, retain it and use
+   the new seal as the interactive focal point. */
+#welcome #openInvitation {
+  position: absolute !important;
+  left: 50% !important;
+  top: 55.5% !important;
+  transform: translate(-50%, -50%) !important;
+  width: clamp(142px, 30vw, 196px) !important;
+  height: clamp(142px, 30vw, 196px) !important;
+  min-width: 142px !important;
+  min-height: 142px !important;
+  max-width: 196px !important;
+  max-height: 196px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  border: 2px solid rgba(247,223,170,.9) !important;
+  background:
+    radial-gradient(circle at 50% 43%, rgba(122,64,32,.97) 0 30%, rgba(52,16,19,.98) 57%, rgba(18,5,10,.99) 100%) !important;
+  box-shadow:
+    0 0 0 5px rgba(80,33,23,.80),
+    0 0 0 7px rgba(232,189,103,.60),
+    0 0 25px rgba(232,189,103,.48),
+    0 0 55px rgba(232,189,103,.18) !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  touch-action: manipulation !important;
+  -webkit-tap-highlight-color: transparent !important;
+  z-index: 20 !important;
+  overflow: visible !important;
+  outline: none !important;
+  animation: vhFloat 3.6s ease-in-out infinite !important;
+}
+
+/* Entire circular area is the hit target. */
+#welcome #openInvitation:focus-visible {
+  outline: 2px solid var(--vh-gold-light) !important;
+  outline-offset: 8px !important;
+}
+
+/* Inner rotating rings */
+#welcome #openInvitation .premium-seal-orbit {
+  position: absolute !important;
+  border-radius: 50% !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+#welcome #openInvitation .premium-seal-orbit-a {
+  inset: -10px !important;
+  border: 1px solid rgba(247,223,170,.65) !important;
+  border-left-color: transparent !important;
+  border-right-color: rgba(232,189,103,.9) !important;
+  animation: vhRotate 7s linear infinite !important;
+}
+
+#welcome #openInvitation .premium-seal-orbit-b {
+  inset: -21px !important;
+  border: 1px solid rgba(232,189,103,.24) !important;
+  border-top-color: rgba(247,223,170,.78) !important;
+  border-bottom-color: transparent !important;
+  animation: vhRotateReverse 10s linear infinite !important;
+}
+
+/* Gold particles/orbit lights */
+#welcome #openInvitation .premium-seal-spark {
+  position: absolute !important;
+  width: 5px !important;
+  height: 5px !important;
+  border-radius: 50% !important;
+  background: var(--vh-gold-light) !important;
+  box-shadow: 0 0 10px rgba(247,223,170,.95), 0 0 18px rgba(232,189,103,.55) !important;
+  pointer-events: none !important;
+  z-index: 3 !important;
+  transform-origin: 50% calc(50% + 92px) !important;
+  animation: vhParticle 4.5s linear infinite !important;
+}
+
+#welcome #openInvitation .spark-1 { top: -7px; left: 50%; animation-delay: 0s !important; }
+#welcome #openInvitation .spark-2 { top: 50%; right: -7px; animation-delay: 1.1s !important; }
+#welcome #openInvitation .spark-3 { bottom: -7px; left: 50%; animation-delay: 2.2s !important; }
+#welcome #openInvitation .spark-4 { top: 50%; left: -7px; animation-delay: 3.3s !important; }
+
+/* Monogram stays stable and always visible. */
+#welcome #openInvitation .premium-monogram {
+  position: relative !important;
+  z-index: 8 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(9px, 2vw, 14px) !important;
+  white-space: nowrap !important;
+  color: var(--vh-gold-light) !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(31px, 8vw, 46px) !important;
+  line-height: 1 !important;
+  font-weight: 600 !important;
+  letter-spacing: .02em !important;
+  text-shadow: 0 2px 5px rgba(0,0,0,.85), 0 0 12px rgba(232,189,103,.32) !important;
+  pointer-events: none !important;
+}
+
+#welcome #openInvitation .premium-heart {
+  color: var(--vh-rose) !important;
+  font-size: .92em !important;
+  line-height: 1 !important;
+  text-shadow: 0 0 9px rgba(239,183,178,.5), 0 2px 5px rgba(0,0,0,.75) !important;
+  animation: vhHeart 1.8s ease-in-out infinite !important;
+}
+
+/* Decorative premium corners on landing page */
+#welcome.wedding-cover .premium-corner {
+  position: absolute;
+  z-index: 4;
+  width: 80px;
+  height: 80px;
+  border-color: rgba(232,189,103,.5);
+  pointer-events: none;
+}
+
+/* Second and subsequent pages: unify premium finish without overriding
+   existing functionality. */
+body {
+  overflow-x: hidden !important;
+}
+
+img, video, iframe {
+  max-width: 100%;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes vhRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes vhRotateReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes vhParticle {
+  from { transform: rotate(0deg) translateY(-92px) rotate(0deg); opacity: .55; }
+  50% { opacity: 1; }
+  to { transform: rotate(360deg) translateY(-92px) rotate(-360deg); opacity: .55; }
+}
+
+@keyframes vhFloat {
+  0%,100% { transform: translate(-50%, -50%) translateY(0) scale(1); }
+  50% { transform: translate(-50%, -50%) translateY(-4px) scale(1.015); }
+}
+
+@keyframes vhHeart {
+  0%,100% { transform: scale(.94); }
+  50% { transform: scale(1.12); }
+}
+
+/* Responsive sizing */
+@media (max-width: 767px) {
+  #welcome #openInvitation {
+    top: 55.5% !important;
+    width: clamp(136px, 43vw, 170px) !important;
+    height: clamp(136px, 43vw, 170px) !important;
+    min-width: 136px !important;
+    min-height: 136px !important;
+    max-width: 170px !important;
+    max-height: 170px !important;
+  }
+  #welcome #openInvitation .premium-seal-orbit-b {
+    inset: -17px !important;
+  }
+  #welcome #openInvitation .premium-seal-spark {
+    transform-origin: 50% calc(50% + 78px) !important;
+  }
+  #welcome #openInvitation .premium-monogram {
+    font-size: clamp(29px, 10vw, 38px) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  #welcome #openInvitation { top: 55.5% !important; }
+}
+
+@media (min-width: 1200px) {
+  #welcome #openInvitation { top: 55% !important; }
+}
+
+@media (max-height: 650px) {
+  #welcome #openInvitation {
+    top: 53% !important;
+    width: 132px !important;
+    height: 132px !important;
+    min-width: 132px !important;
+    min-height: 132px !important;
+  }
+  #welcome #openInvitation .premium-monogram { font-size: 30px !important; }
+}
+
+/* Respect users who request reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  #welcome #openInvitation,
+  #welcome #openInvitation .premium-seal-orbit-a,
+  #welcome #openInvitation .premium-seal-orbit-b,
+  #welcome #openInvitation .premium-seal-spark,
+  #welcome #openInvitation .premium-heart {
+    animation: none !important;
+  }
+}
+
+</style>
+<style>
+
+/* =========================================================
+   WEDDING INVITATION — FINAL SPECIFICATION
+   Premium, responsive, lightweight and accessible.
+   ========================================================= */
+:root{
+  --spec-burgundy:#3a0b18;
+  --spec-burgundy-deep:#1a050d;
+  --spec-gold:#dcae58;
+  --spec-gold-light:#f6dda5;
+  --spec-rose:#efb7b2;
+}
+
+/* No instructional CTA text on landing page. */
+#welcome .spec-instruction,
+#welcome .tap-seal-box,
+#welcome .tap-seal-to-open,
+#welcome .vh-tap,
+#welcome .vh-seal-hint,
+#welcome .tap-to-open,
+#welcome .tap-to-enter{
+  display:none!important;
+}
+
+/* Prevent horizontal overflow globally. */
+html,body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden!important;
+}
+*,*::before,*::after{box-sizing:border-box}
+
+/* Premium landing background/decorative frame. */
+#welcome.wedding-cover{
+  position:relative!important;
+  min-height:100svh!important;
+  min-height:100dvh!important;
+  width:100%!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  background:
+    radial-gradient(circle at 50% 44%,rgba(220,174,88,.12),transparent 30%),
+    linear-gradient(145deg,var(--spec-burgundy),var(--spec-burgundy-deep))!important;
+}
+#welcome.wedding-cover::before{
+  content:""!important;
+  position:absolute!important;
+  inset:10px!important;
+  border:1px solid rgba(246,221,165,.22)!important;
+  border-radius:18px!important;
+  pointer-events:none!important;
+  z-index:3!important;
+}
+#welcome.wedding-cover::after{
+  content:"✦"!important;
+  position:absolute!important;
+  left:50%!important;
+  bottom:max(18px,env(safe-area-inset-bottom))!important;
+  transform:translateX(-50%)!important;
+  color:rgba(246,221,165,.42)!important;
+  font-size:12px!important;
+  pointer-events:none!important;
+  z-index:4!important;
+}
+
+#welcome .wedding-cover__art{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  overflow:hidden!important;
+  z-index:1!important;
+}
+#welcome .wedding-cover__art img{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  user-select:none!important;
+  -webkit-user-drag:none!important;
+}
+
+/* Primary seal: whole circle is the hit area. */
+#welcome #openInvitation{
+  position:absolute!important;
+  left:50%!important;
+  top:55.5%!important;
+  transform:translate(-50%,-50%)!important;
+  width:clamp(150px,26vw,205px)!important;
+  height:clamp(150px,26vw,205px)!important;
+  min-width:150px!important;
+  min-height:150px!important;
+  max-width:205px!important;
+  max-height:205px!important;
+  margin:0!important;
+  padding:0!important;
+  border-radius:50%!important;
+  border:2px solid rgba(246,221,165,.92)!important;
+  background:
+    radial-gradient(circle at 50% 42%,rgba(117,61,30,.98) 0 30%,rgba(50,15,18,.99) 59%,rgba(16,4,9,1) 100%)!important;
+  box-shadow:
+    0 0 0 5px rgba(70,28,20,.78),
+    0 0 0 8px rgba(220,174,88,.58),
+    0 0 26px rgba(220,174,88,.48),
+    0 0 58px rgba(220,174,88,.18)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:visible!important;
+  cursor:pointer!important;
+  touch-action:manipulation!important;
+  -webkit-tap-highlight-color:transparent!important;
+  z-index:30!important;
+  color:transparent!important;
+  font-size:0!important;
+  outline:none!important;
+  animation:specSealFloat 3.8s ease-in-out infinite!important;
+  transition:transform .22s ease,box-shadow .22s ease,filter .22s ease!important;
+}
+
+/* Hover/tap feedback. */
+#welcome #openInvitation:hover{
+  transform:translate(-50%,-50%) scale(1.035)!important;
+  filter:brightness(1.08)!important;
+  box-shadow:
+    0 0 0 5px rgba(70,28,20,.78),
+    0 0 0 8px rgba(246,221,165,.72),
+    0 0 34px rgba(220,174,88,.68),
+    0 0 70px rgba(220,174,88,.24)!important;
+}
+#welcome #openInvitation:active{
+  transform:translate(-50%,-50%) scale(.975)!important;
+}
+#welcome #openInvitation:focus-visible{
+  outline:2px solid var(--spec-gold-light)!important;
+  outline-offset:8px!important;
+}
+
+/* Animated rings stay outside the monogram. */
+#welcome #openInvitation .spec-seal-orbit{
+  position:absolute!important;
+  border-radius:50%!important;
+  pointer-events:none!important;
+  z-index:1!important;
+}
+#welcome #openInvitation .spec-orbit-a{
+  inset:-11px!important;
+  border:1px solid rgba(246,221,165,.66)!important;
+  border-left-color:transparent!important;
+  border-bottom-color:rgba(220,174,88,.9)!important;
+  animation:specRotate 7s linear infinite!important;
+}
+#welcome #openInvitation .spec-orbit-b{
+  inset:-22px!important;
+  border:1px solid rgba(220,174,88,.25)!important;
+  border-top-color:rgba(246,221,165,.76)!important;
+  border-right-color:transparent!important;
+  animation:specRotateReverse 11s linear infinite!important;
+}
+
+/* Four lightweight orbit particles. */
+#welcome #openInvitation .spec-seal-particle{
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  width:5px!important;
+  height:5px!important;
+  margin:-2.5px!important;
+  border-radius:50%!important;
+  background:var(--spec-gold-light)!important;
+  box-shadow:0 0 9px rgba(246,221,165,.95),0 0 18px rgba(220,174,88,.5)!important;
+  pointer-events:none!important;
+  z-index:2!important;
+  transform-origin:center 96px!important;
+  animation:specParticle 6s linear infinite!important;
+}
+#welcome #openInvitation .p1{animation-delay:0s!important}
+#welcome #openInvitation .p2{animation-delay:1.5s!important}
+#welcome #openInvitation .p3{animation-delay:3s!important}
+#welcome #openInvitation .p4{animation-delay:4.5s!important}
+
+/* Stable V ♥ H center. It never rotates with the rings. */
+#welcome #openInvitation .spec-seal-core{
+  position:relative!important;
+  z-index:10!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:clamp(9px,1.6vw,14px)!important;
+  white-space:nowrap!important;
+  color:var(--spec-gold-light)!important;
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(34px,5.4vw,47px)!important;
+  font-weight:600!important;
+  line-height:1!important;
+  letter-spacing:.015em!important;
+  text-shadow:0 2px 6px rgba(0,0,0,.9),0 0 12px rgba(246,221,165,.32)!important;
+  pointer-events:none!important;
+}
+#welcome #openInvitation .spec-heart{
+  color:var(--spec-rose)!important;
+  font-size:.9em!important;
+  text-shadow:0 0 10px rgba(239,183,178,.5),0 2px 5px rgba(0,0,0,.8)!important;
+  animation:specHeart 1.8s ease-in-out infinite!important;
+}
+
+/* Couple-name typography. */
+.couple-names{
+  display:inline-block!important;
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(25px,4vw,42px)!important;
+  font-weight:600!important;
+  line-height:1.18!important;
+  letter-spacing:.02em!important;
+  color:var(--spec-gold-light)!important;
+  text-align:center!important;
+  text-wrap:balance!important;
+}
+
+/* Premium finishing for secondary pages without changing structure/features. */
+#welcome ~ *{
+  max-width:100%!important;
+}
+img,svg,video,iframe,canvas{
+  max-width:100%;
+}
+a,button{
+  touch-action:manipulation;
+}
+
+/* Safe areas and small devices. */
+@media(max-width:767px){
+  #welcome.wedding-cover::before{
+    inset:max(7px,env(safe-area-inset-top)) max(7px,env(safe-area-inset-right))
+          max(7px,env(safe-area-inset-bottom)) max(7px,env(safe-area-inset-left))!important;
+  }
+  #welcome #openInvitation{
+    top:55%!important;
+    width:clamp(146px,44vw,176px)!important;
+    height:clamp(146px,44vw,176px)!important;
+    min-width:146px!important;
+    min-height:146px!important;
+    max-width:176px!important;
+    max-height:176px!important;
+  }
+  #welcome #openInvitation .spec-seal-particle{
+    transform-origin:center 82px!important;
+  }
+  .couple-names{
+    font-size:clamp(23px,7vw,32px)!important;
+  }
+}
+@media(min-width:768px) and (max-width:1199px){
+  #welcome #openInvitation{top:55.5%!important}
+}
+@media(min-width:1200px){
+  #welcome #openInvitation{top:55%!important}
+}
+@media(max-height:650px){
+  #welcome #openInvitation{
+    top:52%!important;
+    width:138px!important;
+    height:138px!important;
+    min-width:138px!important;
+    min-height:138px!important;
+  }
+  #welcome #openInvitation .spec-seal-particle{
+    transform-origin:center 72px!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  #welcome #openInvitation,
+  #welcome #openInvitation .spec-orbit-a,
+  #welcome #openInvitation .spec-orbit-b,
+  #welcome #openInvitation .spec-seal-particle,
+  #welcome #openInvitation .spec-heart{
+    animation:none!important;
+  }
+}
+
+@keyframes specSealFloat{
+  0%,100%{transform:translate(-50%,-50%) translateY(0)}
+  50%{transform:translate(-50%,-50%) translateY(-4px)}
+}
+@keyframes specRotate{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+@keyframes specRotateReverse{
+  from{transform:rotate(360deg)}
+  to{transform:rotate(0deg)}
+}
+@keyframes specParticle{
+  from{transform:rotate(0deg) translateY(-96px) rotate(0deg);opacity:.55}
+  50%{opacity:1}
+  to{transform:rotate(360deg) translateY(-96px) rotate(-360deg);opacity:.55}
+}
+@keyframes specHeart{
+  0%,100%{transform:scale(.94)}
+  50%{transform:scale(1.12)}
+}
+
+</style>
 </head>
 <body class="wedding-cover-lock">
-<div class="petals" aria-hidden="true"></div>
+
 
 <div id="welcome" class="wedding-cover" aria-label="Wedding invitation opening">
   <div class="wedding-cover__art">
@@ -466,9 +1064,17 @@ animation:vhTap 2s ease-in-out infinite!important;
             class="wedding-cover__seal vh-seal-open"
             type="button"
             aria-label="Open the wedding invitation">
-<span class="vh-orbit" aria-hidden="true"></span>
-<span class="vh-mark" aria-hidden="true"><span>V</span><span class="vh-heart">♥</span><span>H</span></span>
-
+<span class="spec-seal-orbit spec-orbit-a" aria-hidden="true"></span>
+<span class="spec-seal-orbit spec-orbit-b" aria-hidden="true"></span>
+<span class="spec-seal-particle p1" aria-hidden="true"></span>
+<span class="spec-seal-particle p2" aria-hidden="true"></span>
+<span class="spec-seal-particle p3" aria-hidden="true"></span>
+<span class="spec-seal-particle p4" aria-hidden="true"></span>
+<span class="spec-seal-core" aria-hidden="true">
+  <span class="spec-letter">V</span>
+  <span class="spec-heart">♥</span>
+  <span class="spec-letter">H</span>
+</span>
 <span class="sr-only">Open wedding invitation</span>
 </button>
   </div>
@@ -489,7 +1095,7 @@ animation:vhTap 2s ease-in-out infinite!important;
 
 <main>
 <section id="home" class="hero">
-<div class="hero-image"></div><div class="hero-overlay"></div>
+
 <div class="hero-content reveal">
 <p class="eyebrow">A NEW BEGINNING</p>
 <div class="premium-couple-name" aria-label="Vijay Anand and Hemalatha">
@@ -500,7 +1106,7 @@ animation:vhTap 2s ease-in-out infinite!important;
 <p class="hero-quote" data-en="Two families, one beautiful celebration." data-ta="இரண்டு குடும்பங்கள், ஒரு அழகான கொண்டாட்டம்.">Two families, one beautiful celebration.</p>
 <p class="hero-sub" data-en="With love, blessings, and joy, we begin our forever together." data-ta="அன்பும், ஆசீர்வாதங்களும், மகிழ்ச்சியுடனும் எங்கள் வாழ்நாள் பயணத்தை தொடங்குகிறோம்.">With love, blessings, and joy, we begin our forever together.</p>
 <div class="date-script">07 September 2026</div>
-<div id="countdown" class="countdown"></div>
+
 <div class="hero-actions"><a class="gold-btn" href="#invite">View Invitation</a><button id="calendarBtn" class="outline-btn">＋ Add to Calendar</button></div>
 </div><a class="scroll-cue" href="#invite">↓</a>
 </section>
@@ -514,7 +1120,7 @@ animation:vhTap 2s ease-in-out infinite!important;
   <span class="premium-name couple-name bride-name">Hemalatha</span>
 </div>
 <div class="families">
-<div><span>Groom's Parents</span><strong>Mr. K. Manimaran<br>Mrs. M. Parimala</strong><small></div>
+<div><span>Groom's Parents</span><strong>Mr. K. Manimaran<br>Mrs. M. Parimala</strong>
 <div><span>Bride's Parents</span><strong>Mr. S. Mohanasundaram<br>Mrs. M. Thenmozhi</strong></div>
 </div>
 <div class="ornament">✦</div><p class="invitation-note">Your presence and blessings will make our celebration truly special.</p>
@@ -570,7 +1176,7 @@ animation:vhTap 2s ease-in-out infinite!important;
 </main>
 
 <footer><p>Thank you for celebrating our special day with us.</p></footer>
-<div id="toast" class="toast"></div>
+
 <div id="lightbox" class="lightbox"><button id="closeLightbox">×</button><img id="lightboxImg" alt=""></div>
 <audio id="bgMusic" loop preload="none" src="assets/music/wedding-instrumental.wav"></audio>
 <script src="js/config.js"></script><script src="js/script.js"></script><script src="js/countdown.js"></script>
@@ -598,5 +1204,41 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
+
+<script>
+/* Premium seal interaction safety: preserve the project's existing opening
+   handler while normalizing touch/click behaviour. */
+document.addEventListener("DOMContentLoaded", function () {
+  const seal = document.getElementById("openInvitation");
+  if (!seal) return;
+  seal.setAttribute("role", "button");
+  seal.setAttribute("aria-label", "Open wedding invitation");
+  if (!seal.hasAttribute("tabindex")) seal.setAttribute("tabindex", "0");
+  seal.addEventListener("keydown", function (e) {
+    if ((e.key === "Enter" || e.key === " ") && !e.defaultPrevented) {
+      e.preventDefault();
+      seal.click();
+    }
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const seal = document.getElementById("openInvitation");
+  if (!seal) return;
+  seal.setAttribute("role", "button");
+  seal.setAttribute("aria-label", "Open wedding invitation");
+  if (!seal.hasAttribute("tabindex")) seal.setAttribute("tabindex", "0");
+  seal.addEventListener("keydown", function (event) {
+    if ((event.key === "Enter" || event.key === " ") && !event.defaultPrevented) {
+      event.preventDefault();
+      seal.click();
+    }
+  });
+});
+</script>
+
 </body>
 </html>

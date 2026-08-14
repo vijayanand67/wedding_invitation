@@ -287,18 +287,24 @@ $("#calendarBtn")?.addEventListener("click", () => {
       cover.remove();
       document.documentElement.classList.remove("wedding-cover-html-lock");
       document.body.classList.remove("wedding-cover-lock");
-      window.scrollTo(0, 0);
-    }, 600);
+
+      // Always open the FIRST invitation content page (#home),
+      // never a later section such as Events/Venue/RSVP.
+      const home = document.getElementById("home");
+      if (home) {
+        const header = document.querySelector(".topbar");
+        const headerHeight = header ? header.getBoundingClientRect().height : 0;
+        const top = Math.max(0, home.getBoundingClientRect().top + window.scrollY - headerHeight);
+        window.scrollTo({ top, left: 0, behavior: "instant" });
+        history.replaceState(null, "", "#home");
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      }
+    }, 620);
   }
 
-  // Whole seal is clickable.
+  // Only the V♥H seal is the opening control.
   seal.addEventListener("click", openCover);
-
-  // The entire envelope artwork is also a generous click/tap target.
-  art?.addEventListener("click", (event) => {
-    if (event.target !== seal) openCover(event);
-  });
-
   seal.addEventListener("pointerup", (event) => {
     if (event.pointerType === "touch") openCover(event);
   });

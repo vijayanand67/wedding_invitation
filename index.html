@@ -6661,6 +6661,49 @@ body.wedding-cover-lock{
 }
 </style>
 
+
+<style id="landing-small-type-final">
+/* FINAL LANDING MICRO REFINEMENT
+   Keep the supplied artwork unchanged, but give the landing artwork a slightly
+   smaller visual scale and make the bottom cue more compact/closer to the seal. */
+#welcome.reference-landing .reference-landing__art img{
+  transform:scale(.965)!important;
+  transform-origin:center center!important;
+}
+#welcome.reference-landing .reference-landing__art{
+  background:#250208!important;
+}
+#welcome .landing-seal-cue{
+  top:80.5%!important;
+  gap:2px!important;
+}
+#welcome .landing-seal-cue__arrow{
+  font-size:23px!important;
+  line-height:.78!important;
+}
+#welcome .landing-seal-cue__text{
+  font-size:15px!important;
+  line-height:.95!important;
+  letter-spacing:.03em!important;
+}
+@media(max-width:700px){
+  #welcome.reference-landing .reference-landing__art img{
+    transform:scale(.965)!important;
+  }
+  #welcome .landing-seal-cue{
+    top:79%!important;
+    gap:2px!important;
+  }
+  #welcome .landing-seal-cue__arrow{font-size:22px!important;}
+  #welcome .landing-seal-cue__text{font-size:14px!important;}
+}
+@media(max-width:390px){
+  #welcome .landing-seal-cue{top:78%!important;}
+  #welcome .landing-seal-cue__arrow{font-size:20px!important;}
+  #welcome .landing-seal-cue__text{font-size:13px!important;}
+}
+</style>
+
 </head>
 <body class="wedding-cover-lock">
 

@@ -6704,6 +6704,57 @@ body.wedding-cover-lock{
 }
 </style>
 
+
+<style id="landing-and-childhood-refinement">
+/* Landing page only: compact the HTML interaction cue without changing any
+   typography on the invitation pages below. The supplied landing artwork is
+   raster artwork, so its embedded typography remains visually unchanged. */
+#welcome .landing-seal-cue__text{
+  font-size:12px!important;
+  line-height:1!important;
+  letter-spacing:.045em!important;
+}
+#welcome .landing-seal-cue__arrow{
+  font-size:19px!important;
+  line-height:.72!important;
+}
+#welcome .landing-seal-cue{
+  gap:1px!important;
+}
+
+/* Childhood-photo transition heading */
+#journey .childhood-heading{
+  grid-column:1 / -1;
+  text-align:center;
+  margin:0 auto 2px;
+  padding:0 12px;
+  color:#9b6a2f;
+  font-family:"Snell Roundhand","Segoe Script","URW Chancery L",cursive;
+  font-size:clamp(20px,3vw,30px);
+  font-weight:600;
+  line-height:1.15;
+  letter-spacing:.02em;
+  text-shadow:0 1px 8px rgba(154,106,47,.18);
+}
+#journey .childhood-heading span{
+  display:inline-block;
+  padding:0 8px 5px;
+  border-bottom:1px solid rgba(154,106,47,.55);
+}
+@media(max-width:700px){
+  #welcome .landing-seal-cue__text{font-size:11px!important;}
+  #welcome .landing-seal-cue__arrow{font-size:18px!important;}
+  #journey .childhood-heading{
+    font-size:21px;
+    margin-bottom:1px;
+  }
+}
+@media(max-width:390px){
+  #welcome .landing-seal-cue__text{font-size:10px!important;}
+  #welcome .landing-seal-cue__arrow{font-size:17px!important;}
+}
+</style>
+
 </head>
 <body class="wedding-cover-lock">
 
@@ -6816,6 +6867,7 @@ body.wedding-cover-lock{
 <div class="section-heading reveal">
 <h2>Our Journey Begins</h2><p>With the blessings of our parents and elders, two families come together for a lifetime of togetherness.</p></div>
 <div class="journey-grid">
+<div class="childhood-heading reveal" aria-label="Avalum Nannum">👩‍❤️‍👨 <span>Avalum Nannum</span> 👩‍❤️‍👨</div>
 <div class="memory-photo reveal"><img src="assets/images/childhood.jpg" alt="Memory"></div>
 <div class="timeline reveal">
 <div><h3>Two Families</h3><p>A beautiful union blessed by our families.</p></div>

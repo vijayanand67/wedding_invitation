@@ -5451,8 +5451,46 @@ main .section > *{position:relative!important;z-index:1!important}
   }
 }
 </style>
+
+<style>
+body.envelope-lock{overflow:hidden!important}
+#envelope-opening{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:18px;background:radial-gradient(circle at 50% 45%,#5a1528 0,transparent 48%),linear-gradient(135deg,#17030a,#3b0a1b 50%,#160208);transition:opacity .8s ease,visibility .8s ease}
+#envelope-opening.is-opening{opacity:0;visibility:hidden;pointer-events:none}
+.envelope-stage{width:min(92vw,560px);height:min(86vh,760px);min-height:500px;display:grid;place-items:center;perspective:1400px}
+.envelope{position:relative;width:min(100%,520px);aspect-ratio:1.42/1;filter:drop-shadow(0 25px 35px #0008)}
+.env-paper{position:absolute;inset:0;overflow:hidden;border:1px solid #d7ad55aa;border-radius:5px;background:repeating-linear-gradient(115deg,#ffffff03 0 2px,transparent 2px 8px),linear-gradient(145deg,#470d1e,#240510 58%,#3b0a18)}
+.env-paper:before{content:"";position:absolute;inset:11px;border:1px solid #e8c16955}
+.env-title{position:absolute;left:6%;right:6%;top:13%;text-align:center;color:#f3d98b;font-family:Georgia,serif;text-shadow:0 2px 8px #0009}
+.env-title .eyebrow{display:block;font-size:clamp(9px,1.8vw,13px);letter-spacing:.25em;text-transform:uppercase;margin-bottom:10px}
+.env-title h1{margin:0;font-size:clamp(28px,7vw,52px);font-weight:500}
+.env-title .rule{width:120px;height:1px;margin:13px auto;background:linear-gradient(90deg,transparent,#d7ad55,transparent)}
+.env-flap{position:absolute;z-index:5;left:0;top:0;width:100%;height:70%;transform-origin:50% 0;clip-path:polygon(0 0,100% 0,50% 100%);background:linear-gradient(145deg,#4b1020,#300713);border-top:1px solid #e8c169aa;transition:transform 1.25s cubic-bezier(.2,.8,.2,1)}
+.env-front:before,.env-front:after{content:"";position:absolute;z-index:6;bottom:0;width:71%;height:73%;background:linear-gradient(145deg,#3d0a18,#250510);border-top:1px solid #e8c16977}
+.env-front:before{left:0;clip-path:polygon(0 0,100% 100%,0 100%)}.env-front:after{right:0;clip-path:polygon(100% 0,100% 100%,0 100%)}
+.env-date{position:absolute;z-index:9;left:50%;bottom:9%;transform:translateX(-50%);color:#f3d98b;font:500 clamp(11px,2.4vw,15px)/1.2 Georgia,serif;letter-spacing:.18em;white-space:nowrap}
+.seal-hit{position:absolute;z-index:20;left:50%;top:63%;width:clamp(145px,34vw,205px);aspect-ratio:1;transform:translate(-50%,-50%);border:0;border-radius:50%;padding:0;cursor:pointer;touch-action:manipulation;background:transparent}
+.seal-core{position:absolute;inset:16%;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#7c4a20,#251008 62%,#090304);border:2px solid #f3d98b;box-shadow:0 0 0 5px #d7ad5530,0 0 28px #d7ad5599,inset 0 2px 12px #fff3;transition:.3s}
+.seal-text{font:700 clamp(31px,8vw,49px) Georgia,serif;letter-spacing:.04em;color:#f5d88c;text-shadow:0 2px 10px #000b;white-space:nowrap}.seal-text .heart{color:#f0474f}
+.seal-orbit{position:absolute;inset:0;border-radius:50%;border:2px solid #f3d98bbb;box-shadow:0 0 16px #d7ad5577;animation:sealSpin 8s linear infinite}
+.seal-orbit:before,.seal-orbit:after{content:"✦";position:absolute;color:#f3d98b;font-size:18px;text-shadow:0 0 10px #ffd664}.seal-orbit:before{top:-9px;left:50%;transform:translateX(-50%)}.seal-orbit:after{bottom:-9px;left:50%;transform:translateX(-50%)}
+.seal-orbit.orbit-2{inset:7%;border-style:dashed;border-width:1px;animation:sealSpinReverse 12s linear infinite;opacity:.72}
+.seal-hit:hover .seal-core,.seal-hit:focus-visible .seal-core{transform:scale(1.05);box-shadow:0 0 0 5px #d7ad5533,0 0 42px #d7ad55dd,inset 0 2px 12px #fff3}
+@keyframes sealSpin{to{transform:rotate(360deg)}}@keyframes sealSpinReverse{to{transform:rotate(-360deg)}}
+#envelope-opening.is-opening .env-flap{transform:rotateX(-165deg);filter:brightness(1.15)}
+#envelope-opening.is-opening .seal-hit{animation:sealRelease .75s ease forwards}
+@keyframes sealRelease{0%{transform:translate(-50%,-50%) scale(1)}55%{transform:translate(-50%,-50%) scale(1.16)}100%{transform:translate(-50%,-50%) scale(.35);opacity:0}}
+@media(max-width:600px){.envelope-stage{width:94vw;height:min(84vh,650px);min-height:480px}.seal-hit{top:64%}.env-title{top:11%}}
+@media(prefers-reduced-motion:reduce){.seal-orbit,.seal-orbit.orbit-2{animation:none}.env-flap{transition:none!important}}
+</style>
 </head>
 <body class="wedding-cover-lock">
+<div id="envelope-opening" aria-label="Wedding invitation opening">
+<div class="envelope-stage"><div class="envelope">
+<div class="env-paper"><div class="env-title"><span class="eyebrow">You are cordially invited</span><h1>Wedding Invitation</h1><div class="rule"></div></div><div class="env-date">07 SEPTEMBER 2026</div></div>
+<div class="env-flap"></div><div class="env-front"></div>
+<button id="envelopeSeal" class="seal-hit" type="button" aria-label="Open wedding invitation"><span class="seal-orbit"></span><span class="seal-orbit orbit-2"></span><span class="seal-core"><span class="seal-text">V <span class="heart">♥</span> H</span></span></button>
+</div></div></div>
+
 
 
 

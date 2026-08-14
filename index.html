@@ -6755,6 +6755,19 @@ body.wedding-cover-lock{
 }
 </style>
 
+
+<style id="language-invitation-and-avalum-refinement">
+#invite .language-invitation-art{width:min(100%,760px);margin:18px auto 24px;text-align:center;}
+#invite .language-invitation-art__frame{position:relative;width:100%;overflow:hidden;border:1px solid rgba(184,139,55,.58);border-radius:18px;background:#f8edd4;box-shadow:0 18px 45px rgba(45,8,18,.16),inset 0 0 0 1px rgba(255,255,255,.45);}
+#invite .language-invitation-art__frame::after{content:"";position:absolute;inset:8px;border:1px solid rgba(184,139,55,.28);border-radius:12px;pointer-events:none;}
+#invite #languageInvitationImage{display:block;width:100%;height:auto;aspect-ratio:1047 / 1503;object-fit:contain;background:#f8edd4;}
+#invite .language-invitation-art__caption{margin:8px 0 0;color:#8f6127;font-family:"Cormorant Garamond","Playfair Display",serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;}
+#journey .childhood-heading{font-family:"Cormorant Garamond","Playfair Display",serif!important;font-size:clamp(24px,3.4vw,34px)!important;font-style:italic!important;font-weight:600!important;letter-spacing:.035em!important;color:#8d5b24!important;line-height:1.08!important;text-shadow:0 1px 7px rgba(141,91,36,.14)!important;margin:4px auto 8px!important;}
+#journey .childhood-heading span{padding:0 10px 6px!important;border-bottom:1px solid rgba(184,139,55,.6)!important;}
+@media(max-width:700px){#invite .language-invitation-art{margin:14px auto 20px;}#invite .language-invitation-art__frame{border-radius:14px;}#invite .language-invitation-art__frame::after{inset:6px;border-radius:9px;}#invite .language-invitation-art__caption{font-size:10px;letter-spacing:.11em;}#journey .childhood-heading{font-size:25px!important;margin:3px auto 6px!important;}}
+@media(max-width:390px){#journey .childhood-heading{font-size:23px!important;}}
+</style>
+
 </head>
 <body class="wedding-cover-lock">
 
@@ -6834,6 +6847,17 @@ body.wedding-cover-lock{
     <p class="eyebrow">WITH OUR FAMILIES</p>
     <h2>Wedding Invitation</h2>
     <p>Together with our families, we warmly invite you to celebrate our wedding.</p>
+  </div>
+
+  <div class="language-invitation-art reveal" aria-live="polite">
+    <div class="language-invitation-art__frame">
+      <img id="languageInvitationImage"
+           src="assets/images/wedding-invitation-english.jpeg"
+           alt="English wedding invitation"
+           width="1047" height="1503"
+           loading="lazy" decoding="async">
+    </div>
+    <p class="language-invitation-art__caption" id="languageInvitationCaption">English Wedding Invitation</p>
   </div>
 
   <div class="invitation-card reveal">

@@ -5985,61 +5985,219 @@ footer p{color:#f2dfe3!important}
 }
 </style>
 
+
+<style id="reference-landing-final">
+/* =========================================================
+   REFERENCE LANDING PAGE — authoritative final layer
+   Uses the supplied wedding-invitation artwork as the visual
+   reference and keeps the V♥H artwork stationary.
+   ========================================================= */
+html.wedding-cover-html-lock,
+html.wedding-cover-html-lock body{
+  overflow:hidden!important;
+  height:100%!important;
+}
+body.wedding-cover-lock{
+  overflow:hidden!important;
+}
+
+#welcome.reference-landing{
+  position:fixed!important;
+  inset:0!important;
+  width:100vw!important;
+  height:100dvh!important;
+  min-height:100svh!important;
+  overflow:hidden!important;
+  display:block!important;
+  z-index:999999!important;
+  background:#250208!important;
+  isolation:isolate!important;
+}
+
+#welcome.reference-landing .reference-landing__art{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  overflow:hidden!important;
+  background:#250208!important;
+}
+
+#welcome.reference-landing .reference-landing__art img{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  display:block!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  user-select:none!important;
+  pointer-events:none!important;
+  -webkit-user-drag:none!important;
+}
+
+/* Very subtle cinematic vignette; artwork remains the primary design. */
+#welcome.reference-landing::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:2!important;
+  pointer-events:none!important;
+  background:
+    radial-gradient(circle at 50% 58%, transparent 0 15%, rgba(28,3,9,.03) 35%, rgba(20,2,7,.18) 100%),
+    linear-gradient(180deg,rgba(15,1,5,.05),transparent 35%,rgba(15,1,5,.12))!important;
+}
+
+/* The whole seal area is the interaction target.
+   No duplicate V♥H text is rendered by HTML. */
+#welcome.reference-landing .reference-landing__seal{
+  position:absolute!important;
+  left:50%!important;
+  top:57.3%!important;
+  transform:translate(-50%,-50%)!important;
+  width:clamp(185px,43vw,310px)!important;
+  height:clamp(185px,43vw,310px)!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:50%!important;
+  background:transparent!important;
+  cursor:pointer!important;
+  pointer-events:auto!important;
+  touch-action:manipulation!important;
+  -webkit-tap-highlight-color:transparent!important;
+  z-index:10!important;
+  outline:none!important;
+  box-shadow:none!important;
+  color:transparent!important;
+  font-size:0!important;
+  transition:transform .25s ease,filter .25s ease!important;
+}
+
+/* A restrained premium highlight follows the reference seal,
+   without covering V♥H. */
+#welcome.reference-landing .reference-landing__halo{
+  position:absolute!important;
+  inset:4%!important;
+  border-radius:50%!important;
+  border:1px solid rgba(247,220,157,.28)!important;
+  box-shadow:0 0 20px rgba(232,184,82,.16)!important;
+  animation:referenceHalo 3.4s ease-in-out infinite!important;
+  pointer-events:none!important;
+}
+
+#welcome.reference-landing .reference-landing__orbit{
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  width:88%!important;
+  height:88%!important;
+  transform:translate(-50%,-50%) rotate(0deg)!important;
+  border-radius:50%!important;
+  border:1px solid rgba(247,220,157,.34)!important;
+  pointer-events:none!important;
+}
+#welcome.reference-landing .reference-landing__orbit--one{
+  border-left-color:transparent!important;
+  border-bottom-color:rgba(247,220,157,.68)!important;
+  animation:referenceOrbit 8s linear infinite!important;
+}
+#welcome.reference-landing .reference-landing__orbit--two{
+  width:96%!important;
+  height:96%!important;
+  border-top-color:rgba(247,220,157,.55)!important;
+  border-right-color:transparent!important;
+  opacity:.62!important;
+  animation:referenceOrbitReverse 12s linear infinite!important;
+}
+
+#welcome.reference-landing .reference-landing__seal:hover{
+  transform:translate(-50%,-50%) scale(1.035)!important;
+  filter:brightness(1.06)!important;
+}
+#welcome.reference-landing .reference-landing__seal:active{
+  transform:translate(-50%,-50%) scale(.965)!important;
+}
+#welcome.reference-landing .reference-landing__seal:focus-visible{
+  outline:2px solid rgba(247,220,157,.82)!important;
+  outline-offset:8px!important;
+}
+
+@keyframes referenceOrbit{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes referenceOrbitReverse{to{transform:translate(-50%,-50%) rotate(-360deg)}}
+@keyframes referenceHalo{
+  0%,100%{opacity:.58;box-shadow:0 0 18px rgba(232,184,82,.12)}
+  50%{opacity:1;box-shadow:0 0 30px rgba(232,184,82,.26)}
+}
+
+/* IMPORTANT: after the seal is clicked, JS scrolls to #home.
+   This guarantees the invitation opens on the first content page. */
+#welcome.reference-landing.is-closing{
+  animation:referenceCoverClose .62s cubic-bezier(.7,0,.2,1) forwards!important;
+}
+@keyframes referenceCoverClose{
+  0%{opacity:1;transform:scale(1)}
+  100%{opacity:0;transform:scale(1.015)}
+}
+
+@media (max-width:700px){
+  #welcome.reference-landing .reference-landing__seal{
+    top:57.4%!important;
+    width:clamp(170px,48vw,230px)!important;
+    height:clamp(170px,48vw,230px)!important;
+  }
+}
+@media (min-width:701px) and (max-width:1100px){
+  #welcome.reference-landing .reference-landing__seal{
+    top:57.3%!important;
+    width:245px!important;
+    height:245px!important;
+  }
+}
+@media (min-width:1101px){
+  #welcome.reference-landing .reference-landing__seal{
+    top:57.2%!important;
+    width:300px!important;
+    height:300px!important;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  #welcome.reference-landing .reference-landing__halo,
+  #welcome.reference-landing .reference-landing__orbit,
+  #welcome.reference-landing.is-closing{
+    animation:none!important;
+  }
+}
+</style>
+
 </head>
 <body class="wedding-cover-lock">
 
 
 
 
-<div id="welcome" class="wedding-cover attached-reference-cover" aria-label="Wedding invitation opening">
-  <div class="attached-reference-background" aria-hidden="true">
-    <div class="attached-branch attached-branch-top"></div>
-    <div class="attached-branch attached-branch-bottom"></div>
-    <span class="attached-spark s1"></span><span class="attached-spark s2"></span>
-    <span class="attached-spark s3"></span><span class="attached-spark s4"></span>
-    <span class="attached-spark s5"></span><span class="attached-spark s6"></span>
+<div id="welcome" class="wedding-cover reference-landing" aria-label="Wedding invitation opening">
+  <div class="reference-landing__art" aria-hidden="true">
+    <img src="assets/images/wedding-invitation-cover-clean.jpg"
+         alt=""
+         width="1022"
+         height="1536"
+         decoding="async"
+         fetchpriority="high">
   </div>
 
-  <div class="attached-cover-fold attached-fold-left" aria-hidden="true"></div>
-  <div class="attached-cover-fold attached-fold-right" aria-hidden="true"></div>
-
-  <main class="attached-cover-content">
-    <div class="attached-top-ornament" aria-hidden="true">
-      <span class="orn-line"></span><span class="orn-leaf">❧</span><span class="orn-line"></span>
-    </div>
-
-    <h1 class="attached-title">Wedding Invitation</h1>
-
-    <div class="attached-divider" aria-hidden="true">
-      <span></span><b>✦</b><span></span>
-    </div>
-
-    <p class="attached-subtitle">YOU ARE CORDIALLY INVITED</p>
-
-    <button id="openInvitation"
-            class="wedding-cover__seal vh-seal-open attached-vh-seal"
-            type="button"
-            aria-label="Open wedding invitation">
-      <span class="attached-seal-ring attached-seal-ring-a" aria-hidden="true"></span>
-      <span class="attached-seal-ring attached-seal-ring-b" aria-hidden="true"></span>
-      <span class="attached-seal-orbit" aria-hidden="true">
-        <i></i><i></i><i></i><i></i><i></i><i></i>
-      </span>
-
-      <span class="attached-seal-face" aria-hidden="true">
-        <span class="attached-mini-ornament top">❧</span>
-        <span class="attached-vh">
-          <span>V</span><strong>♥</strong><span>H</span>
-        </span>
-        <span class="attached-mini-ornament bottom">❧</span>
-      </span>
-      <span class="sr-only">Open wedding invitation</span>
-    </button>
-
-    <div class="attached-bottom-ornament" aria-hidden="true">
-      <span class="gold-line"></span><b>✦</b><span class="gold-line"></span>
-    </div>
-  </main>
+  <!-- Transparent interactive seal aligned with the V♥H seal in the reference artwork. -->
+  <button id="openInvitation"
+          class="reference-landing__seal"
+          type="button"
+          aria-label="Open wedding invitation">
+    <span class="reference-landing__halo" aria-hidden="true"></span>
+    <span class="reference-landing__orbit reference-landing__orbit--one" aria-hidden="true"></span>
+    <span class="reference-landing__orbit reference-landing__orbit--two" aria-hidden="true"></span>
+    <span class="sr-only">Open wedding invitation</span>
+  </button>
 </div>
 <header class="topbar">
 <a class="brand" href="#home"><span class="brand-name">Vijay</span> <span class="brand-heart" aria-hidden="true">♥</span> <span class="brand-name">Hemalatha</span></a>

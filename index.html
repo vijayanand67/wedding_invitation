@@ -6163,11 +6163,143 @@ body.wedding-cover-lock{
     height:300px!important;
   }
 }
+@media (min-aspect-ratio: 2/3){
+  #welcome.reference-landing #openInvitation.reference-landing__seal{
+    top:58.9% !important;
+  }
+}
+
 @media (prefers-reduced-motion:reduce){
   #welcome.reference-landing .reference-landing__halo,
   #welcome.reference-landing .reference-landing__orbit,
   #welcome.reference-landing.is-closing{
     animation:none!important;
+  }
+}
+</style>
+
+<style id="landing-reference-correction">
+/* FINAL LANDING CORRECTION — reference artwork, visible V♥H and fitted seal */
+#welcome.reference-landing .reference-landing__art img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  background:#250208 !important;
+}
+
+/* Override all earlier legacy seal rules (some used #welcome #openInvitation)
+   so they can no longer paint a dark circle over the artwork. */
+#welcome.reference-landing #openInvitation.reference-landing__seal{
+  position:absolute !important;
+  left:50% !important;
+  top:58.9% !important;
+  width:clamp(170px,26vw,280px) !important;
+  height:clamp(170px,26vw,280px) !important;
+  min-width:170px !important;
+  min-height:170px !important;
+  max-width:280px !important;
+  max-height:280px !important;
+  margin:0 !important;
+  padding:0 !important;
+  transform:translate(-50%,-50%) !important;
+  border:0 !important;
+  border-radius:50% !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  color:transparent !important;
+  font-size:0 !important;
+  pointer-events:auto !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  overflow:visible !important;
+  z-index:50 !important;
+  cursor:pointer !important;
+  touch-action:manipulation !important;
+  -webkit-tap-highlight-color:transparent !important;
+  animation:none !important;
+}
+
+/* Premium interaction cue stays outside the artwork's V♥H and never covers it. */
+#welcome.reference-landing #openInvitation.reference-landing__seal::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:7% !important;
+  border:1px solid rgba(247,220,157,.58) !important;
+  border-left-color:transparent !important;
+  border-radius:50% !important;
+  box-shadow:0 0 16px rgba(232,184,82,.18) !important;
+  pointer-events:none !important;
+  animation:landingSealOrbit 7s linear infinite !important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:-4% !important;
+  border:1px solid rgba(247,220,157,.22) !important;
+  border-top-color:rgba(247,220,157,.62) !important;
+  border-right-color:transparent !important;
+  border-radius:50% !important;
+  pointer-events:none !important;
+  animation:landingSealOrbitReverse 11s linear infinite !important;
+}
+
+/* Keep the actual V♥H artwork completely untouched and stationary. */
+#welcome.reference-landing #openInvitation.reference-landing__seal > *{
+  pointer-events:none !important;
+}
+
+#welcome.reference-landing #openInvitation.reference-landing__seal:hover{
+  transform:translate(-50%,-50%) scale(1.025) !important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal:active{
+  transform:translate(-50%,-50%) scale(.975) !important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal:focus-visible{
+  outline:2px solid rgba(247,220,157,.9) !important;
+  outline-offset:8px !important;
+}
+
+@keyframes landingSealOrbit{
+  from{transform:rotate(0deg)}to{transform:rotate(360deg)}
+}
+@keyframes landingSealOrbitReverse{
+  from{transform:rotate(360deg)}to{transform:rotate(0deg)}
+}
+
+@media (max-width:700px){
+  #welcome.reference-landing .reference-landing__art img{
+    object-fit:contain !important;
+  }
+  #welcome.reference-landing #openInvitation.reference-landing__seal{
+    top:57.5% !important;
+    width:clamp(155px,35vw,205px) !important;
+    height:clamp(155px,35vw,205px) !important;
+    min-width:155px !important;
+    min-height:155px !important;
+    max-width:205px !important;
+    max-height:205px !important;
+  }
+}
+
+@media (min-width:701px) and (max-width:1100px){
+  #welcome.reference-landing #openInvitation.reference-landing__seal{
+    top:58.9% !important;
+    width:230px !important;
+    height:230px !important;
+  }
+}
+
+@media (min-aspect-ratio: 2/3){
+  #welcome.reference-landing #openInvitation.reference-landing__seal{
+    top:58.9% !important;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  #welcome.reference-landing #openInvitation.reference-landing__seal::before,
+  #welcome.reference-landing #openInvitation.reference-landing__seal::after{
+    animation:none !important;
   }
 }
 </style>

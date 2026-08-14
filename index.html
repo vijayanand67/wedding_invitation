@@ -5452,45 +5452,541 @@ main .section > *{position:relative!important;z-index:1!important}
 }
 </style>
 
-<style>
-body.envelope-lock{overflow:hidden!important}
-#envelope-opening{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:18px;background:radial-gradient(circle at 50% 45%,#5a1528 0,transparent 48%),linear-gradient(135deg,#17030a,#3b0a1b 50%,#160208);transition:opacity .8s ease,visibility .8s ease}
-#envelope-opening.is-opening{opacity:0;visibility:hidden;pointer-events:none}
-.envelope-stage{width:min(92vw,560px);height:min(86vh,760px);min-height:500px;display:grid;place-items:center;perspective:1400px}
-.envelope{position:relative;width:min(100%,520px);aspect-ratio:1.42/1;filter:drop-shadow(0 25px 35px #0008)}
-.env-paper{position:absolute;inset:0;overflow:hidden;border:1px solid #d7ad55aa;border-radius:5px;background:repeating-linear-gradient(115deg,#ffffff03 0 2px,transparent 2px 8px),linear-gradient(145deg,#470d1e,#240510 58%,#3b0a18)}
-.env-paper:before{content:"";position:absolute;inset:11px;border:1px solid #e8c16955}
-.env-title{position:absolute;left:6%;right:6%;top:13%;text-align:center;color:#f3d98b;font-family:Georgia,serif;text-shadow:0 2px 8px #0009}
-.env-title .eyebrow{display:block;font-size:clamp(9px,1.8vw,13px);letter-spacing:.25em;text-transform:uppercase;margin-bottom:10px}
-.env-title h1{margin:0;font-size:clamp(28px,7vw,52px);font-weight:500}
-.env-title .rule{width:120px;height:1px;margin:13px auto;background:linear-gradient(90deg,transparent,#d7ad55,transparent)}
-.env-flap{position:absolute;z-index:5;left:0;top:0;width:100%;height:70%;transform-origin:50% 0;clip-path:polygon(0 0,100% 0,50% 100%);background:linear-gradient(145deg,#4b1020,#300713);border-top:1px solid #e8c169aa;transition:transform 1.25s cubic-bezier(.2,.8,.2,1)}
-.env-front:before,.env-front:after{content:"";position:absolute;z-index:6;bottom:0;width:71%;height:73%;background:linear-gradient(145deg,#3d0a18,#250510);border-top:1px solid #e8c16977}
-.env-front:before{left:0;clip-path:polygon(0 0,100% 100%,0 100%)}.env-front:after{right:0;clip-path:polygon(100% 0,100% 100%,0 100%)}
-.env-date{position:absolute;z-index:9;left:50%;bottom:9%;transform:translateX(-50%);color:#f3d98b;font:500 clamp(11px,2.4vw,15px)/1.2 Georgia,serif;letter-spacing:.18em;white-space:nowrap}
-.seal-hit{position:absolute;z-index:20;left:50%;top:63%;width:clamp(145px,34vw,205px);aspect-ratio:1;transform:translate(-50%,-50%);border:0;border-radius:50%;padding:0;cursor:pointer;touch-action:manipulation;background:transparent}
-.seal-core{position:absolute;inset:16%;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#7c4a20,#251008 62%,#090304);border:2px solid #f3d98b;box-shadow:0 0 0 5px #d7ad5530,0 0 28px #d7ad5599,inset 0 2px 12px #fff3;transition:.3s}
-.seal-text{font:700 clamp(31px,8vw,49px) Georgia,serif;letter-spacing:.04em;color:#f5d88c;text-shadow:0 2px 10px #000b;white-space:nowrap}.seal-text .heart{color:#f0474f}
-.seal-orbit{position:absolute;inset:0;border-radius:50%;border:2px solid #f3d98bbb;box-shadow:0 0 16px #d7ad5577;animation:sealSpin 8s linear infinite}
-.seal-orbit:before,.seal-orbit:after{content:"✦";position:absolute;color:#f3d98b;font-size:18px;text-shadow:0 0 10px #ffd664}.seal-orbit:before{top:-9px;left:50%;transform:translateX(-50%)}.seal-orbit:after{bottom:-9px;left:50%;transform:translateX(-50%)}
-.seal-orbit.orbit-2{inset:7%;border-style:dashed;border-width:1px;animation:sealSpinReverse 12s linear infinite;opacity:.72}
-.seal-hit:hover .seal-core,.seal-hit:focus-visible .seal-core{transform:scale(1.05);box-shadow:0 0 0 5px #d7ad5533,0 0 42px #d7ad55dd,inset 0 2px 12px #fff3}
-@keyframes sealSpin{to{transform:rotate(360deg)}}@keyframes sealSpinReverse{to{transform:rotate(-360deg)}}
-#envelope-opening.is-opening .env-flap{transform:rotateX(-165deg);filter:brightness(1.15)}
-#envelope-opening.is-opening .seal-hit{animation:sealRelease .75s ease forwards}
-@keyframes sealRelease{0%{transform:translate(-50%,-50%) scale(1)}55%{transform:translate(-50%,-50%) scale(1.16)}100%{transform:translate(-50%,-50%) scale(.35);opacity:0}}
-@media(max-width:600px){.envelope-stage{width:94vw;height:min(84vh,650px);min-height:480px}.seal-hit{top:64%}.env-title{top:11%}}
-@media(prefers-reduced-motion:reduce){.seal-orbit,.seal-orbit.orbit-2{animation:none}.env-flap{transition:none!important}}
+<style id="premium-creative-redesign">
+/* =========================================================
+   PREMIUM CREATIVE WEDDING DESIGN SYSTEM
+   Visual-only refinement: existing HTML/JS/functionality kept.
+   ========================================================= */
+:root{
+  --lux-burgundy:#3a0a1b;
+  --lux-wine:#64152b;
+  --lux-rose:#b95b6d;
+  --lux-gold:#c9a24e;
+  --lux-champagne:#f1d79a;
+  --lux-ivory:#fff8ef;
+  --lux-ink:#3d2b30;
+  --lux-line:rgba(201,162,78,.42);
+  --lux-shadow:0 24px 70px rgba(48,8,24,.14);
+}
+
+/* ---------- Global polish ---------- */
+html{scroll-padding-top:88px}
+body{
+  background:
+    radial-gradient(circle at 15% 5%,rgba(201,162,78,.07),transparent 25%),
+    linear-gradient(180deg,#fffaf3 0%,#fff5eb 100%);
+  color:var(--lux-ink);
+}
+::selection{background:#6a1932;color:#fff8ef}
+.topbar{
+  background:linear-gradient(90deg,rgba(48,6,21,.97),rgba(91,15,39,.95),rgba(48,6,21,.97))!important;
+  border-bottom:1px solid rgba(241,215,154,.20);
+  box-shadow:0 8px 28px rgba(32,3,14,.18);
+}
+.brand{
+  letter-spacing:.01em;
+  text-shadow:0 1px 8px rgba(0,0,0,.25);
+}
+.icon-btn{
+  border-color:rgba(241,215,154,.42)!important;
+  background:rgba(255,255,255,.035)!important;
+  transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease;
+}
+.icon-btn:hover{
+  transform:translateY(-2px);
+  background:rgba(241,215,154,.10)!important;
+  border-color:rgba(241,215,154,.78)!important;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+}
+
+/* ---------- First / landing page ---------- */
+#welcome.attached-reference-cover{
+  background:
+    radial-gradient(circle at 50% 55%,rgba(190,126,54,.13),transparent 25%),
+    linear-gradient(135deg,#18030a,#410b20 52%,#170209)!important;
+}
+#welcome.attached-reference-cover::before{
+  content:"";
+  position:absolute;
+  inset:10px;
+  z-index:30;
+  pointer-events:none;
+  border:1px solid rgba(241,215,154,.32);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.035),0 0 0 1px rgba(0,0,0,.18);
+}
+#welcome.attached-reference-cover::after{
+  content:"";
+  position:absolute;
+  inset:22px;
+  z-index:30;
+  pointer-events:none;
+  border:1px solid rgba(201,162,78,.16);
+  border-radius:18px;
+}
+#welcome .attached-cover-content{
+  filter:drop-shadow(0 20px 32px rgba(0,0,0,.25));
+}
+#welcome .attached-title{
+  color:#f4dda7!important;
+  text-shadow:0 3px 18px rgba(0,0,0,.55),0 0 22px rgba(201,162,78,.14);
+  letter-spacing:.005em!important;
+}
+#welcome .attached-subtitle{
+  color:#f1d79a!important;
+  letter-spacing:.30em!important;
+  text-shadow:0 2px 10px rgba(0,0,0,.48);
+}
+#welcome .attached-top-ornament,
+#welcome .attached-divider,
+#welcome .attached-bottom-ornament{
+  filter:drop-shadow(0 2px 7px rgba(201,162,78,.25));
+}
+#welcome .attached-cover-fold{
+  box-shadow:0 12px 35px rgba(0,0,0,.22);
+}
+#welcome #openInvitation.attached-vh-seal{
+  width:clamp(154px,29vw,210px)!important;
+  height:clamp(154px,29vw,210px)!important;
+  min-width:154px!important;
+  min-height:154px!important;
+  max-width:210px!important;
+  max-height:210px!important;
+  top:56.5%!important;
+  border:1px solid rgba(241,215,154,.82)!important;
+  border-radius:50%!important;
+  background:
+    radial-gradient(circle at 35% 28%,rgba(255,223,164,.20),transparent 18%),
+    radial-gradient(circle at 50% 50%,#5d2818 0,#250a10 58%,#100207 100%)!important;
+  box-shadow:
+    0 0 0 6px rgba(201,162,78,.10),
+    0 0 0 12px rgba(201,162,78,.08),
+    0 0 30px rgba(224,178,82,.42),
+    0 18px 45px rgba(0,0,0,.40),
+    inset 0 2px 12px rgba(255,255,255,.12)!important;
+  animation:luxSealFloat 4s ease-in-out infinite!important;
+}
+#welcome #openInvitation.attached-vh-seal::before{
+  content:"";
+  position:absolute;
+  inset:-12px;
+  border-radius:50%;
+  border:1px solid rgba(241,215,154,.72);
+  border-left-color:transparent;
+  border-bottom-color:rgba(241,215,154,.22);
+  animation:luxSealSpin 8s linear infinite;
+  pointer-events:none;
+}
+#welcome #openInvitation.attached-vh-seal::after{
+  content:"";
+  position:absolute;
+  inset:-27px;
+  border-radius:50%;
+  border:1px dashed rgba(241,215,154,.34);
+  border-top-color:rgba(241,215,154,.78);
+  animation:luxSealSpinReverse 13s linear infinite;
+  pointer-events:none;
+}
+#welcome #openInvitation .attached-seal-face{
+  position:relative!important;
+  z-index:5!important;
+  width:78%!important;
+  height:78%!important;
+  border-radius:50%!important;
+  display:grid!important;
+  place-items:center!important;
+  background:
+    radial-gradient(circle at 45% 35%,rgba(255,221,164,.12),transparent 28%),
+    linear-gradient(145deg,rgba(100,48,24,.70),rgba(24,5,10,.94))!important;
+  border:1px solid rgba(241,215,154,.55)!important;
+  box-shadow:inset 0 0 0 5px rgba(201,162,78,.07),inset 0 8px 22px rgba(0,0,0,.28)!important;
+}
+#welcome #openInvitation .attached-vh{
+  position:relative!important;
+  z-index:8!important;
+  color:#f5dda6!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-weight:600!important;
+  font-size:clamp(2.5rem,7vw,4rem)!important;
+  letter-spacing:.06em!important;
+  text-shadow:0 2px 10px rgba(0,0,0,.65),0 0 15px rgba(241,215,154,.16);
+}
+#welcome #openInvitation .attached-vh strong{
+  color:#ef4d58!important;
+  font-family:Georgia,serif!important;
+  font-size:.82em!important;
+  text-shadow:0 0 12px rgba(239,77,88,.45);
+  animation:luxHeart 1.9s ease-in-out infinite;
+}
+#welcome #openInvitation .attached-mini-ornament{
+  color:rgba(241,215,154,.70)!important;
+}
+#welcome #openInvitation .attached-seal-orbit{
+  position:absolute!important;
+  inset:-4px!important;
+  z-index:6!important;
+  pointer-events:none!important;
+}
+#welcome #openInvitation .attached-seal-orbit i{
+  background:#f1d79a!important;
+  box-shadow:0 0 9px #f1d79a,0 0 18px rgba(201,162,78,.65)!important;
+}
+#welcome #openInvitation.attached-vh-seal:hover{
+  animation-play-state:paused!important;
+  transform:translate(-50%,-50%) scale(1.045)!important;
+}
+#welcome #openInvitation.attached-vh-seal:active{
+  transform:translate(-50%,-50%) scale(.965)!important;
+}
+@keyframes luxSealSpin{to{transform:rotate(360deg)}}
+@keyframes luxSealSpinReverse{to{transform:rotate(-360deg)}}
+@keyframes luxSealFloat{0%,100%{filter:drop-shadow(0 0 0 rgba(241,215,154,0));}50%{filter:drop-shadow(0 0 12px rgba(241,215,154,.18));}}
+@keyframes luxHeart{0%,100%{transform:scale(.94)}50%{transform:scale(1.10)}}
+
+/* ---------- Hero page ---------- */
+#home.hero{
+  background:#3b0b1c;
+}
+#home.hero .hero-image{
+  filter:saturate(.88) contrast(1.03);
+}
+#home.hero .hero-overlay{
+  background:
+    linear-gradient(180deg,rgba(34,4,15,.58),rgba(56,10,28,.28) 45%,rgba(24,3,12,.78)),
+    radial-gradient(circle at 50% 42%,transparent 20%,rgba(35,4,16,.28) 80%);
+}
+#home.hero::before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  z-index:2;
+  pointer-events:none;
+  border:1px solid rgba(241,215,154,.20);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);
+}
+#home .hero-content{
+  padding-top:35px!important;
+  text-shadow:0 2px 10px rgba(40,4,16,.35);
+}
+#home .eyebrow{
+  color:#f1d79a!important;
+  letter-spacing:.30em!important;
+}
+#home .premium-couple-name .premium-name{
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-weight:600!important;
+  color:#fff5e8!important;
+  text-shadow:0 3px 18px rgba(30,3,13,.60)!important;
+}
+#home .premium-couple-name .premium-heart{
+  color:#e94c57!important;
+  text-shadow:0 0 14px rgba(233,76,87,.35)!important;
+}
+#home .hero-quote{
+  color:#fff7ee!important;
+}
+#home .hero-sub{
+  color:rgba(255,247,238,.92)!important;
+}
+#home .date-script{
+  color:#f1d79a!important;
+  text-shadow:0 2px 12px rgba(0,0,0,.45)!important;
+}
+
+/* Countdown: one premium unified frame */
+#home .hero-countdown{
+  border:1px solid rgba(201,162,78,.55)!important;
+  border-radius:16px!important;
+  background:rgba(48,7,20,.30)!important;
+  box-shadow:0 10px 28px rgba(28,3,12,.20),inset 0 1px 0 rgba(255,255,255,.10)!important;
+  backdrop-filter:blur(5px)!important;
+  -webkit-backdrop-filter:blur(5px)!important;
+}
+#home .hero-countdown .unit b{color:#f5dda6!important}
+#home .hero-countdown .unit small{color:#f7eee4!important;opacity:.88}
+
+/* Buttons */
+.gold-btn{
+  background:linear-gradient(135deg,#e4c15d,#c99b3d)!important;
+  border-color:#f0d27f!important;
+  box-shadow:0 9px 22px rgba(82,37,13,.18),inset 0 1px 0 rgba(255,255,255,.35)!important;
+}
+.gold-btn:hover{box-shadow:0 13px 28px rgba(82,37,13,.24)!important}
+.outline-btn{
+  border-color:rgba(241,215,154,.72)!important;
+  background:rgba(35,4,15,.25)!important;
+  color:#fff7ee!important;
+}
+
+/* ---------- Shared section treatment ---------- */
+.section{
+  position:relative;
+  overflow:hidden;
+}
+.section::before{
+  content:"";
+  position:absolute;
+  top:28px;
+  left:50%;
+  width:110px;
+  height:1px;
+  transform:translateX(-50%);
+  background:linear-gradient(90deg,transparent,#c9a24e,transparent);
+  opacity:.65;
+}
+.section-heading h2{
+  color:#5b172d!important;
+  letter-spacing:-.015em;
+}
+.section-heading .eyebrow{
+  color:#a27a35!important;
+}
+.section-heading p:last-child{
+  color:#735e64!important;
+}
+.invitation-card,
+.celebration-card,
+.event-card,
+.map-card,
+.rsvp-form{
+  position:relative;
+}
+.invitation-card{
+  border:1px solid rgba(201,162,78,.52)!important;
+  border-radius:28px!important;
+  background:
+    radial-gradient(circle at 50% 0,rgba(201,162,78,.10),transparent 35%),
+    linear-gradient(145deg,#fffdf8,#fbefe1)!important;
+  box-shadow:0 28px 80px rgba(65,16,34,.13)!important;
+}
+.invitation-card::before{
+  content:"";
+  position:absolute;
+  inset:10px;
+  border:1px solid rgba(201,162,78,.18);
+  border-radius:20px;
+  pointer-events:none;
+}
+.family-unified{
+  position:relative;
+  z-index:1;
+  padding:28px 0!important;
+}
+.family-column{
+  padding:14px 20px!important;
+}
+.family-label{
+  color:#a27a35!important;
+  letter-spacing:.20em!important;
+}
+.family-names{
+  color:#5b3540!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:1.35rem!important;
+}
+.family-center-rule{
+  color:#c9a24e!important;
+}
+
+/* ---------- Journey ---------- */
+#journey{
+  background:
+    radial-gradient(circle at 90% 15%,rgba(201,162,78,.08),transparent 24%),
+    #fffaf4;
+}
+#journey .memory-photo{
+  border:1px solid rgba(201,162,78,.38);
+  box-shadow:0 25px 70px rgba(62,13,30,.18)!important;
+}
+#journey .timeline{
+  border-left:1px solid rgba(201,162,78,.52)!important;
+}
+#journey .timeline>div{
+  padding:0 0 26px!important;
+  margin-bottom:26px!important;
+  border-bottom:1px solid rgba(201,162,78,.18)!important;
+}
+#journey .timeline>div:last-child{border-bottom:0!important}
+#journey .timeline h3{
+  color:#64152b!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:1.7rem!important;
+}
+#journey .timeline p{color:#735e64!important}
+
+/* ---------- Save the Date / events ---------- */
+#events{
+  background:linear-gradient(180deg,#fff8ef,#f9eee2);
+}
+#events .celebration-card{
+  border:1px solid rgba(201,162,78,.48)!important;
+  border-radius:26px!important;
+  background:
+    radial-gradient(circle at 50% 0,rgba(201,162,78,.10),transparent 40%),
+    rgba(255,253,248,.94)!important;
+  box-shadow:0 24px 65px rgba(62,13,30,.11)!important;
+}
+#events .celebration-event h3{
+  color:#64152b!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:2rem!important;
+}
+#events .event-icon{color:#c9a24e!important}
+#events .celebration-divider{color:#c9a24e!important}
+#events .celebration-location{
+  border-top:1px solid rgba(201,162,78,.22)!important;
+  border-bottom:1px solid rgba(201,162,78,.22)!important;
+  padding:22px 10px!important;
+}
+#events .location-label{
+  color:#a27a35!important;
+  letter-spacing:.18em!important;
+}
+#events .celebration-location h4{
+  color:#5b3540!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:1.35rem!important;
+}
+
+/* ---------- Venue ---------- */
+#venue.venue{
+  background:
+    radial-gradient(circle at 10% 20%,rgba(201,162,78,.09),transparent 30%),
+    linear-gradient(135deg,#f8ecdf,#fffaf3)!important;
+}
+#venue .venue-copy h2{
+  color:#64152b!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+}
+#venue .venue-copy h3{
+  color:#6b3d4b!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:1.5rem!important;
+}
+#venue .map-card{
+  border:1px solid rgba(201,162,78,.45)!important;
+  border-radius:22px!important;
+  padding:7px!important;
+  background:#fff!important;
+  box-shadow:0 24px 60px rgba(62,13,30,.14)!important;
+}
+
+/* ---------- Gallery ---------- */
+#gallery{
+  background:#fffaf4;
+}
+#gallery .gallery-item,
+#gallery .gallery-placeholder{
+  border:1px solid rgba(201,162,78,.28)!important;
+  border-radius:18px!important;
+  box-shadow:0 14px 35px rgba(62,13,30,.09)!important;
+}
+#gallery .gallery-item{background:#f7e9d9}
+#gallery .gallery-placeholder{
+  background:linear-gradient(145deg,#fffaf3,#f4e4d2)!important;
+  color:#735e64!important;
+}
+#gallery .gallery-placeholder span{color:#c9a24e!important}
+
+/* ---------- RSVP ---------- */
+#rsvp.rsvp{
+  background:
+    radial-gradient(circle at 15% 10%,rgba(201,162,78,.14),transparent 25%),
+    linear-gradient(145deg,#4a0d23,#65152f 55%,#3b081a)!important;
+}
+#rsvp .section-heading .eyebrow{color:#e6c97f!important}
+#rsvp .section-heading h2{color:#fff7ee!important}
+#rsvp .section-heading p:last-child{color:#f2dfe3!important}
+#rsvp .rsvp-form{
+  padding:30px;
+  border:1px solid rgba(241,215,154,.28);
+  border-radius:24px;
+  background:rgba(25,3,12,.22);
+  box-shadow:0 24px 65px rgba(20,2,9,.25),inset 0 1px 0 rgba(255,255,255,.06);
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
+}
+#rsvp .rsvp-form label{
+  color:#fff2e9!important;
+  font-weight:500;
+}
+#rsvp .rsvp-form input,
+#rsvp .rsvp-form textarea{
+  border:1px solid rgba(241,215,154,.36)!important;
+  border-radius:12px!important;
+  background:rgba(255,255,255,.07)!important;
+  color:#fffaf3!important;
+  box-shadow:inset 0 1px 8px rgba(0,0,0,.12);
+  transition:border-color .22s ease,box-shadow .22s ease,background .22s ease;
+}
+#rsvp .rsvp-form input:focus,
+#rsvp .rsvp-form textarea:focus{
+  outline:none!important;
+  border-color:#e7c76f!important;
+  background:rgba(255,255,255,.10)!important;
+  box-shadow:0 0 0 3px rgba(231,199,111,.12),inset 0 1px 8px rgba(0,0,0,.10)!important;
+}
+#rsvp .rsvp-form input::placeholder,
+#rsvp .rsvp-form textarea::placeholder{color:rgba(255,245,237,.60)}
+#rsvp .gold-btn{min-width:180px}
+
+/* ---------- Footer ---------- */
+footer{
+  background:linear-gradient(135deg,#250510,#430a20)!important;
+  border-top:1px solid rgba(201,162,78,.22);
+}
+footer p{color:#f2dfe3!important}
+
+/* ---------- Mobile / tablet refinement ---------- */
+@media(max-width:700px){
+  #welcome.attached-reference-cover::before{inset:7px}
+  #welcome.attached-reference-cover::after{inset:15px;border-radius:12px}
+  #welcome #openInvitation.attached-vh-seal{
+    width:clamp(138px,42vw,176px)!important;
+    height:clamp(138px,42vw,176px)!important;
+    min-width:138px!important;
+    min-height:138px!important;
+    max-width:176px!important;
+    max-height:176px!important;
+    top:57%!important;
+  }
+  #welcome #openInvitation .attached-vh{font-size:clamp(2.25rem,11vw,3.1rem)!important}
+  #home.hero{min-height:720px!important}
+  #home.hero::before{inset:10px}
+  #home .hero-content{padding-top:45px!important}
+  #home .premium-couple-name .premium-name{
+    font-size:clamp(2rem,10vw,3rem)!important;
+  }
+  #home .hero-quote{font-size:1.15rem!important;max-width:90%}
+  #home .hero-sub{font-size:.94rem!important;max-width:90%}
+  #home .hero-actions .gold-btn,#home .hero-actions .outline-btn{
+    min-width:145px!important;
+    padding:12px 17px!important;
+  }
+  .section{padding:78px 5vw!important}
+  .invitation-card{padding:48px 6%!important}
+  .family-unified{display:grid!important;grid-template-columns:1fr!important;gap:4px!important}
+  .family-center-rule{display:none!important}
+  #events .celebration-card{padding:30px 18px!important}
+  #rsvp .rsvp-form{padding:22px 18px!important}
+}
+@media(min-width:701px) and (max-width:1100px){
+  #welcome #openInvitation.attached-vh-seal{
+    width:180px!important;height:180px!important;min-width:180px!important;min-height:180px!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  #welcome #openInvitation.attached-vh-seal,
+  #welcome #openInvitation.attached-vh-seal::before,
+  #welcome #openInvitation.attached-vh-seal::after,
+  #welcome #openInvitation .attached-vh strong{
+    animation:none!important;
+  }
+  *,*::before,*::after{scroll-behavior:auto!important}
+}
 </style>
+
 </head>
 <body class="wedding-cover-lock">
-<div id="envelope-opening" aria-label="Wedding invitation opening">
-<div class="envelope-stage"><div class="envelope">
-<div class="env-paper"><div class="env-title"><span class="eyebrow">You are cordially invited</span><h1>Wedding Invitation</h1><div class="rule"></div></div><div class="env-date">07 SEPTEMBER 2026</div></div>
-<div class="env-flap"></div><div class="env-front"></div>
-<button id="envelopeSeal" class="seal-hit" type="button" aria-label="Open wedding invitation"><span class="seal-orbit"></span><span class="seal-orbit orbit-2"></span><span class="seal-core"><span class="seal-text">V <span class="heart">♥</span> H</span></span></button>
-</div></div></div>
-
 
 
 

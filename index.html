@@ -6163,12 +6163,6 @@ body.wedding-cover-lock{
     height:300px!important;
   }
 }
-@media (min-aspect-ratio: 2/3){
-  #welcome.reference-landing #openInvitation.reference-landing__seal{
-    top:58.9% !important;
-  }
-}
-
 @media (prefers-reduced-motion:reduce){
   #welcome.reference-landing .reference-landing__halo,
   #welcome.reference-landing .reference-landing__orbit,
@@ -6272,7 +6266,7 @@ body.wedding-cover-lock{
     object-fit:contain !important;
   }
   #welcome.reference-landing #openInvitation.reference-landing__seal{
-    top:57.5% !important;
+    top:58.9% !important;
     width:clamp(155px,35vw,205px) !important;
     height:clamp(155px,35vw,205px) !important;
     min-width:155px !important;
@@ -6290,15 +6284,233 @@ body.wedding-cover-lock{
   }
 }
 
-@media (min-aspect-ratio: 2/3){
+@media (prefers-reduced-motion:reduce){
+  #welcome.reference-landing #openInvitation.reference-landing__seal::before,
+  #welcome.reference-landing #openInvitation.reference-landing__seal::after{
+    animation:none !important;
+  }
+}
+</style>
+
+
+<style id="landing-fullpage-final">
+/* FINAL LANDING PAGE REFINEMENT — full-bleed reference artwork */
+html.wedding-cover-html-lock,
+html.wedding-cover-html-lock body,
+body.wedding-cover-lock{
+  width:100% !important;
+  height:100% !important;
+  min-height:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  background:#250208 !important;
+}
+
+#welcome.reference-landing{
+  position:fixed !important;
+  inset:0 !important;
+  width:100vw !important;
+  height:100vh !important;
+  height:100svh !important;
+  height:100dvh !important;
+  min-width:100% !important;
+  min-height:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  outline:0 !important;
+  overflow:hidden !important;
+  background:#250208 !important;
+  box-sizing:border-box !important;
+}
+
+#welcome.reference-landing .reference-landing__art,
+#welcome.reference-landing .reference-landing__art img{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-sizing:border-box !important;
+}
+
+#welcome.reference-landing .reference-landing__art{
+  overflow:hidden !important;
+  background:#250208 !important;
+}
+
+/* Fill the entire viewport while preserving the artwork's aspect ratio. */
+#welcome.reference-landing .reference-landing__art img{
+  object-fit:cover !important;
+  object-position:center center !important;
+  max-width:none !important;
+  max-height:none !important;
+  display:block !important;
+  user-select:none !important;
+  pointer-events:none !important;
+  -webkit-user-drag:none !important;
+}
+
+/* Remove any inherited frame/panel effect around the landing artwork. */
+#welcome.reference-landing::before,
+#welcome.reference-landing::after{
+  border:0 !important;
+  border-radius:0 !important;
+}
+#welcome.reference-landing::before{
+  content:none !important;
+  display:none !important;
+}
+#welcome.reference-landing::after{
+  content:"" !important;
+  display:block !important;
+  position:absolute !important;
+  inset:0 !important;
+  z-index:2 !important;
+  pointer-events:none !important;
+  background:radial-gradient(circle at 50% 57%, transparent 0 38%, rgba(20,2,7,.06) 72%, rgba(10,1,4,.18) 100%) !important;
+}
+
+/* Large, comfortable transparent hit target aligned to the artwork's V♥H medallion. */
+#welcome.reference-landing #openInvitation.reference-landing__seal{
+  position:absolute !important;
+  left:50% !important;
+  top:57.3% !important;
+  width:clamp(172px,43vw,300px) !important;
+  height:clamp(172px,43vw,300px) !important;
+  min-width:172px !important;
+  min-height:172px !important;
+  max-width:300px !important;
+  max-height:300px !important;
+  margin:0 !important;
+  padding:0 !important;
+  transform:translate(-50%,-50%) !important;
+  border:0 !important;
+  border-radius:50% !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  color:transparent !important;
+  font-size:0 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  overflow:visible !important;
+  pointer-events:auto !important;
+  cursor:pointer !important;
+  touch-action:manipulation !important;
+  -webkit-tap-highlight-color:transparent !important;
+  z-index:20 !important;
+  outline:none !important;
+  transition:transform .22s ease,filter .22s ease !important;
+}
+
+/* Motion is outside the artwork's V♥H so the monogram remains untouched. */
+#welcome.reference-landing #openInvitation.reference-landing__seal::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:-3% !important;
+  border:1px solid rgba(247,220,157,.58) !important;
+  border-left-color:transparent !important;
+  border-bottom-color:rgba(247,220,157,.78) !important;
+  border-radius:50% !important;
+  box-shadow:0 0 18px rgba(232,184,82,.18) !important;
+  pointer-events:none !important;
+  animation:landingGoldOrbit 7.5s linear infinite !important;
+}
+
+#welcome.reference-landing #openInvitation.reference-landing__seal::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:-12% !important;
+  border:1px solid rgba(247,220,157,.24) !important;
+  border-top-color:rgba(247,220,157,.74) !important;
+  border-right-color:transparent !important;
+  border-radius:50% !important;
+  box-shadow:0 0 24px rgba(232,184,82,.13) !important;
+  pointer-events:none !important;
+  animation:landingGoldOrbitReverse 11s linear infinite !important;
+}
+
+/* Two tiny orbiting lights add a wedding-jewellery feel without obscuring V♥H. */
+#welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__halo{
+  position:absolute !important;
+  inset:0 !important;
+  border:0 !important;
+  box-shadow:none !important;
+  border-radius:50% !important;
+  pointer-events:none !important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__halo::before,
+#welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__halo::after{
+  content:"" !important;
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  width:6px !important;
+  height:6px !important;
+  margin:-3px !important;
+  border-radius:50% !important;
+  background:#f7dfaa !important;
+  box-shadow:0 0 9px rgba(247,223,170,.95),0 0 18px rgba(232,189,103,.65) !important;
+  pointer-events:none !important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__halo::before{
+  transform:rotate(0deg) translateY(calc(clamp(86px,21.5vw,150px) * -1));
+  animation:landingDotOrbit 4.8s linear infinite !important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__halo::after{
+  transform:rotate(180deg) translateY(calc(clamp(86px,21.5vw,150px) * -1));
+  animation:landingDotOrbitReverse 6.4s linear infinite !important;
+}
+
+#welcome.reference-landing #openInvitation.reference-landing__seal:hover{
+  transform:translate(-50%,-50%) scale(1.035) !important;
+  filter:brightness(1.06) !important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal:active{
+  transform:translate(-50%,-50%) scale(.965) !important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal:focus-visible{
+  outline:2px solid rgba(247,220,157,.9) !important;
+  outline-offset:8px !important;
+}
+
+@keyframes landingGoldOrbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes landingGoldOrbitReverse{from{transform:rotate(360deg)}to{transform:rotate(0deg)}}
+@keyframes landingDotOrbit{from{transform:rotate(0deg) translateY(calc(clamp(86px,21.5vw,150px) * -1))}to{transform:rotate(360deg) translateY(calc(clamp(86px,21.5vw,150px) * -1))}}
+@keyframes landingDotOrbitReverse{from{transform:rotate(360deg) translateY(calc(clamp(86px,21.5vw,150px) * -1))}to{transform:rotate(0deg) translateY(calc(clamp(86px,21.5vw,150px) * -1))}}
+
+@media (max-width:700px){
+  #welcome.reference-landing .reference-landing__art img{
+    object-position:center center !important;
+  }
   #welcome.reference-landing #openInvitation.reference-landing__seal{
-    top:58.9% !important;
+    top:57.3% !important;
+    width:clamp(170px,44vw,205px) !important;
+    height:clamp(170px,44vw,205px) !important;
+    min-width:170px !important;
+    min-height:170px !important;
+    max-width:205px !important;
+    max-height:205px !important;
+  }
+}
+
+@media (min-width:701px){
+  /* Keep the title and V♥H medallion visible on landscape/desktop while filling the screen. */
+  #welcome.reference-landing .reference-landing__art img{
+    object-position:center 36% !important;
   }
 }
 
 @media (prefers-reduced-motion:reduce){
   #welcome.reference-landing #openInvitation.reference-landing__seal::before,
-  #welcome.reference-landing #openInvitation.reference-landing__seal::after{
+  #welcome.reference-landing #openInvitation.reference-landing__seal::after,
+  #welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__halo::before,
+  #welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__halo::after{
     animation:none !important;
   }
 }

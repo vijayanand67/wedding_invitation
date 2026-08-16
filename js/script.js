@@ -74,7 +74,7 @@ const musicBtn = $("#musicToggle");
 const musicPanel = $("#musicPanel");
 const musicClose = $("#musicClose");
 const neelaLink = $("#neelaVaanamLink");
-const LOCAL_SONG = "assets/music/neela-vanam.mp3";
+const LOCAL_SONG = "assets/music/HemalathaLove.mp3";
 const SONG_START = 15;
 
 function showMusicPanel() {
@@ -102,16 +102,28 @@ musicBtn?.addEventListener("click", async () => {
       return;
     }
 
-    // The MP3 is intentionally user-supplied/licensed. If present, start at 0:15.
-    if (localSongAvailable()) {
-      if (music.currentTime < SONG_START || music.currentTime >= music.duration) {
-        music.currentTime = Math.min(SONG_START, Math.max(0, music.duration - 0.1));
-      }
-      await music.play();
-      musicBtn.textContent = "❚❚";
-    } else {
-      showMusicPanel();
+    // Load the local MP3 before playing. The click itself provides the browser's
+    // user-gesture permission needed for reliable playback on mobile browsers.
+    if (music.readyState === 0) music.load();
+    if (!Number.isFinite(music.duration)) {
+      await new Promise((resolve, reject) => {
+        const onReady = () => { cleanup(); resolve(); };
+        const onError = () => { cleanup(); reject(new Error("Unable to load HemalathaLove.mp3")); };
+        const cleanup = () => {
+          music.removeEventListener("loadedmetadata", onReady);
+          music.removeEventListener("canplay", onReady);
+          music.removeEventListener("error", onError);
+        };
+        music.addEventListener("loadedmetadata", onReady, { once: true });
+        music.addEventListener("canplay", onReady, { once: true });
+        music.addEventListener("error", onError, { once: true });
+      });
     }
+    if (music.currentTime < SONG_START || music.currentTime >= music.duration) {
+      music.currentTime = Math.min(SONG_START, Math.max(0, music.duration - 0.1));
+    }
+    await music.play();
+    musicBtn.textContent = "❚❚";
   } catch (error) {
     console.error("Music playback error:", error);
     showMusicPanel();

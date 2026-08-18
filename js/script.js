@@ -276,6 +276,7 @@ $("#calendarBtn")?.addEventListener("click", () => {
 /* Premium envelope opening */
 (function initWeddingCover() {
   const cover = document.getElementById("welcome");
+  const art = document.querySelector(".wedding-cover__art");
   const seal = document.getElementById("openInvitation");
   if (!cover || !seal) return;
 
@@ -292,35 +293,29 @@ $("#calendarBtn")?.addEventListener("click", () => {
     if (opened) return;
     opened = true;
 
-    // Animate the envelope flap and invitation insert before leaving the cover.
-    cover.classList.add("opening");
+    cover.classList.add("is-closing");
 
     window.setTimeout(() => {
-      cover.classList.add("is-closing");
+      cover.remove();
+      document.documentElement.classList.remove("wedding-cover-html-lock");
+      document.body.classList.remove("wedding-cover-lock");
 
-      window.setTimeout(() => {
-        cover.remove();
-        document.documentElement.classList.remove("wedding-cover-html-lock");
-        document.body.classList.remove("wedding-cover-lock");
-
-        // The envelope opens directly into the SECOND page / Wedding Invitation section.
-        const invite = document.getElementById("invite");
-        if (invite) {
-          const header = document.querySelector(".topbar");
-          const headerHeight = header ? header.getBoundingClientRect().height : 0;
-          const top = Math.max(
-            0,
-            invite.getBoundingClientRect().top + window.scrollY - headerHeight
-          );
-          window.scrollTo({ top, left: 0, behavior: "instant" });
-          history.replaceState(null, "", "#invite");
-        } else {
-          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-        }
-      }, 420);
-    }, 920);
+      // Always open the FIRST invitation content page (#home),
+      // never a later section such as Events/Venue/RSVP.
+      const home = document.getElementById("home");
+      if (home) {
+        const header = document.querySelector(".topbar");
+        const headerHeight = header ? header.getBoundingClientRect().height : 0;
+        const top = Math.max(0, home.getBoundingClientRect().top + window.scrollY - headerHeight);
+        window.scrollTo({ top, left: 0, behavior: "instant" });
+        history.replaceState(null, "", "#home");
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      }
+    }, 620);
   }
 
+  // Only the V♥H seal is the opening control.
   seal.addEventListener("click", openCover);
   seal.addEventListener("pointerup", (event) => {
     if (event.pointerType === "touch") openCover(event);

@@ -6768,37 +6768,100 @@ body.wedding-cover-lock{
 @media(max-width:390px){#journey .childhood-heading{font-size:23px!important;}}
 </style>
 
+
+<style id="envelope-landing-authoritative">
+/* ============================================================
+   LUXURY ENVELOPE LANDING — inspired by the supplied reference
+   ============================================================ */
+html.wedding-cover-html-lock,html.wedding-cover-html-lock body,
+body.wedding-cover-lock{overflow:hidden!important;height:100%!important;margin:0!important}
+#welcome.envelope-landing{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;min-height:100svh!important;overflow:hidden!important;z-index:999999!important;background:#ead7cb!important;isolation:isolate!important;display:grid!important;place-items:center!important;font-family:"Cormorant Garamond","Playfair Display",serif!important}
+#welcome.envelope-landing::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,rgba(255,249,241,.96),rgba(239,219,208,.96) 56%,rgba(205,176,158,.94));z-index:-3}
+#welcome.envelope-landing::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,transparent 30%,rgba(104,62,42,.12) 100%);z-index:8;pointer-events:none}
+.envelope-stage{position:absolute;inset:0;display:grid;place-items:center;padding:5vh 5vw}
+.envelope-glow{position:absolute;width:min(88vw,560px);height:min(72vh,760px);border-radius:38px;background:radial-gradient(circle,rgba(255,245,226,.7),rgba(255,245,226,0) 68%);filter:blur(18px);opacity:.8}
+.envelope{position:relative;width:min(88vw,510px);aspect-ratio:3/4.1;filter:drop-shadow(0 26px 34px rgba(72,39,27,.22));perspective:1000px}
+.envelope-back{position:absolute;inset:0;border-radius:16px;background:linear-gradient(145deg,#f5e7dd,#e9cfc0);box-shadow:inset 0 0 0 1px rgba(151,108,81,.18),inset 0 0 42px rgba(116,71,47,.08);overflow:hidden}
+.envelope-back::before{content:"";position:absolute;inset:12px;border:1px solid rgba(151,108,81,.18);border-radius:11px;box-shadow:inset 0 0 0 5px rgba(255,255,255,.16)}
+.envelope-side{position:absolute;bottom:0;width:0;height:0;border-style:solid;z-index:4}
+.envelope-side-left{left:0;border-width:0 0 47% 50%;border-color:transparent transparent #e7cbbc transparent}
+.envelope-side-right{right:0;border-width:0 50% 47% 0;border-color:transparent #e7cbbc transparent transparent}
+.envelope-bottom{position:absolute;left:0;right:0;bottom:0;height:50%;background:linear-gradient(145deg,#e9cfc0,#dfbdab);clip-path:polygon(0 0,50% 72%,100% 0,100% 100%,0 100%);z-index:5;box-shadow:inset 0 1px rgba(255,255,255,.3)}
+.envelope-flap{position:absolute;left:0;right:0;top:0;height:58%;background:linear-gradient(145deg,#f6e9df,#e8cbbd);clip-path:polygon(0 0,100% 0,50% 78%);z-index:7;transform-origin:50% 0;box-shadow:0 10px 20px rgba(94,56,40,.08);backface-visibility:hidden;transition:transform .72s cubic-bezier(.72,.05,.2,1),filter .72s ease}
+.envelope-flap::after{content:"";position:absolute;left:8%;right:8%;top:8%;height:64%;clip-path:polygon(0 0,100% 0,50% 78%);border:1px solid rgba(154,112,85,.17)}
+.envelope-paper{position:absolute;left:9%;right:9%;top:9%;height:75%;z-index:3;border-radius:8px;background:linear-gradient(#fffaf5,#f8eee8);box-shadow:0 8px 20px rgba(86,47,32,.12);transform:translateY(19%);transition:transform .82s cubic-bezier(.2,.85,.25,1),opacity .55s ease;display:flex;flex-direction:column;align-items:center;padding-top:18%;color:#6b382b;text-align:center}
+.paper-topline{width:48%;height:1px;background:linear-gradient(90deg,transparent,#b78a55,transparent);margin-bottom:12%}
+.paper-title{font-size:clamp(24px,6vw,42px);font-style:italic;letter-spacing:.02em}
+.paper-subtitle{margin-top:7%;font-family:Arial,sans-serif;text-transform:uppercase;font-size:clamp(7px,1.8vw,11px);letter-spacing:.28em;color:#9a7358}
+.floral{position:absolute;z-index:8;width:34%;height:24%;opacity:.7;pointer-events:none}
+.floral-top{top:5%;left:8%;transform:rotate(-4deg)}
+.floral-bottom{bottom:7%;right:8%;transform:rotate(172deg)}
+.floral i{position:absolute;width:11px;height:22px;border:1px solid rgba(160,119,89,.32);border-radius:100% 0 100% 0;transform-origin:bottom center}
+.floral i:nth-child(1){left:8%;bottom:15%;transform:rotate(-35deg)}
+.floral i:nth-child(2){left:25%;bottom:30%;transform:rotate(32deg)}
+.floral i:nth-child(3){left:42%;bottom:46%;transform:rotate(-30deg)}
+.floral i:nth-child(4){left:58%;bottom:56%;transform:rotate(35deg)}
+.floral i:nth-child(5){left:73%;bottom:69%;transform:rotate(-28deg)}
+.floral i:nth-child(6){left:86%;bottom:78%;transform:rotate(30deg)}
+.floral i:nth-child(7){left:53%;bottom:14%;width:22px;height:22px;border-radius:50%;border-color:rgba(174,131,98,.4)}
+.envelope-seal{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(116px,25vw,154px);height:clamp(116px,25vw,154px);border:0;border-radius:50%;padding:0;background:transparent;cursor:pointer;z-index:20;touch-action:manipulation;-webkit-tap-highlight-color:transparent;color:transparent;outline:none}
+.seal-medallion{position:absolute;inset:15%;border-radius:50%;display:flex;align-items:center;justify-content:center;gap:.1em;background:radial-gradient(circle at 35% 28%,#fff9ec,#f2d9a4 52%,#c49a52 100%);border:2px solid #e7c37d;box-shadow:0 5px 20px rgba(118,74,35,.26),inset 0 0 0 5px rgba(255,255,255,.32),0 0 30px rgba(224,178,99,.34);color:#9b6d2e;font-family:"Cormorant Garamond",serif;font-size:clamp(25px,6vw,38px);font-weight:600;letter-spacing:.04em;animation:sealBreath 3.2s ease-in-out infinite}
+.seal-medallion b{color:#b77a57;font-size:.88em;text-shadow:0 1px 3px rgba(126,73,47,.15)}
+.seal-ripple{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(185,133,69,.65);box-shadow:0 0 0 8px rgba(255,248,238,.18),0 0 35px rgba(202,156,86,.25);animation:sealPulse 2.8s ease-out infinite}
+.seal-orbit{position:absolute;inset:-8%;border-radius:50%;border:1px solid rgba(178,128,71,.46);pointer-events:none}
+.seal-orbit::after{content:"";position:absolute;left:50%;top:-4px;width:6px;height:6px;border-radius:50%;background:#cda15f;box-shadow:0 0 10px #e7c37d}
+.seal-orbit-one{animation:orbit 7s linear infinite;border-right-color:transparent}
+.seal-orbit-two{inset:-17%;animation:orbitReverse 11s linear infinite;border-left-color:transparent;opacity:.7}
+.envelope-landing.is-closing .envelope-flap{transform:rotateX(178deg);filter:brightness(1.06)}
+.envelope-landing.is-closing .envelope-paper{transform:translateY(-8%);opacity:1}
+.envelope-landing.is-closing .envelope-seal{animation:sealOpen .62s ease forwards}
+.envelope-landing.is-closing .envelope-glow{opacity:1;transform:scale(1.15);transition:.7s ease}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes orbitReverse{to{transform:rotate(-360deg)}}
+@keyframes sealPulse{0%{transform:scale(.95);opacity:.7}70%,100%{transform:scale(1.12);opacity:0}}
+@keyframes sealBreath{0%,100%{filter:brightness(1)}50%{filter:brightness(1.08)}}
+@keyframes sealOpen{0%{transform:translate(-50%,-50%) scale(1);opacity:1}100%{transform:translate(-50%,-50%) scale(1.12);opacity:0}}
+@media(max-width:430px){.envelope{width:84vw}.envelope-seal{width:122px;height:122px}.envelope-paper{top:10%;height:72%;padding-top:18%}.floral i{width:8px;height:17px}}
+@media(min-width:800px){.envelope{width:min(48vw,520px)}.envelope-seal{width:148px;height:148px}}
+@media(prefers-reduced-motion:reduce){.seal-medallion,.seal-ripple,.seal-orbit{animation:none}.envelope-flap,.envelope-paper{transition:none}.envelope-landing.is-closing .envelope-flap{transform:rotateX(178deg)}.envelope-landing.is-closing .envelope-seal{opacity:0}}
+</style>
+
 </head>
 <body class="wedding-cover-lock">
 
 
 
 
-<div id="welcome" class="wedding-cover reference-landing" aria-label="Wedding invitation opening">
-  <div class="reference-landing__art" aria-hidden="true">
-    <img src="assets/images/wedding-invitation-cover-clean.jpg"
-         alt=""
-         width="1022"
-         height="1536"
-         decoding="async"
-         fetchpriority="high">
+<div id="welcome" class="wedding-cover envelope-landing" aria-label="Wedding invitation opening">
+  <div class="envelope-stage" aria-hidden="true">
+    <div class="envelope-glow"></div>
+    <div class="envelope">
+      <div class="envelope-back"></div>
+      <div class="envelope-paper">
+        <div class="paper-topline"></div>
+        <div class="paper-title">Wedding Invitation</div>
+        <div class="paper-subtitle">You are cordially invited</div>
+      </div>
+      <div class="envelope-flap"></div>
+      <div class="envelope-side envelope-side-left"></div>
+      <div class="envelope-side envelope-side-right"></div>
+      <div class="envelope-bottom"></div>
+      <div class="floral floral-top">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <div class="floral floral-bottom">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+    </div>
   </div>
 
-  <!-- Transparent interactive seal aligned with the V♥H seal in the reference artwork. -->
-  <button id="openInvitation"
-          class="reference-landing__seal"
-          type="button"
-          aria-label="Open wedding invitation">
-    <span class="reference-landing__halo" aria-hidden="true"></span>
-    <span class="reference-landing__orbit reference-landing__orbit--one" aria-hidden="true"></span>
-    <span class="reference-landing__orbit reference-landing__orbit--two" aria-hidden="true"></span>
+  <button id="openInvitation" class="envelope-seal" type="button" aria-label="Open wedding invitation">
+    <span class="seal-ripple" aria-hidden="true"></span>
+    <span class="seal-orbit seal-orbit-one" aria-hidden="true"></span>
+    <span class="seal-orbit seal-orbit-two" aria-hidden="true"></span>
+    <span class="seal-medallion" aria-hidden="true"><span>V</span><b>♥</b><span>H</span></span>
     <span class="sr-only">Open wedding invitation</span>
   </button>
-
-  <div class="landing-seal-cue" aria-hidden="true">
-    <span class="landing-seal-cue__arrow">↑</span>
-    <span class="landing-seal-cue__text">Tap to Seal</span>
-  </div>
 </div>
 <header class="topbar">
 <a class="brand" href="#home"><span class="brand-name">Vijay</span> <span class="brand-heart" aria-hidden="true">♥</span> <span class="brand-name">Hemalatha</span></a>

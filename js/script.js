@@ -276,7 +276,6 @@ $("#calendarBtn")?.addEventListener("click", () => {
 /* Premium envelope opening */
 (function initWeddingCover() {
   const cover = document.getElementById("welcome");
-  const art = document.querySelector(".wedding-cover__art");
   const seal = document.getElementById("openInvitation");
   if (!cover || !seal) return;
 
@@ -312,7 +311,7 @@ $("#calendarBtn")?.addEventListener("click", () => {
       } else {
         window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       }
-    }, 620);
+    }, 820);
   }
 
   // Only the V♥H seal is the opening control.

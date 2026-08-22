@@ -279,7 +279,7 @@ $("#calendarBtn")?.addEventListener("click", () => {
   const layer = cover?.querySelector(".landing-particles");
   if (!cover || !layer) return;
 
-  const count = window.matchMedia("(max-width: 600px)").matches ? 10 : 16;
+  const count = window.matchMedia("(max-width: 600px)").matches ? 12 : 20;
   const fragment = document.createDocumentFragment();
 
   for (let i = 0; i < count; i += 1) {

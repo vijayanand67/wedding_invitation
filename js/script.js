@@ -273,31 +273,58 @@ $("#calendarBtn")?.addEventListener("click", () => {
   });
 })();
 
-/* Premium landing-page opening — champagne envelope cinematic transition */
+/* Premium landing atmosphere — lightweight, CSS-driven particles. */
+(function initLandingAtmosphere() {
+  const cover = document.getElementById("welcome");
+  const layer = cover?.querySelector(".landing-particles");
+  if (!cover || !layer) return;
+
+  const count = window.matchMedia("(max-width: 600px)").matches ? 10 : 16;
+  const fragment = document.createDocumentFragment();
+
+  for (let i = 0; i < count; i += 1) {
+    const particle = document.createElement("span");
+    particle.className = "landing-particle" + (i % 4 === 0 ? " is-small" : "") + (i % 5 === 0 ? " is-soft" : "");
+    particle.style.left = `${12 + Math.random() * 76}%`;
+    particle.style.top = `${20 + Math.random() * 64}%`;
+    particle.style.setProperty("--duration", `${5.5 + Math.random() * 4.5}s`);
+    particle.style.setProperty("--delay", `${Math.random() * -8}s`);
+    particle.style.setProperty("--drift", `${-18 + Math.random() * 36}px`);
+    fragment.appendChild(particle);
+  }
+  layer.appendChild(fragment);
+})();
+
+/* Premium envelope opening */
 (function initWeddingCover() {
   const cover = document.getElementById("welcome");
+  const art = document.querySelector(".wedding-cover__art");
   const seal = document.getElementById("openInvitation");
   if (!cover || !seal) return;
 
   document.documentElement.classList.add("wedding-cover-html-lock");
   document.body.classList.add("wedding-cover-lock");
+
   let opened = false;
 
-  function openFirstInvitationPage(event) {
-    event?.preventDefault();
-    event?.stopPropagation();
+  function openCover(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
     if (opened) return;
     opened = true;
-    seal.setAttribute("aria-disabled", "true");
-    cover.classList.add("opening");
 
-    // Let the envelope-fold transition complete before revealing the existing home page.
-    window.setTimeout(() => cover.classList.add("is-closing"), 1050);
+    cover.classList.add("is-opening");
+    cover.setAttribute("aria-busy", "true");
 
     window.setTimeout(() => {
       cover.remove();
       document.documentElement.classList.remove("wedding-cover-html-lock");
       document.body.classList.remove("wedding-cover-lock");
+
+      // Always open the FIRST invitation content page (#home),
+      // never a later section such as Events/Venue/RSVP.
       const home = document.getElementById("home");
       if (home) {
         const header = document.querySelector(".topbar");
@@ -305,12 +332,15 @@ $("#calendarBtn")?.addEventListener("click", () => {
         const top = Math.max(0, home.getBoundingClientRect().top + window.scrollY - headerHeight);
         window.scrollTo({ top, left: 0, behavior: "instant" });
         history.replaceState(null, "", "#home");
-      } else window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    }, 1450);
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      }
+    }, 920);
   }
 
-  seal.addEventListener("click", openFirstInvitationPage, { passive: false });
+  // Only the V♥H seal is the opening control.
+  seal.addEventListener("click", openCover);
   seal.addEventListener("pointerup", (event) => {
-    if (event.pointerType === "touch") openFirstInvitationPage(event);
-  }, { passive: false });
+    if (event.pointerType === "touch") openCover(event);
+  });
 })();

@@ -273,10 +273,9 @@ $("#calendarBtn")?.addEventListener("click", () => {
   });
 })();
 
-/* Premium envelope opening */
+/* Premium landing-page opening */
 (function initWeddingCover() {
   const cover = document.getElementById("welcome");
-  const art = document.querySelector(".wedding-cover__art");
   const seal = document.getElementById("openInvitation");
   if (!cover || !seal) return;
 
@@ -285,7 +284,7 @@ $("#calendarBtn")?.addEventListener("click", () => {
 
   let opened = false;
 
-  function openCover(event) {
+  function openFirstInvitationPage(event) {
     if (event) {
       event.preventDefault();
       event.stopPropagation();
@@ -293,31 +292,39 @@ $("#calendarBtn")?.addEventListener("click", () => {
     if (opened) return;
     opened = true;
 
-    cover.classList.add("is-closing");
+    // Stage 1: enlarge/glow the seal and reveal the supplied reference image
+    // as a very short cinematic transition.
+    cover.classList.add("opening");
 
     window.setTimeout(() => {
-      cover.remove();
-      document.documentElement.classList.remove("wedding-cover-html-lock");
-      document.body.classList.remove("wedding-cover-lock");
+      // Stage 2: remove the landing layer and reveal the existing FIRST page.
+      cover.classList.add("is-closing");
 
-      // Always open the FIRST invitation content page (#home),
-      // never a later section such as Events/Venue/RSVP.
-      const home = document.getElementById("home");
-      if (home) {
-        const header = document.querySelector(".topbar");
-        const headerHeight = header ? header.getBoundingClientRect().height : 0;
-        const top = Math.max(0, home.getBoundingClientRect().top + window.scrollY - headerHeight);
-        window.scrollTo({ top, left: 0, behavior: "instant" });
-        history.replaceState(null, "", "#home");
-      } else {
-        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-      }
-    }, 620);
+      window.setTimeout(() => {
+        cover.remove();
+        document.documentElement.classList.remove("wedding-cover-html-lock");
+        document.body.classList.remove("wedding-cover-lock");
+
+        const home = document.getElementById("home");
+        if (home) {
+          const header = document.querySelector(".topbar");
+          const headerHeight = header ? header.getBoundingClientRect().height : 0;
+          const top = Math.max(
+            0,
+            home.getBoundingClientRect().top + window.scrollY - headerHeight
+          );
+          window.scrollTo({ top, left: 0, behavior: "instant" });
+          history.replaceState(null, "", "#home");
+        } else {
+          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        }
+      }, 260);
+    }, 760);
   }
 
-  // Only the V♥H seal is the opening control.
-  seal.addEventListener("click", openCover);
+  seal.addEventListener("click", openFirstInvitationPage);
   seal.addEventListener("pointerup", (event) => {
-    if (event.pointerType === "touch") openCover(event);
+    if (event.pointerType === "touch") openFirstInvitationPage(event);
   });
 })();
+

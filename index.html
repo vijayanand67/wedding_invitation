@@ -7323,6 +7323,415 @@ body.wedding-cover-lock{
 @media(min-width:601px){#welcome.reference-landing .reference-landing__art img{object-fit:contain!important}}
 @media(prefers-reduced-motion:reduce){#welcome.reference-landing .reference-landing__art,#welcome.reference-landing .landing-particle,#welcome.reference-landing .landing-atmosphere::before,#welcome.reference-landing .landing-atmosphere::after,#welcome.reference-landing #openInvitation,#welcome.reference-landing #openInvitation::before,#welcome.reference-landing #openInvitation::after,#welcome.reference-landing #openInvitation .reference-landing__halo,#welcome.reference-landing #openInvitation .reference-landing__orbit,#welcome.reference-landing .landing-seal-cue__arrow{animation:none!important}}
 </style>
+
+<style id="landing-polish-final">
+/* =========================================================
+   FINAL LANDING PAGE POLISH
+   Uses the existing envelope artwork; no generated image required.
+   Fixes the invisible-artwork state and creates a refined,
+   reference-inspired opening experience.
+   ========================================================= */
+html.wedding-cover-html-lock, body.wedding-cover-lock {
+  overflow: hidden !important;
+  overscroll-behavior: none !important;
+}
+
+#welcome.reference-landing {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 50% 50%, #f8e8dc 0%, #ead8ce 56%, #d5c1b6 100%) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 2147483647 !important;
+  isolation: isolate !important;
+}
+
+#welcome.reference-landing .reference-landing__art {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  overflow: hidden !important;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  background: #ead8ce !important;
+  z-index: 0 !important;
+}
+
+#welcome.reference-landing .reference-landing__art img {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: scale(1) !important;
+  animation: landingHeroReveal 1.05s cubic-bezier(.22,.75,.22,1) both !important;
+  filter: saturate(.97) contrast(.99) brightness(1.01) !important;
+  z-index: 0 !important;
+}
+
+/* A very light cinematic layer, never hiding the artwork. */
+#welcome.reference-landing .reference-landing__art::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  background:
+    radial-gradient(circle at 50% 54%, rgba(255,227,182,.12), transparent 24%),
+    linear-gradient(180deg, rgba(255,249,241,.03), transparent 42%, rgba(81,45,34,.10)) !important;
+  animation: landingLightSweep 8s ease-in-out infinite alternate !important;
+}
+
+#welcome.reference-landing .landing-atmosphere {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+}
+
+#welcome.reference-landing .landing-atmosphere::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 54% !important;
+  width: min(72vw, 560px) !important;
+  aspect-ratio: 1 !important;
+  transform: translate(-50%, -50%) !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(255,214,137,.16), rgba(255,214,137,.045) 45%, transparent 72%) !important;
+  filter: blur(8px) !important;
+  animation: landingHaloBreath 4.8s ease-in-out infinite !important;
+}
+
+#welcome.reference-landing .landing-atmosphere::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(255,247,227,.18), transparent 4%),
+    radial-gradient(circle at 84% 20%, rgba(255,221,166,.14), transparent 4%),
+    radial-gradient(circle at 16% 72%, rgba(255,238,210,.13), transparent 5%),
+    radial-gradient(circle at 88% 70%, rgba(255,221,166,.11), transparent 4%) !important;
+  animation: landingAmbientDrift 14s ease-in-out infinite alternate !important;
+}
+
+#welcome.reference-landing .landing-particle {
+  position: absolute !important;
+  width: 4px !important;
+  height: 4px !important;
+  border-radius: 50% !important;
+  background: #fff2d9 !important;
+  box-shadow: 0 0 9px rgba(255,216,139,.95), 0 0 20px rgba(255,196,99,.42) !important;
+  opacity: .55 !important;
+  animation: landingParticleFloat 5.8s ease-in-out infinite !important;
+}
+
+/* The artwork already contains the V♥H medallion. This is only the hit area +
+   a very restrained premium halo so there is never a second fake seal. */
+#welcome.reference-landing #openInvitation.reference-landing__seal {
+  position: absolute !important;
+  left: 50% !important;
+  top: 54.2% !important;
+  width: clamp(112px, 28vw, 176px) !important;
+  height: clamp(112px, 28vw, 176px) !important;
+  min-width: 112px !important;
+  min-height: 112px !important;
+  max-width: 176px !important;
+  max-height: 176px !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid rgba(188,133,59,.58) !important;
+  border-radius: 50% !important;
+  background: rgba(255,246,227,.035) !important;
+  box-shadow:
+    0 0 0 1px rgba(255,247,226,.30),
+    0 0 24px rgba(239,182,82,.24) !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  overflow: visible !important;
+  cursor: pointer !important;
+  touch-action: manipulation !important;
+  -webkit-tap-highlight-color: transparent !important;
+  z-index: 12 !important;
+  animation: sealFloat 3.2s ease-in-out infinite !important;
+}
+
+#welcome.reference-landing #openInvitation.reference-landing__seal::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: -10px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(224,178,102,.62) !important;
+  border-left-color: transparent !important;
+  border-bottom-color: rgba(255,219,146,.78) !important;
+  box-shadow: 0 0 15px rgba(235,183,85,.20) !important;
+  animation: sealOrbit 8s linear infinite !important;
+  pointer-events: none !important;
+}
+
+#welcome.reference-landing #openInvitation.reference-landing__seal::after {
+  content: "✦" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -16px !important;
+  transform: translateX(-50%) !important;
+  color: #c28b40 !important;
+  font: 700 10px/1 Georgia, serif !important;
+  text-shadow: 0 0 10px rgba(238,188,92,.8) !important;
+  animation: sealStar 2s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+
+#welcome.reference-landing .reference-landing__seal-core,
+#welcome.reference-landing .reference-landing__halo,
+#welcome.reference-landing .reference-landing__orbit {
+  pointer-events: none !important;
+}
+#welcome.reference-landing .reference-landing__seal-core {
+  opacity: 0 !important;
+}
+#welcome.reference-landing .reference-landing__halo {
+  position: absolute !important;
+  inset: -1px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255,226,173,.36) !important;
+  animation: haloSpin 12s linear infinite !important;
+}
+#welcome.reference-landing .reference-landing__orbit {
+  position: absolute !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(218,169,91,.22) !important;
+}
+#welcome.reference-landing .reference-landing__orbit--one {
+  inset: -26px !important;
+  border-top-color: rgba(224,177,94,.70) !important;
+  border-right-color: transparent !important;
+  animation: haloSpin 8s linear infinite !important;
+}
+#welcome.reference-landing .reference-landing__orbit--two {
+  inset: -38px !important;
+  border-bottom-color: rgba(224,177,94,.48) !important;
+  border-left-color: transparent !important;
+  animation: haloSpinReverse 11s linear infinite !important;
+}
+
+#welcome.reference-landing .landing-seal-cue {
+  position: absolute !important;
+  left: 50% !important;
+  top: 83.5% !important;
+  transform: translateX(-50%) !important;
+  z-index: 10 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 6px !important;
+  color: #80572e !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.65) !important;
+  pointer-events: none !important;
+}
+#welcome.reference-landing .landing-seal-cue__arrow {
+  font: 500 22px/1 Georgia, serif !important;
+  animation: cueArrowUp 1.8s ease-in-out infinite !important;
+}
+#welcome.reference-landing .landing-seal-cue__text {
+  font: 500 clamp(.78rem,2.4vw,1rem)/1 "Cormorant Garamond","Playfair Display",Georgia,serif !important;
+  letter-spacing: .10em !important;
+  white-space: nowrap !important;
+}
+
+/* Opening transition: a warm envelope reveal, inspired by the supplied second
+   reference, then the existing first page is revealed underneath. */
+#welcome.reference-landing .opening-reference-transition {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 100 !important;
+  display: grid !important;
+  place-items: center !important;
+  background: linear-gradient(145deg, #f8e9df, #dfc7ba) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+}
+#welcome.reference-landing .opening-reference-transition__veil {
+  position: absolute !important;
+  inset: 0 !important;
+  background: radial-gradient(circle at 50% 53%, rgba(255,240,206,.88), rgba(255,247,236,.26) 40%, rgba(78,43,33,.12) 100%) !important;
+  opacity: 0 !important;
+}
+#welcome.reference-landing .opening-envelope-card {
+  position: relative !important;
+  width: min(78vw, 390px) !important;
+  aspect-ratio: 2 / 2.95 !important;
+  border-radius: 20px !important;
+  background: linear-gradient(150deg,#f9ede5,#ead2c5) !important;
+  border: 1px solid rgba(157,111,70,.34) !important;
+  box-shadow: 0 26px 70px rgba(80,42,29,.26), inset 0 0 0 1px rgba(255,255,255,.45) !important;
+  transform: translateY(16px) scale(.92) !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+}
+#welcome.reference-landing .opening-envelope-card::before,
+#welcome.reference-landing .opening-envelope-card::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 8% !important;
+  right: 8% !important;
+  height: 1px !important;
+  background: rgba(159,111,65,.28) !important;
+}
+#welcome.reference-landing .opening-envelope-card::before { top: 11% !important; }
+#welcome.reference-landing .opening-envelope-card::after { bottom: 11% !important; }
+#welcome.reference-landing .opening-envelope-paper {
+  position: absolute !important;
+  left: 12% !important;
+  right: 12% !important;
+  bottom: 10% !important;
+  height: 58% !important;
+  background: linear-gradient(160deg,#fff9f2,#f2dfd2) !important;
+  border-radius: 12px !important;
+  transform: translateY(78%) !important;
+  box-shadow: 0 10px 25px rgba(82,45,31,.12) !important;
+}
+#welcome.reference-landing .opening-envelope-flap {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 56% !important;
+  background: linear-gradient(145deg,#fff6ed,#e9cfc0) !important;
+  clip-path: polygon(0 0,100% 0,50% 100%) !important;
+  transform-origin: 50% 0 !important;
+  transform: perspective(700px) rotateX(0deg) !important;
+  z-index: 4 !important;
+}
+#welcome.reference-landing .opening-envelope-seal {
+  position: absolute !important;
+  left: 50% !important;
+  top: 53% !important;
+  width: 86px !important;
+  height: 86px !important;
+  transform: translate(-50%,-50%) scale(1) !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle at 40% 35%,#fff9e9,#e9bb69) !important;
+  border: 2px solid #d49b4c !important;
+  color: #8b5b2c !important;
+  font: 600 24px/1 Georgia,serif !important;
+  box-shadow: 0 0 0 6px rgba(255,244,218,.35), 0 10px 28px rgba(112,65,34,.22) !important;
+  z-index: 7 !important;
+}
+#welcome.reference-landing .opening-envelope-seal b { color:#a9534b !important; }
+
+#welcome.reference-landing.opening .opening-reference-transition {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  animation: openingScene .95s cubic-bezier(.22,.75,.22,1) forwards !important;
+}
+#welcome.reference-landing.opening .opening-reference-transition__veil {
+  animation: openingVeil .95s ease forwards !important;
+}
+#welcome.reference-landing.opening .opening-envelope-card {
+  animation: envelopeCardIn .52s cubic-bezier(.2,.85,.2,1) .08s forwards !important;
+}
+#welcome.reference-landing.opening .opening-envelope-flap {
+  animation: envelopeFlapOpen .56s cubic-bezier(.2,.75,.2,1) .34s forwards !important;
+}
+#welcome.reference-landing.opening .opening-envelope-paper {
+  animation: envelopePaperRise .55s cubic-bezier(.2,.8,.2,1) .48s forwards !important;
+}
+#welcome.reference-landing.opening .opening-envelope-seal {
+  animation: envelopeSealLift .42s ease .67s forwards !important;
+}
+#welcome.reference-landing.opening #openInvitation,
+#welcome.reference-landing.opening .landing-seal-cue,
+#welcome.reference-landing.opening .landing-atmosphere {
+  opacity: 0 !important;
+  transition: opacity .25s ease !important;
+}
+#welcome.reference-landing.is-closing .opening-reference-transition {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity .26s ease !important;
+}
+
+@keyframes landingHeroReveal {
+  from { opacity: .35; transform: scale(1.025); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes landingLightSweep { from { opacity:.65; transform:translateY(-1%); } to { opacity:1; transform:translateY(1%); } }
+@keyframes landingHaloBreath { 0%,100% { opacity:.55; transform:translate(-50%,-50%) scale(.94); } 50% { opacity:1; transform:translate(-50%,-50%) scale(1.06); } }
+@keyframes landingAmbientDrift { from { transform:translate3d(-1%,0,0) scale(1); } to { transform:translate3d(1%,1%,0) scale(1.04); } }
+@keyframes landingParticleFloat { 0%,100% { opacity:.25; transform:translate3d(0,0,0) scale(.8); } 50% { opacity:1; transform:translate3d(8px,-14px,0) scale(1.2); } }
+@keyframes sealFloat { 0%,100% { filter:brightness(1); } 50% { filter:brightness(1.07); } }
+@keyframes sealOrbit { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+@keyframes haloSpin { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+@keyframes haloSpinReverse { from { transform:rotate(360deg); } to { transform:rotate(0deg); } }
+@keyframes sealStar { 0%,100% { opacity:.35; transform:translateX(-50%) translateY(2px); } 50% { opacity:1; transform:translateX(-50%) translateY(-4px); } }
+@keyframes cueArrowUp { 0%,100% { opacity:.55; transform:translateY(2px); } 50% { opacity:1; transform:translateY(-5px); } }
+@keyframes openingScene { 0% { opacity:0; transform:scale(1.02); } 100% { opacity:1; transform:scale(1); } }
+@keyframes openingVeil { 0% { opacity:0; } 55% { opacity:.8; } 100% { opacity:0; } }
+@keyframes envelopeCardIn { from { opacity:0; transform:translateY(22px) scale(.90); } to { opacity:1; transform:translateY(0) scale(1); } }
+@keyframes envelopeFlapOpen { from { transform:perspective(700px) rotateX(0deg); } to { transform:perspective(700px) rotateX(158deg); } }
+@keyframes envelopePaperRise { from { transform:translateY(78%); } to { transform:translateY(8%); } }
+@keyframes envelopeSealLift { from { transform:translate(-50%,-50%) scale(1); opacity:1; } to { transform:translate(-50%,-66%) scale(.88); opacity:.0; } }
+
+@media (max-width: 600px) {
+  #welcome.reference-landing .reference-landing__art img { object-fit:cover !important; object-position:center center !important; }
+  #welcome.reference-landing #openInvitation.reference-landing__seal {
+    top: 54.1% !important;
+    width: 118px !important;
+    height: 118px !important;
+    min-width:118px !important;
+    min-height:118px !important;
+  }
+  #welcome.reference-landing .landing-seal-cue { top: 83.2% !important; }
+  #welcome.reference-landing .reference-landing__orbit--one { inset:-22px !important; }
+  #welcome.reference-landing .reference-landing__orbit--two { inset:-32px !important; }
+  #welcome.reference-landing .opening-envelope-card { width:min(80vw,360px) !important; }
+}
+
+@media (min-width: 601px) and (max-width: 1100px) {
+  #welcome.reference-landing .reference-landing__art img { object-fit:cover !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #welcome.reference-landing .reference-landing__art img,
+  #welcome.reference-landing .reference-landing__art::after,
+  #welcome.reference-landing .landing-atmosphere::before,
+  #welcome.reference-landing .landing-atmosphere::after,
+  #welcome.reference-landing .landing-particle,
+  #welcome.reference-landing #openInvitation,
+  #welcome.reference-landing #openInvitation::before,
+  #welcome.reference-landing #openInvitation::after,
+  #welcome.reference-landing .reference-landing__halo,
+  #welcome.reference-landing .reference-landing__orbit,
+  #welcome.reference-landing .landing-seal-cue__arrow {
+    animation: none !important;
+  }
+}
+</style>
+
 </head>
 <body class="wedding-cover-lock">
 
@@ -7371,7 +7780,7 @@ body.wedding-cover-lock{
 
   <div class="landing-seal-cue" aria-hidden="true">
     <span class="landing-seal-cue__arrow">↑</span>
-    <span class="landing-seal-cue__text">Tap to Seal</span>
+    <span class="landing-seal-cue__text">Tap to Open</span>
   </div>
 </div>
 <header class="topbar">
@@ -7599,3 +8008,313 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
+<style id="landing-final-production-fix">
+/* =========================================================
+   PRODUCTION LANDING — FINAL POLISH
+   Uses the supplied envelope artwork as the single source of truth.
+   ========================================================= */
+html.wedding-cover-html-lock, body.wedding-cover-lock { overflow:hidden !important; }
+
+#welcome.reference-landing {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+  overflow: hidden !important;
+  display: grid !important;
+  place-items: center !important;
+  background: #ead8ce !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 2147483647 !important;
+  isolation: isolate !important;
+}
+
+#welcome.reference-landing .reference-landing__art {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: landingPageIn .9s cubic-bezier(.22,.75,.2,1) both !important;
+  background: #ead8ce !important;
+  overflow: hidden !important;
+  z-index: 0 !important;
+}
+
+#welcome.reference-landing .reference-landing__art img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: scale(1.01) !important;
+  animation: landingArtworkIn 1.15s cubic-bezier(.18,.75,.22,1) both !important;
+  filter: saturate(.98) contrast(1.01) brightness(1.015) !important;
+  pointer-events: none !important;
+}
+
+/* Keep the artwork itself visually dominant; effects sit above it but remain subtle. */
+#welcome.reference-landing .reference-landing__art::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(circle at 50% 56%, rgba(255,223,168,.13), transparent 26%),
+    linear-gradient(180deg, rgba(255,255,255,.035), transparent 34%, rgba(83,46,34,.08)) !important;
+  z-index: 1 !important;
+  animation: landingLightMove 7s ease-in-out infinite alternate !important;
+}
+
+#welcome.reference-landing .landing-atmosphere {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 5 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+}
+
+#welcome.reference-landing .landing-atmosphere::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 58% !important;
+  width: min(74vw, 560px) !important;
+  aspect-ratio: 1 !important;
+  transform: translate(-50%,-50%) !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(255,210,126,.18), rgba(255,210,126,.045) 46%, transparent 72%) !important;
+  filter: blur(9px) !important;
+  animation: landingHalo 4.5s ease-in-out infinite !important;
+}
+
+#welcome.reference-landing .landing-atmosphere::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: -8% !important;
+  background:
+    radial-gradient(circle at 13% 22%, rgba(255,248,221,.42) 0 1px, transparent 2px),
+    radial-gradient(circle at 79% 26%, rgba(255,236,180,.38) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 26% 78%, rgba(255,240,195,.34) 0 1px, transparent 2px),
+    radial-gradient(circle at 84% 71%, rgba(255,255,255,.30) 0 1px, transparent 2px);
+  animation: landingParticles 10s linear infinite;
+  opacity: .85 !important;
+}
+
+#welcome.reference-landing .landing-particle {
+  width: 4px !important;
+  height: 4px !important;
+  border-radius: 50% !important;
+  background: #fff0c9 !important;
+  box-shadow: 0 0 10px rgba(255,205,119,.95) !important;
+  opacity: .55 !important;
+  animation: landingParticleFloat 4.8s ease-in-out infinite !important;
+}
+
+/* The artwork already contains the V♥H medallion. This is only a transparent,
+   perfectly aligned touch target plus a restrained premium orbit. */
+#welcome.reference-landing #openInvitation.reference-landing__seal {
+  position: absolute !important;
+  z-index: 20 !important;
+  left: 50% !important;
+  top: 59.2% !important;
+  width: clamp(108px, 25vw, 170px) !important;
+  height: clamp(108px, 25vw, 170px) !important;
+  min-width: 108px !important;
+  min-height: 108px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transform: translate(-50%,-50%) !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: transparent !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+  -webkit-tap-highlight-color: transparent !important;
+  animation: sealBreath 2.7s ease-in-out infinite !important;
+}
+
+#welcome.reference-landing #openInvitation.reference-landing__seal::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: -9px !important;
+  border: 1px solid rgba(255,225,170,.68) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 22px rgba(255,202,112,.30), inset 0 0 15px rgba(255,242,205,.12) !important;
+  animation: sealHalo 2.8s ease-in-out infinite !important;
+}
+
+#welcome.reference-landing #openInvitation.reference-landing__seal::after {
+  content: "✦" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -30px !important;
+  transform: translateX(-50%) !important;
+  color: #e5b865 !important;
+  font: 14px/1 Georgia,serif !important;
+  text-shadow: 0 0 12px rgba(255,210,126,.9) !important;
+  animation: sealStar 1.8s ease-in-out infinite !important;
+}
+
+#welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__seal-core {
+  display: none !important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__halo {
+  position: absolute !important;
+  inset: -17px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255,224,165,.18) !important;
+  pointer-events: none !important;
+  animation: sealOrbit 8s linear infinite !important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__orbit {
+  display: block !important;
+  position: absolute !important;
+  inset: -25px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(222,170,88,.22) !important;
+  pointer-events: none !important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__orbit--one {
+  border-top-color: rgba(255,221,151,.75) !important;
+  border-right-color: transparent !important;
+  animation: sealOrbit 8s linear infinite !important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__orbit--two {
+  inset: -36px !important;
+  border-style: dashed !important;
+  border-bottom-color: rgba(224,175,91,.5) !important;
+  border-left-color: transparent !important;
+  animation: sealOrbitReverse 12s linear infinite !important;
+}
+
+#welcome.reference-landing #openInvitation.reference-landing__seal:active {
+  transform: translate(-50%,-50%) scale(.94) !important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal:focus-visible {
+  outline: 2px solid rgba(255,241,214,.95) !important;
+  outline-offset: 7px !important;
+}
+
+#welcome.reference-landing .landing-seal-cue {
+  position: absolute !important;
+  z-index: 18 !important;
+  left: 50% !important;
+  top: 84.5% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 7px !important;
+  pointer-events: none !important;
+  color: #875e36 !important;
+  opacity: .92 !important;
+}
+#welcome.reference-landing .landing-seal-cue__arrow {
+  font: 500 22px/1 Georgia,serif !important;
+  color: #bd8847 !important;
+  animation: cueArrow 1.8s ease-in-out infinite !important;
+}
+#welcome.reference-landing .landing-seal-cue__text {
+  font: 500 clamp(14px,2.6vw,19px)/1.05 "Cormorant Garamond","Playfair Display",Georgia,serif !important;
+  letter-spacing: .07em !important;
+  color: #80552f !important;
+  text-shadow: 0 1px 5px rgba(255,247,235,.75) !important;
+  white-space: nowrap !important;
+}
+
+/* Cinematic opening: warm veil + envelope lift, then reveal #home. */
+#welcome.reference-landing .opening-reference-transition {
+  background: radial-gradient(circle at 50% 52%, rgba(255,245,224,.96), rgba(238,218,205,.94) 52%, rgba(214,190,177,.96)) !important;
+}
+#welcome.reference-landing.opening .opening-reference-transition {
+  animation: openingScene .9s cubic-bezier(.22,.75,.22,1) forwards !important;
+}
+#welcome.reference-landing.opening .opening-envelope-card {
+  animation: envelopeCardIn .55s cubic-bezier(.2,.85,.2,1) .05s forwards !important;
+}
+#welcome.reference-landing.opening .opening-envelope-flap {
+  animation: envelopeFlapOpen .58s cubic-bezier(.2,.75,.2,1) .28s forwards !important;
+}
+#welcome.reference-landing.opening .opening-envelope-paper {
+  animation: envelopePaperRise .58s cubic-bezier(.2,.8,.2,1) .40s forwards !important;
+}
+#welcome.reference-landing.opening .opening-envelope-seal {
+  animation: envelopeSealLift .42s ease .62s forwards !important;
+}
+#welcome.reference-landing.opening .reference-landing__art {
+  animation: landingArtworkOut .75s ease forwards !important;
+}
+
+@keyframes landingPageIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes landingArtworkIn { from { opacity: 0; transform: scale(1.045); } to { opacity: 1; transform: scale(1.01); } }
+@keyframes landingArtworkOut { from { opacity: 1; transform: scale(1.01); } to { opacity: 0; transform: scale(1.035); } }
+@keyframes landingLightMove { from { transform: translateY(-.5%); opacity: .65; } to { transform: translateY(.7%); opacity: 1; } }
+@keyframes landingHalo { 0%,100% { opacity:.45; transform:translate(-50%,-50%) scale(.94); } 50% { opacity:.9; transform:translate(-50%,-50%) scale(1.06); } }
+@keyframes landingParticles { from { transform:translate3d(0,0,0); } to { transform:translate3d(-1.2%,1.2%,0); } }
+@keyframes landingParticleFloat { 0%,100% { transform:translateY(0) scale(.8); opacity:.28; } 50% { transform:translateY(-16px) scale(1.15); opacity:.85; } }
+@keyframes sealBreath { 0%,100% { transform:translate(-50%,-50%) scale(1); } 50% { transform:translate(-50%,-50%) scale(1.025); } }
+@keyframes sealHalo { 0%,100% { opacity:.45; transform:scale(.96); } 50% { opacity:1; transform:scale(1.04); } }
+@keyframes sealOrbit { to { transform:rotate(360deg); } }
+@keyframes sealOrbitReverse { to { transform:rotate(-360deg); } }
+@keyframes sealStar { 0%,100% { opacity:.35; transform:translateX(-50%) translateY(2px); } 50% { opacity:1; transform:translateX(-50%) translateY(-4px); } }
+@keyframes cueArrow { 0%,100% { opacity:.55; transform:translateY(2px); } 50% { opacity:1; transform:translateY(-5px); } }
+@keyframes openingScene { from { opacity:0; transform:scale(1.015); } to { opacity:1; transform:scale(1); } }
+@keyframes envelopeCardIn { from { opacity:0; transform:translateY(22px) scale(.90); } to { opacity:1; transform:translateY(0) scale(1); } }
+@keyframes envelopeFlapOpen { from { transform:perspective(700px) rotateX(0); } to { transform:perspective(700px) rotateX(-155deg); } }
+@keyframes envelopePaperRise { from { transform:translateY(78%); } to { transform:translateY(8%); } }
+@keyframes envelopeSealLift { from { transform:translate(-50%,-50%) scale(1); opacity:1; } to { transform:translate(-50%,-68%) scale(.88); opacity:0; } }
+
+@media (max-width: 600px) {
+  #welcome.reference-landing .reference-landing__art img {
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+  #welcome.reference-landing #openInvitation.reference-landing__seal {
+    top: 59.0% !important;
+    width: 116px !important;
+    height: 116px !important;
+    min-width: 116px !important;
+    min-height: 116px !important;
+  }
+  #welcome.reference-landing .landing-seal-cue { top: 84.5% !important; }
+}
+
+@media (min-width: 601px) {
+  #welcome.reference-landing .reference-landing__art img {
+    object-fit: contain !important;
+    background: #ead8ce !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #welcome.reference-landing .reference-landing__art,
+  #welcome.reference-landing .reference-landing__art img,
+  #welcome.reference-landing .reference-landing__art::after,
+  #welcome.reference-landing .landing-atmosphere::before,
+  #welcome.reference-landing .landing-atmosphere::after,
+  #welcome.reference-landing .landing-particle,
+  #welcome.reference-landing #openInvitation.reference-landing__seal,
+  #welcome.reference-landing #openInvitation.reference-landing__seal::before,
+  #welcome.reference-landing #openInvitation.reference-landing__seal::after,
+  #welcome.reference-landing .reference-landing__halo,
+  #welcome.reference-landing .reference-landing__orbit,
+  #welcome.reference-landing .landing-seal-cue__arrow {
+    animation: none !important;
+  }
+}
+</style>

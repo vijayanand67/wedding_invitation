@@ -7778,10 +7778,6 @@ html.wedding-cover-html-lock, body.wedding-cover-lock {
     <span class="sr-only">Open wedding invitation</span>
   </button>
 
-  <div class="landing-seal-cue" aria-hidden="true">
-    <span class="landing-seal-cue__arrow">↑</span>
-    <span class="landing-seal-cue__text">Tap to Open</span>
-  </div>
 </div>
 <header class="topbar">
 <a class="brand" href="#home"><span class="brand-name">Vijay</span> <span class="brand-heart" aria-hidden="true">♥</span> <span class="brand-name">Hemalatha</span></a>
@@ -8007,6 +8003,148 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 </body>
+
+<style id="landing-user-reference-final">
+/* FINAL LANDING REFINEMENT — use supplied artwork as the visual source of truth */
+html.wedding-cover-html-lock, body.wedding-cover-lock { overflow:hidden!important; }
+
+#welcome.reference-landing{
+  background:#ead9ce!important;
+  color:#7c542f!important;
+}
+#welcome.reference-landing .reference-landing__art{
+  background:#ead9ce!important;
+}
+#welcome.reference-landing .reference-landing__art img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  background:#ead9ce!important;
+  filter:saturate(.98) contrast(1.01) brightness(1.01)!important;
+  animation:referenceArtEnter 1.15s cubic-bezier(.2,.75,.2,1) both!important;
+}
+/* Keep effects delicate so the supplied artwork remains the hero. */
+#welcome.reference-landing .reference-landing__art::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  background:
+    radial-gradient(circle at 50% 55%,rgba(255,225,172,.12),transparent 30%),
+    linear-gradient(180deg,rgba(255,247,235,.05),transparent 35%,rgba(108,68,44,.08))!important;
+  pointer-events:none!important;
+  animation:referenceLight 8s ease-in-out infinite alternate!important;
+}
+#welcome.reference-landing .landing-atmosphere::before{
+  width:min(80vw,520px)!important;
+  top:57%!important;
+  background:radial-gradient(circle,rgba(255,208,125,.15),rgba(255,208,125,.04) 48%,transparent 72%)!important;
+  filter:blur(10px)!important;
+  animation:referenceHalo 4.8s ease-in-out infinite!important;
+}
+#welcome.reference-landing .landing-atmosphere::after{
+  opacity:.55!important;
+  background:
+    radial-gradient(circle at 14% 22%,rgba(255,248,221,.55) 0 1px,transparent 2px),
+    radial-gradient(circle at 78% 28%,rgba(255,236,180,.48) 0 1px,transparent 2px),
+    radial-gradient(circle at 25% 76%,rgba(255,240,195,.44) 0 1px,transparent 2px),
+    radial-gradient(circle at 86% 70%,rgba(255,255,255,.38) 0 1px,transparent 2px);
+  animation:referenceParticles 12s linear infinite!important;
+}
+/* Touch target precisely overlays the V♥H seal already present in the image. */
+#welcome.reference-landing #openInvitation.reference-landing__seal{
+  left:50%!important;
+  top:58.7%!important;
+  width:clamp(126px,27vw,190px)!important;
+  height:clamp(126px,27vw,190px)!important;
+  min-width:126px!important;
+  min-height:126px!important;
+  border:0!important;
+  border-radius:50%!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  transform:translate(-50%,-50%)!important;
+  animation:referenceSealBreath 3s ease-in-out infinite!important;
+}
+/* Only rings are generated; never paint another V♥H seal over the artwork. */
+#welcome.reference-landing #openInvitation.reference-landing__seal::before{
+  content:""!important;
+  inset:-7px!important;
+  border:1px solid rgba(210,156,73,.52)!important;
+  border-right-color:transparent!important;
+  border-radius:50%!important;
+  box-shadow:0 0 18px rgba(230,177,82,.18)!important;
+  animation:referenceOrbit 7s linear infinite!important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal::after{
+  content:""!important;
+  inset:-20px!important;
+  border:1px solid rgba(210,156,73,.22)!important;
+  border-left-color:rgba(240,195,111,.48)!important;
+  border-bottom-color:transparent!important;
+  border-radius:50%!important;
+  animation:referenceOrbitReverse 11s linear infinite!important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__seal-core,
+#welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__halo,
+#welcome.reference-landing #openInvitation.reference-landing__seal .reference-landing__orbit{
+  display:none!important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal:hover{
+  transform:translate(-50%,-50%) scale(1.025)!important;
+}
+#welcome.reference-landing #openInvitation.reference-landing__seal:active{
+  transform:translate(-50%,-50%) scale(.965)!important;
+}
+/* The artwork itself owns the Tap to Open text; remove old HTML cue entirely. */
+#welcome.reference-landing .landing-seal-cue{display:none!important}
+
+/* Soft reveal veil during opening */
+#welcome.reference-landing.opening .reference-landing__art{
+  animation:referenceArtExit .72s ease forwards!important;
+}
+
+/* Match the invitation header to the champagne/blush landing palette after opening. */
+.topbar{
+  background:linear-gradient(180deg,#ead9ce 0%,#e3cec1 100%)!important;
+  border-bottom:1px solid rgba(150,103,60,.28)!important;
+  box-shadow:0 8px 26px rgba(91,57,38,.10)!important;
+}
+.topbar .brand,.topbar nav a,.topbar .icon-btn{
+  color:#744c2b!important;
+}
+.topbar .icon-btn{
+  border-color:rgba(141,98,57,.55)!important;
+  background:rgba(255,248,240,.34)!important;
+}
+
+@keyframes referenceArtEnter{from{opacity:0;transform:scale(1.035)}to{opacity:1;transform:scale(1)}}
+@keyframes referenceLight{from{opacity:.45;transform:translateY(-.5%)}to{opacity:.9;transform:translateY(.6%)}}
+@keyframes referenceHalo{0%,100%{opacity:.42;transform:translate(-50%,-50%) scale(.94)}50%{opacity:.82;transform:translate(-50%,-50%) scale(1.06)}}
+@keyframes referenceParticles{from{transform:translate3d(0,0,0)}to{transform:translate3d(-1%,1%,0)}}
+@keyframes referenceSealBreath{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.025)}}
+@keyframes referenceOrbit{to{transform:rotate(360deg)}}
+@keyframes referenceOrbitReverse{to{transform:rotate(-360deg)}}
+@keyframes referenceArtExit{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(1.025)}}
+
+@media(max-width:600px){
+  #welcome.reference-landing .reference-landing__art img{object-fit:cover!important;object-position:center center!important}
+  #welcome.reference-landing #openInvitation.reference-landing__seal{top:58.7%!important;width:132px!important;height:132px!important;min-width:132px!important;min-height:132px!important}
+}
+@media(min-width:601px){
+  #welcome.reference-landing .reference-landing__art img{object-fit:contain!important;background:#ead9ce!important}
+}
+@media(prefers-reduced-motion:reduce){
+  #welcome.reference-landing .reference-landing__art img,
+  #welcome.reference-landing .reference-landing__art::after,
+  #welcome.reference-landing .landing-atmosphere::before,
+  #welcome.reference-landing .landing-atmosphere::after,
+  #welcome.reference-landing #openInvitation.reference-landing__seal,
+  #welcome.reference-landing #openInvitation.reference-landing__seal::before,
+  #welcome.reference-landing #openInvitation.reference-landing__seal::after{animation:none!important}
+}
+</style>
+
 </html>
 
 <style id="landing-final-production-fix">

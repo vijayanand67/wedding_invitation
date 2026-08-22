@@ -3018,3 +3018,77 @@ body.wedding-cover-lock {
   #welcome.wedding-cover::after,
   #welcome .landing-particle { animation: none !important; }
 }
+
+/* =========================================================
+   FIX: FAST, REFINED LANDING -> INVITATION TRANSITION
+   The previous opening animation scaled the entire artwork and waited nearly
+   one second before revealing #home. On mobile this looked like an expanding
+   page and felt like a slow load. Keep the artwork locked in place and use a
+   short opacity/light crossfade instead.
+   ========================================================= */
+#welcome.reference-landing.is-opening,
+#welcome.wedding-cover.is-opening {
+  animation: landingCoverFadeOut .38s cubic-bezier(.22,.61,.36,1) forwards !important;
+  transition: none !important;
+}
+
+#welcome.reference-landing.is-opening .reference-landing__art,
+#welcome.wedding-cover.is-opening .reference-landing__art {
+  animation: none !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+#welcome.reference-landing.is-opening .reference-landing__art img,
+#welcome.wedding-cover.is-opening .reference-landing__art img {
+  animation: none !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+#welcome.reference-landing.is-opening #openInvitation,
+#welcome.wedding-cover.is-opening #openInvitation {
+  animation: landingSealPress .32s cubic-bezier(.16,1,.3,1) forwards !important;
+}
+
+#welcome.reference-landing.is-opening::after,
+#welcome.wedding-cover.is-opening::after {
+  animation: landingCoverGlowOut .38s ease-out forwards !important;
+}
+
+#welcome.reference-landing.is-opening .landing-particles,
+#welcome.wedding-cover.is-opening .landing-particles,
+#welcome.reference-landing.is-opening .landing-atmosphere,
+#welcome.wedding-cover.is-opening .landing-atmosphere {
+  animation: landingElementsFadeOut .28s ease-out forwards !important;
+}
+
+@keyframes landingCoverFadeOut {
+  0% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes landingSealPress {
+  0% { transform: translate(-50%,-50%) scale(1); opacity: 1; }
+  45% { transform: translate(-50%,-50%) scale(.96); opacity: 1; }
+  100% { transform: translate(-50%,-50%) scale(1.015); opacity: 0; }
+}
+
+@keyframes landingCoverGlowOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes landingElementsFadeOut {
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #welcome.reference-landing.is-opening,
+  #welcome.wedding-cover.is-opening,
+  #welcome.reference-landing.is-opening #openInvitation,
+  #welcome.wedding-cover.is-opening #openInvitation {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}

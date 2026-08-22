@@ -7732,6 +7732,88 @@ html.wedding-cover-html-lock, body.wedding-cover-lock {
 }
 </style>
 
+
+<style id="vh-final-premium-cover-v2">
+/* Final champagne cover polish — overrides earlier iterative cover rules. */
+:root{--vh-dark-bronze:#5a3828;--vh-deep-bronze:#3b2118;--vh-champagne:#ead7ca;--vh-gold:#c69a55;--vh-gold-soft:#f2d39a}
+html.wedding-cover-html-lock,body.wedding-cover-lock{overflow:hidden!important;height:100%!important}
+#welcome.reference-landing{
+  background:linear-gradient(180deg,var(--vh-deep-bronze),var(--vh-champagne) 12%,var(--vh-champagne) 88%,var(--vh-deep-bronze))!important;
+}
+#welcome.reference-landing .reference-landing__art{
+  position:absolute!important;inset:0!important;display:grid!important;place-items:center!important;
+  overflow:hidden!important;background:var(--vh-deep-bronze)!important;
+}
+#welcome.reference-landing .reference-landing__art::before{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 48%,transparent 0 34%,rgba(40,20,13,.08) 62%,rgba(35,16,11,.34) 100%),
+    linear-gradient(90deg,rgba(40,20,13,.20),transparent 14%,transparent 86%,rgba(40,20,13,.20));
+  mix-blend-mode:multiply;opacity:.55;
+}
+#welcome.reference-landing .reference-landing__art img{
+  position:relative!important;inset:auto!important;width:100%!important;height:100%!important;
+  object-fit:cover!important;object-position:center center!important;display:block!important;
+  transform:scale(1.018);animation:vhCoverReveal 1.35s cubic-bezier(.22,.7,.2,1) both!important;
+}
+/* Dark, elegant frame matching the other invitation pages. */
+#welcome.reference-landing::after{
+  content:"";position:absolute;inset:13px;z-index:30;pointer-events:none;border:1px solid rgba(67,38,25,.58);
+  border-radius:22px;box-shadow:inset 0 0 0 1px rgba(245,221,181,.28),0 0 0 1px rgba(49,27,18,.22),inset 0 0 55px rgba(42,20,13,.14);
+}
+/* Soft premium ambient movement, intentionally restrained. */
+#welcome.reference-landing .landing-atmosphere{position:absolute;inset:0;z-index:8;pointer-events:none;overflow:hidden}
+#welcome.reference-landing .landing-particle{position:absolute;width:5px;height:5px;border-radius:50%;background:rgba(255,236,195,.9);box-shadow:0 0 12px rgba(241,201,129,.7);opacity:.45;animation:vhFloatParticle 8s ease-in-out infinite}
+#welcome.reference-landing .p1{left:13%;top:24%;animation-delay:-1s}.p2{left:82%;top:31%;animation-delay:-4s}.p3{left:18%;top:67%;animation-delay:-2s}.p4{left:76%;top:72%;animation-delay:-6s}.p5{left:52%;top:14%;animation-delay:-3s}.p6{left:63%;top:83%;animation-delay:-5s}
+/* Use only the artwork's V♥H seal visually; the button is a transparent hit area. */
+#welcome.reference-landing #openInvitation{
+  position:absolute!important;left:50%!important;top:56.2%!important;transform:translate(-50%,-50%)!important;
+  width:clamp(145px,42vw,205px)!important;height:clamp(145px,42vw,205px)!important;
+  min-width:0!important;min-height:0!important;border:0!important;background:transparent!important;box-shadow:none!important;
+  color:transparent!important;font-size:0!important;z-index:60!important;cursor:pointer!important;outline:none!important;
+  pointer-events:auto!important;animation:none!important;
+}
+#welcome.reference-landing #openInvitation::before{
+  content:""!important;position:absolute!important;inset:-9px!important;border-radius:50%!important;border:1px solid rgba(198,154,85,.78)!important;
+  box-shadow:0 0 18px rgba(198,154,85,.38),inset 0 0 12px rgba(255,224,160,.16)!important;
+  animation:vhSealBreath 2.8s ease-in-out infinite!important;
+}
+#welcome.reference-landing #openInvitation::after{
+  content:""!important;position:absolute!important;inset:-23px!important;border-radius:50%!important;border:1px solid rgba(198,154,85,.30)!important;
+  border-top-color:rgba(247,215,157,.75)!important;border-bottom-color:transparent!important;
+  animation:vhSealOrbit 8s linear infinite!important;
+}
+/* Cinematic opening: the second-page feeling is created with an elegant envelope-fold reveal. */
+#welcome.reference-landing .opening-reference-transition{
+  position:absolute!important;inset:0!important;z-index:100!important;display:grid!important;place-items:center!important;
+  background:linear-gradient(180deg,rgba(73,42,29,.96),rgba(234,215,202,.98) 48%,rgba(73,42,29,.96))!important;
+  opacity:0!important;visibility:hidden!important;pointer-events:none!important;overflow:hidden!important;
+}
+#welcome.reference-landing .opening-envelope-card{
+  position:relative;width:min(88vw,480px);aspect-ratio:711/1536;border-radius:18px;overflow:hidden;
+  background:url("assets/images/wedding-envelope-landing.png") center/cover no-repeat;
+  box-shadow:0 30px 90px rgba(26,13,8,.48);transform:scale(.82);opacity:0;
+}
+#welcome.reference-landing .opening-envelope-flap{position:absolute;left:0;right:0;top:0;height:50%;background:linear-gradient(180deg,rgba(255,246,233,.08),rgba(96,52,33,.12));clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:50% 0;transform:rotateX(0)}
+#welcome.reference-landing .opening-envelope-paper{position:absolute;left:10%;right:10%;top:48%;height:35%;border-radius:12px;background:linear-gradient(180deg,#fff8ef,#ead7ca);box-shadow:0 10px 30px rgba(53,27,17,.18);transform:translateY(45%);opacity:.9}
+#welcome.reference-landing .opening-envelope-seal{position:absolute;left:50%;top:55%;transform:translate(-50%,-50%);width:34%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;color:#805324;font:600 clamp(1.1rem,5vw,2rem) Georgia,serif;background:radial-gradient(circle,#fff9e8 0 56%,#d7aa65 57% 61%,#f5dfae 62% 100%);box-shadow:0 0 0 6px rgba(255,244,216,.55),0 0 30px rgba(218,169,88,.45)}
+#welcome.reference-landing.opening .opening-reference-transition{opacity:1;visibility:visible;transition:opacity .18s ease!important}
+#welcome.reference-landing.opening .opening-envelope-card{animation:vhOpenCard 1.05s cubic-bezier(.2,.75,.18,1) forwards!important}
+#welcome.reference-landing.opening .opening-envelope-flap{animation:vhOpenFlap .9s .16s cubic-bezier(.2,.75,.18,1) forwards!important}
+#welcome.reference-landing.opening .opening-envelope-paper{animation:vhPaperLift .72s .42s cubic-bezier(.2,.75,.18,1) forwards!important}
+#welcome.reference-landing.is-closing{animation:vhCoverExit .55s cubic-bezier(.55,.08,.24,.9) forwards!important}
+#welcome.reference-landing.is-closing .opening-reference-transition__veil{opacity:1!important}
+@keyframes vhCoverReveal{from{opacity:0;transform:scale(1.055)}to{opacity:1;transform:scale(1.018)}}
+@keyframes vhFloatParticle{0%,100%{transform:translate3d(0,0,0) scale(.7);opacity:.25}50%{transform:translate3d(8px,-14px,0) scale(1.15);opacity:.8}}
+@keyframes vhSealBreath{0%,100%{transform:scale(.97);opacity:.52}50%{transform:scale(1.055);opacity:1}}
+@keyframes vhSealOrbit{to{transform:rotate(360deg)}}
+@keyframes vhOpenCard{0%{opacity:0;transform:scale(.82) translateY(18px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes vhOpenFlap{0%{transform:rotateX(0)}100%{transform:rotateX(78deg)}}
+@keyframes vhPaperLift{0%{transform:translateY(45%);opacity:.3}100%{transform:translateY(-2%);opacity:1}}
+@keyframes vhCoverExit{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.035)}}
+@media(max-width:600px){#welcome.reference-landing::after{inset:9px;border-radius:16px}#welcome.reference-landing #openInvitation{top:56.2%!important;width:clamp(135px,44vw,180px)!important;height:clamp(135px,44vw,180px)!important}.opening-envelope-card{width:91vw!important}}
+@media(prefers-reduced-motion:reduce){#welcome.reference-landing .reference-landing__art img,#welcome.reference-landing #openInvitation::before,#welcome.reference-landing #openInvitation::after,#welcome.reference-landing .landing-particle{animation:none!important}.opening-envelope-card,.opening-envelope-flap,.opening-envelope-paper{animation:none!important}}
+</style>
 </head>
 <body class="wedding-cover-lock">
 

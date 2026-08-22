@@ -273,7 +273,7 @@ $("#calendarBtn")?.addEventListener("click", () => {
   });
 })();
 
-/* Premium landing-page opening */
+/* Premium landing-page opening — champagne envelope cinematic transition */
 (function initWeddingCover() {
   const cover = document.getElementById("welcome");
   const seal = document.getElementById("openInvitation");
@@ -281,50 +281,36 @@ $("#calendarBtn")?.addEventListener("click", () => {
 
   document.documentElement.classList.add("wedding-cover-html-lock");
   document.body.classList.add("wedding-cover-lock");
-
   let opened = false;
 
   function openFirstInvitationPage(event) {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+    event?.preventDefault();
+    event?.stopPropagation();
     if (opened) return;
     opened = true;
-
-    // Stage 1: enlarge/glow the seal and reveal the supplied reference image
-    // as a very short cinematic transition.
+    seal.setAttribute("aria-disabled", "true");
     cover.classList.add("opening");
 
+    // Let the envelope-fold transition complete before revealing the existing home page.
+    window.setTimeout(() => cover.classList.add("is-closing"), 1050);
+
     window.setTimeout(() => {
-      // Stage 2: remove the landing layer and reveal the existing FIRST page.
-      cover.classList.add("is-closing");
-
-      window.setTimeout(() => {
-        cover.remove();
-        document.documentElement.classList.remove("wedding-cover-html-lock");
-        document.body.classList.remove("wedding-cover-lock");
-
-        const home = document.getElementById("home");
-        if (home) {
-          const header = document.querySelector(".topbar");
-          const headerHeight = header ? header.getBoundingClientRect().height : 0;
-          const top = Math.max(
-            0,
-            home.getBoundingClientRect().top + window.scrollY - headerHeight
-          );
-          window.scrollTo({ top, left: 0, behavior: "instant" });
-          history.replaceState(null, "", "#home");
-        } else {
-          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-        }
-      }, 260);
-    }, 760);
+      cover.remove();
+      document.documentElement.classList.remove("wedding-cover-html-lock");
+      document.body.classList.remove("wedding-cover-lock");
+      const home = document.getElementById("home");
+      if (home) {
+        const header = document.querySelector(".topbar");
+        const headerHeight = header ? header.getBoundingClientRect().height : 0;
+        const top = Math.max(0, home.getBoundingClientRect().top + window.scrollY - headerHeight);
+        window.scrollTo({ top, left: 0, behavior: "instant" });
+        history.replaceState(null, "", "#home");
+      } else window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }, 1450);
   }
 
-  seal.addEventListener("click", openFirstInvitationPage);
+  seal.addEventListener("click", openFirstInvitationPage, { passive: false });
   seal.addEventListener("pointerup", (event) => {
     if (event.pointerType === "touch") openFirstInvitationPage(event);
-  });
+  }, { passive: false });
 })();
-

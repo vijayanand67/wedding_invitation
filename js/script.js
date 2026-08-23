@@ -32,8 +32,11 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
     const topbar = document.querySelector(".topbar");
     const headerHeight = topbar ? topbar.getBoundingClientRect().height : 0;
-    const gap = window.innerWidth <= 500 ? 18 : window.innerWidth <= 850 ? 22 : 24;
-    const targetTop = Math.max(0, target.getBoundingClientRect().top + window.scrollY - headerHeight + gap);
+    /* Align the section itself directly beneath the fixed header.
+       The section's own top padding provides the visual breathing room.
+       Do not add a second scroll gap here, otherwise a strip of the
+       previous page remains visible above the next section. */
+    const targetTop = Math.max(0, target.getBoundingClientRect().top + window.scrollY - headerHeight);
 
     window.scrollTo({ top: targetTop, left: 0, behavior: "smooth" });
     history.replaceState(null, "", id);

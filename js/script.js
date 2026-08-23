@@ -315,30 +315,17 @@ $("#calendarBtn")?.addEventListener("click", () => {
     if (opened) return;
     opened = true;
 
-    // Start a short, non-scaling crossfade. The old implementation enlarged the
-    // artwork during the 920ms transition, which made the page look like it was
-    // zooming/expanding and kept the next page hidden for too long on mobile.
-    cover.classList.add("is-opening");
-    cover.setAttribute("aria-busy", "true");
+    // Open immediately. Do not add an opening state, wait for a timeout,
+    // animate/expand the cover, or display any loader/preloader. The first
+    // invitation page is already present in the DOM, so reveal it synchronously.
+    cover.remove();
+    document.documentElement.classList.remove("wedding-cover-html-lock");
+    document.body.classList.remove("wedding-cover-lock");
 
-    // Reveal the already-rendered first page quickly. No navigation/reload is
-    // performed, so the browser does not wait for a second page load.
-    window.setTimeout(() => {
-      cover.remove();
-      document.documentElement.classList.remove("wedding-cover-html-lock");
-      document.body.classList.remove("wedding-cover-lock");
-
-      const home = document.getElementById("home");
-      if (home) {
-        const header = document.querySelector(".topbar");
-        const headerHeight = header ? header.getBoundingClientRect().height : 0;
-        const top = Math.max(0, home.getBoundingClientRect().top + window.scrollY - headerHeight);
-        window.scrollTo({ top, left: 0, behavior: "auto" });
-        history.replaceState(null, "", "#home");
-      } else {
-        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-      }
-    }, 380);
+    // Always land on the first invitation page (#home), without smooth scrolling
+    // or an artificial transition.
+    window.scrollTo(0, 0);
+    history.replaceState(null, "", "#home");
   }
 
   // Only the V♥H seal is the opening control.

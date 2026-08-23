@@ -3116,3 +3116,58 @@ body.wedding-cover-lock {
   animation: none !important;
   transition: none !important;
 }
+
+
+/* =========================================================
+   FINAL UX FIX: REMOVE EXCESSIVE TOP SPACE BETWEEN PAGES
+   Keep the fixed navigation, but let each section begin close to
+   the navigation bar. Anchor targets are offset so headings never
+   hide behind the fixed header.
+   ========================================================= */
+:root{
+  --landing-topbar-height:72px;
+  --section-top-gap:24px;
+}
+
+/* Never leave a large blank band above section content. */
+.section{
+  scroll-margin-top:calc(var(--landing-topbar-height) - var(--section-top-gap));
+  padding-top:var(--section-top-gap)!important;
+}
+
+/* Keep section-to-section navigation calm and consistent. */
+html{
+  scroll-padding-top:0!important;
+}
+
+@media (max-width:850px){
+  :root{
+    --landing-topbar-height:66px;
+    --section-top-gap:22px;
+  }
+  .section{
+    padding:var(--section-top-gap) 5vw 70px!important;
+  }
+  .section-heading{
+    margin-bottom:34px!important;
+  }
+}
+
+@media (max-width:500px){
+  :root{
+    --landing-topbar-height:62px;
+    --section-top-gap:18px;
+  }
+  .section{
+    padding:var(--section-top-gap) 5vw 60px!important;
+  }
+  .section-heading{
+    margin-bottom:28px!important;
+  }
+}
+
+/* Prevent reveal animation from making a newly opened section look like it
+   is loading. Keep the existing reveal effect subtle and fast. */
+.reveal{
+  transition-duration:.35s!important;
+}

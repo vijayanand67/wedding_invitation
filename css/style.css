@@ -3172,182 +3172,127 @@ html{
   transition-duration:.35s!important;
 }
 
-
 /* =========================================================
-   FINAL POLISH: COMMON BURGUNDY / CHAMPAGNE THEME + HEADER ALIGNMENT
-   - Anchor navigation stops exactly at the fixed header.
-   - Section padding creates the intentional content breathing room.
-   - All pages share one premium burgundy/gold visual language.
+   FINAL COMMON THEME + MOBILE HEADER SPACE FIX
+   Keep every content page visually connected to the invitation
+   artwork and let the header extend cleanly into the iOS safe area.
    ========================================================= */
 :root{
-  --theme-wine:#2a0714;
-  --theme-wine-2:#3b0d1f;
-  --theme-wine-3:#4a1025;
-  --theme-gold:#d9ad5f;
-  --theme-gold-soft:#efd29b;
-  --theme-ivory:#f7ecdf;
-  --theme-text:#f8eee4;
-  --theme-muted:#dcc9c3;
+  --wedding-cream:#fff8f0;
+  --wedding-cream-deep:#f8ecdf;
+  --wedding-maroon:#64152b;
+  --wedding-maroon-deep:#3a0b1d;
+  --wedding-gold:#d8b143;
+  --safe-top:env(safe-area-inset-top, 0px);
 }
 
-html{
-  scroll-padding-top:0 !important;
+html,body{
+  background:var(--wedding-cream)!important;
 }
 
-body{
-  background:
-    radial-gradient(circle at 50% 0%, rgba(118,38,61,.20), transparent 34%),
-    linear-gradient(180deg,var(--theme-wine),#21050f 55%,var(--theme-wine)) !important;
-  color:var(--theme-text) !important;
-}
-
+/* Remove the visible cream strip above the fixed header on iPhone/Safari.
+   The header now owns the safe-area space instead of leaving it to body. */
 .topbar{
-  background:linear-gradient(90deg,rgba(38,5,18,.98),rgba(67,12,31,.97),rgba(38,5,18,.98)) !important;
-  border-bottom:1px solid rgba(217,173,95,.28) !important;
-  box-shadow:0 8px 28px rgba(15,2,8,.24) !important;
+  top:calc(-1 * var(--safe-top))!important;
+  min-height:calc(72px + var(--safe-top));
+  padding-top:calc(18px + var(--safe-top))!important;
+  background:linear-gradient(135deg,rgba(58,11,29,.99),rgba(100,21,43,.98))!important;
+  border-bottom:1px solid rgba(216,177,67,.28);
+  box-shadow:0 8px 24px rgba(42,7,20,.12);
 }
 
-/* The section itself reaches the top of the viewport under the fixed header.
-   This eliminates the visible strip of the previous page when navigating. */
-.section{
-  scroll-margin-top:0 !important;
-  padding-top:calc(var(--landing-topbar-height) + 18px) !important;
-  padding-bottom:72px !important;
+/* One shared page canvas: warm ivory/cream, with restrained depth. */
+main,
+main > .section,
+main > section.section,
+#invite.section,
+#journey.section,
+#events.section,
+#venue.section,
+#gallery.section,
+#rsvp.section{
+  background:var(--wedding-cream)!important;
+  color:#34272a;
+}
+
+/* Keep the venue from becoming a visually different block. */
+#venue.section{
+  background:linear-gradient(180deg,var(--wedding-cream),var(--wedding-cream-deep))!important;
+}
+
+/* RSVP uses the same common background as every other page. */
+#rsvp.section.rsvp{
   background:
-    radial-gradient(circle at 50% 0%,rgba(132,42,69,.14),transparent 34%),
-    linear-gradient(180deg,var(--theme-wine-2),var(--theme-wine) 72%,#250610) !important;
-  color:var(--theme-text) !important;
+    radial-gradient(circle at 88% 8%,rgba(216,177,67,.09),transparent 26%),
+    radial-gradient(circle at 10% 92%,rgba(100,21,43,.045),transparent 30%),
+    var(--wedding-cream)!important;
+  color:#34272a!important;
+  border-top:1px solid rgba(100,21,43,.10);
 }
-
-.section + .section{
-  border-top:1px solid rgba(217,173,95,.13);
+#rsvp .section-heading h2{
+  color:var(--wedding-maroon)!important;
 }
-
-.section-heading h2,
-.venue h2,
-.timeline h3,
-.event-card h3{
-  color:var(--theme-ivory) !important;
-}
-
-.section-heading p:last-child,
-.timeline p,
-.muted,
-.form-note,
-.venue-copy p,
-.invitation-note{
-  color:var(--theme-muted) !important;
-}
-
-.section-heading .eyebrow,
-.eyebrow,
-.location-label,
-.small-caps{
-  color:var(--theme-gold-soft) !important;
-}
-
-/* Invitation artwork remains the visual centerpiece, but now sits on the
-   same burgundy page theme instead of switching the whole page to cream. */
-#invite{
-  background:
-    radial-gradient(circle at 50% 18%,rgba(217,173,95,.10),transparent 28%),
-    linear-gradient(180deg,#3b0d1f,#2a0714 78%,#23050f) !important;
-}
-
-#invite .language-invitation-art{
-  margin-top:10px !important;
-}
-
-#invite .language-invitation-art__frame{
-  background:#f6ead8 !important;
-  border-color:rgba(217,173,95,.72) !important;
-  box-shadow:0 22px 58px rgba(0,0,0,.32),0 0 0 1px rgba(255,240,210,.12) !important;
-}
-
-#journey,
-#events,
-#gallery,
-#venue{
-  background:
-    radial-gradient(circle at 50% 0%,rgba(132,42,69,.12),transparent 30%),
-    linear-gradient(180deg,#2f0919,#250610) !important;
-}
-
-#events .celebration-card,
-.event-card,
-#venue .map-card,
-.gallery-placeholder{
-  background:linear-gradient(145deg,#451026,#2b0715) !important;
-  border-color:rgba(217,173,95,.34) !important;
-  color:var(--theme-text) !important;
-  box-shadow:0 22px 60px rgba(0,0,0,.24) !important;
-}
-
-#events .celebration-card p,
-#events .celebration-card h4,
-.event-card p,
-.event-card .time,
-.gallery-placeholder p{
-  color:var(--theme-muted) !important;
-}
-
-#venue .map-card{
-  border-color:rgba(247,236,223,.18) !important;
-}
-
-#rsvp{
-  background:
-    radial-gradient(circle at 78% 12%,rgba(174,76,100,.18),transparent 28%),
-    linear-gradient(145deg,#3b0b1d,#24050f 78%) !important;
-  color:var(--theme-text) !important;
-  border-top:1px solid rgba(217,173,95,.18);
-}
-
-#rsvp .section-heading h2,
 #rsvp .section-heading p:last-child{
-  color:var(--theme-ivory) !important;
+  color:#6f5d61!important;
 }
-
+#rsvp .eyebrow{
+  color:#97764a!important;
+}
 #rsvp .rsvp-form{
-  background:rgba(23,3,11,.20);
-  border:1px solid rgba(217,173,95,.22);
+  background:rgba(100,21,43,.035);
+  border:1px solid rgba(100,21,43,.18);
   border-radius:24px;
-  padding:28px;
-  box-shadow:inset 0 1px 0 rgba(255,240,210,.04),0 20px 60px rgba(0,0,0,.18);
+  padding:32px;
+  box-shadow:0 22px 60px rgba(73,17,34,.08);
 }
-
+#rsvp .rsvp-form label{
+  color:#4d3037;
+  font-weight:600;
+}
 #rsvp .rsvp-form input,
 #rsvp .rsvp-form textarea{
-  border-color:rgba(239,210,155,.38) !important;
-  background:rgba(255,255,255,.055) !important;
-  color:#fff7ef !important;
+  background:rgba(255,255,255,.58)!important;
+  color:#34272a!important;
+  border:1px solid rgba(100,21,43,.28)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
 }
-
+#rsvp .rsvp-form input:focus,
+#rsvp .rsvp-form textarea:focus{
+  outline:none;
+  border-color:rgba(216,177,67,.9)!important;
+  box-shadow:0 0 0 3px rgba(216,177,67,.14);
+}
 #rsvp .gold-btn{
-  background:linear-gradient(135deg,#d7ad5f,#edcb83,#c8943d) !important;
-  border-color:#f0d69f !important;
-  color:#2b0714 !important;
+  background:linear-gradient(135deg,#d8b143,#c99831)!important;
+  color:#28151a!important;
 }
 
+/* The invitation page artwork remains the visual centerpiece. */
+#invite .invitation-card{
+  background:linear-gradient(145deg,#fffdf8,#fbefe1)!important;
+}
+
+/* Keep footer aligned with the same maroon/gold system. */
 footer{
-  background:#1b040c !important;
-  border-top:1px solid rgba(217,173,95,.18);
+  background:linear-gradient(135deg,var(--wedding-maroon-deep),var(--wedding-maroon))!important;
+  border-top:1px solid rgba(216,177,67,.25);
 }
 
 @media(max-width:850px){
-  :root{--landing-topbar-height:66px}
-  .section{
-    padding:calc(var(--landing-topbar-height) + 14px) 5vw 62px !important;
+  .topbar{
+    min-height:calc(66px + var(--safe-top));
+    padding-top:calc(14px + var(--safe-top))!important;
   }
-  .section-heading{margin-bottom:30px !important}
-  #rsvp .rsvp-form{padding:20px;border-radius:20px}
+  #rsvp .rsvp-form{padding:24px;border-radius:22px;}
 }
 
 @media(max-width:500px){
-  :root{--landing-topbar-height:62px}
-  .section{
-    padding:calc(var(--landing-topbar-height) + 12px) 5vw 54px !important;
+  .topbar{
+    min-height:calc(62px + var(--safe-top));
+    padding-top:calc(13px + var(--safe-top))!important;
   }
-  .section-heading{margin-bottom:24px !important}
-  #invite .language-invitation-art{margin-top:4px !important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .topbar{transition:none!important}
 }

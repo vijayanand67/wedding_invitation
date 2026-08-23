@@ -13,29 +13,17 @@ $("#menuToggle")?.addEventListener("click", () => {
   document.querySelector(".topbar")?.classList.toggle("nav-open");
 });
 document.querySelectorAll("nav a").forEach((a) => {
-  a.addEventListener("click", () => document.querySelector(".topbar")?.classList.remove("nav-open"));
-});
-
-
-
-/* Section navigation: account for the fixed top bar without adding visual
-   whitespace or allowing headings to disappear underneath it. */
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", (event) => {
-    const id = link.getAttribute("href");
-    if (!id || id === "#") return;
+  a.addEventListener("click", (event) => {
+    document.querySelector(".topbar")?.classList.remove("nav-open");
+    const id = a.getAttribute("href");
+    if (!id || !id.startsWith("#")) return;
     const target = document.querySelector(id);
     if (!target) return;
-
     event.preventDefault();
-    document.querySelector(".topbar")?.classList.remove("nav-open");
-
-    const topbar = document.querySelector(".topbar");
-    const headerHeight = topbar ? topbar.getBoundingClientRect().height : 0;
-    const gap = window.innerWidth <= 500 ? 18 : window.innerWidth <= 850 ? 22 : 24;
-    const targetTop = Math.max(0, target.getBoundingClientRect().top + window.scrollY - headerHeight + gap);
-
-    window.scrollTo({ top: targetTop, left: 0, behavior: "smooth" });
+    const header = document.querySelector(".topbar");
+    const headerHeight = header ? header.getBoundingClientRect().height : 0;
+    const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - headerHeight - 22);
+    window.scrollTo({ top, left: 0, behavior: "smooth" });
     history.replaceState(null, "", id);
   });
 });
@@ -339,17 +327,22 @@ $("#calendarBtn")?.addEventListener("click", () => {
     if (opened) return;
     opened = true;
 
-    // Open immediately. Do not add an opening state, wait for a timeout,
-    // animate/expand the cover, or display any loader/preloader. The first
-    // invitation page is already present in the DOM, so reveal it synchronously.
+    cover.classList.add("is-opening");
+    cover.setAttribute("aria-busy", "true");
+
+    // Remove the cover synchronously. No artificial loading delay or spinner.
     cover.remove();
     document.documentElement.classList.remove("wedding-cover-html-lock");
     document.body.classList.remove("wedding-cover-lock");
 
-    // Always land on the first invitation page (#home), without smooth scrolling
-    // or an artificial transition.
-    window.scrollTo(0, 0);
-    history.replaceState(null, "", "#home");
+    // Always open the FIRST invitation content page (#home).
+    const home = document.getElementById("home");
+    if (home) {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      history.replaceState(null, "", "#home");
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
   }
 
   // Only the V♥H seal is the opening control.

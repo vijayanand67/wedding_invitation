@@ -39,8 +39,6 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="preload" as="image" href="assets/images/hero.jpg">
-<link rel="preload" as="image" href="assets/images/wedding-invitation-english.jpeg">
 <meta name="theme-color" content="#64152b">
 <meta name="description" content="Vijay and Hemalatha — wedding invitation, Chennai, September 2026.">
 <meta property="og:title" content="Vijay ❤️ Hemalatha | Wedding Invitation">
@@ -6771,30 +6769,228 @@ body.wedding-cover-lock{
 </style>
 
 
-<style id="final-header-spacing-fix">
-/* FINAL MOBILE/DESKTOP HEADER-TO-CONTENT SPACING FIX */
-.section{
-  padding-top:20px !important;
-  scroll-margin-top:0 !important;
+<style id="final-common-typography-spacing-fix">
+/* FINAL POLISH: one typography system + compact section starts */
+:root{
+  --vh-ink:#4a182b;
+  --vh-ink-soft:#654a54;
+  --vh-gold:#a8792f;
+  --vh-cream:#fbf5ec;
+  --vh-cream-2:#f5e9dc;
+  --vh-header:#5a102b;
+  --vh-header-deep:#3a071b;
+  --vh-header-h:106px;
 }
-.section::before{
-  top:8px !important;
+
+html,body{
+  background:var(--vh-cream)!important;
+  color:var(--vh-ink-soft)!important;
 }
-@media (max-width:850px){
-  .section{
-    padding:18px 5vw 70px !important;
-    scroll-margin-top:0 !important;
+body{
+  font-family:"Poppins",sans-serif!important;
+}
+
+/* Header: stable height, no artificial extra top band. */
+.topbar{
+  top:0!important;
+  min-height:var(--vh-header-h)!important;
+  height:var(--vh-header-h)!important;
+  box-sizing:border-box!important;
+  padding:20px 4.5vw!important;
+  padding-top:calc(20px + env(safe-area-inset-top,0px))!important;
+  background:linear-gradient(135deg,var(--vh-header-deep),var(--vh-header),#6d1635)!important;
+  border-bottom:1px solid rgba(216,177,67,.32)!important;
+  box-shadow:0 8px 24px rgba(53,7,25,.14)!important;
+}
+.brand{
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(24px,3vw,32px)!important;
+  font-weight:600!important;
+  letter-spacing:.01em!important;
+  color:#fff4e7!important;
+}
+.brand-name{color:#fff4e7!important}
+.brand-heart{color:#d96a72!important}
+.icon-btn{
+  width:48px!important;height:48px!important;
+  border:1px solid rgba(241,215,154,.45)!important;
+  color:#f8e8c8!important;
+  background:rgba(255,255,255,.035)!important;
+  font-family:"Poppins",sans-serif!important;
+}
+
+/* Remove the inconsistent large top padding used by individual sections. */
+.section,
+#invite,
+#journey,
+#events,
+#venue,
+#gallery,
+#rsvp{
+  padding-top:34px!important;
+  padding-bottom:72px!important;
+  background:var(--vh-cream)!important;
+  color:var(--vh-ink-soft)!important;
+}
+
+/* A small, deliberate breathing space only — never a large blank band. */
+.section-heading{
+  margin:0 auto 30px!important;
+  padding:0!important;
+}
+.section-heading .eyebrow,
+.eyebrow{
+  margin:0 0 10px!important;
+  color:var(--vh-gold)!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:.72rem!important;
+  font-weight:600!important;
+  letter-spacing:.24em!important;
+  line-height:1.4!important;
+}
+.section-heading h2,
+#invite .section-heading h2,
+#journey .section-heading h2,
+#events .section-heading h2,
+#venue .venue-copy h2,
+#rsvp .section-heading h2{
+  margin:0 0 12px!important;
+  color:var(--vh-ink)!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(40px,6vw,68px)!important;
+  font-weight:600!important;
+  line-height:.98!important;
+  letter-spacing:-.015em!important;
+  text-shadow:none!important;
+}
+.section-heading>p:not(.eyebrow),
+#journey .section-heading>p,
+#rsvp .section-heading>p:not(.eyebrow){
+  margin:0 auto!important;
+  color:var(--vh-ink-soft)!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:clamp(.98rem,2vw,1.2rem)!important;
+  line-height:1.65!important;
+}
+
+/* Keep all page canvases visually related. */
+main .section::before{
+  top:8px!important;
+  opacity:.38!important;
+}
+#invite .invitation-card,
+#events .celebration-card,
+#journey .memory-photo,
+#gallery .gallery-item,
+#gallery .gallery-placeholder,
+#venue .map-card,
+#rsvp .rsvp-form{
+  box-shadow:0 18px 48px rgba(73,17,34,.09)!important;
+}
+
+/* Invitation artwork: less dead space above the card. */
+#invite .language-invitation-art,
+#invite .invitation-card{
+  margin-top:18px!important;
+}
+
+/* RSVP: use the same cream canvas and a refined warm panel. */
+#rsvp.section.rsvp{
+  background:
+    radial-gradient(circle at 88% 5%,rgba(216,177,67,.10),transparent 24%),
+    radial-gradient(circle at 8% 92%,rgba(100,21,43,.045),transparent 28%),
+    linear-gradient(180deg,var(--vh-cream),var(--vh-cream-2))!important;
+  color:var(--vh-ink-soft)!important;
+  border-top:1px solid rgba(100,21,43,.10)!important;
+}
+#rsvp::before{
+  inset:14px!important;
+  border:1px solid rgba(167,121,47,.20)!important;
+  border-radius:24px!important;
+}
+#rsvp::after{
+  border-color:rgba(167,121,47,.10)!important;
+}
+#rsvp .section-heading .eyebrow{color:var(--vh-gold)!important;text-shadow:none!important}
+#rsvp .section-heading h2{color:var(--vh-ink)!important;text-shadow:none!important}
+#rsvp .section-heading>p:not(.eyebrow){color:var(--vh-ink-soft)!important}
+#rsvp .rsvp-form{
+  max-width:820px!important;
+  padding:28px!important;
+  background:rgba(255,250,243,.82)!important;
+  border:1px solid rgba(115,76,43,.20)!important;
+  border-radius:24px!important;
+  backdrop-filter:blur(8px)!important;
+  -webkit-backdrop-filter:blur(8px)!important;
+  box-shadow:0 18px 50px rgba(73,17,34,.10),inset 0 1px 0 rgba(255,255,255,.8)!important;
+}
+#rsvp .rsvp-form label{
+  color:var(--vh-ink)!important;
+  font-family:"Poppins",sans-serif!important;
+  font-size:14px!important;
+  font-weight:600!important;
+}
+#rsvp .rsvp-form input,
+#rsvp .rsvp-form textarea{
+  background:#fffaf4!important;
+  color:#3f2830!important;
+  border:1px solid rgba(115,76,43,.27)!important;
+  box-shadow:inset 0 1px 2px rgba(73,17,34,.04)!important;
+  font-family:"Poppins",sans-serif!important;
+}
+#rsvp .rsvp-form input::placeholder,
+#rsvp .rsvp-form textarea::placeholder{color:rgba(74,24,43,.42)!important}
+#rsvp .rsvp-form input:focus,
+#rsvp .rsvp-form textarea:focus{
+  border-color:rgba(167,121,47,.78)!important;
+  box-shadow:0 0 0 3px rgba(216,177,67,.12)!important;
+}
+#rsvp .gold-btn{
+  background:linear-gradient(135deg,#c79236,#dfbb62 50%,#b77b2b)!important;
+  color:#2f101a!important;
+}
+
+/* Footer stays dark, creating a clean end to the cream pages. */
+footer{
+  background:linear-gradient(135deg,var(--vh-header-deep),var(--vh-header))!important;
+}
+
+/* Prevent reveal animation from looking like a loading state. */
+.reveal{transition:opacity .32s ease,transform .32s ease!important}
+
+@media(max-width:850px){
+  :root{--vh-header-h:106px}
+  .topbar{
+    padding-left:4vw!important;padding-right:4vw!important;
+    padding-top:calc(18px + env(safe-area-inset-top,0px))!important;
   }
-}
-@media (max-width:500px){
-  .section{
-    padding:14px 5vw 60px !important;
-    scroll-margin-top:0 !important;
+  .icon-btn{width:46px!important;height:46px!important}
+  .section,#invite,#journey,#events,#venue,#gallery,#rsvp{
+    padding-top:26px!important;
+    padding-bottom:60px!important;
   }
+  .section-heading{margin-bottom:24px!important}
+  .section-heading h2,
+  #invite .section-heading h2,
+  #journey .section-heading h2,
+  #events .section-heading h2,
+  #venue .venue-copy h2,
+  #rsvp .section-heading h2{
+    font-size:clamp(38px,10vw,52px)!important;
+  }
+  #rsvp .rsvp-form{padding:22px 18px!important}
 }
-/* Keep the first content line visually aligned directly below the fixed header. */
-@media (max-width:850px){
-  .section-heading{margin-top:0 !important;}
+
+@media(max-width:500px){
+  .brand{font-size:25px!important}
+  .section,#invite,#journey,#events,#venue,#gallery,#rsvp{
+    padding-top:22px!important;
+    padding-bottom:52px!important;
+  }
+  .section-heading{margin-bottom:22px!important}
+  .section-heading .eyebrow{font-size:.65rem!important;letter-spacing:.20em!important}
+  .section-heading>p:not(.eyebrow){font-size:.96rem!important;line-height:1.6!important}
+  #rsvp .rsvp-form{padding:20px 16px!important;border-radius:20px!important}
 }
 </style>
 </head>

@@ -16,6 +16,30 @@ document.querySelectorAll("nav a").forEach((a) => {
   a.addEventListener("click", () => document.querySelector(".topbar")?.classList.remove("nav-open"));
 });
 
+
+
+/* Section navigation: account for the fixed top bar without adding visual
+   whitespace or allowing headings to disappear underneath it. */
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const id = link.getAttribute("href");
+    if (!id || id === "#") return;
+    const target = document.querySelector(id);
+    if (!target) return;
+
+    event.preventDefault();
+    document.querySelector(".topbar")?.classList.remove("nav-open");
+
+    const topbar = document.querySelector(".topbar");
+    const headerHeight = topbar ? topbar.getBoundingClientRect().height : 0;
+    const gap = window.innerWidth <= 500 ? 18 : window.innerWidth <= 850 ? 22 : 24;
+    const targetTop = Math.max(0, target.getBoundingClientRect().top + window.scrollY - headerHeight + gap);
+
+    window.scrollTo({ top: targetTop, left: 0, behavior: "smooth" });
+    history.replaceState(null, "", id);
+  });
+});
+
 /* Language */
 let lang = "en";
 $("#langToggle")?.addEventListener("click", () => {

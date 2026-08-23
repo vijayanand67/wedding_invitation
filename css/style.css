@@ -3092,3 +3092,27 @@ body.wedding-cover-lock {
     opacity: 0 !important;
   }
 }
+
+/* =========================================================
+   FINAL FIX: INSTANT LANDING -> FIRST PAGE
+   Never scale, fade, expand, or wait when the seal is clicked.
+   The opening handler removes the cover synchronously.
+   ========================================================= */
+#welcome.reference-landing.is-opening,
+#welcome.wedding-cover.is-opening,
+#welcome.invitation-cover.is-opening {
+  animation: none !important;
+  transition: none !important;
+}
+#welcome.reference-landing.is-opening .reference-landing__art,
+#welcome.wedding-cover.is-opening .reference-landing__art,
+#welcome.invitation-cover.is-opening .reference-landing__art,
+#welcome.reference-landing.is-opening .reference-landing__art img,
+#welcome.wedding-cover.is-opening .reference-landing__art img,
+#welcome.invitation-cover.is-opening .reference-landing__art img,
+#welcome.reference-landing.is-opening #openInvitation,
+#welcome.wedding-cover.is-opening #openInvitation,
+#welcome.invitation-cover.is-opening #openInvitation {
+  animation: none !important;
+  transition: none !important;
+}

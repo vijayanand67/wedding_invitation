@@ -6770,6 +6770,33 @@ body.wedding-cover-lock{
 @media(max-width:390px){#journey .childhood-heading{font-size:23px!important;}}
 </style>
 
+
+<style id="final-header-spacing-fix">
+/* FINAL MOBILE/DESKTOP HEADER-TO-CONTENT SPACING FIX */
+.section{
+  padding-top:20px !important;
+  scroll-margin-top:0 !important;
+}
+.section::before{
+  top:8px !important;
+}
+@media (max-width:850px){
+  .section{
+    padding:18px 5vw 70px !important;
+    scroll-margin-top:0 !important;
+  }
+}
+@media (max-width:500px){
+  .section{
+    padding:14px 5vw 60px !important;
+    scroll-margin-top:0 !important;
+  }
+}
+/* Keep the first content line visually aligned directly below the fixed header. */
+@media (max-width:850px){
+  .section-heading{margin-top:0 !important;}
+}
+</style>
 </head>
 <body class="wedding-cover-lock">
 

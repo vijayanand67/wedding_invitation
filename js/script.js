@@ -187,16 +187,16 @@ $("#calendarBtn")?.addEventListener("click", () => {
   window.open(url, "_blank", "noopener,noreferrer");
 });
 
-/* RSVP — reliable cross-origin HTML form POST through a hidden iframe.
-   This avoids the browser CORS/no-cors response problem that caused the
-   previous fetch implementation to report success without a reliable flow. */
+/* RSVP — native cross-origin form POST through a hidden iframe.
+   Google Apps Script handles the write to the Sheet and mirrors the row to
+   GitHub log/rsvp.csv. The UI waits for the iframe response instead of
+   claiming success after an arbitrary delay. */
 (function initRSVP() {
   const form = $("#rsvpForm");
   if (!form) return;
 
   const endpoint = String(SITE_CONFIG.rsvpWebAppUrl || "").trim();
   const button = form.querySelector("button[type='submit']");
-
   let status = $("#rsvpStatus");
   if (!status) {
     status = document.createElement("span");
@@ -212,17 +212,16 @@ $("#calendarBtn")?.addEventListener("click", () => {
     iframe.name = "rsvpSubmitFrame";
     iframe.title = "RSVP submission";
     iframe.setAttribute("aria-hidden", "true");
-    iframe.style.position = "absolute";
-    iframe.style.width = "1px";
-    iframe.style.height = "1px";
-    iframe.style.border = "0";
-    iframe.style.opacity = "0";
-    iframe.style.pointerEvents = "none";
+    Object.assign(iframe.style,{position:"absolute",width:"1px",height:"1px",border:"0",opacity:"0",pointerEvents:"none"});
     document.body.appendChild(iframe);
   }
 
+  let submitting = false;
+  let responseTimer = null;
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    if (submitting) return;
 
     if (!endpoint) {
       status.textContent = "RSVP is not connected.";
@@ -233,55 +232,58 @@ $("#calendarBtn")?.addEventListener("click", () => {
     const name = String(form.querySelector('[name="name"]')?.value || "").trim();
     const guests = String(form.querySelector('[name="guests"]')?.value || "").trim();
     const wishes = String(form.querySelector('[name="wishes"]')?.value || "").trim();
-
     if (!name || !guests) {
       status.textContent = "Please enter your name and number of guests.";
       status.className = "rsvp-status error";
       return;
     }
 
-    // No "Sending..." message. Show only the requested success message after
-    // the cross-origin form POST has been dispatched.
-    const submitName = form.querySelector('[name="name"]');
-    const submitGuests = form.querySelector('[name="guests"]');
-    const submitWishes = form.querySelector('[name="wishes"]');
+    submitting = true;
+    if (button) { button.disabled = true; button.setAttribute("aria-busy","true"); }
+    status.textContent = "";
+    status.className = "rsvp-status";
 
     const originalAction = form.getAttribute("action");
     const originalTarget = form.getAttribute("target");
     const originalMethod = form.getAttribute("method");
+    let responseSeen = false;
 
-    form.setAttribute("action", endpoint);
-    form.setAttribute("method", "POST");
-    form.setAttribute("target", "rsvpSubmitFrame");
+    const restore = () => {
+      if (originalAction === null) form.removeAttribute("action"); else form.setAttribute("action",originalAction);
+      if (originalTarget === null) form.removeAttribute("target"); else form.setAttribute("target",originalTarget);
+      if (originalMethod === null) form.removeAttribute("method"); else form.setAttribute("method",originalMethod);
+      if (responseTimer) { clearTimeout(responseTimer); responseTimer=null; }
+      iframe.removeEventListener("load", onLoad);
+      submitting=false;
+      if (button) { button.disabled=false; button.removeAttribute("aria-busy"); }
+    };
 
-    if (button) {
-      button.disabled = true;
-      button.setAttribute("aria-busy", "true");
-    }
-
-    // Submit natively so Google Apps Script receives application/x-www-form-urlencoded.
-    HTMLFormElement.prototype.submit.call(form);
-
-    // Restore normal attributes after dispatch.
-    window.setTimeout(() => {
-      if (originalAction === null) form.removeAttribute("action");
-      else form.setAttribute("action", originalAction);
-
-      if (originalTarget === null) form.removeAttribute("target");
-      else form.setAttribute("target", originalTarget);
-
-      if (originalMethod === null) form.removeAttribute("method");
-      else form.setAttribute("method", originalMethod);
-
-      status.textContent = "RSVP data received successfully";
+    const onLoad = () => {
+      if (responseSeen) return;
+      responseSeen = true;
+      // Google Apps Script has completed the request by the time the target
+      // iframe receives its response. The response body is intentionally not
+      // read because it is cross-origin.
+      status.textContent = "RSVP submitted successfully";
       status.className = "rsvp-status success";
       form.reset();
+      restore();
+    };
 
-      if (button) {
-        button.disabled = false;
-        button.removeAttribute("aria-busy");
-      }
-    }, 900);
+    iframe.addEventListener("load", onLoad);
+    form.setAttribute("action",endpoint);
+    form.setAttribute("method","POST");
+    form.setAttribute("target","rsvpSubmitFrame");
+    HTMLFormElement.prototype.submit.call(form);
+
+    // Fail safely if the Apps Script deployment is unreachable.
+    responseTimer = window.setTimeout(() => {
+      if (responseSeen) return;
+      responseSeen=true;
+      status.textContent="Unable to confirm the RSVP. Please try again.";
+      status.className="rsvp-status error";
+      restore();
+    },15000);
   });
 })();
 

@@ -54,6 +54,8 @@ function applyLanguage(nextLang) {
   lang = nextLang === "ta" ? "ta" : "en";
   document.documentElement.lang = lang;
   document.documentElement.dataset.lang = lang;
+  document.documentElement.classList.toggle("is-tamil", lang === "ta");
+  document.body?.classList.toggle("is-tamil", lang === "ta");
   localStorage.setItem("weddingLang", lang);
 
   const dictionary = LANGUAGE_TEXT[lang];

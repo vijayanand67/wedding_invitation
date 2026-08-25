@@ -29,15 +29,58 @@ document.querySelectorAll("nav a").forEach((a) => {
 });
 
 /* Language */
-let lang = "en";
-$("#langToggle")?.addEventListener("click", () => {
-  lang = lang === "en" ? "ta" : "en";
+let lang = localStorage.getItem("weddingLang") === "ta" ? "ta" : "en";
+
+const LANGUAGE_TEXT = {
+  en: {
+    heroQuote: "Two families, one beautiful celebration.",
+    heroSub: "With love, blessings, and joy, we begin our forever together."
+  },
+  ta: {
+    heroQuote: "இரண்டு குடும்பங்கள், ஒரு அழகான கொண்டாட்டம்.",
+    heroSub: "அன்பும், ஆசீர்வாதங்களும், மகிழ்ச்சியுடனும் எங்கள் வாழ்நாள் பயணத்தை தொடங்குகிறோம்."
+  }
+};
+
+function applyLanguage(nextLang) {
+  lang = nextLang === "ta" ? "ta" : "en";
   document.documentElement.lang = lang;
-  $("#langToggle").textContent = lang === "en" ? "தமிழ்" : "EN";
+  document.documentElement.dataset.lang = lang;
+  localStorage.setItem("weddingLang", lang);
+
+  const dictionary = LANGUAGE_TEXT[lang];
+  document.querySelectorAll("[data-key]").forEach((el) => {
+    const key = el.dataset.key;
+    if (Object.prototype.hasOwnProperty.call(dictionary, key)) el.textContent = dictionary[key];
+  });
+
   document.querySelectorAll("[data-en][data-ta]").forEach((el) => {
     el.textContent = el.dataset[lang];
   });
+
+  const invitationImage = document.getElementById("languageInvitationImage");
+  if (invitationImage) {
+    invitationImage.src = lang === "ta"
+      ? "assets/images/wedding-invitation-tamil.jpeg"
+      : "assets/images/wedding-invitation-english.jpeg";
+    invitationImage.alt = lang === "ta" ? "தமிழ் திருமண அழைப்பிதழ்" : "English wedding invitation";
+  }
+
+  const toggle = $("#langToggle");
+  if (toggle) toggle.textContent = lang === "en" ? "தமிழ்" : "EN";
+
+  window.dispatchEvent(new CustomEvent("wedding:languagechange", { detail: { lang } }));
+}
+
+$("#langToggle")?.addEventListener("click", () => {
+  applyLanguage(lang === "en" ? "ta" : "en");
 });
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => applyLanguage(lang), { once: true });
+} else {
+  applyLanguage(lang);
+}
 
 /* Reveal */
 if ("IntersectionObserver" in window) {

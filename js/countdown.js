@@ -13,9 +13,10 @@
     function render() {
       const remaining = weddingDate - Date.now();
 
+      const currentLang = document.documentElement.dataset.lang === "ta" ? "ta" : "en";
       if (remaining <= 0) {
         el.innerHTML =
-          '<div class="unit"><b>♥</b><small>Wedding Day</small></div>';
+          '<div class="unit"><b>♥</b><small>' + (currentLang === "ta" ? "திருமண நாள்" : "Wedding Day") + '</small></div>';
         return;
       }
 
@@ -25,13 +26,14 @@
       const seconds = Math.floor((remaining % 60000) / 1000);
 
       el.innerHTML =
-        '<div class="unit"><b>' + days + '</b><small>Days</small></div>' +
-        '<div class="unit"><b>' + String(hours).padStart(2, "0") + '</b><small>Hours</small></div>' +
-        '<div class="unit"><b>' + String(minutes).padStart(2, "0") + '</b><small>Minutes</small></div>' +
-        '<div class="unit"><b>' + String(seconds).padStart(2, "0") + '</b><small>Seconds</small></div>';
+        '<div class="unit"><b>' + days + '</b><small>' + (currentLang === "ta" ? "நாட்கள்" : "Days") + '</small></div>' +
+        '<div class="unit"><b>' + String(hours).padStart(2, "0") + '</b><small>' + (currentLang === "ta" ? "மணிநேரம்" : "Hours") + '</small></div>' +
+        '<div class="unit"><b>' + String(minutes).padStart(2, "0") + '</b><small>' + (currentLang === "ta" ? "நிமிடங்கள்" : "Minutes") + '</small></div>' +
+        '<div class="unit"><b>' + String(seconds).padStart(2, "0") + '</b><small>' + (currentLang === "ta" ? "விநாடிகள்" : "Seconds") + '</small></div>';
     }
 
     render();
+    window.addEventListener("wedding:languagechange", render);
     window.clearInterval(window.__weddingCountdownTimer);
     window.__weddingCountdownTimer = window.setInterval(render, 1000);
   }

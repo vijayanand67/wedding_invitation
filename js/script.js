@@ -33,12 +33,20 @@ let lang = localStorage.getItem("weddingLang") === "ta" ? "ta" : "en";
 
 const LANGUAGE_TEXT = {
   en: {
-    heroQuote: "Two families, one beautiful celebration.",
-    heroSub: "With love, blessings, and joy, we begin our forever together."
+    brandGroom:"Vijay",brandBride:"Hemalatha",navInvitation:"Invitation",navJourney:"Journey",navEvents:"Events",navVenue:"Venue",navGallery:"Gallery",navRsvp:"RSVP",
+    heroEyebrow:"A NEW BEGINNING",groomName:"Vijay Anand",brideName:"Hemalatha",heroQuote:"Two families, one beautiful celebration.",heroSub:"With love, blessings, and joy, we begin our forever together.",heroDate:"07 September 2026",viewInvitation:"View Invitation",addCalendar:"＋ Add to Calendar",
+    inviteEyebrow:"WITH OUR FAMILIES",inviteTitle:"Wedding Invitation",inviteDescription:"Together with our families, we warmly invite you to celebrate our wedding.",
+    journeyTitle:"Our Journey Begins",journeyDescription:"With the blessings of our parents and elders, two families come together for a lifetime of togetherness.",childhood:"Our Memories",journeyStep1Title:"Two Families",journeyStep1Text:"A beautiful union blessed by our families.",journeyStep2Title:"Engagement",journeyStep2Text:"A joyful celebration that brought our families closer.",journeyStep3Title:"A Promise for a Lifetime",journeyStep3Text:"With love, blessings and joy, we begin our new chapter.",journeyStep4Title:"Forever Begins",journeyStep4Text:"07 September 2026",
+    eventsEyebrow:"SAVE THE DATE",eventsTitle:"Wedding Celebrations",eventsDescription:"Two beautiful moments, one unforgettable beginning.",receptionDate:"06 SEP 2026",receptionTitle:"Reception",receptionTime:"6:30 PM onwards",weddingDate:"07 SEP 2026",weddingTitle:"Wedding Ceremony",weddingTime:"6:00 AM – 7:30 AM",celebrationVenue:"CELEBRATION VENUE",venueName:"Ramaswamy Mahal / S.R. Sami Party Hall",directions:"📍 Get Directions",celebrationNote:"With the love and blessings of our families, we warmly invite you to celebrate with us.",
+    venueEyebrow:"JOIN US",venueTitle:"The Venue",venueAddress:"8, North Avenue, Muthamizh Nagar, Kodungaiyur, Chennai – 600118",venueNear:"Near Muthamizh Nagar Church",openMaps:"Open in Google Maps",galleryEyebrow:"MOMENTS TO TREASURE",galleryMore:"More memories coming soon",rsvpEyebrow:"WE WOULD LOVE TO HAVE YOU",rsvpTitle:"RSVP",rsvpDescription:"Please share your attendance and wishes with us.",rsvpNameLabel:"Your Name",rsvpGuestsLabel:"Number of Guests",rsvpWishesLabel:"Your Wishes",rsvpSubmit:"Send RSVP",footerThanks:"Thank you for celebrating our special day with us."
   },
   ta: {
-    heroQuote: "இரண்டு குடும்பங்கள், ஒரு அழகான கொண்டாட்டம்.",
-    heroSub: "அன்பும், ஆசீர்வாதங்களும், மகிழ்ச்சியுடனும் எங்கள் வாழ்நாள் பயணத்தை தொடங்குகிறோம்."
+    brandGroom:"விஜய்",brandBride:"ஹேமலதா",navInvitation:"அழைப்பிதழ்",navJourney:"நமது பயணம்",navEvents:"நிகழ்வுகள்",navVenue:"திருமண இடம்",navGallery:"நினைவுகள்",navRsvp:"வருகை உறுதி",
+    heroEyebrow:"ஒரு புதிய தொடக்கம்",groomName:"விஜய் ஆனந்த்",brideName:"ஹேமலதா",heroQuote:"இரண்டு குடும்பங்கள், ஒரு அழகான கொண்டாட்டம்.",heroSub:"அன்பும், ஆசீர்வாதங்களும், மகிழ்ச்சியுடனும் எங்கள் வாழ்நாள் பயணத்தை தொடங்குகிறோம்.",heroDate:"07 செப்டம்பர் 2026",viewInvitation:"அழைப்பிதழைப் பார்க்கவும்",addCalendar:"＋ காலண்டரில் சேர்க்கவும்",
+    inviteEyebrow:"எங்கள் குடும்பங்களுடன்",inviteTitle:"திருமண அழைப்பிதழ்",inviteDescription:"எங்கள் குடும்பங்களுடன் இணைந்து, எங்கள் திருமண விழாவை கொண்டாட உங்களை அன்புடன் அழைக்கிறோம்.",
+    journeyTitle:"எங்கள் பயணம் தொடங்குகிறது",journeyDescription:"பெற்றோர் மற்றும் பெரியோர்களின் ஆசீர்வாதத்துடன், இரண்டு குடும்பங்கள் வாழ்நாள் உறவாக ஒன்றிணைகின்றன.",childhood:"நமது நினைவுகள்",journeyStep1Title:"இரண்டு குடும்பங்கள்",journeyStep1Text:"எங்கள் குடும்பங்களின் ஆசீர்வாதத்துடன் ஒரு அழகான இணைவு.",journeyStep2Title:"நிச்சயதார்த்தம்",journeyStep2Text:"எங்கள் குடும்பங்களை இன்னும் நெருக்கமாக இணைத்த மகிழ்ச்சியான விழா.",journeyStep3Title:"வாழ்நாள் வாக்குறுதி",journeyStep3Text:"அன்பும், ஆசீர்வாதமும், மகிழ்ச்சியுடனும் எங்கள் புதிய அத்தியாயத்தை தொடங்குகிறோம்.",journeyStep4Title:"என்றென்றும் தொடங்குகிறது",journeyStep4Text:"07 செப்டம்பர் 2026",
+    eventsEyebrow:"தேதியை நினைவில் கொள்ளுங்கள்",eventsTitle:"திருமண விழாக்கள்",eventsDescription:"இரண்டு அழகான தருணங்கள், மறக்க முடியாத ஒரு தொடக்கம்.",receptionDate:"06 செப் 2026",receptionTitle:"வரவேற்பு விழா",receptionTime:"மாலை 6:30 மணி முதல்",weddingDate:"07 செப் 2026",weddingTitle:"திருமண விழா",weddingTime:"காலை 6:00 – 7:30 மணி",celebrationVenue:"விழா நடைபெறும் இடம்",venueName:"ராமசாமி மஹால் / எஸ்.ஆர். சாமி பார்ட்டி ஹால்",directions:"📍 வழிகாட்டியைப் பார்க்கவும்",celebrationNote:"எங்கள் குடும்பங்களின் அன்பும் ஆசீர்வாதமும் நிறைந்த இந்த விழாவை எங்களுடன் இணைந்து கொண்டாட உங்களை அன்புடன் அழைக்கிறோம்.",
+    venueEyebrow:"எங்களுடன் இணைந்திடுங்கள்",venueTitle:"திருமண இடம்",venueAddress:"8, நார்த் அவென்யூ, முத்தமிழ் நகர், கொடுங்கையூர், சென்னை – 600118",venueNear:"முத்தமிழ் நகர் தேவாலயம் அருகில்",openMaps:"Google Maps-ல் திறக்கவும்",galleryEyebrow:"மனதில் நிற்கும் நினைவுகள்",galleryMore:"மேலும் நினைவுகள் விரைவில்",rsvpEyebrow:"உங்கள் வருகையை ஆவலுடன் எதிர்நோக்குகிறோம்",rsvpTitle:"வருகை உறுதி",rsvpDescription:"உங்கள் வருகையையும் வாழ்த்துகளையும் எங்களுடன் பகிர்ந்து கொள்ளுங்கள்.",rsvpNameLabel:"உங்கள் பெயர்",rsvpGuestsLabel:"வரும் விருந்தினர்களின் எண்ணிக்கை",rsvpWishesLabel:"உங்கள் வாழ்த்துகள்",rsvpSubmit:"வருகையை உறுதிப்படுத்துங்கள்",footerThanks:"எங்கள் சிறப்பு நாளை எங்களுடன் கொண்டாடியதற்கு நன்றி."
   }
 };
 
@@ -352,47 +360,26 @@ $("#calendarBtn")?.addEventListener("click", () => {
   layer.appendChild(fragment);
 })();
 
-/* Premium envelope opening */
+/* Fast, cross-platform landing opening. Android-safe: touchend + pointerup + click, no delay. */
 (function initWeddingCover() {
   const cover = document.getElementById("welcome");
-  const art = document.querySelector(".wedding-cover__art");
   const seal = document.getElementById("openInvitation");
   if (!cover || !seal) return;
-
   document.documentElement.classList.add("wedding-cover-html-lock");
   document.body.classList.add("wedding-cover-lock");
-
   let opened = false;
-
   function openCover(event) {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
     if (opened) return;
+    if (event) { event.preventDefault(); event.stopPropagation(); }
     opened = true;
-
-    cover.classList.add("is-opening");
-    cover.setAttribute("aria-busy", "true");
-
-    // Remove the cover synchronously. No artificial loading delay or spinner.
     cover.remove();
     document.documentElement.classList.remove("wedding-cover-html-lock");
     document.body.classList.remove("wedding-cover-lock");
-
-    // Always open the FIRST invitation content page (#home).
-    const home = document.getElementById("home");
-    if (home) {
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-      history.replaceState(null, "", "#home");
-    } else {
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    }
+    window.scrollTo(0, 0);
+    history.replaceState(null, "", "#home");
   }
-
-  // Only the V♥H seal is the opening control.
-  seal.addEventListener("click", openCover);
-  seal.addEventListener("pointerup", (event) => {
-    if (event.pointerType === "touch") openCover(event);
-  });
+  seal.addEventListener("click", openCover, {passive:false});
+  seal.addEventListener("touchend", openCover, {passive:false});
+  seal.addEventListener("pointerup", (e) => { if (e.pointerType === "touch" || e.pointerType === "pen") openCover(e); }, {passive:false});
+  seal.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") openCover(e); });
 })();

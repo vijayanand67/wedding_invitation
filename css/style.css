@@ -3018,3 +3018,104 @@ body.wedding-cover-lock {
   #welcome.wedding-cover::after,
   #welcome .landing-particle { animation: none !important; }
 }
+
+
+/* =========================================================
+   FINAL COMMON THEME + TYPOGRAPHY + MOBILE SPACING
+   ========================================================= */
+:root{
+  --vh-wine:#3a0b1d;
+  --vh-wine-deep:#260713;
+  --vh-cream:#fbf4e9;
+  --vh-paper:#fffaf2;
+  --vh-ink:#4a182b;
+  --vh-ink-soft:#6b555b;
+  --vh-gold:#b88a3b;
+  --vh-gold-soft:#d9b56b;
+}
+
+html{scroll-behavior:smooth;scroll-padding-top:0!important}
+body{background:var(--vh-cream);color:var(--vh-ink);font-family:"Poppins",sans-serif}
+.topbar{
+  background:linear-gradient(135deg,rgba(50,7,24,.98),rgba(102,18,48,.97))!important;
+  border-bottom:1px solid rgba(220,177,95,.28);
+  box-shadow:0 8px 28px rgba(48,7,20,.16);
+}
+.brand{font-family:"Cormorant Garamond","Playfair Display",serif!important;font-size:1.35rem!important;font-weight:600!important;letter-spacing:.01em}
+.icon-btn{border-color:rgba(222,184,107,.48)!important;background:rgba(255,255,255,.035)!important;color:#f7ead3!important;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.icon-btn:hover{transform:translateY(-1px);background:rgba(222,184,107,.10)!important;border-color:rgba(222,184,107,.75)!important}
+
+/* Keep every section visually attached to the header. */
+.section{padding-top:58px!important;padding-bottom:78px!important;background:var(--vh-cream)}
+.section-heading{margin-top:0!important;margin-bottom:38px!important}
+.section-heading h2{font-family:"Cormorant Garamond","Playfair Display",serif!important;font-weight:600!important;color:var(--vh-ink)!important;letter-spacing:-.01em}
+.section-heading p:last-child{font-family:"Poppins",sans-serif!important;color:var(--vh-ink-soft)!important}
+.eyebrow{color:var(--vh-gold)!important;letter-spacing:.28em!important}
+
+#invite,#journey,#events,#venue,#gallery,#rsvp{scroll-margin-top:0!important}
+#invite{background:linear-gradient(180deg,#fffaf2 0%,#fbf1e4 100%)!important}
+#journey,#events,#gallery{background:var(--vh-cream)!important}
+#venue{background:linear-gradient(180deg,#f8eee2,#fbf4e9)!important}
+
+.invitation-card,.event-card,.rsvp-form{border-color:rgba(160,119,56,.42)!important}
+.invitation-card{background:linear-gradient(145deg,#fffdf8,#f8eddf)!important;box-shadow:0 24px 70px rgba(67,22,38,.10)!important}
+.event-card{background:rgba(255,252,246,.82)!important}
+.event-card.featured{background:linear-gradient(145deg,#64152b,#4a0d21)!important}
+
+/* RSVP: match the invitation's cream paper instead of the old flat maroon panel. */
+#rsvp.section.rsvp{
+  max-width:none!important;
+  background:
+    radial-gradient(circle at 88% 8%,rgba(184,138,59,.10),transparent 24%),
+    linear-gradient(180deg,#fbf4e9 0%,#f6eadb 100%)!important;
+  color:var(--vh-ink)!important;
+  border-top:1px solid rgba(150,105,45,.12);
+}
+#rsvp .section-heading h2{color:var(--vh-ink)!important;text-shadow:none!important}
+#rsvp .section-heading>p:not(.eyebrow){color:var(--vh-ink-soft)!important}
+#rsvp .rsvp-form{
+  padding:32px!important;
+  border-radius:24px!important;
+  background:rgba(255,250,242,.86)!important;
+  box-shadow:0 24px 70px rgba(70,23,39,.12)!important;
+  backdrop-filter:blur(10px);
+}
+#rsvp .rsvp-form label{color:var(--vh-ink)!important;font-weight:600!important;font-size:.84rem!important}
+#rsvp .rsvp-form input,#rsvp .rsvp-form textarea{
+  border:1px solid rgba(154,112,54,.48)!important;
+  background:#fffaf2!important;
+  color:var(--vh-ink)!important;
+  border-radius:14px!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 5px 18px rgba(65,20,37,.04)!important;
+  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease!important;
+}
+#rsvp .rsvp-form input:focus,#rsvp .rsvp-form textarea:focus{
+  outline:none!important;border-color:var(--vh-gold)!important;
+  box-shadow:0 0 0 3px rgba(184,138,59,.13),0 8px 24px rgba(65,20,37,.07)!important;
+}
+#rsvp .gold-btn{background:linear-gradient(135deg,#c8943e,#e0b65f)!important;color:#35101d!important;border-color:#e8cb91!important;box-shadow:0 10px 24px rgba(157,106,38,.18)!important}
+#rsvp .gold-btn:hover{transform:translateY(-2px)!important}
+.rsvp-status{font-family:"Poppins",sans-serif!important;color:var(--vh-ink)!important}
+.rsvp-status.success{color:#356b50!important;font-weight:600!important}
+.rsvp-status.error{color:#9b3040!important;font-weight:600!important}
+
+footer{background:linear-gradient(135deg,#2b0714,#430d21)!important;border-top:1px solid rgba(217,181,107,.20)}
+
+/* Remove excessive mobile reveal offset that made sections feel like they had a blank top band. */
+.reveal{transform:translateY(8px)!important;transition:opacity .32s ease,transform .32s ease!important}
+.reveal.visible{transform:none!important}
+
+@media(max-width:850px){
+  .section{padding:46px 5vw 64px!important}
+  .section-heading{margin-bottom:30px!important}
+  .section-heading h2{font-size:clamp(2.45rem,12vw,3.5rem)!important}
+  #rsvp .rsvp-form{padding:24px 18px!important;border-radius:20px!important}
+}
+@media(max-width:500px){
+  .topbar{padding:12px 4vw!important;min-height:68px!important}
+  .brand{font-size:1.12rem!important}
+  .section{padding-top:38px!important;padding-bottom:54px!important}
+  .section-heading{margin-bottom:26px!important}
+  #rsvp .rsvp-form{padding:22px 16px!important}
+}
+@media(prefers-reduced-motion:reduce){.reveal{transition:none!important}}

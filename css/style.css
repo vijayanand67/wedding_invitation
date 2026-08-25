@@ -3235,3 +3235,92 @@ html[data-lang="ta"] .section-heading {
     line-height: 1.8 !important;
   }
 }
+
+/* =========================================================
+   FINAL CROSS-PLATFORM TYPOGRAPHY + ANDROID LANDING FIX
+   ========================================================= */
+html,body{overflow-x:hidden}
+
+/* One consistent, slightly smaller premium type scale in both languages. */
+.hero .premium-name,
+#home.hero .premium-couple-name .premium-name{
+  font-family:"Playfair Display",Georgia,serif!important;
+  font-size:clamp(2rem,7vw,3.35rem)!important;
+  line-height:1.12!important;
+  font-weight:500!important;
+  letter-spacing:-.015em!important;
+}
+#home.hero .premium-couple-name{gap:.15rem!important}
+#home.hero .hero-quote{font-size:clamp(1rem,3.7vw,1.35rem)!important;line-height:1.45!important}
+#home.hero .hero-sub{font-size:clamp(.88rem,3.1vw,1.05rem)!important;line-height:1.65!important}
+#home.hero .date-script{font-size:clamp(1.15rem,4vw,1.65rem)!important;line-height:1.35!important}
+
+/* Tamil: use the same visual scale, with Tamil-appropriate line height. */
+html[data-lang="ta"] body,
+html[data-lang="ta"] button,
+html[data-lang="ta"] input,
+html[data-lang="ta"] textarea,
+html[data-lang="ta"] select,
+html[data-lang="ta"] .topbar,
+html[data-lang="ta"] nav,
+html[data-lang="ta"] .section,
+html[data-lang="ta"] footer{
+  font-family:"Noto Sans Tamil","Noto Serif Tamil",sans-serif!important;
+}
+html[data-lang="ta"] .brand,
+html[data-lang="ta"] .premium-name,
+html[data-lang="ta"] .section-heading h2,
+html[data-lang="ta"] .timeline h3,
+html[data-lang="ta"] .venue-copy h2,
+html[data-lang="ta"] .venue-copy h3,
+html[data-lang="ta"] .celebration-event h3,
+html[data-lang="ta"] .date-script{
+  font-family:"Noto Serif Tamil","Noto Sans Tamil",sans-serif!important;
+}
+html[data-lang="ta"] .premium-name,
+html[data-lang="ta"] #home.hero .premium-couple-name .premium-name{
+  font-size:clamp(2rem,7vw,3.35rem)!important;
+  line-height:1.18!important;
+  font-weight:600!important;
+  letter-spacing:0!important;
+}
+html[data-lang="ta"] #home.hero .hero-quote{font-size:clamp(1rem,3.7vw,1.35rem)!important;line-height:1.65!important}
+html[data-lang="ta"] #home.hero .hero-sub{font-size:clamp(.86rem,3.1vw,1.05rem)!important;line-height:1.75!important}
+html[data-lang="ta"] #home.hero .date-script{font-size:clamp(1.15rem,4vw,1.65rem)!important;line-height:1.5!important}
+html[data-lang="ta"] .eyebrow{letter-spacing:.05em!important}
+html[data-lang="ta"] .countdown small{letter-spacing:0!important}
+html[data-lang="ta"] .gold-btn,html[data-lang="ta"] .outline-btn{font-size:.88rem!important;line-height:1.45!important}
+html[data-lang="ta"] .section-heading h2{font-size:clamp(2rem,9vw,3.2rem)!important;line-height:1.28!important}
+html[data-lang="ta"] .section-heading p:last-child{font-size:clamp(.92rem,3.5vw,1.1rem)!important;line-height:1.75!important}
+
+/* Make every language-switchable content element inherit the correct font. */
+html[data-lang="ta"] [data-key],
+html[data-lang="ta"] [data-en][data-ta]{font-family:"Noto Sans Tamil","Noto Serif Tamil",sans-serif!important}
+html[data-lang="ta"] h1,html[data-lang="ta"] h2,html[data-lang="ta"] h3,html[data-lang="ta"] h4,
+html[data-lang="ta"] .premium-name,html[data-lang="ta"] .brand,html[data-lang="ta"] .date-script{font-family:"Noto Serif Tamil","Noto Sans Tamil",sans-serif!important}
+
+/* Android/iOS: the seal is a real button with a generous hit area. */
+#welcome #openInvitation{
+  pointer-events:auto!important;
+  touch-action:manipulation!important;
+  -webkit-user-select:none!important;
+  user-select:none!important;
+  -webkit-touch-callout:none!important;
+  -webkit-tap-highlight-color:transparent!important;
+  cursor:pointer!important;
+  z-index:999!important;
+}
+#welcome #openInvitation *{pointer-events:none!important}
+/* No transition/loading animation during navigation. */
+#welcome.is-opening #openInvitation,
+#welcome.is-opening .reference-landing__art,
+#welcome.is-opening::after,
+#welcome.is-opening::before{animation:none!important;transition:none!important}
+
+@media(max-width:600px){
+  #home.hero .premium-name,
+  html[data-lang="ta"] #home.hero .premium-name{font-size:clamp(1.9rem,7.2vw,2.7rem)!important}
+  #home.hero .premium-couple-name{gap:.1rem!important}
+  #home.hero .hero-content{padding-top:20px!important}
+  #welcome #openInvitation{width:170px!important;height:170px!important;top:56%!important}
+}

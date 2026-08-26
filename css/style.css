@@ -3607,3 +3607,31 @@ html[data-lang="ta"] .section-heading h2{
 @media (prefers-reduced-motion:reduce){
   #home.hero .hero-image{transition:none!important}
 }
+
+/* =========================================================
+   ANDROID CHROME — NATIVE-FIRST LANDING SEAL
+   ========================================================= */
+#welcome #openInvitation.reference-landing__seal {
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-decoration:none!important;
+  -webkit-user-select:none!important;
+  user-select:none!important;
+  -webkit-touch-callout:none!important;
+  touch-action:manipulation!important;
+  cursor:pointer!important;
+  pointer-events:auto!important;
+  -webkit-tap-highlight-color:transparent!important;
+}
+#welcome #openInvitation.reference-landing__seal > * {
+  pointer-events:none!important;
+}
+@media (max-width:600px) {
+  #welcome #openInvitation.reference-landing__seal {
+    min-width:96px!important;
+    min-height:96px!important;
+    width:96px!important;
+    height:96px!important;
+  }
+}

@@ -362,26 +362,33 @@ $("#calendarBtn")?.addEventListener("click", () => {
   layer.appendChild(fragment);
 })();
 
-/* Fast, cross-platform landing opening. Android-safe: touchend + pointerup + click, no delay. */
+/* Android/iOS-safe landing opening. The inline native-first handler in index.html
+   performs the actual open; this listener is only a JS-loaded fallback. */
 (function initWeddingCover() {
   const cover = document.getElementById("welcome");
   const seal = document.getElementById("openInvitation");
   if (!cover || !seal) return;
-  document.documentElement.classList.add("wedding-cover-html-lock");
-  document.body.classList.add("wedding-cover-lock");
-  let opened = false;
+
   function openCover(event) {
-    if (opened) return;
-    if (event) { event.preventDefault(); event.stopPropagation(); }
-    opened = true;
+    if (typeof window.openWeddingInvitation === "function") {
+      window.openWeddingInvitation(event);
+      return;
+    }
+    if (event) {
+      try { event.preventDefault(); } catch (_) {}
+      try { event.stopPropagation(); } catch (_) {}
+    }
     cover.remove();
-    document.documentElement.classList.remove("wedding-cover-html-lock");
-    document.body.classList.remove("wedding-cover-lock");
-    window.scrollTo(0, 0);
-    history.replaceState(null, "", "#home");
+    document.documentElement.classList.remove("wedding-cover-html-lock", "cover-locked");
+    document.body.classList.remove("wedding-cover-lock", "no-scroll");
+    try { history.replaceState(null, "", "#home"); } catch (_) {}
+    try { window.scrollTo(0, 0); } catch (_) {}
   }
-  seal.addEventListener("click", openCover, {passive:false});
-  seal.addEventListener("touchend", openCover, {passive:false});
-  seal.addEventListener("pointerup", (e) => { if (e.pointerType === "touch" || e.pointerType === "pen") openCover(e); }, {passive:false});
-  seal.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") openCover(e); });
+
+  seal.addEventListener("click", openCover, { passive: false });
+  seal.addEventListener("touchend", openCover, { passive: false });
+  seal.addEventListener("pointerup", openCover, { passive: false });
+  seal.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") openCover(e);
+  });
 })();

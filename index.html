@@ -7027,16 +7027,20 @@ html[data-lang="ta"] .section-heading h2{font-size:clamp(1.95rem,8.5vw,3rem)!imp
          fetchpriority="high">
   </div>
 
-  <!-- Transparent interactive seal aligned with the V♥H seal in the reference artwork. -->
-  <button id="openInvitation"
-          class="reference-landing__seal"
-          type="button"
-          aria-label="Open wedding invitation">
+  <!-- Android/iOS-safe native link: works even if a script is delayed or unavailable. -->
+  <a id="openInvitation"
+     class="reference-landing__seal"
+     href="#home"
+     role="button"
+     aria-label="Open wedding invitation"
+     onclick="return window.openWeddingInvitation ? window.openWeddingInvitation(event) : true;"
+     ontouchstart="if(window.openWeddingInvitation){window.openWeddingInvitation(event);}"
+     onpointerdown="if(window.openWeddingInvitation){window.openWeddingInvitation(event);}">
     <span class="reference-landing__halo" aria-hidden="true"></span>
     <span class="reference-landing__orbit reference-landing__orbit--one" aria-hidden="true"></span>
     <span class="reference-landing__orbit reference-landing__orbit--two" aria-hidden="true"></span>
     <span class="sr-only">Open wedding invitation</span>
-  </button>
+  </a>
 
   <div class="landing-atmosphere" aria-hidden="true"></div>
   <div class="landing-particles" aria-hidden="true"></div>
@@ -7191,6 +7195,26 @@ Kodungaiyur, Chennai – 600118</p><p class="muted" data-key="venueNear">Near Mu
 
 <div id="lightbox" class="lightbox"><button id="closeLightbox">×</button><img id="lightboxImg" alt=""></div>
 <audio id="bgMusic" loop preload="metadata" src="assets/music/HemalathaLove.mp3"></audio>
+<script>
+/* Native-first landing opener: intentionally tiny and dependency-free for Android Chrome. */
+window.openWeddingInvitation = function (event) {
+  if (window.__weddingOpened) return false;
+  window.__weddingOpened = true;
+  if (event) {
+    try { event.preventDefault(); } catch (_) {}
+    try { event.stopPropagation(); } catch (_) {}
+  }
+  var cover = document.getElementById('welcome');
+  if (cover) cover.remove();
+  document.documentElement.classList.remove('wedding-cover-html-lock');
+  document.body.classList.remove('wedding-cover-lock');
+  document.documentElement.classList.remove('cover-locked');
+  document.body.classList.remove('no-scroll');
+  try { history.replaceState(null, '', '#home'); } catch (_) {}
+  try { window.scrollTo(0, 0); } catch (_) {}
+  return false;
+};
+</script>
 <script src="js/config.js"></script><script src="js/script.js"></script><script src="js/countdown.js"></script>
 <script>
 
@@ -7229,23 +7253,6 @@ document.addEventListener("DOMContentLoaded", function () {
   seal.addEventListener("keydown", function (e) {
     if ((e.key === "Enter" || e.key === " ") && !e.defaultPrevented) {
       e.preventDefault();
-      seal.click();
-    }
-  });
-});
-</script>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const seal = document.getElementById("openInvitation");
-  if (!seal) return;
-  seal.setAttribute("role", "button");
-  seal.setAttribute("aria-label", "Open wedding invitation");
-  if (!seal.hasAttribute("tabindex")) seal.setAttribute("tabindex", "0");
-  seal.addEventListener("keydown", function (event) {
-    if ((event.key === "Enter" || event.key === " ") && !event.defaultPrevented) {
-      event.preventDefault();
       seal.click();
     }
   });

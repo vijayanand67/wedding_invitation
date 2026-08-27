@@ -33,20 +33,20 @@ let lang = localStorage.getItem("weddingLang") === "ta" ? "ta" : "en";
 
 const LANGUAGE_TEXT = {
   en: {
-    brandGroom:"Vijay",brandBride:"Hemalatha",navInvitation:"Invitation",navJourney:"Journey",navEvents:"Events",navVenue:"Venue",navGallery:"Gallery",navQuotes:"Quotes",navRsvp:"RSVP",
+    brandGroom:"Vijay",brandBride:"Hemalatha",navInvitation:"Invitation",navJourney:"Journey",navEvents:"Events",navVenue:"Venue",navGallery:"Gallery",navRsvp:"RSVP",
     heroEyebrow:"A NEW BEGINNING",groomName:"Vijay Anand",brideName:"Hemalatha",heroQuote:"Two families, one beautiful celebration.",heroSub:"With love, blessings, and joy, we begin our forever together.",heroDate:"07 September 2026",viewInvitation:"View Invitation",addCalendar:"＋ Add to Calendar",
     inviteEyebrow:"WITH OUR FAMILIES",inviteTitle:"Wedding Invitation",inviteDescription:"Together with our families, we warmly invite you to celebrate our wedding.",
     journeyTitle:"Our Journey Begins",journeyDescription:"With the blessings of our parents and elders, two families come together for a lifetime of togetherness.",childhood:"Our Memories",journeyStep1Title:"Two Families",journeyStep1Text:"A beautiful union blessed by our families.",journeyStep2Title:"Engagement",journeyStep2Text:"A joyful celebration that brought our families closer.",journeyStep3Title:"A Promise for a Lifetime",journeyStep3Text:"With love, blessings and joy, we begin our new chapter.",journeyStep4Title:"Forever Begins",journeyStep4Text:"07 September 2026",
     eventsEyebrow:"SAVE THE DATE",eventsTitle:"Wedding Celebrations",eventsDescription:"Two beautiful moments, one unforgettable beginning.",receptionDate:"06 SEP 2026",receptionTitle:"Reception",receptionTime:"6:30 PM onwards",weddingDate:"07 SEP 2026",weddingTitle:"Wedding Ceremony",weddingTime:"6:00 AM – 7:30 AM",celebrationVenue:"CELEBRATION VENUE",venueName:"Ramaswamy Mahal / S.R. Sami Party Hall",directions:"📍 Get Directions",celebrationNote:"With the love and blessings of our families, we warmly invite you to celebrate with us.",
-    venueEyebrow:"JOIN US",venueTitle:"The Venue",venueAddress:"8, North Avenue, Muthamizh Nagar, Kodungaiyur, Chennai – 600118",venueNear:"Near Muthamizh Nagar Church",openMaps:"Open in Google Maps",galleryEyebrow:"MOMENTS TO TREASURE",galleryMore:"More memories coming soon",quotesEyebrow:"LOVE • LAUGHTER • FOREVER",quotesStory:"A beautiful journey, growing closer, laughing together, and choosing each other every day.",quotesContinue:"Continue",rsvpEyebrow:"WE WOULD LOVE TO HAVE YOU",rsvpTitle:"RSVP",rsvpDescription:"Please share your attendance and wishes with us.",rsvpNameLabel:"Your Name",rsvpGuestsLabel:"Number of Guests",rsvpWishesLabel:"Your Wishes",rsvpSubmit:"Send RSVP",footerThanks:"Thank you for celebrating our special day with us."
+    venueEyebrow:"JOIN US",venueTitle:"The Venue",venueAddress:"8, North Avenue, Muthamizh Nagar, Kodungaiyur, Chennai – 600118",venueNear:"Near Muthamizh Nagar Church",openMaps:"Open in Google Maps",galleryEyebrow:"MOMENTS TO TREASURE",galleryMore:"More memories coming soon",rsvpEyebrow:"WE WOULD LOVE TO HAVE YOU",rsvpTitle:"RSVP",rsvpDescription:"Please share your attendance and wishes with us.",rsvpNameLabel:"Your Name",rsvpGuestsLabel:"Number of Guests",rsvpWishesLabel:"Your Wishes",rsvpSubmit:"Send RSVP",footerThanks:"Thank you for celebrating our special day with us."
   },
   ta: {
-    brandGroom:"விஜய்",brandBride:"ஹேமலதா",navInvitation:"அழைப்பிதழ்",navJourney:"நமது பயணம்",navEvents:"நிகழ்வுகள்",navVenue:"திருமண இடம்",navGallery:"நினைவுகள்",navQuotes:"மேற்கோள்கள்",navRsvp:"வருகை உறுதி",
+    brandGroom:"விஜய்",brandBride:"ஹேமலதா",navInvitation:"அழைப்பிதழ்",navJourney:"நமது பயணம்",navEvents:"நிகழ்வுகள்",navVenue:"திருமண இடம்",navGallery:"நினைவுகள்",navRsvp:"வருகை உறுதி",
     heroEyebrow:"ஒரு புதிய தொடக்கம்",groomName:"விஜய் ஆனந்த்",brideName:"ஹேமலதா",heroQuote:"இரண்டு குடும்பங்கள், ஒரு அழகான கொண்டாட்டம்.",heroSub:"அன்பும், ஆசீர்வாதங்களும், மகிழ்ச்சியுடனும் எங்கள் வாழ்நாள் பயணத்தை தொடங்குகிறோம்.",heroDate:"07 செப்டம்பர் 2026",viewInvitation:"அழைப்பிதழைப் பார்க்கவும்",addCalendar:"＋ காலண்டரில் சேர்க்கவும்",
     inviteEyebrow:"எங்கள் குடும்பங்களுடன்",inviteTitle:"திருமண அழைப்பிதழ்",inviteDescription:"எங்கள் குடும்பங்களுடன் இணைந்து, எங்கள் திருமண விழாவை கொண்டாட உங்களை அன்புடன் அழைக்கிறோம்.",
     journeyTitle:"எங்கள் பயணம் தொடங்குகிறது",journeyDescription:"பெற்றோர் மற்றும் பெரியோர்களின் ஆசீர்வாதத்துடன், இரண்டு குடும்பங்கள் வாழ்நாள் உறவாக ஒன்றிணைகின்றன.",childhood:"நமது நினைவுகள்",journeyStep1Title:"இரண்டு குடும்பங்கள்",journeyStep1Text:"எங்கள் குடும்பங்களின் ஆசீர்வாதத்துடன் ஒரு அழகான இணைவு.",journeyStep2Title:"நிச்சயதார்த்தம்",journeyStep2Text:"எங்கள் குடும்பங்களை இன்னும் நெருக்கமாக இணைத்த மகிழ்ச்சியான விழா.",journeyStep3Title:"வாழ்நாள் வாக்குறுதி",journeyStep3Text:"அன்பும், ஆசீர்வாதமும், மகிழ்ச்சியுடனும் எங்கள் புதிய அத்தியாயத்தை தொடங்குகிறோம்.",journeyStep4Title:"என்றென்றும் தொடங்குகிறது",journeyStep4Text:"07 செப்டம்பர் 2026",
     eventsEyebrow:"தேதியை நினைவில் கொள்ளுங்கள்",eventsTitle:"திருமண விழாக்கள்",eventsDescription:"இரண்டு அழகான தருணங்கள், மறக்க முடியாத ஒரு தொடக்கம்.",receptionDate:"06 செப் 2026",receptionTitle:"வரவேற்பு விழா",receptionTime:"மாலை 6:30 மணி முதல்",weddingDate:"07 செப் 2026",weddingTitle:"திருமண விழா",weddingTime:"காலை 6:00 – 7:30 மணி",celebrationVenue:"விழா நடைபெறும் இடம்",venueName:"ராமசாமி மஹால் / எஸ்.ஆர். சாமி பார்ட்டி ஹால்",directions:"📍 வழிகாட்டியைப் பார்க்கவும்",celebrationNote:"எங்கள் குடும்பங்களின் அன்பும் ஆசீர்வாதமும் நிறைந்த இந்த விழாவை எங்களுடன் இணைந்து கொண்டாட உங்களை அன்புடன் அழைக்கிறோம்.",
-    venueEyebrow:"எங்களுடன் இணைந்திடுங்கள்",venueTitle:"திருமண இடம்",venueAddress:"8, நார்த் அவென்யூ, முத்தமிழ் நகர், கொடுங்கையூர், சென்னை – 600118",venueNear:"முத்தமிழ் நகர் தேவாலயம் அருகில்",openMaps:"Google Maps-ல் திறக்கவும்",galleryEyebrow:"மனதில் நிற்கும் நினைவுகள்",galleryMore:"மேலும் நினைவுகள் விரைவில்",quotesEyebrow:"அன்பு • சிரிப்பு • என்றும்",quotesStory:"ஒரு அழகான பயணம், நாளுக்கு நாள் நெருக்கமாகி, ஒன்றாக சிரித்து, ஒவ்வொரு நாளும் ஒருவரை ஒருவர் தேர்ந்தெடுக்கும் அன்பு.",quotesContinue:"தொடரலாம்",rsvpEyebrow:"உங்கள் வருகையை ஆவலுடன் எதிர்நோக்குகிறோம்",rsvpTitle:"வருகை உறுதி",rsvpDescription:"உங்கள் வருகையையும் வாழ்த்துகளையும் எங்களுடன் பகிர்ந்து கொள்ளுங்கள்.",rsvpNameLabel:"உங்கள் பெயர்",rsvpGuestsLabel:"வரும் விருந்தினர்களின் எண்ணிக்கை",rsvpWishesLabel:"உங்கள் வாழ்த்துகள்",rsvpSubmit:"வருகையை உறுதிப்படுத்துங்கள்",footerThanks:"எங்கள் சிறப்பு நாளை எங்களுடன் கொண்டாடியதற்கு நன்றி."
+    venueEyebrow:"எங்களுடன் இணைந்திடுங்கள்",venueTitle:"திருமண இடம்",venueAddress:"8, நார்த் அவென்யூ, முத்தமிழ் நகர், கொடுங்கையூர், சென்னை – 600118",venueNear:"முத்தமிழ் நகர் தேவாலயம் அருகில்",openMaps:"Google Maps-ல் திறக்கவும்",galleryEyebrow:"மனதில் நிற்கும் நினைவுகள்",galleryMore:"மேலும் நினைவுகள் விரைவில்",rsvpEyebrow:"உங்கள் வருகையை ஆவலுடன் எதிர்நோக்குகிறோம்",rsvpTitle:"வருகை உறுதி",rsvpDescription:"உங்கள் வருகையையும் வாழ்த்துகளையும் எங்களுடன் பகிர்ந்து கொள்ளுங்கள்.",rsvpNameLabel:"உங்கள் பெயர்",rsvpGuestsLabel:"வரும் விருந்தினர்களின் எண்ணிக்கை",rsvpWishesLabel:"உங்கள் வாழ்த்துகள்",rsvpSubmit:"வருகையை உறுதிப்படுத்துங்கள்",footerThanks:"எங்கள் சிறப்பு நாளை எங்களுடன் கொண்டாடியதற்கு நன்றி."
   }
 };
 
@@ -54,8 +54,6 @@ function applyLanguage(nextLang) {
   lang = nextLang === "ta" ? "ta" : "en";
   document.documentElement.lang = lang;
   document.documentElement.dataset.lang = lang;
-  document.documentElement.classList.toggle("is-tamil", lang === "ta");
-  document.body?.classList.toggle("is-tamil", lang === "ta");
   localStorage.setItem("weddingLang", lang);
 
   const dictionary = LANGUAGE_TEXT[lang];
@@ -90,85 +88,6 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => applyLanguage(lang), { once: true });
 } else {
   applyLanguage(lang);
-}
-
-/* Love & Marriage quote rotator */
-const LOVE_QUOTES = {
-  en: [
-    { category:"LOVE", text:"Love turns ordinary moments into memories we treasure forever." },
-    { category:"FOREVER", text:"May our hearts grow closer, kinder, and happier with every year we share." },
-    { category:"MARRIAGE", text:"Marriage is two hearts choosing the same beautiful journey, every single day." },
-    { category:"ELEGANCE", text:"A beautiful marriage is built with love, respect, laughter, and little acts of kindness." },
-    { category:"FUNNY", text:"Marriage is teamwork — especially when deciding what to eat tonight." },
-    { category:"LAUGHTER", text:"The secret to a happy marriage: love deeply, laugh often, and occasionally share the last piece of dessert." },
-    { category:"LOVE", text:"Where there is love, even the simplest day feels like a celebration." },
-    { category:"FOREVER", text:"Two souls, one home, countless stories waiting to be written together." },
-    { category:"FUNNY", text:"A perfect match is someone who steals your heart… and still asks what you want for dinner." },
-    { category:"LOVE", text:"Here is to a lifetime of holding hands, sharing dreams, and growing together." }
-  ],
-  ta: [
-    { category:"அன்பு", text:"அன்பு இருக்கும் இடத்தில் சாதாரண தருணங்களும் வாழ்நாள் நினைவுகளாக மாறுகின்றன." },
-    { category:"என்றும்", text:"ஒவ்வொரு ஆண்டும் நம் இதயங்கள் இன்னும் நெருக்கமாகவும், இனிமையாகவும் மலரட்டும்." },
-    { category:"திருமணம்", text:"திருமணம் என்பது ஒவ்வொரு நாளும் ஒருவரை ஒருவர் தேர்ந்தெடுத்து, ஒரே அழகான பயணத்தை தொடர்வது." },
-    { category:"இனிமை", text:"அன்பு, மரியாதை, சிரிப்பு, அக்கறை — இவையே அழகான இல்லறத்தின் இனிய அடித்தளம்." },
-    { category:"நகைச்சுவை", text:"திருமண வாழ்க்கை என்பது ஒரு குழு வேலை… குறிப்பாக இன்று என்ன சாப்பிடலாம் என்று முடிவு செய்வதில்!" },
-    { category:"சிரிப்பு", text:"இனிய இல்லறத்தின் ரகசியம் — ஆழமான அன்பு, நிறைய சிரிப்பு, கொஞ்சம் பொறுமை, கடைசி இனிப்பையும் பகிர்ந்து கொள்வது." },
-    { category:"அன்பு", text:"அன்புடன் இணைந்த இரு மனங்களுக்கு, சாதாரண நாளும் ஒரு சிறப்பு கொண்டாட்டமே." },
-    { category:"என்றும்", text:"இரு மனங்கள், ஒரு வீடு, எண்ணற்ற கனவுகள் — சேர்ந்து எழுதும் அழகான வாழ்க்கைக் கதை." },
-    { category:"நகைச்சுவை", text:"சரியான துணை என்றால், இதயத்தை திருடிவிட்டு… இரவு உணவுக்கு என்ன வேண்டும் என்றும் கேட்பவர்!" },
-    { category:"காதல்", text:"கைகளைப் பற்றிக் கொண்டு, கனவுகளைப் பகிர்ந்து, வாழ்நாள் முழுவதும் ஒன்றாக வளர்வோம்." }
-  ]
-};
-
-let quoteIndex = 0;
-let quoteTimer = null;
-function renderQuote(index, immediate = false) {
-  const quoteEl = $("#rotatingQuote");
-  const dotsEl = $("#quoteDots");
-  const categoryEl = $("#quoteCategory");
-  if (!quoteEl) return;
-  const quotes = LOVE_QUOTES[lang] || LOVE_QUOTES.en;
-  quoteIndex = ((index % quotes.length) + quotes.length) % quotes.length;
-  const item = quotes[quoteIndex];
-
-  const setQuote = () => {
-    quoteEl.textContent = item.text;
-    if (categoryEl) categoryEl.textContent = item.category;
-  };
-
-  if (immediate) {
-    setQuote();
-  } else {
-    quoteEl.classList.add("is-changing");
-    window.setTimeout(() => {
-      setQuote();
-      requestAnimationFrame(() => quoteEl.classList.remove("is-changing"));
-    }, 220);
-  }
-
-  if (dotsEl) {
-    dotsEl.innerHTML = quotes.map((_, i) =>
-      `<span class="quote-dot${i === quoteIndex ? " active" : ""}"></span>`
-    ).join("");
-  }
-}
-function startQuoteRotator() {
-  if (!$("#rotatingQuote")) return;
-  window.clearInterval(quoteTimer);
-  renderQuote(quoteIndex, true);
-  quoteTimer = window.setInterval(() => {
-    const quotes = LOVE_QUOTES[lang] || LOVE_QUOTES.en;
-    renderQuote(quoteIndex + 1);
-  }, 4800);
-}
-window.addEventListener("wedding:languagechange", () => {
-  quoteIndex = 0;
-  startQuoteRotator();
-});
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", startQuoteRotator, { once: true });
-} else {
-  startQuoteRotator();
 }
 
 /* Reveal */
@@ -441,59 +360,26 @@ $("#calendarBtn")?.addEventListener("click", () => {
   layer.appendChild(fragment);
 })();
 
-/* Android/iOS-safe landing opening. The inline native-first handler in index.html
-   performs the actual open; this listener is only a JS-loaded fallback. */
+/* Fast, cross-platform landing opening. Android-safe: touchend + pointerup + click, no delay. */
 (function initWeddingCover() {
   const cover = document.getElementById("welcome");
   const seal = document.getElementById("openInvitation");
   if (!cover || !seal) return;
-
+  document.documentElement.classList.add("wedding-cover-html-lock");
+  document.body.classList.add("wedding-cover-lock");
+  let opened = false;
   function openCover(event) {
-    if (typeof window.openWeddingInvitation === "function") {
-      window.openWeddingInvitation(event);
-      return;
-    }
-    if (event) {
-      try { event.preventDefault(); } catch (_) {}
-      try { event.stopPropagation(); } catch (_) {}
-    }
+    if (opened) return;
+    if (event) { event.preventDefault(); event.stopPropagation(); }
+    opened = true;
     cover.remove();
-    document.documentElement.classList.remove("wedding-cover-html-lock", "cover-locked");
-    document.body.classList.remove("wedding-cover-lock", "no-scroll");
-    try { history.replaceState(null, "", "#home"); } catch (_) {}
-    try { window.scrollTo(0, 0); } catch (_) {}
+    document.documentElement.classList.remove("wedding-cover-html-lock");
+    document.body.classList.remove("wedding-cover-lock");
+    window.scrollTo(0, 0);
+    history.replaceState(null, "", "#home");
   }
-
-  seal.addEventListener("click", openCover, { passive: false });
-  seal.addEventListener("touchend", openCover, { passive: false });
-  seal.addEventListener("pointerup", openCover, { passive: false });
-  seal.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") openCover(e);
-  });
+  seal.addEventListener("click", openCover, {passive:false});
+  seal.addEventListener("touchend", openCover, {passive:false});
+  seal.addEventListener("pointerup", (e) => { if (e.pointerType === "touch" || e.pointerType === "pen") openCover(e); }, {passive:false});
+  seal.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") openCover(e); });
 })();
-
-
-/* FINAL MOBILE RENDER SAFETY
-   Content must never remain hidden when IntersectionObserver/animation timing
-   behaves differently on Android Chrome or lower-end mobile GPUs. */
-(function forceVisibleContent() {
-  function revealAll() {
-    document.querySelectorAll(".reveal").forEach((el) => {
-      el.classList.add("visible");
-      el.style.opacity = "1";
-      el.style.visibility = "visible";
-      el.style.transform = "none";
-    });
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", revealAll, { once: true });
-  } else {
-    revealAll();
-  }
-
-  window.addEventListener("pageshow", revealAll);
-  window.setTimeout(revealAll, 120);
-  window.setTimeout(revealAll, 600);
-})();
-

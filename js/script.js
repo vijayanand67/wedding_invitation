@@ -392,3 +392,29 @@ $("#calendarBtn")?.addEventListener("click", () => {
     if (e.key === "Enter" || e.key === " ") openCover(e);
   });
 })();
+
+
+/* FINAL MOBILE RENDER SAFETY
+   Content must never remain hidden when IntersectionObserver/animation timing
+   behaves differently on Android Chrome or lower-end mobile GPUs. */
+(function forceVisibleContent() {
+  function revealAll() {
+    document.querySelectorAll(".reveal").forEach((el) => {
+      el.classList.add("visible");
+      el.style.opacity = "1";
+      el.style.visibility = "visible";
+      el.style.transform = "none";
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", revealAll, { once: true });
+  } else {
+    revealAll();
+  }
+
+  window.addEventListener("pageshow", revealAll);
+  window.setTimeout(revealAll, 120);
+  window.setTimeout(revealAll, 600);
+})();
+

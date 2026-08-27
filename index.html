@@ -7608,88 +7608,343 @@ main > section{
 </style>
 
 
-<style id="responsive-hero-final-v2">
-/* Final cross-device hero/layout pass — no image assets changed. */
-html{scroll-padding-top:var(--vh-header-h,72px)}
+<style id="v3-final-responsive-overrides">
+/* =========================================================
+   V3 — FINAL RESPONSIVE HERO + END-OF-PAGE QUOTES
+   Existing wedding images are intentionally untouched.
+   ========================================================= */
+
+:root{
+  --hero-header-space: clamp(76px, 9vh, 104px);
+}
+
+html,body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+/* The first page is a self-contained viewport. The following section can
+   never peek into it because the hero owns the full dynamic viewport. */
 #home.hero{
-  height:100dvh!important; min-height:100dvh!important; max-height:100dvh!important;
-  overflow:hidden!important; border:0!important; outline:0!important; box-shadow:none!important;
+  position:relative !important;
+  width:100% !important;
+  height:100dvh !important;
+  min-height:100dvh !important;
+  max-height:none !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:center !important;
+  padding:0 !important;
+  isolation:isolate;
 }
+
 #home.hero .hero-image{
-  inset:0!important; width:100%!important; height:100%!important;
-  background-size:cover!important; background-repeat:no-repeat!important;
-  background-position:50% 34%!important; border:0!important; outline:0!important; box-shadow:none!important;
+  position:absolute !important;
+  inset:0 !important;
+  background-size:cover !important;
+  background-position:center 40% !important;
+  background-repeat:no-repeat !important;
+  transform:none !important;
 }
+
+#home.hero .hero-overlay{
+  position:absolute !important;
+  inset:0 !important;
+  background:linear-gradient(180deg,rgba(32,5,16,.34) 0%,rgba(45,7,22,.18) 38%,rgba(35,4,15,.72) 100%) !important;
+}
+
 #home.hero .hero-content{
-  top:auto!important; left:50%!important; bottom:clamp(58px,7.5dvh,88px)!important;
-  transform:translateX(-50%)!important; width:min(760px,calc(100% - 28px))!important;
-  height:auto!important; max-height:calc(100dvh - var(--vh-header-h,72px) - 64px)!important;
-  justify-content:flex-end!important; padding:0!important; overflow:visible!important;
+  position:relative !important;
+  z-index:3 !important;
+  width:min(900px,calc(100% - 32px)) !important;
+  max-width:900px !important;
+  max-height:calc(100dvh - var(--hero-header-space) - 34px) !important;
+  margin:0 auto !important;
+  padding:0 0 clamp(62px,7.2vh,82px) !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  text-align:center !important;
 }
-#home.hero .eyebrow{margin-bottom:clamp(3px,.6dvh,7px)!important}
-#home.hero .premium-couple-name{margin:0 auto clamp(5px,.8dvh,9px)!important}
-#home.hero .hero-quote{margin:0 auto 2px!important}
-#home.hero .date-script{margin:clamp(6px,1dvh,11px) 0!important}
-#home.hero .invite-countdown{margin:clamp(4px,.7dvh,7px) 0 clamp(8px,1.2dvh,13px)!important}
-#home.hero .scroll-cue{bottom:max(10px,env(safe-area-inset-bottom))!important}
-#love-quotes.love-quotes-page{min-height:100dvh!important;scroll-margin-top:0!important}
-#rsvp,[href="#rsvp"]{display:none!important}
 
-/* Phones: keep faces visible by biasing the photo upward while placing copy in the lower half. */
-@media(max-width:767px){
-  :root{--vh-header-h:clamp(60px,9dvh,70px)}
-  #home.hero .hero-image{background-position:50% 30%!important}
+#home.hero .eyebrow{
+  margin:0 0 clamp(8px,1.1vh,14px) !important;
+  font-size:clamp(.58rem,1.5vw,.78rem) !important;
+  line-height:1.2 !important;
+}
+
+#home.hero .premium-couple-name{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:clamp(1px,.4vh,5px) !important;
+  width:100% !important;
+  margin:0 !important;
+  line-height:.96 !important;
+}
+
+#home.hero .premium-name{
+  display:block !important;
+  font-size:clamp(2.05rem,7.2vw,4.9rem) !important;
+  line-height:.96 !important;
+  white-space:nowrap !important;
+}
+
+#home.hero .premium-heart{
+  display:block !important;
+  font-size:clamp(1.25rem,4vw,2rem) !important;
+  line-height:1 !important;
+  margin:clamp(3px,.5vh,7px) 0 !important;
+}
+
+#home.hero .hero-quote{
+  margin:clamp(12px,1.8vh,20px) auto 0 !important;
+  max-width:760px !important;
+  font-size:clamp(.98rem,2.35vw,1.5rem) !important;
+  line-height:1.2 !important;
+}
+
+#home.hero .hero-sub{
+  max-width:720px !important;
+  margin:clamp(4px,1vh,9px) auto 0 !important;
+  font-size:clamp(.78rem,1.9vw,1.05rem) !important;
+  line-height:1.38 !important;
+}
+
+#home.hero .date-script{
+  margin:clamp(10px,1.8vh,18px) 0 0 !important;
+  font-size:clamp(1.12rem,3vw,1.8rem) !important;
+  line-height:1.1 !important;
+}
+
+#home.hero .hero-countdown{
+  width:min(640px,100%) !important;
+  margin:clamp(10px,1.7vh,18px) auto 0 !important;
+}
+
+#home.hero .invite-countdown{
+  width:100% !important;
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:0 !important;
+  padding:clamp(9px,1.3vh,15px) clamp(7px,2vw,16px) !important;
+  border:1px solid rgba(224,185,75,.72) !important;
+  border-radius:24px !important;
+  background:rgba(27,4,13,.48) !important;
+  backdrop-filter:blur(5px) !important;
+  -webkit-backdrop-filter:blur(5px) !important;
+}
+
+#home.hero .invite-countdown .unit{
+  min-width:0 !important;
+  padding:clamp(5px,1vh,10px) 6px !important;
+  border:0 !important;
+  border-right:1px solid rgba(224,185,75,.48) !important;
+  border-radius:0 !important;
+  background:transparent !important;
+}
+#home.hero .invite-countdown .unit:last-child{border-right:0 !important}
+#home.hero .invite-countdown b{
+  font-size:clamp(1.15rem,3.3vw,1.65rem) !important;
+  line-height:1 !important;
+}
+#home.hero .invite-countdown small{
+  display:block !important;
+  margin-top:4px !important;
+  font-size:clamp(.45rem,1.1vw,.6rem) !important;
+  line-height:1 !important;
+}
+
+#home.hero .hero-actions{
+  width:min(640px,100%) !important;
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:10px !important;
+  margin:clamp(10px,1.7vh,18px) auto 0 !important;
+}
+#home.hero .gold-btn,#home.hero .outline-btn{
+  min-width:0 !important;
+  width:100% !important;
+  min-height:clamp(48px,6vh,58px) !important;
+  padding:10px 14px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  white-space:nowrap !important;
+  font-size:clamp(.78rem,1.8vw,1rem) !important;
+}
+
+#home.hero .scroll-cue{
+  z-index:4 !important;
+  bottom:max(12px,env(safe-area-inset-bottom)) !important;
+  font-size:clamp(1.35rem,4vw,1.8rem) !important;
+  line-height:1 !important;
+  padding:5px 12px !important;
+}
+
+/* Do not use a decorative frame on the first hero image. */
+#home.hero::before,#home.hero::after{
+  display:none !important;
+}
+
+/* Quotes belong at the end of the invitation, not between the hero and the
+   invitation artwork. It is intentionally content-rich so the page never
+   looks empty. */
+#love-quotes.love-quotes-page{
+  min-height:clamp(620px,100svh,900px) !important;
+  width:100% !important;
+  margin:0 !important;
+  padding:clamp(72px,9vh,110px) clamp(20px,6vw,80px) !important;
+  display:grid !important;
+  place-items:center !important;
+  position:relative !important;
+  overflow:hidden !important;
+  background:
+    radial-gradient(circle at 50% 38%,rgba(125,39,68,.9) 0%,rgba(91,19,43,.96) 38%,rgba(50,7,25,1) 100%) !important;
+  color:#fff7ee !important;
+}
+
+#love-quotes .quotes-shell{
+  width:min(900px,100%) !important;
+  min-height:min(650px,82svh) !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+  position:relative !important;
+  padding:clamp(34px,7vw,72px) clamp(18px,5vw,60px) !important;
+  border:1px solid rgba(224,185,75,.32) !important;
+  border-radius:36px !important;
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015)) !important;
+  box-shadow:0 30px 100px rgba(0,0,0,.25),inset 0 0 60px rgba(224,185,75,.035) !important;
+}
+#love-quotes .quotes-shell::before,#love-quotes .quotes-shell::after{
+  content:"" !important;
+  position:absolute !important;
+  width:min(70vw,600px) !important;
+  aspect-ratio:1 !important;
+  border:1px solid rgba(224,185,75,.17) !important;
+  border-radius:50% !important;
+  pointer-events:none !important;
+}
+#love-quotes .quotes-shell::before{inset:auto;left:50%;top:50%;transform:translate(-50%,-50%) scale(.9) !important}
+#love-quotes .quotes-shell::after{inset:auto;left:50%;top:50%;transform:translate(-50%,-50%) scale(.7) !important}
+#love-quotes .eyebrow{
+  position:relative !important; z-index:2 !important;
+  margin:0 0 12px !important;
+  color:#e7c77a !important;
+  font-size:clamp(.58rem,1.7vw,.75rem) !important;
+  letter-spacing:.25em !important;
+}
+#love-quotes .quote-heart{
+  position:relative !important; z-index:2 !important;
+  font-size:clamp(1.8rem,6vw,3rem) !important;
+  line-height:1 !important;
+  margin:0 0 clamp(18px,4vh,32px) !important;
+  text-shadow:0 0 20px rgba(255,91,112,.35) !important;
+  animation:quoteHeartPulse 1.8s ease-in-out infinite !important;
+}
+#love-quotes .quote-rotator{
+  position:relative !important; z-index:2 !important;
+  width:min(720px,100%) !important;
+  min-height:clamp(150px,24vh,230px) !important;
+  display:grid !important;
+  place-items:center !important;
+}
+#love-quotes .rotating-quote{
+  margin:0 !important;
+  max-width:720px !important;
+  color:#fff7ee !important;
+  font:500 clamp(1.65rem,4.8vw,3.15rem)/1.15 "Playfair Display",serif !important;
+  text-wrap:balance !important;
+  transition:opacity .32s ease,transform .32s ease !important;
+}
+#love-quotes .rotating-quote.is-changing{opacity:0 !important;transform:translateY(12px) !important}
+#love-quotes .quote-story{
+  position:relative !important; z-index:2 !important;
+  width:min(650px,100%) !important;
+  margin:clamp(12px,2vh,20px) auto 0 !important;
+  color:rgba(255,247,238,.82) !important;
+  font:400 clamp(.85rem,2vw,1.08rem)/1.5 Poppins,sans-serif !important;
+}
+#love-quotes .quote-dots{
+  position:relative !important; z-index:2 !important;
+  display:flex !important; gap:7px !important;
+  margin-top:clamp(18px,3vh,28px) !important;
+}
+#love-quotes .quote-dot{
+  width:7px !important; height:7px !important; border-radius:50% !important;
+  background:rgba(255,255,255,.3) !important; transition:.25s ease !important;
+}
+#love-quotes .quote-dot.active{
+  width:22px !important; border-radius:99px !important; background:#e0b94b !important;
+}
+
+@keyframes quoteHeartPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+
+/* Remove any legacy RSVP space even if an older cached HTML block is present. */
+#rsvp,.rsvp,[id*="rsvp" i],.rsvp-form{
+  display:none !important;
+  visibility:hidden !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+}
+
+/* Small phones: compress the hero without moving content onto the faces. */
+@media (max-width:600px){
+  #home.hero .hero-image{background-position:center 36% !important}
   #home.hero .hero-content{
-    bottom:clamp(48px,6.5dvh,66px)!important;
-    width:calc(100% - 22px)!important;
-    max-height:calc(100dvh - var(--vh-header-h) - 52px)!important;
+    width:calc(100% - 24px) !important;
+    max-height:calc(100dvh - 86px) !important;
+    padding-bottom:clamp(54px,6.5vh,72px) !important;
   }
-  #home.hero .premium-couple-name .premium-name{font-size:clamp(27px,7.8vw,40px)!important}
-  #home.hero .premium-heart{font-size:clamp(16px,4.4vw,21px)!important}
-  #home.hero .hero-quote{font-size:clamp(13px,3.8vw,17px)!important}
-  #home.hero .hero-sub{font-size:clamp(9.5px,2.8vw,12px)!important;line-height:1.35!important;max-width:330px!important}
-  #home.hero .date-script{font-size:clamp(17px,4.8vw,22px)!important}
-  #home.hero .invite-countdown{border-radius:18px!important;padding:7px 3px!important}
-  #home.hero .invite-countdown b{font-size:clamp(14px,4vw,19px)!important}
-  #home.hero .invite-countdown small{font-size:clamp(6px,1.8vw,7px)!important}
-  #home.hero .hero-actions .gold-btn,#home.hero .hero-actions .outline-btn{min-height:44px!important;font-size:clamp(9.5px,2.8vw,11px)!important}
+  #home.hero .premium-name{font-size:clamp(1.95rem,8.4vw,2.85rem) !important}
+  #home.hero .hero-quote{font-size:clamp(.92rem,4.1vw,1.12rem) !important}
+  #home.hero .hero-sub{font-size:clamp(.72rem,3.3vw,.9rem) !important;max-width:94% !important}
+  #home.hero .date-script{font-size:clamp(1rem,4.7vw,1.35rem) !important}
+  #home.hero .invite-countdown{border-radius:20px !important;padding:7px 4px !important}
+  #home.hero .invite-countdown .unit{padding:5px 3px !important}
+  #home.hero .invite-countdown b{font-size:clamp(1rem,5vw,1.25rem) !important}
+  #home.hero .invite-countdown small{font-size:.42rem !important;letter-spacing:.08em !important}
+  #home.hero .hero-actions{gap:8px !important}
+  #home.hero .gold-btn,#home.hero .outline-btn{min-height:48px !important;padding:9px 7px !important;font-size:clamp(.7rem,3.2vw,.86rem) !important}
+  #love-quotes.love-quotes-page{min-height:100svh !important;padding:56px 14px !important}
+  #love-quotes .quotes-shell{min-height:calc(100svh - 112px) !important;border-radius:28px !important;padding:34px 18px !important}
+  #love-quotes .quote-rotator{min-height:210px !important}
+  #love-quotes .rotating-quote{font-size:clamp(1.45rem,7vw,2.1rem) !important}
+  #love-quotes .quote-story{font-size:.8rem !important}
 }
-/* Short phones (older/smaller Android and iPhone landscape-like heights). */
-@media(max-width:767px) and (max-height:700px){
-  #home.hero .hero-image{background-position:50% 26%!important}
-  #home.hero .hero-content{bottom:42px!important}
-  #home.hero .eyebrow{font-size:8px!important;margin-bottom:2px!important}
-  #home.hero .premium-couple-name .premium-name{font-size:26px!important}
-  #home.hero .premium-heart{font-size:15px!important;margin:0!important}
-  #home.hero .hero-quote{font-size:12px!important}
-  #home.hero .hero-sub{font-size:9px!important;line-height:1.25!important}
-  #home.hero .date-script{font-size:16px!important;margin:4px 0!important}
-  #home.hero .invite-countdown{margin:3px 0 6px!important;padding:5px 2px!important}
-  #home.hero .invite-countdown .unit{padding:2px!important}
-  #home.hero .invite-countdown b{font-size:13px!important}
-  #home.hero .hero-actions .gold-btn,#home.hero .hero-actions .outline-btn{min-height:38px!important;padding:6px!important;font-size:9px!important}
-}
-/* Narrow phones: stack actions only when two buttons would become cramped. */
-@media(max-width:360px){
-  #home.hero .hero-actions{gap:6px!important}
-  #home.hero .hero-actions .gold-btn,#home.hero .hero-actions .outline-btn{padding-inline:5px!important;font-size:9px!important}
-}
-/* Tablets / desktop: preserve spacious composition and responsive scaling. */
-@media(min-width:768px){
-  #home.hero .hero-image{background-position:50% 38%!important}
-  #home.hero .hero-content{bottom:clamp(64px,8dvh,100px)!important}
-}
-@media(min-width:1200px){
-  #home.hero .hero-image{background-position:50% 42%!important}
-  #home.hero .hero-content{width:min(820px,72vw)!important}
-}
-@supports not (height:100dvh){
-  #home.hero{height:100vh!important;min-height:100vh!important;max-height:100vh!important}
-  #home.hero .hero-content{max-height:calc(100vh - var(--vh-header-h,72px) - 64px)!important}
-  #love-quotes.love-quotes-page{min-height:100vh!important}
-}
-</style>
 
+@media (max-width:390px){
+  #home.hero .hero-content{width:calc(100% - 18px) !important;padding-bottom:52px !important}
+  #home.hero .premium-name{font-size:clamp(1.78rem,8.8vw,2.45rem) !important}
+  #home.hero .hero-quote{margin-top:9px !important}
+  #home.hero .hero-sub{margin-top:3px !important}
+  #home.hero .date-script{margin-top:8px !important}
+  #home.hero .hero-countdown{margin-top:8px !important}
+  #home.hero .hero-actions{margin-top:8px !important}
+}
+
+@media (min-width:601px){
+  #home.hero .hero-content{
+    padding-bottom:clamp(70px,8vh,92px) !important;
+  }
+  #love-quotes .quote-rotator{min-height:230px !important}
+}
+
+@media (prefers-reduced-motion:reduce){
+  #love-quotes .quote-heart{animation:none !important}
+  #love-quotes .rotating-quote{transition:none !important}
+}
+
+</style>
 </head>
 <body class="wedding-cover-lock">
 
@@ -7770,18 +8025,6 @@ html{scroll-padding-top:var(--vh-header-h,72px)}
 </div><a class="scroll-cue" href="#love-quotes" aria-label="Scroll to love and marriage quotes">↓</a>
 </section>
 
-<section id="love-quotes" class="love-quotes-page" aria-label="Love and Marriage Quotes">
-  <div class="quotes-shell">
-    <p class="eyebrow" data-key="quotesEyebrow">LOVE • MARRIAGE • FOREVER</p>
-    <div class="quote-heart" aria-hidden="true">♥</div>
-    <h2 data-key="quotesTitle">Love &amp; Marriage</h2>
-    <div class="quote-rotator" aria-live="polite" aria-atomic="true">
-      <p id="rotatingQuote" class="rotating-quote"></p>
-    </div>
-    <div class="quote-dots" id="quoteDots" aria-hidden="true"></div>
-    <a class="quote-continue" href="#invite" data-key="quotesContinue">Continue to Invitation ↓</a>
-  </div>
-</section>
 
 <section id="invite" class="section">
   <div class="section-heading reveal">
@@ -7872,6 +8115,19 @@ Kodungaiyur, Chennai – 600118</p><p class="muted" data-key="venueNear">Near Mu
 <div class="gallery-placeholder reveal"><span>♥</span><p data-key="galleryMore">More memories coming soon</p></div>
 </div></section>
 
+
+
+<section id="love-quotes" class="love-quotes-page" aria-label="Marriage and Love Quotes">
+  <div class="quotes-shell">
+    <p class="eyebrow" data-key="quotesEyebrow">LOVE • LAUGHTER • FOREVER</p>
+    <div class="quote-heart" aria-hidden="true">♥</div>
+    <div class="quote-rotator" aria-live="polite" aria-atomic="true">
+      <p id="rotatingQuote" class="rotating-quote"></p>
+    </div>
+    <p class="quote-story" data-key="quotesStory">An arranged beginning, a beautiful bond, and a love that grows more and more every day.</p>
+    <div class="quote-dots" id="quoteDots" aria-hidden="true"></div>
+  </div>
+</section>
 
 </main>
 

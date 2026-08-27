@@ -33,16 +33,16 @@ let lang = localStorage.getItem("weddingLang") === "ta" ? "ta" : "en";
 
 const LANGUAGE_TEXT = {
   en: {
-    brandGroom:"Vijay",brandBride:"Hemalatha",navInvitation:"Invitation",navJourney:"Journey",navEvents:"Events",navVenue:"Venue",navGallery:"Gallery",navRsvp:"RSVP",
-    heroEyebrow:"A NEW BEGINNING",groomName:"Vijay Anand",brideName:"Hemalatha",heroQuote:"Two families, one beautiful celebration.",heroSub:"With love, blessings, and joy, we begin our forever together.",heroDate:"07 September 2026",viewInvitation:"View Invitation",addCalendar:"＋ Add to Calendar",
+    brandGroom:"Vijay",brandBride:"Hemalatha",navInvitation:"Invitation",navJourney:"Journey",navEvents:"Events",navVenue:"Venue",navGallery:"Gallery",navQuotes:"Quotes",navRsvp:"RSVP",
+    quotesEyebrow:"LOVE • MARRIAGE • FOREVER",quotesTitle:"Love & Marriage",quotesContinue:"Continue to Invitation ↓",heroEyebrow:"A NEW BEGINNING",groomName:"Vijay Anand",brideName:"Hemalatha",heroQuote:"Two families, one beautiful celebration.",heroSub:"With love, blessings, and joy, we begin our forever together.",heroDate:"07 September 2026",viewInvitation:"View Invitation",addCalendar:"＋ Add to Calendar",
     inviteEyebrow:"WITH OUR FAMILIES",inviteTitle:"Wedding Invitation",inviteDescription:"Together with our families, we warmly invite you to celebrate our wedding.",
     journeyTitle:"Our Journey Begins",journeyDescription:"With the blessings of our parents and elders, two families come together for a lifetime of togetherness.",childhood:"Our Memories",journeyStep1Title:"Two Families",journeyStep1Text:"A beautiful union blessed by our families.",journeyStep2Title:"Engagement",journeyStep2Text:"A joyful celebration that brought our families closer.",journeyStep3Title:"A Promise for a Lifetime",journeyStep3Text:"With love, blessings and joy, we begin our new chapter.",journeyStep4Title:"Forever Begins",journeyStep4Text:"07 September 2026",
     eventsEyebrow:"SAVE THE DATE",eventsTitle:"Wedding Celebrations",eventsDescription:"Two beautiful moments, one unforgettable beginning.",receptionDate:"06 SEP 2026",receptionTitle:"Reception",receptionTime:"6:30 PM onwards",weddingDate:"07 SEP 2026",weddingTitle:"Wedding Ceremony",weddingTime:"6:00 AM – 7:30 AM",celebrationVenue:"CELEBRATION VENUE",venueName:"Ramaswamy Mahal / S.R. Sami Party Hall",directions:"📍 Get Directions",celebrationNote:"With the love and blessings of our families, we warmly invite you to celebrate with us.",
     venueEyebrow:"JOIN US",venueTitle:"The Venue",venueAddress:"8, North Avenue, Muthamizh Nagar, Kodungaiyur, Chennai – 600118",venueNear:"Near Muthamizh Nagar Church",openMaps:"Open in Google Maps",galleryEyebrow:"MOMENTS TO TREASURE",galleryMore:"More memories coming soon",rsvpEyebrow:"WE WOULD LOVE TO HAVE YOU",rsvpTitle:"RSVP",rsvpDescription:"Please share your attendance and wishes with us.",rsvpNameLabel:"Your Name",rsvpGuestsLabel:"Number of Guests",rsvpWishesLabel:"Your Wishes",rsvpSubmit:"Send RSVP",footerThanks:"Thank you for celebrating our special day with us."
   },
   ta: {
-    brandGroom:"விஜய்",brandBride:"ஹேமலதா",navInvitation:"அழைப்பிதழ்",navJourney:"நமது பயணம்",navEvents:"நிகழ்வுகள்",navVenue:"திருமண இடம்",navGallery:"நினைவுகள்",navRsvp:"வருகை உறுதி",
-    heroEyebrow:"ஒரு புதிய தொடக்கம்",groomName:"விஜய் ஆனந்த்",brideName:"ஹேமலதா",heroQuote:"இரண்டு குடும்பங்கள், ஒரு அழகான கொண்டாட்டம்.",heroSub:"அன்பும், ஆசீர்வாதங்களும், மகிழ்ச்சியுடனும் எங்கள் வாழ்நாள் பயணத்தை தொடங்குகிறோம்.",heroDate:"07 செப்டம்பர் 2026",viewInvitation:"அழைப்பிதழைப் பார்க்கவும்",addCalendar:"＋ காலண்டரில் சேர்க்கவும்",
+    brandGroom:"விஜய்",brandBride:"ஹேமலதா",navInvitation:"அழைப்பிதழ்",navJourney:"நமது பயணம்",navEvents:"நிகழ்வுகள்",navVenue:"திருமண இடம்",navGallery:"நினைவுகள்",navQuotes:"காதல் வரிகள்",navRsvp:"வருகை உறுதி",
+    quotesEyebrow:"காதல் • திருமணம் • என்றும்",quotesTitle:"காதலும் திருமணமும்",quotesContinue:"அழைப்பிதழுக்கு தொடரவும் ↓",heroEyebrow:"ஒரு புதிய தொடக்கம்",groomName:"விஜய் ஆனந்த்",brideName:"ஹேமலதா",heroQuote:"இரண்டு குடும்பங்கள், ஒரு அழகான கொண்டாட்டம்.",heroSub:"அன்பும், ஆசீர்வாதங்களும், மகிழ்ச்சியுடனும் எங்கள் வாழ்நாள் பயணத்தை தொடங்குகிறோம்.",heroDate:"07 செப்டம்பர் 2026",viewInvitation:"அழைப்பிதழைப் பார்க்கவும்",addCalendar:"＋ காலண்டரில் சேர்க்கவும்",
     inviteEyebrow:"எங்கள் குடும்பங்களுடன்",inviteTitle:"திருமண அழைப்பிதழ்",inviteDescription:"எங்கள் குடும்பங்களுடன் இணைந்து, எங்கள் திருமண விழாவை கொண்டாட உங்களை அன்புடன் அழைக்கிறோம்.",
     journeyTitle:"எங்கள் பயணம் தொடங்குகிறது",journeyDescription:"பெற்றோர் மற்றும் பெரியோர்களின் ஆசீர்வாதத்துடன், இரண்டு குடும்பங்கள் வாழ்நாள் உறவாக ஒன்றிணைகின்றன.",childhood:"நமது நினைவுகள்",journeyStep1Title:"இரண்டு குடும்பங்கள்",journeyStep1Text:"எங்கள் குடும்பங்களின் ஆசீர்வாதத்துடன் ஒரு அழகான இணைவு.",journeyStep2Title:"நிச்சயதார்த்தம்",journeyStep2Text:"எங்கள் குடும்பங்களை இன்னும் நெருக்கமாக இணைத்த மகிழ்ச்சியான விழா.",journeyStep3Title:"வாழ்நாள் வாக்குறுதி",journeyStep3Text:"அன்பும், ஆசீர்வாதமும், மகிழ்ச்சியுடனும் எங்கள் புதிய அத்தியாயத்தை தொடங்குகிறோம்.",journeyStep4Title:"என்றென்றும் தொடங்குகிறது",journeyStep4Text:"07 செப்டம்பர் 2026",
     eventsEyebrow:"தேதியை நினைவில் கொள்ளுங்கள்",eventsTitle:"திருமண விழாக்கள்",eventsDescription:"இரண்டு அழகான தருணங்கள், மறக்க முடியாத ஒரு தொடக்கம்.",receptionDate:"06 செப் 2026",receptionTitle:"வரவேற்பு விழா",receptionTime:"மாலை 6:30 மணி முதல்",weddingDate:"07 செப் 2026",weddingTitle:"திருமண விழா",weddingTime:"காலை 6:00 – 7:30 மணி",celebrationVenue:"விழா நடைபெறும் இடம்",venueName:"ராமசாமி மஹால் / எஸ்.ஆர். சாமி பார்ட்டி ஹால்",directions:"📍 வழிகாட்டியைப் பார்க்கவும்",celebrationNote:"எங்கள் குடும்பங்களின் அன்பும் ஆசீர்வாதமும் நிறைந்த இந்த விழாவை எங்களுடன் இணைந்து கொண்டாட உங்களை அன்புடன் அழைக்கிறோம்.",
@@ -90,6 +90,70 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => applyLanguage(lang), { once: true });
 } else {
   applyLanguage(lang);
+}
+
+/* Love & Marriage quote rotator */
+const LOVE_QUOTES = {
+  en: [
+    "Love is choosing each other, every single day.",
+    "Marriage: two hearts, one home, and unlimited inside jokes.",
+    "A happy marriage is built from love, laughter, and a little patience.",
+    "Forever sounds better when I spend it with you.",
+    "We found love, then decided to make it official — with witnesses!",
+    "The best adventures are the ones we take together.",
+    "Behind every happy couple is a lot of love… and a lot of snacks.",
+    "Two souls, one beautiful journey, and a lifetime of memories to make."
+  ],
+  ta: [
+    "ஒவ்வொரு நாளும் ஒருவரை ஒருவர் தேர்ந்தெடுப்பதே உண்மையான காதல்.",
+    "திருமணம்: இரண்டு இதயங்கள், ஒரு வீடு, எண்ணற்ற சிரிப்புகள்.",
+    "அன்பும், சிரிப்பும், கொஞ்சம் பொறுமையும் சேர்ந்ததே அழகான திருமணம்.",
+    "என்றென்றும் என்பது உன்னுடன் இருக்கும்போது இன்னும் அழகாகிறது.",
+    "காதலை கண்டோம்… அதை திருமணமாக அதிகாரப்பூர்வமாக்க முடிவு செய்தோம்!",
+    "சேர்ந்து செல்லும் பயணங்களே வாழ்க்கையின் அழகான சாகசங்கள்.",
+    "ஒவ்வொரு சந்தோஷமான ஜோடிக்கும் பின்னால் அன்பும்… நிறைய ஸ்நாக்ஸும் இருக்கும்.",
+    "இரண்டு ஆன்மாக்கள், ஒரு அழகான பயணம், வாழ்நாள் முழுவதும் நினைவுகள்."
+  ]
+};
+
+let quoteIndex = 0;
+let quoteTimer = null;
+function renderQuote(index, immediate = false) {
+  const quoteEl = $("#rotatingQuote");
+  const dotsEl = $("#quoteDots");
+  if (!quoteEl) return;
+  const quotes = LOVE_QUOTES[lang] || LOVE_QUOTES.en;
+  quoteIndex = ((index % quotes.length) + quotes.length) % quotes.length;
+  if (immediate) {
+    quoteEl.textContent = quotes[quoteIndex];
+  } else {
+    quoteEl.classList.add("is-changing");
+    window.setTimeout(() => {
+      quoteEl.textContent = quotes[quoteIndex];
+      requestAnimationFrame(() => quoteEl.classList.remove("is-changing"));
+    }, 220);
+  }
+  if (dotsEl) {
+    dotsEl.innerHTML = quotes.map((_, i) => `<span class="quote-dot${i === quoteIndex ? " active" : ""}"></span>`).join("");
+  }
+}
+function startQuoteRotator() {
+  if (!$("#rotatingQuote")) return;
+  window.clearInterval(quoteTimer);
+  renderQuote(quoteIndex, true);
+  quoteTimer = window.setInterval(() => {
+    const quotes = LOVE_QUOTES[lang] || LOVE_QUOTES.en;
+    renderQuote(quoteIndex + 1);
+  }, 4200);
+}
+window.addEventListener("wedding:languagechange", () => {
+  quoteIndex = 0;
+  startQuoteRotator();
+});
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", startQuoteRotator, { once: true });
+} else {
+  startQuoteRotator();
 }
 
 /* Reveal */

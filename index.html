@@ -7234,6 +7234,321 @@ body:not(.hero-at-top) #home.hero + #invite{
   window.addEventListener('orientationchange', function(){ setTimeout(update, 80); }, {passive:true});
 })();
 </script>
+
+<style id="final-user-layout-fix-20260827">
+/* ============================================================
+   FINAL USER LAYOUT FIX
+   - Page 1 is one closed hero canvas.
+   - Hide the pale source-image strip at the hero top without editing the image.
+   - Move hero copy slightly downward so the lower area is balanced.
+   - Page 2 begins cleanly at #invite and is revealed only after navigation.
+   ============================================================ */
+
+/* Keep the header and hero visually continuous. */
+#home.hero{
+  background:#5a102c!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+}
+
+/* The original photo is untouched. On narrow screens, scale it very slightly
+   beyond the viewport height so the pale strip that exists inside the source
+   photo is outside the visible canvas. */
+#home.hero .hero-image{
+  background-size:cover!important;
+  background-position:center center!important;
+  background-repeat:no-repeat!important;
+  background-attachment:scroll!important;
+}
+
+/* Blend the very top of the existing photo into the burgundy header instead of
+   exposing the light strip that is part of the original photograph. */
+#home.hero::after{
+  content:"";
+  position:absolute;
+  z-index:2;
+  left:0;right:0;top:0;
+  height:clamp(34px,5vh,62px);
+  pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(86,10,40,.98) 0%,
+    rgba(86,10,40,.90) 22%,
+    rgba(86,10,40,.55) 58%,
+    rgba(86,10,40,0) 100%);
+}
+
+/* Content remains inside the hero and is intentionally lower than the
+   previous version. */
+#home.hero .hero-content{
+  transform:translateY(2.5vh)!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+}
+
+/* Keep the bottom controls comfortably above the hero edge. */
+#home.hero .hero-actions{margin-top:12px!important;}
+#home.hero .scroll-cue{
+  bottom:clamp(12px,2.5vh,26px)!important;
+  transform:translateX(-50%)!important;
+}
+
+/* Page 2 is a true sibling and starts with its heading, then its existing
+   invitation artwork. */
+#home.hero + #invite{
+  position:relative!important;
+  margin-top:0!important;
+  top:auto!important;
+  transform:none!important;
+  clear:both!important;
+  min-height:100vh!important;
+  overflow:visible!important;
+  scroll-margin-top:calc(var(--wedding-header-height) + 10px)!important;
+}
+#invite .section-heading{
+  margin-top:0!important;
+  padding-top:clamp(28px,5vh,64px)!important;
+}
+#invite .section-heading h2{
+  margin-top:6px!important;
+  margin-bottom:14px!important;
+}
+#invite .language-invitation-art{
+  margin-top:0!important;
+}
+
+/* At the initial position Page 2 must not paint through the bottom of Page 1. */
+body.hero-at-top #home.hero + #invite{
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+body:not(.hero-at-top) #home.hero + #invite{
+  visibility:visible!important;
+  pointer-events:auto!important;
+}
+
+@media (max-width:767px){
+  #home.hero .hero-image{
+    /* Slight vertical overscan removes the pale strip that is physically
+       present at the top of hero.jpg while preserving the couple's faces. */
+    background-size:auto 104%!important;
+    background-position:center center!important;
+  }
+  #home.hero .hero-content{
+    width:100%!important;
+    padding:14px 12px max(56px,calc(env(safe-area-inset-bottom) + 44px))!important;
+    transform:translateY(3.2vh)!important;
+  }
+  #home.hero .premium-couple-name .premium-name{
+    font-size:clamp(31px,8vw,43px)!important;
+  }
+  #home.hero .hero-quote{
+    font-size:clamp(16px,4.5vw,20px)!important;
+    max-width:340px!important;
+  }
+  #home.hero .hero-sub{
+    font-size:clamp(10.5px,2.8vw,12px)!important;
+    max-width:350px!important;
+  }
+  #home.hero .date-script{
+    font-size:clamp(21px,5.8vw,25px)!important;
+    margin-top:10px!important;
+  }
+  #home.hero .hero-countdown{
+    width:calc(100vw - 36px)!important;
+    margin-top:9px!important;
+  }
+  #home.hero .hero-actions{
+    width:calc(100vw - 28px)!important;
+    gap:9px!important;
+    margin-top:12px!important;
+  }
+  #home.hero .hero-actions .gold-btn,
+  #home.hero .hero-actions .outline-btn{
+    min-height:45px!important;
+    padding:10px 7px!important;
+    font-size:clamp(10.5px,3vw,12px)!important;
+  }
+  #home.hero .scroll-cue{bottom:15px!important;}
+
+  #invite .section-heading{
+    padding:24px 18px 0!important;
+    margin-top:0!important;
+  }
+  #invite .section-heading h2{font-size:clamp(32px,9vw,44px)!important;}
+  #invite .section-heading>p:not(.eyebrow){
+    font-size:clamp(14px,3.9vw,17px)!important;
+    line-height:1.5!important;
+  }
+}
+
+@media (max-width:390px){
+  #home.hero .hero-image{background-size:auto 105%!important;}
+  #home.hero .hero-content{transform:translateY(2.4vh)!important;}
+  #home.hero .premium-couple-name .premium-name{font-size:29px!important;}
+  #home.hero .hero-quote{font-size:15px!important;}
+  #home.hero .hero-sub{font-size:10px!important;}
+  #home.hero .date-script{font-size:21px!important;}
+  #home.hero .hero-countdown .unit b{font-size:18px!important;}
+  #home.hero .hero-actions .gold-btn,
+  #home.hero .hero-actions .outline-btn{font-size:10px!important;min-height:42px!important;}
+}
+</style>
+
+
+<style id="final-responsive-typography-quotes-fix">
+/* FINAL RESPONSIVE TYPOGRAPHY + QUOTES PAGE
+   Existing photographs are intentionally untouched. */
+
+/* Keep the hero photo visually connected to the burgundy header and remove
+   the light strip at the source image's top edge through CSS overscan only. */
+#home.hero .hero-image{
+  background-size:cover!important;
+  background-position:center center!important;
+  background-repeat:no-repeat!important;
+}
+
+@media (max-width:767px){
+  #home.hero .hero-image{
+    background-size:auto 112%!important;
+    background-position:center 46%!important;
+  }
+}
+@media (max-width:420px){
+  #home.hero .hero-image{
+    background-size:auto 116%!important;
+    background-position:center 44%!important;
+  }
+}
+
+/* Slightly smaller, calmer typography on every device. */
+#home.hero .premium-couple-name .premium-name{
+  font-size:clamp(1.55rem,5.8vw,3.65rem)!important;
+}
+#home.hero .hero-quote{font-size:clamp(.78rem,2.35vw,1.18rem)!important;}
+#home.hero .hero-sub{font-size:clamp(.64rem,1.95vw,.92rem)!important;}
+#home.hero .date-script{font-size:clamp(.94rem,2.75vw,1.55rem)!important;}
+#home.hero .hero-countdown .unit b{font-size:clamp(1rem,2.8vw,1.45rem)!important;}
+#home.hero .hero-countdown .unit small{font-size:.5rem!important;}
+#home.hero .hero-actions .gold-btn,
+#home.hero .hero-actions .outline-btn{font-size:clamp(.66rem,1.55vw,.88rem)!important;}
+
+/* Keep hero copy a little lower while retaining a safe bottom clearance. */
+#home.hero .hero-content{
+  transform:translateY(clamp(12px,4.2vh,38px))!important;
+}
+
+/* Tamil uses an actual Tamil typeface instead of falling back to Latin fonts. */
+html[data-lang="ta"] body,
+html[data-lang="ta"] button,
+html[data-lang="ta"] input,
+html[data-lang="ta"] textarea,
+html[data-lang="ta"] select{
+  font-family:"Noto Sans Tamil",sans-serif!important;
+}
+html[data-lang="ta"] .hero,
+html[data-lang="ta"] .section,
+html[data-lang="ta"] .topbar,
+html[data-lang="ta"] footer{
+  font-family:"Noto Sans Tamil",sans-serif!important;
+}
+html[data-lang="ta"] #home.hero .premium-couple-name .premium-name,
+html[data-lang="ta"] #home.hero .hero-quote,
+html[data-lang="ta"] #home.hero .hero-sub,
+html[data-lang="ta"] #home.hero .date-script,
+html[data-lang="ta"] .section-heading h2,
+html[data-lang="ta"] .dynamic-quote{
+  font-family:"Noto Serif Tamil","Noto Sans Tamil",serif!important;
+}
+html[data-lang="ta"] #home.hero .premium-couple-name .premium-name{
+  font-size:clamp(1.45rem,5.5vw,3.45rem)!important;
+  line-height:1.18!important;
+}
+html[data-lang="ta"] #home.hero .hero-quote{font-size:clamp(.76rem,2.7vw,1.08rem)!important;line-height:1.55!important;}
+html[data-lang="ta"] #home.hero .hero-sub{font-size:clamp(.62rem,2.1vw,.88rem)!important;line-height:1.6!important;}
+
+/* New quotes page replaces the RSVP form. */
+#quotes.quotes-section{
+  min-height:min(100vh,920px)!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  position:relative!important;
+  overflow:hidden!important;
+  background:
+    radial-gradient(circle at 50% 18%,rgba(216,177,67,.13),transparent 34%),
+    linear-gradient(180deg,#fffaf3 0%,#f7eadc 100%)!important;
+}
+#quotes.quotes-section::before{
+  content:"♥";
+  position:absolute;
+  top:8%;
+  left:50%;
+  transform:translateX(-50%);
+  color:rgba(112,21,47,.06);
+  font:700 12rem/1 "Playfair Display",serif;
+  pointer-events:none;
+}
+#quotes .section-heading{position:relative;z-index:1;margin-bottom:28px!important;}
+#quotes .section-heading h2{font-size:clamp(2rem,5vw,3.4rem)!important;margin-bottom:10px!important;}
+#quotes .section-heading>p:not(.eyebrow){font-size:clamp(.78rem,1.8vw,1rem)!important;line-height:1.55!important;}
+.quote-showcase{
+  position:relative;
+  z-index:1;
+  width:min(760px,92vw);
+  min-height:260px;
+  margin:0 auto;
+  padding:52px clamp(24px,6vw,68px) 38px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  border:1px solid rgba(174,132,49,.48);
+  border-radius:28px;
+  background:rgba(255,253,249,.78);
+  box-shadow:0 24px 70px rgba(73,17,34,.12), inset 0 0 0 6px rgba(216,177,67,.06);
+  backdrop-filter:blur(8px);
+}
+.quote-mark{position:absolute;top:8px;left:50%;transform:translateX(-50%);font:600 4.8rem/1 "Playfair Display",serif;color:#d4a84d;opacity:.8;}
+.dynamic-quote{margin:12px 0 20px;max-width:650px;font:500 clamp(1.15rem,3vw,1.8rem)/1.45 "Playfair Display",serif;color:#5f162c;}
+.quote-progress{width:min(360px,72vw);height:2px;background:#e4d5c0;border-radius:99px;overflow:hidden;}
+.quote-progress span{display:block;height:100%;width:12.5%;background:#c99c3f;transition:width .35s ease;}
+.quote-counter{margin:10px 0 0;font:500 .62rem/1 "Poppins",sans-serif;letter-spacing:.18em;color:#8d6c34;}
+html[data-lang="ta"] #quotes .dynamic-quote{font-family:"Noto Serif Tamil","Noto Sans Tamil",serif;font-size:clamp(1rem,2.7vw,1.55rem);line-height:1.75;}
+html[data-lang="ta"] #quotes .section-heading h2,
+html[data-lang="ta"] #quotes .section-heading>p:not(.eyebrow){font-family:"Noto Serif Tamil","Noto Sans Tamil",serif;}
+
+@media(max-width:600px){
+  #home.hero .hero-content{transform:translateY(clamp(16px,3.5vh,28px))!important;}
+  #home.hero .premium-couple-name .premium-name{font-size:clamp(1.38rem,6.2vw,2.25rem)!important;}
+  #home.hero .hero-quote{font-size:clamp(.72rem,3.1vw,.92rem)!important;}
+  #home.hero .hero-sub{font-size:clamp(.60rem,2.35vw,.78rem)!important;}
+  #home.hero .date-script{font-size:clamp(.88rem,3.5vw,1.15rem)!important;}
+  #home.hero .hero-countdown .unit b{font-size:17px!important;}
+  #home.hero .hero-countdown .unit small{font-size:5px!important;}
+  #home.hero .hero-actions .gold-btn,
+  #home.hero .hero-actions .outline-btn{font-size:10px!important;padding:9px 5px!important;min-height:42px!important;}
+  #quotes.quotes-section{min-height:720px!important;padding:80px 18px!important;}
+  .quote-showcase{min-height:235px;padding:46px 20px 32px;border-radius:22px;}
+  .quote-mark{font-size:4rem;top:7px;}
+  .dynamic-quote{font-size:1.05rem;line-height:1.5;}
+  html[data-lang="ta"] #quotes .dynamic-quote{font-size:.98rem;line-height:1.8;}
+}
+@media(max-width:390px){
+  #home.hero .hero-content{transform:translateY(18px)!important;}
+  #home.hero .premium-couple-name .premium-name{font-size:27px!important;}
+  #home.hero .hero-quote{font-size:14px!important;}
+  #home.hero .hero-sub{font-size:9.5px!important;}
+  #home.hero .date-script{font-size:19px!important;}
+  #home.hero .hero-actions .gold-btn,
+  #home.hero .hero-actions .outline-btn{font-size:9.5px!important;}
+}
+@media(min-width:1000px){
+  #quotes.quotes-section{min-height:780px!important;}
+  .quote-showcase{min-height:300px;}
+}
+</style>
+
 </head>
 <body class="wedding-cover-lock">
 
@@ -7271,7 +7586,7 @@ body:not(.hero-at-top) #home.hero + #invite{
 <header class="topbar">
 <a class="brand" href="#home"><span class="brand-name" data-key="brandGroom">Vijay</span> <span class="brand-heart" aria-hidden="true">♥</span> <span class="brand-name" data-key="brandBride">Hemalatha</span></a>
 <nav>
-<a href="#invite" data-key="navInvitation">Invitation</a><a href="#journey" data-key="navJourney">Journey</a><a href="#events" data-key="navEvents">Events</a><a href="#venue" data-key="navVenue">Venue</a><a href="#gallery" data-key="navGallery">Gallery</a><a href="#rsvp" data-key="navRsvp">RSVP</a>
+<a href="#invite" data-key="navInvitation">Invitation</a><a href="#journey" data-key="navJourney">Journey</a><a href="#events" data-key="navEvents">Events</a><a href="#venue" data-key="navVenue">Venue</a><a href="#gallery" data-key="navGallery">Gallery</a><a href="#quotes" data-key="navQuotes">Quotes</a>
 </nav>
 <div class="top-actions">
 <button id="langToggle" class="icon-btn" aria-label="Switch language">தமிழ்</button>
@@ -7399,15 +7714,21 @@ Kodungaiyur, Chennai – 600118</p><p class="muted" data-key="venueNear">Near Mu
 <div class="gallery-placeholder reveal"><span>♥</span><p data-key="galleryMore">More memories coming soon</p></div>
 </div></section>
 
-<section id="rsvp" class="section rsvp">
-<div class="section-heading reveal"><p class="eyebrow" data-key="rsvpEyebrow">WE WOULD LOVE TO HAVE YOU</p><h2 data-key="rsvpTitle">RSVP</h2><p data-key="rsvpDescription">Please share your attendance and wishes with us.</p></div>
-<form id="rsvpForm" class="rsvp-form">
-<label><span data-key="rsvpNameLabel">Your Name</span><input name="name" required></label>
-<label><span data-key="rsvpGuestsLabel">Number of Guests</span><input name="guests" type="number" min="1" max="20" required></label>
-<label class="full"><span data-key="rsvpWishesLabel">Your Wishes</span><textarea name="wishes" rows="5"></textarea></label>
-<button class="gold-btn" type="submit" data-key="rsvpSubmit">Send RSVP</button>
-</form>
+<section id="quotes" class="section quotes-section" aria-labelledby="quotesTitle">
+  <div class="section-heading reveal">
+    <p class="eyebrow" data-key="quotesEyebrow">LOVE &amp; MARRIAGE</p>
+    <h2 id="quotesTitle" data-key="quotesTitle">Marriage &amp; Love</h2>
+    <p data-key="quotesDescription">A few little words about love, laughter and growing together.</p>
+  </div>
+  <div class="quote-showcase reveal" role="region" aria-live="polite" aria-label="Marriage and love quotes">
+    <span class="quote-mark" aria-hidden="true">“</span>
+    <p id="dynamicQuote" class="dynamic-quote">Love grows more beautiful when two hearts choose each other, every day.</p>
+    <div class="quote-progress" aria-hidden="true"><span id="quoteProgress"></span></div>
+    <p class="quote-counter"><span id="quoteNumber">1</span> / <span id="quoteTotal">8</span></p>
+  </div>
 </section>
+
+
 </main>
 
 <footer><p data-key="footerThanks">Thank you for celebrating our special day with us.</p></footer>
@@ -7490,6 +7811,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+</script>
+
+
+<script id="final-user-navigation-fix-20260827">
+(function () {
+  function goToInvitation(event) {
+    var link = event.currentTarget;
+    var target = document.getElementById('invite');
+    if (!target) return;
+    event.preventDefault();
+    document.body.classList.remove('hero-at-top');
+    history.replaceState(null, '', '#invite');
+    requestAnimationFrame(function () {
+      var header = document.querySelector('.topbar');
+      var offset = header ? header.getBoundingClientRect().height : 0;
+      var y = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('#home .scroll-cue, #home .hero-actions a[href="#invite"]').forEach(function (el) {
+      el.addEventListener('click', goToInvitation, { passive: false });
+      el.addEventListener('touchend', function () {}, { passive: true });
+    });
+  });
+})();
 </script>
 
 </body>

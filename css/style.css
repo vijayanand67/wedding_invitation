@@ -3917,3 +3917,118 @@ html, body {
     }
   }
 }
+
+
+/* =========================================================
+   FINAL VIEWPORT-LOCK HERO PATCH
+   Keep the first hero exactly one visible viewport tall.
+   The second section remains a normal sibling and cannot peek
+   into the first screen on mobile browser chrome layouts.
+   ========================================================= */
+#home.hero {
+  position: relative !important;
+  width: 100% !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+  max-height: 100dvh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  overflow: clip !important;
+  box-sizing: border-box !important;
+  isolation: isolate !important;
+}
+
+#home.hero .hero-image,
+#home.hero .hero-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+#home.hero .hero-image {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+}
+
+#home.hero .hero-content {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Never allow the invitation section to be visible through the first viewport. */
+#home.hero + #invite {
+  position: relative !important;
+  z-index: 1 !important;
+  margin: 0 !important;
+  top: auto !important;
+  transform: none !important;
+}
+
+/* Give the second page its own clean starting edge. */
+#invite {
+  overflow: visible !important;
+  clear: both !important;
+}
+
+@media (max-width: 600px) {
+  #home.hero {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+  }
+
+  #home.hero .hero-content {
+    padding-top: clamp(68px, 10vh, 92px) !important;
+    padding-bottom: clamp(48px, 7vh, 68px) !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  #home.hero .scroll-cue {
+    bottom: max(12px, env(safe-area-inset-bottom)) !important;
+  }
+}
+
+@media (min-width: 601px) {
+  #home.hero {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+  }
+}
+
+@supports not (height: 100dvh) {
+  #home.hero {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+  }
+}
+
+
+/* Initial viewport guard: never show a sliver of the second page while the hero is at the top. */
+body.hero-at-top #home.hero + #invite {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body:not(.hero-at-top) #home.hero + #invite {
+  visibility: visible !important;
+  pointer-events: auto !important;
+}

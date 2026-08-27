@@ -38,7 +38,7 @@ const LANGUAGE_TEXT = {
     inviteEyebrow:"WITH OUR FAMILIES",inviteTitle:"Wedding Invitation",inviteDescription:"Together with our families, we warmly invite you to celebrate our wedding.",
     journeyTitle:"Our Journey Begins",journeyDescription:"With the blessings of our parents and elders, two families come together for a lifetime of togetherness.",childhood:"Our Memories",journeyStep1Title:"Two Families",journeyStep1Text:"A beautiful union blessed by our families.",journeyStep2Title:"Engagement",journeyStep2Text:"A joyful celebration that brought our families closer.",journeyStep3Title:"A Promise for a Lifetime",journeyStep3Text:"With love, blessings and joy, we begin our new chapter.",journeyStep4Title:"Forever Begins",journeyStep4Text:"07 September 2026",
     eventsEyebrow:"SAVE THE DATE",eventsTitle:"Wedding Celebrations",eventsDescription:"Two beautiful moments, one unforgettable beginning.",receptionDate:"06 SEP 2026",receptionTitle:"Reception",receptionTime:"6:30 PM onwards",weddingDate:"07 SEP 2026",weddingTitle:"Wedding Ceremony",weddingTime:"6:00 AM – 7:30 AM",celebrationVenue:"CELEBRATION VENUE",venueName:"Ramaswamy Mahal / S.R. Sami Party Hall",directions:"📍 Get Directions",celebrationNote:"With the love and blessings of our families, we warmly invite you to celebrate with us.",
-    venueEyebrow:"JOIN US",venueTitle:"The Venue",venueAddress:"8, North Avenue, Muthamizh Nagar, Kodungaiyur, Chennai – 600118",venueNear:"Near Muthamizh Nagar Church",openMaps:"Open in Google Maps",galleryEyebrow:"MOMENTS TO TREASURE",galleryMore:"More memories coming soon",quotesEyebrow:"LOVE • LAUGHTER • FOREVER",quotesStory:"An arranged beginning, a beautiful bond, and a love that grows more and more every day.",quotesContinue:"Continue",rsvpEyebrow:"WE WOULD LOVE TO HAVE YOU",rsvpTitle:"RSVP",rsvpDescription:"Please share your attendance and wishes with us.",rsvpNameLabel:"Your Name",rsvpGuestsLabel:"Number of Guests",rsvpWishesLabel:"Your Wishes",rsvpSubmit:"Send RSVP",footerThanks:"Thank you for celebrating our special day with us."
+    venueEyebrow:"JOIN US",venueTitle:"The Venue",venueAddress:"8, North Avenue, Muthamizh Nagar, Kodungaiyur, Chennai – 600118",venueNear:"Near Muthamizh Nagar Church",openMaps:"Open in Google Maps",galleryEyebrow:"MOMENTS TO TREASURE",galleryMore:"More memories coming soon",quotesEyebrow:"LOVE • LAUGHTER • FOREVER",quotesStory:"A beautiful journey, growing closer, laughing together, and choosing each other every day.",quotesContinue:"Continue",rsvpEyebrow:"WE WOULD LOVE TO HAVE YOU",rsvpTitle:"RSVP",rsvpDescription:"Please share your attendance and wishes with us.",rsvpNameLabel:"Your Name",rsvpGuestsLabel:"Number of Guests",rsvpWishesLabel:"Your Wishes",rsvpSubmit:"Send RSVP",footerThanks:"Thank you for celebrating our special day with us."
   },
   ta: {
     brandGroom:"விஜய்",brandBride:"ஹேமலதா",navInvitation:"அழைப்பிதழ்",navJourney:"நமது பயணம்",navEvents:"நிகழ்வுகள்",navVenue:"திருமண இடம்",navGallery:"நினைவுகள்",navQuotes:"மேற்கோள்கள்",navRsvp:"வருகை உறுதி",
@@ -46,7 +46,7 @@ const LANGUAGE_TEXT = {
     inviteEyebrow:"எங்கள் குடும்பங்களுடன்",inviteTitle:"திருமண அழைப்பிதழ்",inviteDescription:"எங்கள் குடும்பங்களுடன் இணைந்து, எங்கள் திருமண விழாவை கொண்டாட உங்களை அன்புடன் அழைக்கிறோம்.",
     journeyTitle:"எங்கள் பயணம் தொடங்குகிறது",journeyDescription:"பெற்றோர் மற்றும் பெரியோர்களின் ஆசீர்வாதத்துடன், இரண்டு குடும்பங்கள் வாழ்நாள் உறவாக ஒன்றிணைகின்றன.",childhood:"நமது நினைவுகள்",journeyStep1Title:"இரண்டு குடும்பங்கள்",journeyStep1Text:"எங்கள் குடும்பங்களின் ஆசீர்வாதத்துடன் ஒரு அழகான இணைவு.",journeyStep2Title:"நிச்சயதார்த்தம்",journeyStep2Text:"எங்கள் குடும்பங்களை இன்னும் நெருக்கமாக இணைத்த மகிழ்ச்சியான விழா.",journeyStep3Title:"வாழ்நாள் வாக்குறுதி",journeyStep3Text:"அன்பும், ஆசீர்வாதமும், மகிழ்ச்சியுடனும் எங்கள் புதிய அத்தியாயத்தை தொடங்குகிறோம்.",journeyStep4Title:"என்றென்றும் தொடங்குகிறது",journeyStep4Text:"07 செப்டம்பர் 2026",
     eventsEyebrow:"தேதியை நினைவில் கொள்ளுங்கள்",eventsTitle:"திருமண விழாக்கள்",eventsDescription:"இரண்டு அழகான தருணங்கள், மறக்க முடியாத ஒரு தொடக்கம்.",receptionDate:"06 செப் 2026",receptionTitle:"வரவேற்பு விழா",receptionTime:"மாலை 6:30 மணி முதல்",weddingDate:"07 செப் 2026",weddingTitle:"திருமண விழா",weddingTime:"காலை 6:00 – 7:30 மணி",celebrationVenue:"விழா நடைபெறும் இடம்",venueName:"ராமசாமி மஹால் / எஸ்.ஆர். சாமி பார்ட்டி ஹால்",directions:"📍 வழிகாட்டியைப் பார்க்கவும்",celebrationNote:"எங்கள் குடும்பங்களின் அன்பும் ஆசீர்வாதமும் நிறைந்த இந்த விழாவை எங்களுடன் இணைந்து கொண்டாட உங்களை அன்புடன் அழைக்கிறோம்.",
-    venueEyebrow:"எங்களுடன் இணைந்திடுங்கள்",venueTitle:"திருமண இடம்",venueAddress:"8, நார்த் அவென்யூ, முத்தமிழ் நகர், கொடுங்கையூர், சென்னை – 600118",venueNear:"முத்தமிழ் நகர் தேவாலயம் அருகில்",openMaps:"Google Maps-ல் திறக்கவும்",galleryEyebrow:"மனதில் நிற்கும் நினைவுகள்",galleryMore:"மேலும் நினைவுகள் விரைவில்",quotesEyebrow:"அன்பு • சிரிப்பு • என்றும்",quotesStory:"அழகான ஒரு தொடக்கம், இனிய ஒரு உறவு, நாளுக்கு நாள் அதிகரிக்கும் அன்பு.",quotesContinue:"தொடரலாம்",rsvpEyebrow:"உங்கள் வருகையை ஆவலுடன் எதிர்நோக்குகிறோம்",rsvpTitle:"வருகை உறுதி",rsvpDescription:"உங்கள் வருகையையும் வாழ்த்துகளையும் எங்களுடன் பகிர்ந்து கொள்ளுங்கள்.",rsvpNameLabel:"உங்கள் பெயர்",rsvpGuestsLabel:"வரும் விருந்தினர்களின் எண்ணிக்கை",rsvpWishesLabel:"உங்கள் வாழ்த்துகள்",rsvpSubmit:"வருகையை உறுதிப்படுத்துங்கள்",footerThanks:"எங்கள் சிறப்பு நாளை எங்களுடன் கொண்டாடியதற்கு நன்றி."
+    venueEyebrow:"எங்களுடன் இணைந்திடுங்கள்",venueTitle:"திருமண இடம்",venueAddress:"8, நார்த் அவென்யூ, முத்தமிழ் நகர், கொடுங்கையூர், சென்னை – 600118",venueNear:"முத்தமிழ் நகர் தேவாலயம் அருகில்",openMaps:"Google Maps-ல் திறக்கவும்",galleryEyebrow:"மனதில் நிற்கும் நினைவுகள்",galleryMore:"மேலும் நினைவுகள் விரைவில்",quotesEyebrow:"அன்பு • சிரிப்பு • என்றும்",quotesStory:"ஒரு அழகான பயணம், நாளுக்கு நாள் நெருக்கமாகி, ஒன்றாக சிரித்து, ஒவ்வொரு நாளும் ஒருவரை ஒருவர் தேர்ந்தெடுக்கும் அன்பு.",quotesContinue:"தொடரலாம்",rsvpEyebrow:"உங்கள் வருகையை ஆவலுடன் எதிர்நோக்குகிறோம்",rsvpTitle:"வருகை உறுதி",rsvpDescription:"உங்கள் வருகையையும் வாழ்த்துகளையும் எங்களுடன் பகிர்ந்து கொள்ளுங்கள்.",rsvpNameLabel:"உங்கள் பெயர்",rsvpGuestsLabel:"வரும் விருந்தினர்களின் எண்ணிக்கை",rsvpWishesLabel:"உங்கள் வாழ்த்துகள்",rsvpSubmit:"வருகையை உறுதிப்படுத்துங்கள்",footerThanks:"எங்கள் சிறப்பு நாளை எங்களுடன் கொண்டாடியதற்கு நன்றி."
   }
 };
 
@@ -95,32 +95,32 @@ if (document.readyState === "loading") {
 /* Love & Marriage quote rotator */
 const LOVE_QUOTES = {
   en: [
-    "Some marriages begin with an introduction; ours will grow into a love story of our own.",
-    "An arranged beginning, a beautiful bond, and a love that grows more and more every day.",
-    "Marriage is two people choosing each other — and then choosing each other again tomorrow.",
-    "First comes the family introduction, then come the memories, laughter, and love.",
-    "The best part of marriage is having a forever person for every ordinary little moment.",
-    "A happy marriage needs love, laughter, patience… and someone who knows where the snacks are.",
-    "We may be starting as an arranged match, but we are looking forward to falling in love more every day.",
-    "Two families brought us together; a lifetime of love will keep bringing us closer.",
-    "Marriage: one home, two hearts, endless inside jokes.",
-    "May our love grow older, deeper, funnier, and sweeter with every year.",
-    "Forever is a long time — good thing we have plenty of jokes to share along the way.",
-    "From a beautiful beginning to a beautiful forever — together, one day at a time."
+    { category:"LOVE", text:"The best part of forever is having someone to share every little moment with." },
+    { category:"FOREVER", text:"May our love grow deeper, kinder, and sweeter with every passing year." },
+    { category:"MARRIAGE", text:"Marriage is two hearts building one beautiful life, one day at a time." },
+    { category:"CUTE", text:"Home is wherever we are together — especially when there is good food." },
+    { category:"FUNNY", text:"Marriage is sharing everything… including the remote, the snacks, and the last word." },
+    { category:"LAUGHTER", text:"A happy marriage is love, laughter, patience, and knowing when to say, “You are right.”" },
+    { category:"LOVE", text:"Every ordinary day becomes special when it is spent with the right person." },
+    { category:"MARRIAGE", text:"Two hearts, one team, countless memories waiting to be made." },
+    { category:"FUNNY", text:"Behind every happy couple is one person asking, “What should we eat?”" },
+    { category:"FOREVER", text:"Here’s to growing older together while keeping the laughter young." },
+    { category:"CUTE", text:"You are my favourite person to annoy for the rest of my life." },
+    { category:"LOVE", text:"The sweetest love stories are written together, one beautiful day at a time." }
   ],
   ta: [
-    "சில திருமணங்கள் ஒரு அறிமுகத்தில் தொடங்கும்; நமது திருமணம் நமக்கென ஒரு அழகான காதல் கதையாக மலரட்டும்.",
-    "அழகான ஒரு தொடக்கம், இனிய ஒரு உறவு, நாளுக்கு நாள் அதிகரிக்கும் அன்பு.",
-    "திருமணம் என்பது ஒருவரை ஒருவர் தேர்ந்தெடுத்து, நாளையும் மீண்டும் தேர்ந்தெடுப்பது.",
-    "குடும்ப அறிமுகத்தில் தொடங்கி, நினைவுகள், சிரிப்புகள், அன்புடன் நமது பயணம் தொடரட்டும்.",
-    "திருமணத்தின் அழகு — வாழ்க்கையின் ஒவ்வொரு சிறிய தருணத்திற்கும் ஒரு நிரந்தர துணை இருப்பது.",
-    "அழகான திருமணத்திற்கு அன்பும், சிரிப்பும், பொறுமையும்… ஸ்நாக்ஸ் எங்கே என்று தெரிந்த ஒருவரும் தேவை!",
-    "இது ஒரு ஏற்பாடு செய்யப்பட்ட தொடக்கம்; ஆனால் தினமும் மேலும் மேலும் காதலிக்கப் போகிறோம்.",
-    "இரண்டு குடும்பங்கள் எங்களை இணைத்தன; வாழ்நாள் முழுவதும் அன்பு எங்களை இன்னும் நெருக்கமாக்கட்டும்.",
-    "திருமணம்: ஒரு வீடு, இரண்டு இதயங்கள், முடிவில்லா சிரிப்புகள்.",
-    "ஒவ்வொரு ஆண்டும் நமது அன்பு இன்னும் ஆழமாகவும் இனிமையாகவும் வளரட்டும்.",
-    "என்றென்றும் என்பது நீண்ட காலம்; அதிர்ஷ்டவசமாக பகிர்ந்து கொள்ள நிறைய சிரிப்புகள் இருக்கின்றன.",
-    "ஒரு அழகான தொடக்கத்திலிருந்து ஒரு அழகான என்றும் — நாளுக்கு நாள் ஒன்றாக."
+    { category:"அன்பு", text:"வாழ்க்கையின் ஒவ்வொரு சிறிய தருணத்தையும் பகிர்ந்து கொள்ளும் துணை இருப்பதே என்றும் இனிமை." },
+    { category:"என்றும்", text:"ஒவ்வொரு ஆண்டும் நமது அன்பு இன்னும் ஆழமாகவும் இனிமையாகவும் வளரட்டும்." },
+    { category:"திருமணம்", text:"திருமணம் என்பது இரண்டு இதயங்கள் இணைந்து, நாளுக்கு நாள் ஒரு அழகான வாழ்க்கையை உருவாக்குவது." },
+    { category:"அழகு", text:"நாம் ஒன்றாக இருக்கும் இடமெல்லாம் வீடு — குறிப்பாக நல்ல உணவு இருந்தால்!" },
+    { category:"நகைச்சுவை", text:"திருமணம் என்பது எல்லாவற்றையும் பகிர்வது… ரிமோட், ஸ்நாக்ஸ், கடைசி வார்த்தை கூட!" },
+    { category:"சிரிப்பு", text:"இனிய திருமண வாழ்க்கைக்கு அன்பு, சிரிப்பு, பொறுமை… சரியான நேரத்தில் “நீ சொல்வது சரி” என்பதும் தேவை." },
+    { category:"அன்பு", text:"சரியான துணையுடன் கழிக்கும் ஒவ்வொரு சாதாரண நாளும் ஒரு சிறப்பு நாளாக மாறும்." },
+    { category:"திருமணம்", text:"இரண்டு இதயங்கள், ஒரு குழு, உருவாக காத்திருக்கும் எண்ணற்ற நினைவுகள்." },
+    { category:"நகைச்சுவை", text:"மகிழ்ச்சியான தம்பதிகளுக்குப் பின்னால் எப்போதும் ஒரு கேள்வி இருக்கும் — “என்ன சாப்பிடலாம்?”" },
+    { category:"என்றும்", text:"ஒன்றாக வயதாகலாம்; ஆனால் நமது சிரிப்பு என்றும் இளமையாக இருக்கட்டும்." },
+    { category:"அழகு", text:"வாழ்நாள் முழுவதும் கிண்டல் செய்ய எனக்கு மிகவும் பிடித்த மனிதர் நீ தான்!" },
+    { category:"அன்பு", text:"இனிமையான காதல் கதைகள் இருவரும் சேர்ந்து, ஒவ்வொரு அழகான நாளிலும் எழுதப்படுகின்றன." }
   ]
 };
 
@@ -129,20 +129,31 @@ let quoteTimer = null;
 function renderQuote(index, immediate = false) {
   const quoteEl = $("#rotatingQuote");
   const dotsEl = $("#quoteDots");
+  const categoryEl = $("#quoteCategory");
   if (!quoteEl) return;
   const quotes = LOVE_QUOTES[lang] || LOVE_QUOTES.en;
   quoteIndex = ((index % quotes.length) + quotes.length) % quotes.length;
+  const item = quotes[quoteIndex];
+
+  const setQuote = () => {
+    quoteEl.textContent = item.text;
+    if (categoryEl) categoryEl.textContent = item.category;
+  };
+
   if (immediate) {
-    quoteEl.textContent = quotes[quoteIndex];
+    setQuote();
   } else {
     quoteEl.classList.add("is-changing");
     window.setTimeout(() => {
-      quoteEl.textContent = quotes[quoteIndex];
+      setQuote();
       requestAnimationFrame(() => quoteEl.classList.remove("is-changing"));
     }, 220);
   }
+
   if (dotsEl) {
-    dotsEl.innerHTML = quotes.map((_, i) => `<span class="quote-dot${i === quoteIndex ? " active" : ""}"></span>`).join("");
+    dotsEl.innerHTML = quotes.map((_, i) =>
+      `<span class="quote-dot${i === quoteIndex ? " active" : ""}"></span>`
+    ).join("");
   }
 }
 function startQuoteRotator() {

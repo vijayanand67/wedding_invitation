@@ -3548,3 +3548,176 @@ html[data-lang="ta"] .premium-name,html[data-lang="ta"] .brand,html[data-lang="t
     max-height:100dvh!important;
   }
 }
+
+
+/* =========================================================
+   FINAL FIRST-PAGE / SECOND-PAGE BOUNDARY FIX
+   Existing images are used unchanged. CSS only.
+   ========================================================= */
+#home.hero{
+  position:relative!important;
+  height:100dvh!important;
+  min-height:100dvh!important;
+  max-height:100dvh!important;
+  width:100%!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  box-sizing:border-box!important;
+}
+
+/* Keep the hero artwork inside the first page only. */
+#home.hero .hero-image{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  background-image:url("../assets/images/hero.jpg")!important;
+  background-repeat:no-repeat!important;
+  background-size:cover!important;
+  background-position:center center!important;
+  background-attachment:scroll!important;
+  transform:none!important;
+}
+
+#home.hero .hero-overlay{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  pointer-events:none!important;
+}
+
+#home.hero .hero-content{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  box-sizing:border-box!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+  text-align:center!important;
+  z-index:3!important;
+}
+
+/* Do not allow the next section to peek through the hero boundary. */
+#home.hero + #invite{
+  position:relative!important;
+  z-index:1!important;
+  margin-top:0!important;
+  clear:both!important;
+}
+
+/* Keep the second-page heading/image completely below the first-page viewport. */
+#invite .section-heading,
+#invite .language-invitation-art{
+  position:relative!important;
+}
+
+@media (max-width:600px){
+  #home.hero{
+    height:100svh!important;
+    min-height:100svh!important;
+    max-height:100svh!important;
+  }
+
+  #home.hero .hero-image{
+    background-size:cover!important;
+    background-position:center center!important;
+  }
+
+  /* Compact mobile composition so every hero element stays inside the image. */
+  #home.hero .hero-content{
+    padding:clamp(72px,12vh,108px) 12px clamp(54px,8vh,78px)!important;
+  }
+
+  #home.hero .premium-couple-name .premium-name{
+    font-size:clamp(1.72rem,7vw,2.55rem)!important;
+    line-height:1.08!important;
+  }
+
+  #home.hero .hero-quote{
+    font-size:clamp(.86rem,3.4vw,1.08rem)!important;
+    line-height:1.32!important;
+    margin-bottom:4px!important;
+  }
+
+  #home.hero .hero-sub{
+    max-width:92vw!important;
+    font-size:clamp(.72rem,2.85vw,.94rem)!important;
+    line-height:1.42!important;
+    margin-bottom:5px!important;
+  }
+
+  #home.hero .date-script{
+    font-size:clamp(1rem,3.7vw,1.35rem)!important;
+    margin:6px auto!important;
+  }
+
+  #home.hero .hero-countdown{
+    margin:7px auto 12px!important;
+    max-width:92vw!important;
+  }
+
+  #home.hero .hero-actions{
+    width:100%!important;
+    max-width:94vw!important;
+    gap:8px!important;
+    flex-wrap:nowrap!important;
+  }
+
+  #home.hero .hero-actions .gold-btn,
+  #home.hero .hero-actions .outline-btn{
+    width:calc(50% - 4px)!important;
+    min-width:0!important;
+    padding:10px 7px!important;
+    font-size:clamp(.70rem,3vw,.86rem)!important;
+    line-height:1.2!important;
+    white-space:nowrap!important;
+  }
+
+  #home.hero .scroll-cue{
+    bottom:max(12px,env(safe-area-inset-bottom))!important;
+    left:50%!important;
+    transform:translateX(-50%)!important;
+  }
+}
+
+@media (max-width:390px){
+  #home.hero .hero-content{
+    padding:68px 10px 50px!important;
+  }
+  #home.hero .premium-couple-name .premium-name{
+    font-size:clamp(1.62rem,6.9vw,2.28rem)!important;
+  }
+  #home.hero .hero-quote{font-size:clamp(.82rem,3.3vw,1rem)!important}
+  #home.hero .hero-sub{font-size:clamp(.70rem,2.75vw,.86rem)!important}
+  #home.hero .hero-countdown{margin-bottom:10px!important}
+}
+
+/* Desktop remains full-screen with the original image and balanced scaling. */
+@media (min-width:601px){
+  #home.hero .hero-content{
+    padding:clamp(86px,10vh,116px) 28px clamp(62px,8vh,90px)!important;
+  }
+  #home.hero .premium-couple-name .premium-name{
+    font-size:clamp(2.25rem,4vw,4.2rem)!important;
+  }
+}
+
+/* Prevent the next section from being painted over the hero's final pixel. */
+@supports (height:100lvh){
+  @media (max-width:600px){
+    #home.hero{
+      /* Use the stable mobile viewport so browser chrome cannot expose the next section. */
+      min-height:100svh!important;
+      height:100svh!important;
+    }
+  }
+}

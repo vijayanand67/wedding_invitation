@@ -4032,3 +4032,77 @@ body:not(.hero-at-top) #home.hero + #invite {
   visibility: visible !important;
   pointer-events: auto !important;
 }
+
+
+/* =========================================================
+   FINAL MOBILE HERO BOUNDARY FIX
+   Prevent translucent mobile browser chrome from revealing
+   the next section at the bottom of the first hero.
+   The existing hero image is reused unchanged.
+   ========================================================= */
+@media (max-width: 600px) {
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  #home.hero {
+    /* Keep a small protected visual tail below the dynamic viewport.
+       This prevents the next section from appearing behind Safari/Chrome
+       bottom UI while preserving the first-page composition. */
+    height: calc(100dvh + 120px) !important;
+    min-height: calc(100dvh + 120px) !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+  }
+
+  #home.hero .hero-image,
+  #home.hero .hero-overlay {
+    height: 100% !important;
+    inset: 0 !important;
+  }
+
+  /* Keep all interactive hero content inside the actual visible viewport,
+     rather than centering it in the protected tail. */
+  #home.hero .hero-content {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding-top: clamp(54px, 8vh, 82px) !important;
+    padding-bottom: clamp(48px, 7vh, 72px) !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  #home.hero .scroll-cue {
+    position: absolute !important;
+    bottom: 22px !important;
+    z-index: 10 !important;
+  }
+
+  /* The second section must never paint while the page is at the top. */
+  body.hero-at-top #home.hero + #invite {
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  body:not(.hero-at-top) #home.hero + #invite {
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+@media (min-width: 601px) {
+  #home.hero {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+  }
+}

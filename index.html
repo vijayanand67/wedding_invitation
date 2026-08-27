@@ -6993,6 +6993,247 @@ footer{
   #rsvp .rsvp-form{padding:20px 16px!important;border-radius:20px!important}
 }
 </style>
+
+<style id="final-two-page-viewport-fix">
+/* ==========================================================
+   FINAL TWO-PAGE VIEWPORT FIX
+   Page 1 = header + one hero canvas.
+   Page 2 starts only after the hero and never paints at top.
+   Existing images are used unchanged.
+   ========================================================== */
+:root{--wedding-header-height:106px;}
+
+/* The fixed header is visually part of Page 1, so the hero occupies
+   only the remaining viewport height instead of adding another full
+   viewport underneath the header. */
+#home.hero{
+  position:relative!important;
+  width:100%!important;
+  height:calc(100dvh - var(--wedding-header-height))!important;
+  min-height:0!important;
+  max-height:none!important;
+  margin-top:var(--wedding-header-height)!important;
+  margin-bottom:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  box-sizing:border-box!important;
+}
+
+#home.hero .hero-image{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  background-image:url("assets/images/hero.jpg")!important;
+  background-repeat:no-repeat!important;
+  background-size:cover!important;
+  background-position:center center!important;
+  background-attachment:scroll!important;
+}
+
+#home.hero .hero-overlay{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  pointer-events:none!important;
+}
+
+/* Keep every first-page element inside the hero canvas. */
+#home.hero .hero-content{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-height:100%!important;
+  margin:0!important;
+  padding:clamp(18px,3vh,34px) clamp(14px,4vw,40px) clamp(64px,8vh,82px)!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+  z-index:3!important;
+  transform:translateY(clamp(-2vh,-10px,-4px))!important;
+}
+
+#home.hero .eyebrow{margin:0 0 7px!important;line-height:1.2!important;}
+#home.hero .premium-couple-name{margin:2px auto 10px!important;}
+#home.hero .premium-couple-name .premium-name{
+  font-size:clamp(1.75rem,6.7vw,4.4rem)!important;
+  line-height:1.02!important;
+}
+#home.hero .hero-quote{
+  margin:0 auto 4px!important;
+  font-size:clamp(.86rem,3.1vw,1.4rem)!important;
+  line-height:1.25!important;
+}
+#home.hero .hero-sub{
+  margin:0 auto 6px!important;
+  max-width:min(90vw,760px)!important;
+  font-size:clamp(.72rem,2.5vw,1rem)!important;
+  line-height:1.35!important;
+}
+#home.hero .date-script{
+  margin:7px auto 8px!important;
+  font-size:clamp(1rem,3.2vw,1.85rem)!important;
+  line-height:1.1!important;
+}
+#home.hero .hero-countdown{
+  width:min(92vw,660px)!important;
+  margin:5px auto 11px!important;
+  flex:0 0 auto!important;
+}
+#home.hero .hero-actions{
+  width:min(94vw,760px)!important;
+  margin:0 auto!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:10px!important;
+  flex-wrap:nowrap!important;
+  flex:0 0 auto!important;
+}
+#home.hero .hero-actions .gold-btn,
+#home.hero .hero-actions .outline-btn{
+  min-width:0!important;
+  flex:1 1 0!important;
+  padding:11px 16px!important;
+  font-size:clamp(.72rem,1.7vw,.95rem)!important;
+  line-height:1.2!important;
+  white-space:nowrap!important;
+}
+#home.hero .scroll-cue{
+  position:absolute!important;
+  left:50%!important;
+  bottom:max(12px,env(safe-area-inset-bottom))!important;
+  transform:translateX(-50%)!important;
+  z-index:6!important;
+  line-height:1!important;
+}
+
+/* Page 2 is a real sibling. It is not pulled upward into Page 1. */
+#home.hero + #invite{
+  position:relative!important;
+  top:auto!important;
+  left:auto!important;
+  margin-top:0!important;
+  transform:none!important;
+  clear:both!important;
+  z-index:1!important;
+  scroll-margin-top:calc(var(--wedding-header-height) + 12px)!important;
+}
+
+/* At the initial top position, don't even paint Page 2. This also protects
+   against translucent Safari/Chrome bottom browser controls showing the
+   next section behind them. JS removes this state on scroll or #invite tap. */
+body.hero-at-top #home.hero + #invite{
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+body:not(.hero-at-top) #home.hero + #invite{
+  visibility:visible!important;
+  pointer-events:auto!important;
+}
+
+/* The section itself gets normal spacing once the user reaches it. */
+#invite{
+  min-height:0!important;
+  overflow:visible!important;
+}
+#invite .section-heading{padding-top:0!important;}
+
+@media (max-width:600px){
+  #home.hero{
+    height:calc(100dvh - var(--wedding-header-height))!important;
+    margin-top:var(--wedding-header-height)!important;
+  }
+  #home.hero .hero-content{
+    padding:12px 9px max(54px,calc(env(safe-area-inset-bottom) + 44px))!important;
+    transform:translateY(-1vh)!important;
+  }
+  #home.hero .premium-couple-name .premium-name{
+    font-size:clamp(1.58rem,7vw,2.55rem)!important;
+  }
+  #home.hero .hero-quote{
+    font-size:clamp(.80rem,3.35vw,1.02rem)!important;
+  }
+  #home.hero .hero-sub{
+    font-size:clamp(.68rem,2.7vw,.88rem)!important;
+    max-width:94vw!important;
+  }
+  #home.hero .date-script{
+    font-size:clamp(.96rem,3.65vw,1.3rem)!important;
+    margin:6px auto 7px!important;
+  }
+  #home.hero .hero-countdown{
+    width:calc(100vw - 34px)!important;
+    margin:5px auto 10px!important;
+  }
+  #home.hero .hero-countdown .unit{padding:7px 2px 6px!important;}
+  #home.hero .hero-countdown .unit b{font-size:20px!important;}
+  #home.hero .hero-countdown .unit small{font-size:5.5px!important;}
+  #home.hero .hero-actions{
+    width:calc(100vw - 28px)!important;
+    gap:8px!important;
+  }
+  #home.hero .hero-actions .gold-btn,
+  #home.hero .hero-actions .outline-btn{
+    padding:10px 6px!important;
+    font-size:clamp(.68rem,3vw,.84rem)!important;
+  }
+  #home.hero .scroll-cue{bottom:14px!important;}
+
+  /* Keep the second-page heading below the browser's translucent bottom
+     controls when the hero is at its boundary. */
+  #invite .section-heading{margin-top:34px!important;}
+}
+
+@media (max-width:390px){
+  #home.hero .hero-content{
+    padding-left:7px!important;
+    padding-right:7px!important;
+    transform:translateY(-1.5vh)!important;
+  }
+  #home.hero .premium-couple-name .premium-name{font-size:clamp(1.5rem,6.8vw,2.2rem)!important;}
+  #home.hero .hero-quote{font-size:.78rem!important;}
+  #home.hero .hero-sub{font-size:.66rem!important;}
+  #home.hero .hero-countdown .unit b{font-size:18px!important;}
+  #home.hero .hero-actions .gold-btn,
+  #home.hero .hero-actions .outline-btn{font-size:.68rem!important;padding:9px 4px!important;}
+}
+
+@media (min-width:601px){
+  #home.hero .hero-content{
+    padding-left:28px!important;
+    padding-right:28px!important;
+  }
+}
+
+@supports not (height:100dvh){
+  #home.hero{
+    height:calc(100vh - var(--wedding-header-height))!important;
+  }
+}
+</style>
+
+<script>
+/* Keep the hero's layout height synchronized with the real fixed header.
+   This avoids device-specific Chrome/Safari header-height drift. */
+(function syncWeddingHeaderHeight(){
+  function update(){
+    var header=document.querySelector('.topbar');
+    if(!header) return;
+    document.documentElement.style.setProperty('--wedding-header-height', header.offsetHeight + 'px');
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', update, {once:true});
+  else update();
+  window.addEventListener('resize', update, {passive:true});
+  window.addEventListener('orientationchange', function(){ setTimeout(update, 80); }, {passive:true});
+})();
+</script>
 </head>
 <body class="wedding-cover-lock">
 

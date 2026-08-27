@@ -3324,3 +3324,227 @@ html[data-lang="ta"] .premium-name,html[data-lang="ta"] .brand,html[data-lang="t
   #home.hero .hero-content{padding-top:20px!important}
   #welcome #openInvitation{width:170px!important;height:170px!important;top:56%!important}
 }
+
+/* =========================================================
+   FINAL HERO VIEWPORT FIX — centered mobile/desktop composition
+   Uses the existing hero.jpg only; no image is modified or replaced.
+   ========================================================= */
+#home.hero{
+  position:relative!important;
+  width:100%!important;
+  height:100svh!important;
+  min-height:0!important;
+  max-height:100svh!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  display:block!important;
+  isolation:isolate;
+}
+
+#home.hero .hero-image{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  background-image:url("../assets/images/hero.jpg")!important;
+  background-repeat:no-repeat!important;
+  background-size:cover!important;
+  background-position:center center!important;
+  transform:none!important;
+}
+
+#home.hero .hero-overlay{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+}
+
+#home.hero .hero-content{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  max-width:none!important;
+  height:100%!important;
+  margin:0!important;
+  padding:clamp(86px,11vh,118px) clamp(16px,5vw,60px) clamp(74px,9vh,100px)!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  overflow:hidden!important;
+  z-index:3!important;
+  transform:none!important;
+}
+
+#home.hero .eyebrow{
+  margin:0 0 clamp(8px,1.3vh,14px)!important;
+  flex:0 0 auto;
+}
+
+#home.hero .premium-couple-name{
+  flex:0 0 auto!important;
+  width:min(92vw,720px)!important;
+  max-width:720px!important;
+  margin:clamp(4px,1vh,10px) auto clamp(12px,2vh,20px)!important;
+  padding:0!important;
+  overflow:visible!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+}
+
+#home.hero .premium-couple-name .premium-name{
+  width:100%!important;
+  max-width:100%!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  text-align:center!important;
+  font-size:clamp(2rem,7vw,3.35rem)!important;
+  line-height:1.02!important;
+}
+
+#home.hero .hero-quote,
+#home.hero .hero-sub,
+#home.hero .date-script,
+#home.hero .hero-countdown,
+#home.hero .hero-actions{
+  flex:0 0 auto!important;
+  width:100%!important;
+  max-width:760px!important;
+  margin-inline:auto!important;
+  text-align:center!important;
+}
+
+#home.hero .hero-quote{margin-top:0!important;margin-bottom:6px!important}
+#home.hero .hero-sub{margin-top:0!important;margin-bottom:8px!important}
+#home.hero .date-script{margin:8px auto!important}
+#home.hero .hero-countdown{margin:10px auto 14px!important}
+#home.hero .hero-actions{display:flex!important;align-items:center!important;justify-content:center!important;gap:12px!important}
+
+#home.hero .hero-actions .gold-btn,
+#home.hero .hero-actions .outline-btn{
+  min-width:min(42vw,310px)!important;
+  text-align:center!important;
+}
+
+#home.hero .scroll-cue{
+  left:50%!important;
+  right:auto!important;
+  bottom:max(14px,env(safe-area-inset-bottom))!important;
+  transform:translateX(-50%)!important;
+  z-index:5!important;
+  line-height:1!important;
+}
+
+/* Keep the fixed header from changing the hero's width or introducing overflow. */
+.topbar{width:100%!important;max-width:none!important;box-sizing:border-box!important}
+
+@media (max-width:600px){
+  #home.hero{
+    height:100svh!important;
+    max-height:100svh!important;
+  }
+
+  #home.hero .hero-image{
+    background-position:center center!important;
+  }
+
+  #home.hero .hero-content{
+    padding-top:clamp(78px,12vh,108px)!important;
+    padding-right:12px!important;
+    padding-bottom:clamp(62px,9vh,82px)!important;
+    padding-left:12px!important;
+  }
+
+  #home.hero .eyebrow{
+    font-size:clamp(.58rem,2.4vw,.72rem)!important;
+    margin-bottom:clamp(5px,1vh,10px)!important;
+  }
+
+  #home.hero .premium-couple-name{
+    width:min(92vw,520px)!important;
+    margin:3px auto clamp(9px,1.7vh,15px)!important;
+  }
+
+  #home.hero .premium-couple-name .premium-name{
+    font-size:clamp(1.82rem,7.6vw,2.7rem)!important;
+    line-height:1.04!important;
+  }
+
+  #home.hero .hero-quote{
+    font-size:clamp(.92rem,3.65vw,1.18rem)!important;
+    line-height:1.32!important;
+  }
+
+  #home.hero .hero-sub{
+    max-width:92vw!important;
+    font-size:clamp(.78rem,3vw,.98rem)!important;
+    line-height:1.42!important;
+  }
+
+  #home.hero .date-script{
+    font-size:clamp(1.02rem,3.9vw,1.4rem)!important;
+    line-height:1.2!important;
+    margin:7px auto!important;
+  }
+
+  #home.hero .hero-countdown{
+    margin:8px auto 11px!important;
+  }
+
+  #home.hero .hero-actions{
+    gap:8px!important;
+    flex-wrap:nowrap!important;
+  }
+
+  #home.hero .hero-actions .gold-btn,
+  #home.hero .hero-actions .outline-btn{
+    min-width:0!important;
+    width:calc(50% - 4px)!important;
+    padding:11px 9px!important;
+    font-size:clamp(.72rem,3.1vw,.9rem)!important;
+    line-height:1.2!important;
+    white-space:nowrap!important;
+  }
+}
+
+@media (max-width:390px){
+  #home.hero .hero-content{
+    padding-top:74px!important;
+    padding-bottom:58px!important;
+  }
+
+  #home.hero .premium-couple-name .premium-name{
+    font-size:clamp(1.68rem,7.4vw,2.35rem)!important;
+  }
+
+  #home.hero .hero-quote{font-size:clamp(.86rem,3.5vw,1.05rem)!important}
+  #home.hero .hero-sub{font-size:clamp(.74rem,2.85vw,.9rem)!important}
+  #home.hero .hero-countdown{margin:6px auto 9px!important}
+  #home.hero .hero-actions .gold-btn,
+  #home.hero .hero-actions .outline-btn{padding:10px 6px!important;font-size:.72rem!important}
+}
+
+@media (min-width:601px){
+  #home.hero .hero-content{
+    padding-top:clamp(82px,9vh,112px)!important;
+    padding-bottom:clamp(62px,8vh,88px)!important;
+  }
+
+  #home.hero .premium-couple-name .premium-name{
+    font-size:clamp(2.4rem,4.5vw,4.6rem)!important;
+  }
+
+  #home.hero .hero-quote{font-size:clamp(1.05rem,1.8vw,1.45rem)!important}
+  #home.hero .hero-sub{font-size:clamp(.9rem,1.35vw,1.08rem)!important}
+}
+
+@supports (height:100dvh){
+  #home.hero{
+    height:100dvh!important;
+    max-height:100dvh!important;
+  }
+}

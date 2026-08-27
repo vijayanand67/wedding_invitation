@@ -4510,3 +4510,45 @@ html,body{
 @media (max-width: 600px) and (min-height: 850px) {
   #home.hero .hero-content { top: 32% !important; }
 }
+
+/* FINAL MOBILE HERO COVER FIX
+   Keep the first-page artwork as one continuous full-screen panel.
+   Do not let the next invitation section peek through at the bottom.
+   Existing artwork is untouched. */
+:root{--vh-header-h:76px;}
+body{background:#21040d;}
+#home.hero{
+  box-sizing:border-box!important;
+  margin-top:var(--vh-header-h)!important;
+  height:calc(100dvh - var(--vh-header-h))!important;
+  min-height:calc(100dvh - var(--vh-header-h))!important;
+  max-height:calc(100dvh - var(--vh-header-h))!important;
+  overflow:hidden!important;
+  background:#21040d!important;
+}
+#home.hero .hero-image{
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  background-size:cover!important;
+  background-position:center top!important;
+  background-repeat:no-repeat!important;
+}
+@supports not (height:100dvh){
+  #home.hero{
+    height:calc(100vh - var(--vh-header-h))!important;
+    min-height:calc(100vh - var(--vh-header-h))!important;
+    max-height:calc(100vh - var(--vh-header-h))!important;
+  }
+}
+@media(max-width:600px){
+  :root{--vh-header-h:60px;}
+  .topbar{height:var(--vh-header-h)!important;min-height:var(--vh-header-h)!important;}
+  #home.hero{
+    margin-top:var(--vh-header-h)!important;
+    height:calc(100dvh - var(--vh-header-h))!important;
+    min-height:calc(100dvh - var(--vh-header-h))!important;
+    max-height:calc(100dvh - var(--vh-header-h))!important;
+  }
+  #home.hero .hero-image{background-position:center top!important;}
+}

@@ -4552,3 +4552,195 @@ body{background:#21040d;}
   }
   #home.hero .hero-image{background-position:center top!important;}
 }
+
+/* =========================================================
+   FINAL MOBILE FIRST-PAGE COMPOSITION FIX
+   Keep the existing photo exactly as supplied. The first page is
+   intentionally one complete viewport-height composition; the next
+   section must never peek into the bottom of the hero.
+   ========================================================= */
+@media (max-width: 600px) {
+  #home.hero {
+    box-sizing: border-box !important;
+    margin-top: var(--vh-header-h, 60px) !important;
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
+    overflow: hidden !important;
+    position: relative !important;
+    isolation: isolate !important;
+  }
+
+  @supports (height: 100dvh) {
+    #home.hero {
+      height: 100dvh !important;
+      min-height: 100dvh !important;
+      max-height: 100dvh !important;
+    }
+  }
+
+  #home.hero .hero-image {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-color: transparent !important;
+  }
+
+  #home.hero .hero-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+  }
+
+  /* Compact the composition so the complete content stays inside the
+     enlarged first-page canvas without covering the faces. */
+  #home.hero .hero-content {
+    position: relative !important;
+    z-index: 3 !important;
+    width: min(92%, 640px) !important;
+    height: 100% !important;
+    max-height: none !important;
+    margin: 0 auto !important;
+    padding: clamp(72px, 9vh, 105px) 12px 82px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+
+  #home.hero .eyebrow {
+    margin: 0 0 clamp(5px, 1vh, 10px) !important;
+    font-size: clamp(.56rem, 2.1vw, .72rem) !important;
+  }
+
+  #home.hero .premium-couple-name {
+    margin: 0 0 clamp(5px, 1.1vh, 12px) !important;
+  }
+
+  #home.hero .premium-name {
+    font-size: clamp(1.65rem, 7.2vw, 2.35rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  #home.hero .premium-heart {
+    font-size: clamp(.9rem, 4.8vw, 1.25rem) !important;
+    margin: 2px 0 !important;
+  }
+
+  #home.hero .hero-quote {
+    margin: 0 auto 3px !important;
+    font-size: clamp(.8rem, 3.9vw, 1.05rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  #home.hero .hero-sub {
+    margin: 0 auto clamp(5px, 1vh, 10px) !important;
+    max-width: 92% !important;
+    font-size: clamp(.67rem, 3vw, .86rem) !important;
+    line-height: 1.35 !important;
+  }
+
+  #home.hero .date-script {
+    margin: clamp(4px, .9vh, 9px) 0 !important;
+    font-size: clamp(.95rem, 4.2vw, 1.25rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  #home.hero .hero-countdown {
+    width: 100% !important;
+    margin: clamp(5px, 1vh, 10px) 0 clamp(10px, 1.8vh, 18px) !important;
+  }
+
+  #home.hero .invite-countdown {
+    width: 100% !important;
+    max-width: 660px !important;
+    gap: 0 !important;
+    flex-wrap: nowrap !important;
+  }
+
+  #home.hero .invite-countdown .unit {
+    flex: 1 1 25% !important;
+    min-width: 0 !important;
+    padding: 7px 3px !important;
+    border-radius: 0 !important;
+  }
+
+  #home.hero .invite-countdown .unit:first-child {
+    border-radius: 16px 0 0 16px !important;
+  }
+  #home.hero .invite-countdown .unit:last-child {
+    border-radius: 0 16px 16px 0 !important;
+  }
+
+  #home.hero .invite-countdown b {
+    font-size: clamp(1rem, 4.8vw, 1.35rem) !important;
+    line-height: 1 !important;
+  }
+
+  #home.hero .invite-countdown small {
+    font-size: clamp(.38rem, 1.7vw, .5rem) !important;
+    line-height: 1 !important;
+  }
+
+  #home.hero .hero-actions {
+    width: 100% !important;
+    max-width: 660px !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: clamp(8px, 2vw, 14px) !important;
+    margin: 0 !important;
+  }
+
+  #home.hero .gold-btn,
+  #home.hero .outline-btn {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    min-height: 44px !important;
+    padding: 9px 10px !important;
+    font-size: clamp(.66rem, 2.8vw, .8rem) !important;
+    white-space: nowrap !important;
+  }
+
+  /* The cue is deliberately below the action row and never overlaps it. */
+  #home.hero .scroll-cue {
+    left: 50% !important;
+    bottom: max(20px, env(safe-area-inset-bottom)) !important;
+    transform: translateX(-50%) !important;
+    z-index: 5 !important;
+    line-height: 1 !important;
+    font-size: 1.45rem !important;
+  }
+}
+
+@media (max-width: 390px) {
+  #home.hero .hero-content {
+    padding-top: 66px !important;
+    padding-bottom: 76px !important;
+  }
+  #home.hero .premium-name {
+    font-size: 1.55rem !important;
+  }
+  #home.hero .hero-quote {
+    font-size: .75rem !important;
+  }
+  #home.hero .hero-sub {
+    font-size: .63rem !important;
+  }
+  #home.hero .gold-btn,
+  #home.hero .outline-btn {
+    font-size: .62rem !important;
+    padding-inline: 7px !important;
+  }
+}
+
+/* Do not alter the desktop composition. */
+@media (min-width: 601px) {
+  #home.hero .hero-image {
+    background-size: cover !important;
+    background-position: center top !important;
+    background-color: transparent !important;
+  }
+}

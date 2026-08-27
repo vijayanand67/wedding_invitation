@@ -3635,3 +3635,69 @@ html[data-lang="ta"] .section-heading h2{
     height:96px!important;
   }
 }
+
+/* =========================================================
+   FINAL HERO VIEWPORT FIX — FULL MOBILE HERO, NO NEXT-PAGE PEEK
+   ========================================================= */
+#home.hero{
+  /* Fallback for browsers without dynamic viewport units. */
+  height:calc(100vh - var(--vh-header-h, 64px)) !important;
+  min-height:calc(100vh - var(--vh-header-h, 64px)) !important;
+  max-height:none !important;
+  overflow:hidden !important;
+}
+
+/* Use the actual visible mobile viewport when supported. This prevents the
+   invitation section from appearing at the bottom of the first screen. */
+@supports (height: 100dvh){
+  #home.hero{
+    height:calc(100dvh - var(--vh-header-h, 64px)) !important;
+    min-height:calc(100dvh - var(--vh-header-h, 64px)) !important;
+  }
+}
+
+/* The portrait hero artwork must fill the complete first page. Using
+   100% auto was leaving a burgundy strip and making the composition look
+   like the next page had started early. */
+#home.hero .hero-image{
+  inset:0 !important;
+  background-size:cover !important;
+  background-position:center top !important;
+  background-repeat:no-repeat !important;
+  background-color:#2b0815 !important;
+}
+
+/* Keep the composition comfortably inside the taller first-page canvas. */
+#home.hero .hero-content{
+  max-height:100% !important;
+  box-sizing:border-box !important;
+}
+
+/* Small phones: give the content enough breathing room without allowing
+   the buttons/countdown to push the hero beyond its viewport. */
+@media (max-width:480px){
+  #home.hero .hero-content{
+    width:calc(100% - 24px) !important;
+    padding-top:10px !important;
+    padding-bottom:58px !important;
+  }
+  #home.hero .hero-actions{
+    flex-wrap:nowrap !important;
+  }
+  #home.hero .gold-btn,
+  #home.hero .outline-btn{
+    flex:1 1 0 !important;
+    min-width:0 !important;
+    white-space:nowrap !important;
+    padding-inline:10px !important;
+  }
+}
+
+/* Keep desktop behaviour unchanged while applying the same full-page
+   principle to tablets/desktop viewports. */
+@media (min-width:601px){
+  #home.hero{
+    height:100dvh !important;
+    min-height:100dvh !important;
+  }
+}

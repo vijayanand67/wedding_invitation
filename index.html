@@ -6993,1097 +6993,189 @@ footer{
   #rsvp .rsvp-form{padding:20px 16px!important;border-radius:20px!important}
 }
 </style>
-<style id="final-header-tamil-reliability">
-/* Final authoritative overrides for compact header, top-aligned hero artwork and local Tamil fonts. */
-.topbar{height:82px!important;min-height:82px!important;padding:10px 4vw!important;padding-top:10px!important;padding-bottom:10px!important;box-sizing:border-box!important;}
-.brand{font-size:clamp(21px,3vw,29px)!important;line-height:1!important;white-space:nowrap!important;}
-.icon-btn{width:44px!important;height:44px!important;min-width:44px!important;}
-.top-actions{gap:7px!important;}
-#home.hero .hero-image{background-position:center top!important;}
-#home.hero .hero-content{padding-top:24px!important;}
-html[data-lang="ta"] body,html[data-lang="ta"] body button,html[data-lang="ta"] body input,html[data-lang="ta"] body textarea,html[data-lang="ta"] body select,html[data-lang="ta"] .topbar,html[data-lang="ta"] nav,html[data-lang="ta"] main,html[data-lang="ta"] footer,html[data-lang="ta"] [data-key],html[data-lang="ta"] [data-en][data-ta]{font-family:"VH Noto Sans Tamil","Noto Sans Tamil","Tamil Sangam MN",sans-serif!important;letter-spacing:0!important;}
-html[data-lang="ta"] h1,html[data-lang="ta"] h2,html[data-lang="ta"] h3,html[data-lang="ta"] h4,html[data-lang="ta"] .brand,html[data-lang="ta"] .premium-name,html[data-lang="ta"] .couple-name,html[data-lang="ta"] .date-script,html[data-lang="ta"] .section-heading h2,html[data-lang="ta"] .timeline h3,html[data-lang="ta"] .venue-copy h2,html[data-lang="ta"] .venue-copy h3,html[data-lang="ta"] .celebration-event h3,html[data-lang="ta"] footer h2{font-family:"VH Noto Serif Tamil","Noto Serif Tamil","Tamil Sangam MN",serif!important;letter-spacing:0!important;}
-html[data-lang="ta"] .hero-quote,html[data-lang="ta"] .hero-sub,html[data-lang="ta"] .eyebrow,html[data-lang="ta"] .countdown small,html[data-lang="ta"] .gold-btn,html[data-lang="ta"] .outline-btn,html[data-lang="ta"] .rsvp-form label,html[data-lang="ta"] .rsvp-form input,html[data-lang="ta"] .rsvp-form textarea,html[data-lang="ta"] .section-heading p,html[data-lang="ta"] .venue-address,html[data-lang="ta"] .timeline p,html[data-lang="ta"] .invitation-note{font-family:"VH Noto Sans Tamil","Noto Sans Tamil","Tamil Sangam MN",sans-serif!important;letter-spacing:0!important;}
-html[data-lang="ta"] #home.hero .premium-name{font-size:clamp(1.85rem,6.8vw,3.15rem)!important;line-height:1.18!important;font-weight:600!important;}
-html[data-lang="ta"] #home.hero .hero-quote{font-size:clamp(.98rem,3.5vw,1.3rem)!important;line-height:1.65!important;}
-html[data-lang="ta"] #home.hero .hero-sub{font-size:clamp(.84rem,3vw,1rem)!important;line-height:1.7!important;}
-html[data-lang="ta"] #home.hero .date-script{font-size:clamp(1.08rem,3.8vw,1.55rem)!important;line-height:1.45!important;}
-html[data-lang="ta"] .section-heading h2{font-size:clamp(1.95rem,8.5vw,3rem)!important;line-height:1.3!important;}
-@media(max-width:600px){.topbar{height:76px!important;min-height:76px!important;padding:8px 3.5vw!important;padding-top:8px!important;padding-bottom:8px!important;}.brand{font-size:22px!important;}.icon-btn{width:42px!important;height:42px!important;min-width:42px!important;}.top-actions{gap:5px!important;}#home.hero .hero-content{padding-top:18px!important;}}
-</style>
 
-<style id="final-android-chrome-responsive-fix">
-/*
-  FINAL ANDROID CHROME / REALME 8 5G RESPONSIVE FIX
-  - Keep desktop untouched.
-  - Make mobile hero fill the complete visible area.
-  - Preserve the top of hero.jpg so heads are never hidden by the crop.
-  - Remove JS-dependent "blank/loading" reveal states.
-  - Make the invitation artwork load immediately.
-  - Keep anchor scrolling clear of the fixed header.
-*/
+<style id="final-responsive-layout-pass">
+/* FINAL RESPONSIVE LAYOUT PASS — existing images only */
 
-/* Never let the page depend on IntersectionObserver for visibility. */
-.reveal,
-.reveal.visible{
-  opacity:1!important;
-  visibility:visible!important;
-  transform:none!important;
+/* Header is fixed and overlays the hero; the hero itself owns exactly one viewport. */
+#home.hero {
+  width: 100%;
+  height: 100dvh !important;
+  min-height: 0 !important;
+  max-height: 100dvh !important;
+  overflow: hidden !important;
+  position: relative !important;
+  isolation: isolate;
+}
+#home.hero .hero-image {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+}
+#home.hero .hero-overlay { inset: 0 !important; }
+#home.hero .hero-content {
+  width: min(980px, calc(100% - 40px)) !important;
+  height: 100% !important;
+  padding: 112px 20px 112px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+#home.hero .premium-couple-name { margin: 8px auto 16px !important; }
+#home.hero .hero-quote { margin: 0 auto 5px !important; }
+#home.hero .hero-sub { margin: 0 auto 8px !important; }
+#home.hero .date-script { margin: 12px 0 10px !important; }
+#home.hero .hero-countdown { width: min(760px, 100%); }
+#home.hero .hero-actions { margin-top: 6px !important; gap: 14px !important; }
+#home.hero .scroll-cue {
+  left: 50% !important;
+  bottom: max(12px, env(safe-area-inset-bottom)) !important;
+  transform: translateX(-50%) !important;
+  z-index: 5 !important;
+  line-height: 1 !important;
+  margin: 0 !important;
 }
 
-/* The next section must never be clipped by a fixed/absolute ancestor. */
-main,
-main > section{
-  overflow:visible;
-}
+/* Never let the next section paint inside the first viewport. */
+#invite { position: relative; z-index: 1; }
 
-#invite,
-#journey,
-#events,
-#venue,
-#gallery,
-#rsvp{
-  scroll-margin-top:calc(var(--vh-header-h, 76px) + 12px);
-}
-
-@media (max-width:850px){
-  html{
-    overflow-x:hidden!important;
-    -webkit-text-size-adjust:100%;
+/* Desktop: give the invitation artwork and the following content a deliberate page composition. */
+@media (min-width: 901px) {
+  #home.hero .hero-content {
+    padding-top: 116px !important;
+    padding-bottom: 104px !important;
   }
-  body{
-    width:100%;
-    min-width:0;
-    overflow-x:hidden!important;
+  #home.hero .premium-couple-name .premium-name {
+    font-size: clamp(2.15rem, 4.2vw, 3.45rem) !important;
   }
+  #home.hero .hero-quote { font-size: clamp(1rem, 1.7vw, 1.28rem) !important; }
+  #home.hero .hero-sub { font-size: clamp(.86rem, 1.35vw, 1rem) !important; }
 
-  /* Header dimensions are used by the hero so the artwork begins below it. */
-  :root{
-    --android-header-h:82px;
+  #invite.section {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 72px 40px 96px !important;
   }
-
-  .topbar{
-    width:100%!important;
-    max-width:100vw!important;
-    box-sizing:border-box!important;
+  #invite .section-heading {
+    width: min(760px, 100%);
+    margin: 0 auto 34px !important;
   }
-
-  /*
-    Start the hero below the fixed header instead of placing the header on top
-    of the photograph. This prevents the top of the supplied portrait image
-    from being hidden.
-  */
-  #home.hero{
-    margin-top:var(--android-header-h)!important;
-    height:calc(100dvh - var(--android-header-h))!important;
-    min-height:calc(100dvh - var(--android-header-h))!important;
-    max-height:none!important;
-    overflow:hidden!important;
-    position:relative!important;
+  #invite .section-heading h2 {
+    font-size: clamp(42px, 4.5vw, 62px) !important;
+  }
+  #invite .language-invitation-art {
+    width: min(680px, 55vw) !important;
+    margin: 0 auto !important;
+  }
+  #invite .language-invitation-art__frame {
+    border-radius: 22px !important;
+    box-shadow: 0 26px 70px rgba(45,8,18,.14), inset 0 0 0 1px rgba(255,255,255,.55) !important;
   }
 
-  /* Fallback for older mobile engines that do not support dynamic viewport units. */
-  @supports not (height:100dvh){
-    #home.hero{
-      height:calc(100svh - var(--android-header-h))!important;
-      min-height:calc(100svh - var(--android-header-h))!important;
-    }
+  #journey.section {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 92px 48px 110px !important;
   }
-
-  #home.hero .hero-image{
-    position:absolute!important;
-    inset:0!important;
-    width:100%!important;
-    height:100%!important;
-    background-size:cover!important;
-    background-position:center top!important;
-    background-repeat:no-repeat!important;
-    background-color:#2b0815!important;
+  #journey .section-heading,
+  #journey .journey-grid {
+    width: min(1180px, 100%);
+    margin-inline: auto;
   }
-
-  #home.hero .hero-content{
-    opacity:1!important;
-    visibility:visible!important;
-    transform:none!important;
-    z-index:3!important;
-    max-height:none!important;
-    overflow:visible!important;
+  #journey .journey-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr) !important;
+    gap: 72px !important;
+    align-items: center !important;
   }
-
-  #home.hero .scroll-cue{
-    z-index:5!important;
-    bottom:max(18px,env(safe-area-inset-bottom,0px))!important;
-    min-width:44px!important;
-    min-height:44px!important;
-    display:grid!important;
-    place-items:center!important;
-    -webkit-tap-highlight-color:transparent;
-    touch-action:manipulation;
+  #journey .childhood-heading { grid-column: 1 / -1 !important; }
+  #journey .memory-photo {
+    height: min(680px, 65vh) !important;
+    min-height: 520px !important;
+    border-radius: 170px 170px 24px 24px !important;
   }
+  #journey .timeline { padding-left: 34px !important; }
 
-  /* Ensure the first invitation section is painted immediately after scrolling. */
-  #invite{
-    position:relative!important;
-    z-index:1!important;
-    min-height:0!important;
-    overflow:visible!important;
+  #events.section {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 88px 48px 104px !important;
   }
-
-  #invite .section-heading,
-  #invite .language-invitation-art{
-    opacity:1!important;
-    visibility:visible!important;
-    transform:none!important;
-  }
-
-  #invite .language-invitation-art{
-    display:block!important;
-    width:min(100%,760px)!important;
-  }
-
-  #invite #languageInvitationImage{
-    display:block!important;
-    width:100%!important;
-    height:auto!important;
-    min-height:1px!important;
-    object-fit:contain!important;
+  #events .celebration-card {
+    width: min(1040px, 100%) !important;
   }
 }
 
-@media (max-width:600px){
-  :root{
-    --android-header-h:76px;
+/* Mobile: the hero is a strict viewport canvas, with no second-section bleed. */
+@media (max-width: 900px) {
+  #home.hero {
+    height: 100svh !important;
+    height: 100dvh !important;
+    min-height: 0 !important;
+    max-height: 100dvh !important;
   }
-
-  .topbar{
-    height:76px!important;
-    min-height:76px!important;
-    padding:8px max(12px,3vw)!important;
-    gap:6px!important;
+  #home.hero .hero-image {
+    background-position: center top !important;
   }
-
-  .brand{
-    font-size:clamp(17px,5.5vw,22px)!important;
-    flex:1 1 auto!important;
-    min-width:0!important;
-    overflow:hidden!important;
-    text-overflow:clip!important;
-    white-space:nowrap!important;
+  #home.hero .hero-content {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    padding: max(82px, calc(68px + env(safe-area-inset-top))) 14px max(70px, calc(54px + env(safe-area-inset-bottom))) !important;
+    justify-content: center !important;
   }
-
-  .top-actions{
-    flex:0 0 auto!important;
-    gap:4px!important;
+  #home.hero .premium-couple-name .premium-name,
+  html[data-lang="ta"] #home.hero .premium-couple-name .premium-name {
+    font-size: clamp(1.72rem, 7.3vw, 2.55rem) !important;
+    line-height: 1.08 !important;
   }
+  #home.hero .premium-couple-name { margin: 6px auto 12px !important; }
+  #home.hero .hero-quote { font-size: clamp(.95rem, 3.5vw, 1.2rem) !important; line-height: 1.4 !important; }
+  #home.hero .hero-sub { font-size: clamp(.82rem, 3vw, 1rem) !important; line-height: 1.5 !important; max-width: 94% !important; }
+  #home.hero .date-script { font-size: clamp(1.08rem, 3.8vw, 1.5rem) !important; margin: 9px 0 7px !important; }
+  #home.hero .hero-countdown { margin: 7px 0 8px !important; }
+  #home.hero .hero-actions { width: 100% !important; gap: 10px !important; margin-top: 4px !important; }
+  #home.hero .hero-actions > * { flex: 1 1 0; min-width: 0; }
+  #home.hero .scroll-cue { bottom: max(9px, env(safe-area-inset-bottom)) !important; }
 
-  .icon-btn{
-    width:42px!important;
-    height:42px!important;
-    min-width:42px!important;
-    min-height:42px!important;
-    padding:0!important;
-    flex:0 0 42px!important;
+  /* Start the next page cleanly below the hero. */
+  #invite.section { margin-top: 0 !important; padding-top: 34px !important; }
+}
+
+/* Extra-small Android/iPhone screens: keep everything inside the hero. */
+@media (max-width: 390px), (max-height: 700px) and (max-width: 900px) {
+  #home.hero .hero-content {
+    padding-top: max(74px, calc(64px + env(safe-area-inset-top))) !important;
+    padding-bottom: max(62px, calc(48px + env(safe-area-inset-bottom))) !important;
   }
-
-  #home.hero{
-    margin-top:76px!important;
-    height:calc(100dvh - 76px)!important;
-    min-height:calc(100dvh - 76px)!important;
+  #home.hero .premium-couple-name .premium-name,
+  html[data-lang="ta"] #home.hero .premium-couple-name .premium-name {
+    font-size: clamp(1.58rem, 7.1vw, 2.2rem) !important;
   }
-
-  #home.hero .hero-content{
-    width:min(94vw,520px)!important;
-    padding:18px 10px 64px!important;
-  }
-
-  #home.hero .premium-couple-name{
-    max-width:100%!important;
-    flex-wrap:wrap!important;
-    justify-content:center!important;
-  }
-
-  #home.hero .premium-name{
-    font-size:clamp(1.75rem,8.2vw,2.7rem)!important;
-  }
-
-  #home.hero .hero-quote{
-    font-size:clamp(.9rem,3.8vw,1.15rem)!important;
-  }
-
-  #home.hero .hero-sub{
-    font-size:clamp(.76rem,3.1vw,.96rem)!important;
-  }
-
-  #home.hero .date-script{
-    margin:10px 0!important;
-    font-size:clamp(.98rem,4vw,1.35rem)!important;
-  }
-
-  #home.hero .invite-countdown{
-    margin:10px 0 14px!important;
-  }
-
-  #home.hero .invite-countdown .unit{
-    min-width:58px!important;
-    padding:7px 6px!important;
-  }
-
-  #home.hero .invite-countdown b{
-    font-size:1rem!important;
-  }
-
-  #home.hero .hero-actions{
-    gap:7px!important;
-  }
-
-  #home.hero .gold-btn,
-  #home.hero .outline-btn{
-    padding:10px 15px!important;
-    font-size:.78rem!important;
-  }
-
-  #home.hero .scroll-cue{
-    bottom:max(12px,env(safe-area-inset-bottom,0px))!important;
-  }
-
-  #invite,
-  #journey,
-  #events,
-  #venue,
-  #gallery,
-  #rsvp{
-    scroll-margin-top:88px!important;
-  }
-
-  #invite{
-    padding-top:28px!important;
-  }
-
-  #invite .language-invitation-art{
-    margin-top:12px!important;
-  }
+  #home.hero .hero-quote { font-size: clamp(.88rem, 3.35vw, 1.08rem) !important; }
+  #home.hero .hero-sub { font-size: clamp(.76rem, 2.85vw, .92rem) !important; }
+  #home.hero .date-script { font-size: clamp(1rem, 3.6vw, 1.32rem) !important; }
+  #home.hero .hero-actions .gold-btn,
+  #home.hero .hero-actions .outline-btn { padding: 11px 12px !important; font-size: .78rem !important; }
 }
 
-@media (max-width:380px){
-  /* 360 CSS-pixel phones such as the Realme 8 class of viewport. */
-  .topbar{
-    padding-left:10px!important;
-    padding-right:10px!important;
-  }
-
-  .brand{
-    font-size:17px!important;
-  }
-
-  .top-actions{
-    gap:3px!important;
-  }
-
-  .icon-btn{
-    width:39px!important;
-    height:39px!important;
-    min-width:39px!important;
-    min-height:39px!important;
-    flex-basis:39px!important;
-    font-size:.78rem!important;
-  }
-
-  #home.hero .hero-content{
-    padding-left:7px!important;
-    padding-right:7px!important;
-  }
-
-  #home.hero .premium-name{
-    font-size:clamp(1.58rem,8vw,2.25rem)!important;
-  }
+/* Tamil uses the local font files already present in the project; no image/text artwork is changed. */
+html[data-lang="ta"] #home.hero .premium-name,
+html[data-lang="ta"] #invite [data-key],
+html[data-lang="ta"] #journey [data-key],
+html[data-lang="ta"] #events [data-key],
+html[data-lang="ta"] #venue [data-key],
+html[data-lang="ta"] #rsvp [data-key] {
+  font-family: "Noto Serif Tamil", "Noto Sans Tamil", sans-serif !important;
 }
 
-/* Devices that request reduced motion still receive the complete page immediately. */
-@media (prefers-reduced-motion:reduce){
-  .reveal,
-  .reveal.visible{
-    opacity:1!important;
-    transform:none!important;
-    transition:none!important;
-  }
-}
-</style>
-
-
-<style id="final-mobile-hero-quotes-fix">
-/* =========================================================
-   FINAL MOBILE HERO + LOVE QUOTES PAGE
-   Existing images are untouched.
-   ========================================================= */
-#home.hero{
-  position:relative!important;
-  height:100svh!important;
-  min-height:100svh!important;
-  max-height:none!important;
-  margin:0!important;
-  overflow:hidden!important;
-  border:0!important;
-  outline:0!important;
-  box-shadow:none!important;
-}
-#home.hero::before,
-#home.hero::after{
-  content:none!important;
-  display:none!important;
-  border:0!important;
-  box-shadow:none!important;
-}
-#home.hero .hero-image{
-  inset:0!important;
-  width:100%!important;
-  height:100%!important;
-  background-size:cover!important;
-  background-position:center center!important;
-  border:0!important;
-  outline:0!important;
-}
-#home.hero .hero-overlay{
-  inset:0!important;
-  background:
-    linear-gradient(180deg,rgba(38,5,16,.34) 0%,rgba(55,10,25,.12) 28%,rgba(43,7,20,.10) 52%,rgba(30,4,14,.46) 78%,rgba(20,2,9,.72) 100%)!important;
-}
-#home.hero .hero-content{
-  position:absolute!important;
-  left:50%!important;
-  top:calc(var(--vh-header-h,68px) + 4svh)!important;
-  bottom:clamp(64px,9svh,94px)!important;
-  transform:translateX(-50%)!important;
-  width:min(760px,calc(100% - 28px))!important;
-  max-width:760px!important;
-  max-height:none!important;
-  padding:0!important;
-  margin:0!important;
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-  justify-content:center!important;
-  overflow:visible!important;
-  z-index:3!important;
-}
-#home.hero .eyebrow{
-  margin:0 0 clamp(5px,1vh,10px)!important;
-  font-size:clamp(9px,1.9vw,13px)!important;
-  line-height:1.2!important;
-  letter-spacing:.28em!important;
-}
-#home.hero .premium-couple-name{
-  margin:0 auto clamp(8px,1.5vh,15px)!important;
-  gap:0!important;
-}
-#home.hero .premium-couple-name .premium-name{
-  font-size:clamp(31px,6.8vw,58px)!important;
-  line-height:.94!important;
-}
-#home.hero .premium-heart{
-  font-size:clamp(18px,3.8vw,30px)!important;
-  margin:2px 0!important;
-}
-#home.hero .hero-quote{
-  max-width:720px!important;
-  margin:0 auto 4px!important;
-  font-size:clamp(16px,2.7vw,25px)!important;
-  line-height:1.18!important;
-}
-#home.hero .hero-sub{
-  max-width:650px!important;
-  margin:0 auto!important;
-  font-size:clamp(11px,1.9vw,15px)!important;
-  line-height:1.45!important;
-}
-#home.hero .date-script{
-  margin:clamp(9px,1.6vh,16px) 0!important;
-  font-size:clamp(19px,3.3vw,31px)!important;
-  line-height:1!important;
-}
-#home.hero .hero-countdown{
-  width:min(560px,100%)!important;
-}
-#home.hero .invite-countdown{
-  display:flex!important;
-  width:100%!important;
-  justify-content:center!important;
-  gap:0!important;
-  flex-wrap:nowrap!important;
-  margin:clamp(5px,1vh,10px) 0 clamp(12px,2vh,20px)!important;
-  padding:clamp(10px,1.5vh,15px) clamp(6px,2vw,14px)!important;
-  border:1px solid rgba(232,184,82,.60)!important;
-  border-radius:24px!important;
-  background:rgba(36,7,18,.34)!important;
-  backdrop-filter:blur(5px)!important;
-}
-#home.hero .invite-countdown .unit{
-  flex:1 1 25%!important;
-  min-width:0!important;
-  padding:4px 6px!important;
-  border:0!important;
-  border-right:1px solid rgba(232,184,82,.38)!important;
-  border-radius:0!important;
-  background:transparent!important;
-}
-#home.hero .invite-countdown .unit:last-child{border-right:0!important}
-#home.hero .invite-countdown b{
-  font-size:clamp(16px,3vw,25px)!important;
-  line-height:1!important;
-}
-#home.hero .invite-countdown small{
-  font-size:clamp(7px,1.3vw,9px)!important;
-  line-height:1.2!important;
-}
-#home.hero .hero-actions{
-  width:100%!important;
-  display:flex!important;
-  flex-wrap:nowrap!important;
-  justify-content:center!important;
-  gap:10px!important;
-  margin:0!important;
-}
-#home.hero .hero-actions .gold-btn,
-#home.hero .hero-actions .outline-btn{
-  flex:1 1 0!important;
-  min-width:0!important;
-  max-width:290px!important;
-  min-height:52px!important;
-  padding:11px clamp(12px,2vw,24px)!important;
-  font-size:clamp(11px,1.8vw,15px)!important;
-  line-height:1.15!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  white-space:nowrap!important;
-}
-#home.hero .scroll-cue{
-  bottom:clamp(14px,3.5svh,30px)!important;
-  left:50%!important;
-  transform:translateX(-50%)!important;
-  z-index:5!important;
-  font-size:clamp(24px,5vw,34px)!important;
-  line-height:1!important;
-  padding:6px 12px!important;
-}
-
-/* Love & Marriage page */
-#love-quotes.love-quotes-page{
-  position:relative!important;
-  min-height:100svh!important;
-  width:100%!important;
-  max-width:none!important;
-  margin:0!important;
-  padding:clamp(76px,10svh,120px) 22px!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  overflow:hidden!important;
-  text-align:center!important;
-  color:#fff8ec!important;
-  background:
-    radial-gradient(circle at 50% 35%,rgba(221,174,82,.16),transparent 32%),
-    linear-gradient(145deg,#2c0715 0%,#5b102b 52%,#250510 100%)!important;
-}
-#love-quotes.love-quotes-page::before,
-#love-quotes.love-quotes-page::after{
-  content:""!important;
-  position:absolute!important;
-  border:1px solid rgba(232,184,82,.18)!important;
-  border-radius:50%!important;
-  pointer-events:none!important;
-}
-#love-quotes.love-quotes-page::before{width:min(78vw,560px);height:min(78vw,560px);}
-#love-quotes.love-quotes-page::after{width:min(58vw,420px);height:min(58vw,420px);}
-.quotes-shell{
-  position:relative!important;
-  z-index:1!important;
-  width:min(820px,100%)!important;
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-}
-.quotes-shell .eyebrow{
-  margin:0 0 12px!important;
-  color:#f0d18a!important;
-  font-size:clamp(9px,1.7vw,13px)!important;
-  letter-spacing:.24em!important;
-}
-.quote-heart{
-  color:#e86a73!important;
-  font-size:clamp(24px,5vw,38px)!important;
-  line-height:1!important;
-  animation:quoteHeartPulse 2.4s ease-in-out infinite!important;
-}
-.quotes-shell h2{
-  margin:8px 0 18px!important;
-  color:#fff5df!important;
-  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
-  font-size:clamp(38px,7vw,66px)!important;
-  line-height:.98!important;
-}
-.quote-rotator{
-  width:min(720px,100%)!important;
-  min-height:clamp(120px,18svh,170px)!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  padding:18px 22px!important;
-}
-.rotating-quote{
-  margin:0!important;
-  color:#fff9ef!important;
-  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
-  font-size:clamp(24px,4vw,39px)!important;
-  font-weight:600!important;
-  line-height:1.22!important;
-  text-shadow:0 3px 20px rgba(0,0,0,.28)!important;
-  opacity:1!important;
-  transform:translateY(0)!important;
-  transition:opacity .45s ease,transform .45s ease!important;
-}
-.rotating-quote.is-changing{opacity:0!important;transform:translateY(12px)!important}
-.quote-dots{display:flex!important;gap:7px!important;margin:5px 0 22px!important;min-height:8px!important}
-.quote-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,240,207,.35);transition:.3s ease}
-.quote-dot.active{width:20px;border-radius:999px;background:#e9c875}
-.quote-continue{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  min-height:46px!important;
-  padding:10px 22px!important;
-  border:1px solid rgba(255,245,220,.55)!important;
-  border-radius:999px!important;
-  color:#fff6e4!important;
-  text-decoration:none!important;
-  font:600 clamp(11px,1.7vw,14px)/1.2 Poppins,sans-serif!important;
-  background:rgba(255,255,255,.06)!important;
-  backdrop-filter:blur(6px)!important;
-}
-.quote-continue:hover{transform:translateY(-2px);background:rgba(255,255,255,.10)!important}
-@keyframes quoteHeartPulse{0%,100%{transform:scale(1);filter:brightness(1)}50%{transform:scale(1.08);filter:brightness(1.12)}}
-
-/* Never allow the hidden RSVP to create layout space. */
-#rsvp{display:none!important}
-
-@media(max-width:600px){
-  #home.hero{height:100svh!important;min-height:100svh!important}
-  #home.hero .hero-content{
-    top:calc(var(--vh-header-h,64px) + 3svh)!important;
-    bottom:clamp(60px,8svh,76px)!important;
-    width:calc(100% - 24px)!important;
-  }
-  #home.hero .premium-couple-name .premium-name{font-size:clamp(29px,8.2vw,43px)!important}
-  #home.hero .premium-heart{font-size:20px!important}
-  #home.hero .hero-quote{font-size:clamp(14px,4vw,18px)!important}
-  #home.hero .hero-sub{font-size:clamp(10px,2.9vw,13px)!important;line-height:1.4!important;max-width:340px!important}
-  #home.hero .date-script{font-size:clamp(18px,4.7vw,23px)!important}
-  #home.hero .invite-countdown{border-radius:20px!important;padding:8px 4px!important}
-  #home.hero .invite-countdown .unit{padding:3px 2px!important}
-  #home.hero .invite-countdown b{font-size:clamp(15px,4.2vw,20px)!important}
-  #home.hero .invite-countdown small{font-size:7px!important}
-  #home.hero .hero-actions{gap:8px!important}
-  #home.hero .hero-actions .gold-btn,#home.hero .hero-actions .outline-btn{min-height:48px!important;padding:9px 8px!important;font-size:11px!important}
-  #home.hero .scroll-cue{bottom:12px!important}
-  #love-quotes.love-quotes-page{min-height:100svh!important;padding:78px 18px 60px!important}
-  .quotes-shell h2{font-size:clamp(36px,10vw,48px)!important}
-  .quote-rotator{min-height:180px!important;padding:10px 6px!important}
-  .rotating-quote{font-size:clamp(23px,7vw,31px)!important;line-height:1.25!important}
-  .quote-continue{min-height:44px!important}
-}
-@media(max-height:700px) and (max-width:600px){
-  #home.hero .hero-content{top:calc(var(--vh-header-h,64px) + 1svh)!important;bottom:54px!important}
-  #home.hero .premium-couple-name .premium-name{font-size:30px!important}
-  #home.hero .hero-quote{font-size:14px!important}
-  #home.hero .hero-sub{font-size:10px!important}
-  #home.hero .date-script{font-size:18px!important;margin:6px 0!important}
-  #home.hero .invite-countdown{margin:5px 0 9px!important}
-  #home.hero .hero-actions .gold-btn,#home.hero .hero-actions .outline-btn{min-height:44px!important;font-size:10px!important}
-}
-@media(min-width:768px){
-  #home.hero .hero-content{top:calc(var(--vh-header-h,72px) + 5svh)!important;bottom:82px!important}
-}
-@media(prefers-reduced-motion:reduce){
-  .quote-heart,.rotating-quote{animation:none!important;transition:none!important}
-}
-</style>
-
-
-<style id="v3-final-responsive-overrides">
-/* =========================================================
-   V3 — FINAL RESPONSIVE HERO + END-OF-PAGE QUOTES
-   Existing wedding images are intentionally untouched.
-   ========================================================= */
-
-:root{
-  --hero-header-space: clamp(76px, 9vh, 104px);
-}
-
-html,body{
-  max-width:100%;
-  overflow-x:hidden;
-}
-
-/* The first page is a self-contained viewport. The following section can
-   never peek into it because the hero owns the full dynamic viewport. */
-#home.hero{
-  position:relative !important;
-  width:100% !important;
-  height:100dvh !important;
-  min-height:100dvh !important;
-  max-height:none !important;
-  overflow:hidden !important;
-  display:flex !important;
-  align-items:flex-end !important;
-  justify-content:center !important;
-  padding:0 !important;
-  isolation:isolate;
-}
-
-#home.hero .hero-image{
-  position:absolute !important;
-  inset:0 !important;
-  background-size:cover !important;
-  background-position:center 40% !important;
-  background-repeat:no-repeat !important;
-  transform:none !important;
-}
-
-#home.hero .hero-overlay{
-  position:absolute !important;
-  inset:0 !important;
-  background:linear-gradient(180deg,rgba(32,5,16,.34) 0%,rgba(45,7,22,.18) 38%,rgba(35,4,15,.72) 100%) !important;
-}
-
-#home.hero .hero-content{
-  position:relative !important;
-  z-index:3 !important;
-  width:min(900px,calc(100% - 32px)) !important;
-  max-width:900px !important;
-  max-height:calc(100dvh - var(--hero-header-space) - 34px) !important;
-  margin:0 auto !important;
-  padding:0 0 clamp(62px,7.2vh,82px) !important;
-  display:flex !important;
-  flex-direction:column !important;
-  align-items:center !important;
-  justify-content:flex-end !important;
-  text-align:center !important;
-}
-
-#home.hero .eyebrow{
-  margin:0 0 clamp(8px,1.1vh,14px) !important;
-  font-size:clamp(.58rem,1.5vw,.78rem) !important;
-  line-height:1.2 !important;
-}
-
-#home.hero .premium-couple-name{
-  display:flex !important;
-  flex-direction:column !important;
-  align-items:center !important;
-  justify-content:center !important;
-  gap:clamp(1px,.4vh,5px) !important;
-  width:100% !important;
-  margin:0 !important;
-  line-height:.96 !important;
-}
-
-#home.hero .premium-name{
-  display:block !important;
-  font-size:clamp(2.05rem,7.2vw,4.9rem) !important;
-  line-height:.96 !important;
-  white-space:nowrap !important;
-}
-
-#home.hero .premium-heart{
-  display:block !important;
-  font-size:clamp(1.25rem,4vw,2rem) !important;
-  line-height:1 !important;
-  margin:clamp(3px,.5vh,7px) 0 !important;
-}
-
-#home.hero .hero-quote{
-  margin:clamp(12px,1.8vh,20px) auto 0 !important;
-  max-width:760px !important;
-  font-size:clamp(.98rem,2.35vw,1.5rem) !important;
-  line-height:1.2 !important;
-}
-
-#home.hero .hero-sub{
-  max-width:720px !important;
-  margin:clamp(4px,1vh,9px) auto 0 !important;
-  font-size:clamp(.78rem,1.9vw,1.05rem) !important;
-  line-height:1.38 !important;
-}
-
-#home.hero .date-script{
-  margin:clamp(10px,1.8vh,18px) 0 0 !important;
-  font-size:clamp(1.12rem,3vw,1.8rem) !important;
-  line-height:1.1 !important;
-}
-
-#home.hero .hero-countdown{
-  width:min(640px,100%) !important;
-  margin:clamp(10px,1.7vh,18px) auto 0 !important;
-}
-
-#home.hero .invite-countdown{
-  width:100% !important;
-  display:grid !important;
-  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
-  gap:0 !important;
-  padding:clamp(9px,1.3vh,15px) clamp(7px,2vw,16px) !important;
-  border:1px solid rgba(224,185,75,.72) !important;
-  border-radius:24px !important;
-  background:rgba(27,4,13,.48) !important;
-  backdrop-filter:blur(5px) !important;
-  -webkit-backdrop-filter:blur(5px) !important;
-}
-
-#home.hero .invite-countdown .unit{
-  min-width:0 !important;
-  padding:clamp(5px,1vh,10px) 6px !important;
-  border:0 !important;
-  border-right:1px solid rgba(224,185,75,.48) !important;
-  border-radius:0 !important;
-  background:transparent !important;
-}
-#home.hero .invite-countdown .unit:last-child{border-right:0 !important}
-#home.hero .invite-countdown b{
-  font-size:clamp(1.15rem,3.3vw,1.65rem) !important;
-  line-height:1 !important;
-}
-#home.hero .invite-countdown small{
-  display:block !important;
-  margin-top:4px !important;
-  font-size:clamp(.45rem,1.1vw,.6rem) !important;
-  line-height:1 !important;
-}
-
-#home.hero .hero-actions{
-  width:min(640px,100%) !important;
-  display:grid !important;
-  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-  gap:10px !important;
-  margin:clamp(10px,1.7vh,18px) auto 0 !important;
-}
-#home.hero .gold-btn,#home.hero .outline-btn{
-  min-width:0 !important;
-  width:100% !important;
-  min-height:clamp(48px,6vh,58px) !important;
-  padding:10px 14px !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  white-space:nowrap !important;
-  font-size:clamp(.78rem,1.8vw,1rem) !important;
-}
-
-#home.hero .scroll-cue{
-  z-index:4 !important;
-  bottom:max(12px,env(safe-area-inset-bottom)) !important;
-  font-size:clamp(1.35rem,4vw,1.8rem) !important;
-  line-height:1 !important;
-  padding:5px 12px !important;
-}
-
-/* Do not use a decorative frame on the first hero image. */
-#home.hero::before,#home.hero::after{
-  display:none !important;
-}
-
-/* Quotes belong at the end of the invitation, not between the hero and the
-   invitation artwork. It is intentionally content-rich so the page never
-   looks empty. */
-#love-quotes.love-quotes-page{
-  min-height:clamp(620px,100svh,900px) !important;
-  width:100% !important;
-  margin:0 !important;
-  padding:clamp(72px,9vh,110px) clamp(20px,6vw,80px) !important;
-  display:grid !important;
-  place-items:center !important;
-  position:relative !important;
-  overflow:hidden !important;
-  background:
-    radial-gradient(circle at 50% 38%,rgba(125,39,68,.9) 0%,rgba(91,19,43,.96) 38%,rgba(50,7,25,1) 100%) !important;
-  color:#fff7ee !important;
-}
-
-#love-quotes .quotes-shell{
-  width:min(900px,100%) !important;
-  min-height:min(650px,82svh) !important;
-  display:flex !important;
-  flex-direction:column !important;
-  align-items:center !important;
-  justify-content:center !important;
-  text-align:center !important;
-  position:relative !important;
-  padding:clamp(34px,7vw,72px) clamp(18px,5vw,60px) !important;
-  border:1px solid rgba(224,185,75,.32) !important;
-  border-radius:36px !important;
-  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015)) !important;
-  box-shadow:0 30px 100px rgba(0,0,0,.25),inset 0 0 60px rgba(224,185,75,.035) !important;
-}
-#love-quotes .quotes-shell::before,#love-quotes .quotes-shell::after{
-  content:"" !important;
-  position:absolute !important;
-  width:min(70vw,600px) !important;
-  aspect-ratio:1 !important;
-  border:1px solid rgba(224,185,75,.17) !important;
-  border-radius:50% !important;
-  pointer-events:none !important;
-}
-#love-quotes .quotes-shell::before{inset:auto;left:50%;top:50%;transform:translate(-50%,-50%) scale(.9) !important}
-#love-quotes .quotes-shell::after{inset:auto;left:50%;top:50%;transform:translate(-50%,-50%) scale(.7) !important}
-#love-quotes .eyebrow{
-  position:relative !important; z-index:2 !important;
-  margin:0 0 12px !important;
-  color:#e7c77a !important;
-  font-size:clamp(.58rem,1.7vw,.75rem) !important;
-  letter-spacing:.25em !important;
-}
-#love-quotes .quote-heart{
-  position:relative !important; z-index:2 !important;
-  font-size:clamp(1.8rem,6vw,3rem) !important;
-  line-height:1 !important;
-  margin:0 0 clamp(18px,4vh,32px) !important;
-  text-shadow:0 0 20px rgba(255,91,112,.35) !important;
-  animation:quoteHeartPulse 1.8s ease-in-out infinite !important;
-}
-#love-quotes .quote-rotator{
-  position:relative !important; z-index:2 !important;
-  width:min(720px,100%) !important;
-  min-height:clamp(150px,24vh,230px) !important;
-  display:grid !important;
-  place-items:center !important;
-}
-#love-quotes .rotating-quote{
-  margin:0 !important;
-  max-width:720px !important;
-  color:#fff7ee !important;
-  font:500 clamp(1.65rem,4.8vw,3.15rem)/1.15 "Playfair Display",serif !important;
-  text-wrap:balance !important;
-  transition:opacity .32s ease,transform .32s ease !important;
-}
-#love-quotes .rotating-quote.is-changing{opacity:0 !important;transform:translateY(12px) !important}
-#love-quotes .quote-story{
-  position:relative !important; z-index:2 !important;
-  width:min(650px,100%) !important;
-  margin:clamp(12px,2vh,20px) auto 0 !important;
-  color:rgba(255,247,238,.82) !important;
-  font:400 clamp(.85rem,2vw,1.08rem)/1.5 Poppins,sans-serif !important;
-}
-#love-quotes .quote-dots{
-  position:relative !important; z-index:2 !important;
-  display:flex !important; gap:7px !important;
-  margin-top:clamp(18px,3vh,28px) !important;
-}
-#love-quotes .quote-dot{
-  width:7px !important; height:7px !important; border-radius:50% !important;
-  background:rgba(255,255,255,.3) !important; transition:.25s ease !important;
-}
-#love-quotes .quote-dot.active{
-  width:22px !important; border-radius:99px !important; background:#e0b94b !important;
-}
-
-@keyframes quoteHeartPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
-
-/* Remove any legacy RSVP space even if an older cached HTML block is present. */
-#rsvp,.rsvp,[id*="rsvp" i],.rsvp-form{
-  display:none !important;
-  visibility:hidden !important;
-  height:0 !important;
-  min-height:0 !important;
-  margin:0 !important;
-  padding:0 !important;
-  overflow:hidden !important;
-}
-
-/* Small phones: compress the hero without moving content onto the faces. */
-@media (max-width:600px){
-  #home.hero .hero-image{background-position:center 36% !important}
-  #home.hero .hero-content{
-    width:calc(100% - 24px) !important;
-    max-height:calc(100dvh - 86px) !important;
-    padding-bottom:clamp(54px,6.5vh,72px) !important;
-  }
-  #home.hero .premium-name{font-size:clamp(1.95rem,8.4vw,2.85rem) !important}
-  #home.hero .hero-quote{font-size:clamp(.92rem,4.1vw,1.12rem) !important}
-  #home.hero .hero-sub{font-size:clamp(.72rem,3.3vw,.9rem) !important;max-width:94% !important}
-  #home.hero .date-script{font-size:clamp(1rem,4.7vw,1.35rem) !important}
-  #home.hero .invite-countdown{border-radius:20px !important;padding:7px 4px !important}
-  #home.hero .invite-countdown .unit{padding:5px 3px !important}
-  #home.hero .invite-countdown b{font-size:clamp(1rem,5vw,1.25rem) !important}
-  #home.hero .invite-countdown small{font-size:.42rem !important;letter-spacing:.08em !important}
-  #home.hero .hero-actions{gap:8px !important}
-  #home.hero .gold-btn,#home.hero .outline-btn{min-height:48px !important;padding:9px 7px !important;font-size:clamp(.7rem,3.2vw,.86rem) !important}
-  #love-quotes.love-quotes-page{min-height:100svh !important;padding:56px 14px !important}
-  #love-quotes .quotes-shell{min-height:calc(100svh - 112px) !important;border-radius:28px !important;padding:34px 18px !important}
-  #love-quotes .quote-rotator{min-height:210px !important}
-  #love-quotes .rotating-quote{font-size:clamp(1.45rem,7vw,2.1rem) !important}
-  #love-quotes .quote-story{font-size:.8rem !important}
-}
-
-@media (max-width:390px){
-  #home.hero .hero-content{width:calc(100% - 18px) !important;padding-bottom:52px !important}
-  #home.hero .premium-name{font-size:clamp(1.78rem,8.8vw,2.45rem) !important}
-  #home.hero .hero-quote{margin-top:9px !important}
-  #home.hero .hero-sub{margin-top:3px !important}
-  #home.hero .date-script{margin-top:8px !important}
-  #home.hero .hero-countdown{margin-top:8px !important}
-  #home.hero .hero-actions{margin-top:8px !important}
-}
-
-@media (min-width:601px){
-  #home.hero .hero-content{
-    padding-bottom:clamp(70px,8vh,92px) !important;
-  }
-  #love-quotes .quote-rotator{min-height:230px !important}
-}
-
-@media (prefers-reduced-motion:reduce){
-  #love-quotes .quote-heart{animation:none !important}
-  #love-quotes .rotating-quote{transition:none !important}
-}
-
-</style>
-
-<style id="final-wedding-responsive-layout-fix">
-/* Final responsive layout: compact fixed header + self-contained hero.
-   Existing photographs are intentionally untouched. */
-:root{--vh-header-h:64px;}
-html,body{overflow-x:hidden;max-width:100%;}
-body{padding-top:0!important;}
-.topbar{
-  height:var(--vh-header-h)!important;min-height:var(--vh-header-h)!important;
-  padding:6px clamp(10px,3.5vw,36px)!important;box-sizing:border-box!important;
-  gap:8px!important;z-index:1000!important;
-}
-.brand{font-size:clamp(17px,4.8vw,24px)!important;line-height:1!important;white-space:nowrap!important;flex:1 1 auto;min-width:0;}
-.top-actions{gap:5px!important;flex:0 0 auto;}
-.icon-btn{width:38px!important;height:38px!important;min-width:38px!important;font-size:.78rem!important;}
-
-/* Hero starts immediately below the fixed header; no hidden header-sized gap. */
-#home.hero{
-  margin-top:var(--vh-header-h)!important;
-  width:100%!important;
-  height:calc(100svh - var(--vh-header-h))!important;
-  min-height:0!important;max-height:none!important;
-  overflow:hidden!important;position:relative!important;
-  display:flex!important;align-items:flex-end!important;justify-content:center!important;
-}
-#home.hero .hero-image{
-  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
-  background-size:cover!important;background-position:center top!important;background-repeat:no-repeat!important;
-}
-#home.hero .hero-overlay{position:absolute!important;inset:0!important;}
-#home.hero .hero-content{
-  position:absolute!important;left:50%!important;bottom:max(30px,env(safe-area-inset-bottom))!important;
-  top:auto!important;transform:translateX(-50%)!important;
-  width:min(680px,calc(100% - 28px))!important;max-width:680px!important;
-  max-height:none!important;margin:0!important;padding:0!important;
-  display:flex!important;flex-direction:column!important;align-items:center!important;
-  justify-content:flex-end!important;text-align:center!important;
-  z-index:5!important;
-}
-#home.hero .eyebrow{margin:0 0 7px!important;font-size:clamp(.56rem,1.8vw,.72rem)!important;line-height:1.15!important;}
-#home.hero .premium-couple-name{margin:0!important;padding:0!important;gap:0!important;line-height:.95!important;}
-#home.hero .premium-name{font-size:clamp(1.85rem,7.4vw,3.4rem)!important;line-height:.96!important;white-space:nowrap!important;}
-#home.hero .premium-heart{font-size:clamp(1rem,3.6vw,1.55rem)!important;line-height:1!important;margin:2px 0!important;}
-#home.hero .hero-quote{margin:9px auto 0!important;max-width:620px!important;font-size:clamp(.98rem,4vw,1.35rem)!important;line-height:1.18!important;}
-#home.hero .hero-sub{margin:3px auto 0!important;max-width:610px!important;font-size:clamp(.7rem,2.8vw,.9rem)!important;line-height:1.32!important;}
-#home.hero .date-script{margin:8px 0 0!important;font-size:clamp(1.05rem,4.2vw,1.65rem)!important;line-height:1!important;}
-#home.hero .hero-countdown{width:100%!important;margin:10px 0 0!important;}
-#home.hero .invite-countdown{
-  width:min(560px,100%)!important;margin:0 auto!important;
-  display:grid!important;grid-template-columns:repeat(4,1fr)!important;
-  gap:0!important;padding:6px 3px!important;border-radius:18px!important;
-}
-#home.hero .invite-countdown .unit{min-width:0!important;padding:4px 2px!important;}
-#home.hero .invite-countdown b{font-size:clamp(.95rem,4.2vw,1.35rem)!important;line-height:1!important;}
-#home.hero .invite-countdown small{font-size:clamp(.38rem,1.3vw,.55rem)!important;margin-top:3px!important;line-height:1!important;}
-#home.hero .hero-actions{
-  width:min(600px,100%)!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
-  gap:9px!important;margin:13px auto 0!important;
-}
-#home.hero .hero-actions .gold-btn,#home.hero .hero-actions .outline-btn{
-  width:100%!important;min-width:0!important;min-height:46px!important;padding:8px 10px!important;
-  display:flex!important;align-items:center!important;justify-content:center!important;
-  white-space:nowrap!important;font-size:clamp(.68rem,2.8vw,.88rem)!important;line-height:1.1!important;
-}
-#home.hero .scroll-cue{bottom:7px!important;font-size:1.25rem!important;z-index:6!important;}
-
-/* Every normal page begins with compact, predictable spacing below the fixed header. */
-main>section:not(#home){scroll-margin-top:calc(var(--vh-header-h) + 10px)!important;}
-.section{padding-top:46px!important;padding-bottom:58px!important;}
-.section-heading{margin-top:0!important;margin-bottom:28px!important;}
-.section-heading h2{font-size:clamp(2rem,7.8vw,3.4rem)!important;line-height:1.08!important;}
-
-/* Tamil typography: bundled locally, so it works without Google Fonts/network access. */
-@font-face{font-family:"VH Tamil Sans";src:url("fonts/NotoSansTamil-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap;}
-@font-face{font-family:"VH Tamil Sans";src:url("fonts/NotoSansTamil-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap;}
-@font-face{font-family:"VH Tamil Sans";src:url("fonts/NotoSansTamil-SemiBold.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap;}
-@font-face{font-family:"VH Tamil Sans";src:url("fonts/NotoSansTamil-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap;}
-@font-face{font-family:"VH Tamil Serif";src:url("fonts/NotoSerifTamil-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap;}
-@font-face{font-family:"VH Tamil Serif";src:url("fonts/NotoSerifTamil-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap;}
-@font-face{font-family:"VH Tamil Serif";src:url("fonts/NotoSerifTamil-SemiBold.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap;}
-@font-face{font-family:"VH Tamil Serif";src:url("fonts/NotoSerifTamil-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap;}
-html[data-lang="ta"] body,html[data-lang="ta"] button,html[data-lang="ta"] input,html[data-lang="ta"] textarea,html[data-lang="ta"] select,html[data-lang="ta"] nav,html[data-lang="ta"] footer{font-family:"VH Tamil Sans",sans-serif!important;letter-spacing:0!important;}
-html[data-lang="ta"] h1,html[data-lang="ta"] h2,html[data-lang="ta"] h3,html[data-lang="ta"] h4,html[data-lang="ta"] .brand,html[data-lang="ta"] .premium-name,html[data-lang="ta"] .date-script,html[data-lang="ta"] .section-heading h2,html[data-lang="ta"] .celebration-event h3,html[data-lang="ta"] .venue-copy h2{font-family:"VH Tamil Serif","VH Tamil Sans",sans-serif!important;letter-spacing:0!important;}
-html[data-lang="ta"] .hero-quote,html[data-lang="ta"] .hero-sub,html[data-lang="ta"] .eyebrow,html[data-lang="ta"] .gold-btn,html[data-lang="ta"] .outline-btn,html[data-lang="ta"] .section-heading p,html[data-lang="ta"] .timeline p,html[data-lang="ta"] .venue-address,html[data-lang="ta"] .quote-story,html[data-lang="ta"] .quotes-kicker{font-family:"VH Tamil Sans",sans-serif!important;letter-spacing:0!important;}
-html[data-lang="ta"] #home.hero .premium-name{font-size:clamp(1.8rem,7.2vw,3.35rem)!important;line-height:1.12!important;font-weight:600!important;}
-html[data-lang="ta"] #home.hero .hero-quote{font-size:clamp(.9rem,3.7vw,1.25rem)!important;line-height:1.5!important;}
-html[data-lang="ta"] #home.hero .hero-sub{font-size:clamp(.68rem,2.8vw,.9rem)!important;line-height:1.55!important;}
-html[data-lang="ta"] #home.hero .date-script{font-size:clamp(1rem,4vw,1.55rem)!important;line-height:1.35!important;}
-html[data-lang="ta"] .section-heading h2{font-size:clamp(1.9rem,8vw,3.2rem)!important;line-height:1.25!important;}
-
-/* Quotes: compact and language-aware. */
-#love-quotes .quotes-kicker{font-size:clamp(.58rem,1.8vw,.72rem)!important;}
-#love-quotes .rotating-quote{font-size:clamp(1.35rem,5.8vw,2.5rem)!important;line-height:1.25!important;}
-html[data-lang="ta"] #love-quotes .rotating-quote{font-family:"VH Tamil Serif","VH Tamil Sans",sans-serif!important;font-size:clamp(1.2rem,5.8vw,2.3rem)!important;line-height:1.45!important;}
-
-/* Never clip the hero controls on short phones. */
-@media(max-width:600px){
-  :root{--vh-header-h:60px;}
-  .topbar{height:var(--vh-header-h)!important;min-height:var(--vh-header-h)!important;padding:5px 9px!important;}
-  .brand{font-size:clamp(16px,4.6vw,21px)!important;}
-  .top-actions{gap:4px!important;}
-  .icon-btn{width:36px!important;height:36px!important;min-width:36px!important;font-size:.72rem!important;}
-  #home.hero{margin-top:var(--vh-header-h)!important;height:calc(100svh - var(--vh-header-h))!important;}
-  #home.hero .hero-content{width:calc(100% - 22px)!important;bottom:max(24px,env(safe-area-inset-bottom))!important;}
-  #home.hero .premium-name{font-size:clamp(1.72rem,7.7vw,2.65rem)!important;}
-  #home.hero .premium-heart{font-size:1.05rem!important;}
-  #home.hero .hero-quote{font-size:clamp(.9rem,4vw,1.08rem)!important;margin-top:7px!important;}
-  #home.hero .hero-sub{font-size:clamp(.67rem,2.8vw,.82rem)!important;line-height:1.35!important;}
-  #home.hero .date-script{font-size:clamp(1rem,4.4vw,1.3rem)!important;margin-top:7px!important;}
-  #home.hero .hero-countdown{margin-top:8px!important;}
-  #home.hero .invite-countdown{padding:5px 2px!important;border-radius:16px!important;}
-  #home.hero .invite-countdown b{font-size:clamp(.9rem,4.2vw,1.15rem)!important;}
-  #home.hero .invite-countdown small{font-size:6px!important;margin-top:2px!important;}
-  #home.hero .hero-actions{gap:7px!important;margin-top:11px!important;}
-  #home.hero .hero-actions .gold-btn,#home.hero .hero-actions .outline-btn{min-height:45px!important;padding:7px 5px!important;font-size:clamp(.66rem,2.9vw,.8rem)!important;}
-  #home.hero .scroll-cue{bottom:4px!important;font-size:1.15rem!important;}
-  .section{padding:42px 18px 54px!important;}
-}
-@media(max-width:380px){
-  .brand{font-size:15px!important;} .icon-btn{width:34px!important;height:34px!important;min-width:34px!important;}
-  #home.hero .hero-content{width:calc(100% - 16px)!important;bottom:max(20px,env(safe-area-inset-bottom))!important;}
-  #home.hero .premium-name{font-size:1.58rem!important;}
-  #home.hero .hero-quote{font-size:.82rem!important;}
-  #home.hero .hero-sub{font-size:.63rem!important;}
-  #home.hero .date-script{font-size:.92rem!important;}
-  #home.hero .hero-actions .gold-btn,#home.hero .hero-actions .outline-btn{font-size:.61rem!important;min-height:42px!important;}
-}
-@media(max-width:600px) and (max-height:700px){
-  #home.hero .hero-content{bottom:max(16px,env(safe-area-inset-bottom))!important;}
-  #home.hero .eyebrow{margin-bottom:4px!important;}
-  #home.hero .premium-name{font-size:1.48rem!important;}
-  #home.hero .hero-quote{font-size:.78rem!important;margin-top:5px!important;}
-  #home.hero .hero-sub{font-size:.6rem!important;line-height:1.25!important;}
-  #home.hero .date-script{font-size:.86rem!important;margin-top:5px!important;}
-  #home.hero .hero-countdown{margin-top:5px!important;}
-  #home.hero .hero-actions{margin-top:7px!important;}
-  #home.hero .hero-actions .gold-btn,#home.hero .hero-actions .outline-btn{min-height:40px!important;}
-}
-@media(prefers-reduced-motion:reduce){#home.hero .premium-heart,#welcome #openInvitation::before,#welcome #openInvitation::after{animation:none!important;}}
 </style>
 </head>
 <body class="wedding-cover-lock">
@@ -8101,18 +7193,16 @@ html[data-lang="ta"] #love-quotes .rotating-quote{font-family:"VH Tamil Serif","
          fetchpriority="high">
   </div>
 
-  <!-- Android/iOS-safe native link: works even if a script is delayed or unavailable. -->
-  <a id="openInvitation"
-     class="reference-landing__seal"
-     href="#home"
-     role="button"
-     aria-label="Open wedding invitation"
-     onclick="return window.openWeddingInvitation ? window.openWeddingInvitation(event) : true;">
+  <!-- Transparent interactive seal aligned with the V♥H seal in the reference artwork. -->
+  <button id="openInvitation"
+          class="reference-landing__seal"
+          type="button"
+          aria-label="Open wedding invitation">
     <span class="reference-landing__halo" aria-hidden="true"></span>
     <span class="reference-landing__orbit reference-landing__orbit--one" aria-hidden="true"></span>
     <span class="reference-landing__orbit reference-landing__orbit--two" aria-hidden="true"></span>
     <span class="sr-only">Open wedding invitation</span>
-  </a>
+  </button>
 
   <div class="landing-atmosphere" aria-hidden="true"></div>
   <div class="landing-particles" aria-hidden="true"></div>
@@ -8124,7 +7214,7 @@ html[data-lang="ta"] #love-quotes .rotating-quote{font-family:"VH Tamil Serif","
 <header class="topbar">
 <a class="brand" href="#home"><span class="brand-name" data-key="brandGroom">Vijay</span> <span class="brand-heart" aria-hidden="true">♥</span> <span class="brand-name" data-key="brandBride">Hemalatha</span></a>
 <nav>
-<a href="#invite" data-key="navInvitation">Invitation</a><a href="#journey" data-key="navJourney">Journey</a><a href="#events" data-key="navEvents">Events</a><a href="#venue" data-key="navVenue">Venue</a><a href="#gallery" data-key="navGallery">Gallery</a><a href="#love-quotes" data-key="navQuotes">Quotes</a>
+<a href="#invite" data-key="navInvitation">Invitation</a><a href="#journey" data-key="navJourney">Journey</a><a href="#events" data-key="navEvents">Events</a><a href="#venue" data-key="navVenue">Venue</a><a href="#gallery" data-key="navGallery">Gallery</a><a href="#rsvp" data-key="navRsvp">RSVP</a>
 </nav>
 <div class="top-actions">
 <button id="langToggle" class="icon-btn" aria-label="Switch language">தமிழ்</button>
@@ -8160,9 +7250,8 @@ html[data-lang="ta"] #love-quotes .rotating-quote{font-family:"VH Tamil Serif","
 </div>
 
 <div class="hero-actions"><a class="gold-btn" href="#invite" data-key="viewInvitation">View Invitation</a><button id="calendarBtn" class="outline-btn" data-key="addCalendar">＋ Add to Calendar</button></div>
-</div><a class="scroll-cue" href="#invite" aria-label="Scroll to wedding invitation">↓</a>
+</div><a class="scroll-cue" href="#invite">↓</a>
 </section>
-
 
 <section id="invite" class="section">
   <div class="section-heading reveal">
@@ -8177,7 +7266,7 @@ html[data-lang="ta"] #love-quotes .rotating-quote{font-family:"VH Tamil Serif","
            src="assets/images/wedding-invitation-english.jpeg"
            alt="English wedding invitation"
            width="1047" height="1503"
-           loading="eager" fetchpriority="high" decoding="async">
+           loading="lazy" decoding="async">
     </div>
   </div>
 
@@ -8253,47 +7342,21 @@ Kodungaiyur, Chennai – 600118</p><p class="muted" data-key="venueNear">Near Mu
 <div class="gallery-placeholder reveal"><span>♥</span><p data-key="galleryMore">More memories coming soon</p></div>
 </div></section>
 
-
-
-<section id="love-quotes" class="love-quotes-page" aria-label="Marriage and Love Quotes">
-  <div class="quotes-shell">
-    <p class="quotes-kicker" data-key="quotesEyebrow">MARRIAGE • LOVE • LAUGHTER</p>
-    <div class="quote-heart" aria-hidden="true">♥</div>
-    <div class="quote-category" id="quoteCategory">LOVE</div>
-    <div class="quote-rotator" aria-live="polite" aria-atomic="true">
-      <p id="rotatingQuote" class="rotating-quote"></p>
-    </div>
-    <p class="quote-story" data-key="quotesStory">A beautiful journey, growing closer, laughing together, and choosing each other every day.</p>
-    <div class="quote-dots" id="quoteDots" aria-hidden="true"></div>
-  </div>
+<section id="rsvp" class="section rsvp">
+<div class="section-heading reveal"><p class="eyebrow" data-key="rsvpEyebrow">WE WOULD LOVE TO HAVE YOU</p><h2 data-key="rsvpTitle">RSVP</h2><p data-key="rsvpDescription">Please share your attendance and wishes with us.</p></div>
+<form id="rsvpForm" class="rsvp-form">
+<label><span data-key="rsvpNameLabel">Your Name</span><input name="name" required></label>
+<label><span data-key="rsvpGuestsLabel">Number of Guests</span><input name="guests" type="number" min="1" max="20" required></label>
+<label class="full"><span data-key="rsvpWishesLabel">Your Wishes</span><textarea name="wishes" rows="5"></textarea></label>
+<button class="gold-btn" type="submit" data-key="rsvpSubmit">Send RSVP</button>
+</form>
 </section>
-
 </main>
 
 <footer><p data-key="footerThanks">Thank you for celebrating our special day with us.</p></footer>
 
 <div id="lightbox" class="lightbox"><button id="closeLightbox">×</button><img id="lightboxImg" alt=""></div>
 <audio id="bgMusic" loop preload="metadata" src="assets/music/HemalathaLove.mp3"></audio>
-<script>
-/* Native-first landing opener: intentionally tiny and dependency-free for Android Chrome. */
-window.openWeddingInvitation = function (event) {
-  if (window.__weddingOpened) return false;
-  window.__weddingOpened = true;
-  if (event) {
-    try { event.preventDefault(); } catch (_) {}
-    try { event.stopPropagation(); } catch (_) {}
-  }
-  var cover = document.getElementById('welcome');
-  if (cover) cover.remove();
-  document.documentElement.classList.remove('wedding-cover-html-lock');
-  document.body.classList.remove('wedding-cover-lock');
-  document.documentElement.classList.remove('cover-locked');
-  document.body.classList.remove('no-scroll');
-  try { history.replaceState(null, '', '#home'); } catch (_) {}
-  try { window.scrollTo(0, 0); } catch (_) {}
-  return false;
-};
-</script>
 <script src="js/config.js"></script><script src="js/script.js"></script><script src="js/countdown.js"></script>
 <script>
 
@@ -8332,6 +7395,23 @@ document.addEventListener("DOMContentLoaded", function () {
   seal.addEventListener("keydown", function (e) {
     if ((e.key === "Enter" || e.key === " ") && !e.defaultPrevented) {
       e.preventDefault();
+      seal.click();
+    }
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const seal = document.getElementById("openInvitation");
+  if (!seal) return;
+  seal.setAttribute("role", "button");
+  seal.setAttribute("aria-label", "Open wedding invitation");
+  if (!seal.hasAttribute("tabindex")) seal.setAttribute("tabindex", "0");
+  seal.addEventListener("keydown", function (event) {
+    if ((event.key === "Enter" || event.key === " ") && !event.defaultPrevented) {
+      event.preventDefault();
       seal.click();
     }
   });

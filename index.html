@@ -7011,6 +7011,304 @@ html[data-lang="ta"] #home.hero .date-script{font-size:clamp(1.08rem,3.8vw,1.55r
 html[data-lang="ta"] .section-heading h2{font-size:clamp(1.95rem,8.5vw,3rem)!important;line-height:1.3!important;}
 @media(max-width:600px){.topbar{height:76px!important;min-height:76px!important;padding:8px 3.5vw!important;padding-top:8px!important;padding-bottom:8px!important;}.brand{font-size:22px!important;}.icon-btn{width:42px!important;height:42px!important;min-width:42px!important;}.top-actions{gap:5px!important;}#home.hero .hero-content{padding-top:18px!important;}}
 </style>
+
+<style id="final-android-chrome-responsive-fix">
+/*
+  FINAL ANDROID CHROME / REALME 8 5G RESPONSIVE FIX
+  - Keep desktop untouched.
+  - Make mobile hero fill the complete visible area.
+  - Preserve the top of hero.jpg so heads are never hidden by the crop.
+  - Remove JS-dependent "blank/loading" reveal states.
+  - Make the invitation artwork load immediately.
+  - Keep anchor scrolling clear of the fixed header.
+*/
+
+/* Never let the page depend on IntersectionObserver for visibility. */
+.reveal,
+.reveal.visible{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+}
+
+/* The next section must never be clipped by a fixed/absolute ancestor. */
+main,
+main > section{
+  overflow:visible;
+}
+
+#invite,
+#journey,
+#events,
+#venue,
+#gallery,
+#rsvp{
+  scroll-margin-top:calc(var(--vh-header-h, 76px) + 12px);
+}
+
+@media (max-width:850px){
+  html{
+    overflow-x:hidden!important;
+    -webkit-text-size-adjust:100%;
+  }
+  body{
+    width:100%;
+    min-width:0;
+    overflow-x:hidden!important;
+  }
+
+  /* Header dimensions are used by the hero so the artwork begins below it. */
+  :root{
+    --android-header-h:82px;
+  }
+
+  .topbar{
+    width:100%!important;
+    max-width:100vw!important;
+    box-sizing:border-box!important;
+  }
+
+  /*
+    Start the hero below the fixed header instead of placing the header on top
+    of the photograph. This prevents the top of the supplied portrait image
+    from being hidden.
+  */
+  #home.hero{
+    margin-top:var(--android-header-h)!important;
+    height:calc(100dvh - var(--android-header-h))!important;
+    min-height:calc(100dvh - var(--android-header-h))!important;
+    max-height:none!important;
+    overflow:hidden!important;
+    position:relative!important;
+  }
+
+  /* Fallback for older mobile engines that do not support dynamic viewport units. */
+  @supports not (height:100dvh){
+    #home.hero{
+      height:calc(100svh - var(--android-header-h))!important;
+      min-height:calc(100svh - var(--android-header-h))!important;
+    }
+  }
+
+  #home.hero .hero-image{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    background-size:cover!important;
+    background-position:center top!important;
+    background-repeat:no-repeat!important;
+    background-color:#2b0815!important;
+  }
+
+  #home.hero .hero-content{
+    opacity:1!important;
+    visibility:visible!important;
+    transform:none!important;
+    z-index:3!important;
+    max-height:none!important;
+    overflow:visible!important;
+  }
+
+  #home.hero .scroll-cue{
+    z-index:5!important;
+    bottom:max(18px,env(safe-area-inset-bottom,0px))!important;
+    min-width:44px!important;
+    min-height:44px!important;
+    display:grid!important;
+    place-items:center!important;
+    -webkit-tap-highlight-color:transparent;
+    touch-action:manipulation;
+  }
+
+  /* Ensure the first invitation section is painted immediately after scrolling. */
+  #invite{
+    position:relative!important;
+    z-index:1!important;
+    min-height:0!important;
+    overflow:visible!important;
+  }
+
+  #invite .section-heading,
+  #invite .language-invitation-art{
+    opacity:1!important;
+    visibility:visible!important;
+    transform:none!important;
+  }
+
+  #invite .language-invitation-art{
+    display:block!important;
+    width:min(100%,760px)!important;
+  }
+
+  #invite #languageInvitationImage{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:1px!important;
+    object-fit:contain!important;
+  }
+}
+
+@media (max-width:600px){
+  :root{
+    --android-header-h:76px;
+  }
+
+  .topbar{
+    height:76px!important;
+    min-height:76px!important;
+    padding:8px max(12px,3vw)!important;
+    gap:6px!important;
+  }
+
+  .brand{
+    font-size:clamp(17px,5.5vw,22px)!important;
+    flex:1 1 auto!important;
+    min-width:0!important;
+    overflow:hidden!important;
+    text-overflow:clip!important;
+    white-space:nowrap!important;
+  }
+
+  .top-actions{
+    flex:0 0 auto!important;
+    gap:4px!important;
+  }
+
+  .icon-btn{
+    width:42px!important;
+    height:42px!important;
+    min-width:42px!important;
+    min-height:42px!important;
+    padding:0!important;
+    flex:0 0 42px!important;
+  }
+
+  #home.hero{
+    margin-top:76px!important;
+    height:calc(100dvh - 76px)!important;
+    min-height:calc(100dvh - 76px)!important;
+  }
+
+  #home.hero .hero-content{
+    width:min(94vw,520px)!important;
+    padding:18px 10px 64px!important;
+  }
+
+  #home.hero .premium-couple-name{
+    max-width:100%!important;
+    flex-wrap:wrap!important;
+    justify-content:center!important;
+  }
+
+  #home.hero .premium-name{
+    font-size:clamp(1.75rem,8.2vw,2.7rem)!important;
+  }
+
+  #home.hero .hero-quote{
+    font-size:clamp(.9rem,3.8vw,1.15rem)!important;
+  }
+
+  #home.hero .hero-sub{
+    font-size:clamp(.76rem,3.1vw,.96rem)!important;
+  }
+
+  #home.hero .date-script{
+    margin:10px 0!important;
+    font-size:clamp(.98rem,4vw,1.35rem)!important;
+  }
+
+  #home.hero .invite-countdown{
+    margin:10px 0 14px!important;
+  }
+
+  #home.hero .invite-countdown .unit{
+    min-width:58px!important;
+    padding:7px 6px!important;
+  }
+
+  #home.hero .invite-countdown b{
+    font-size:1rem!important;
+  }
+
+  #home.hero .hero-actions{
+    gap:7px!important;
+  }
+
+  #home.hero .gold-btn,
+  #home.hero .outline-btn{
+    padding:10px 15px!important;
+    font-size:.78rem!important;
+  }
+
+  #home.hero .scroll-cue{
+    bottom:max(12px,env(safe-area-inset-bottom,0px))!important;
+  }
+
+  #invite,
+  #journey,
+  #events,
+  #venue,
+  #gallery,
+  #rsvp{
+    scroll-margin-top:88px!important;
+  }
+
+  #invite{
+    padding-top:28px!important;
+  }
+
+  #invite .language-invitation-art{
+    margin-top:12px!important;
+  }
+}
+
+@media (max-width:380px){
+  /* 360 CSS-pixel phones such as the Realme 8 class of viewport. */
+  .topbar{
+    padding-left:10px!important;
+    padding-right:10px!important;
+  }
+
+  .brand{
+    font-size:17px!important;
+  }
+
+  .top-actions{
+    gap:3px!important;
+  }
+
+  .icon-btn{
+    width:39px!important;
+    height:39px!important;
+    min-width:39px!important;
+    min-height:39px!important;
+    flex-basis:39px!important;
+    font-size:.78rem!important;
+  }
+
+  #home.hero .hero-content{
+    padding-left:7px!important;
+    padding-right:7px!important;
+  }
+
+  #home.hero .premium-name{
+    font-size:clamp(1.58rem,8vw,2.25rem)!important;
+  }
+}
+
+/* Devices that request reduced motion still receive the complete page immediately. */
+@media (prefers-reduced-motion:reduce){
+  .reveal,
+  .reveal.visible{
+    opacity:1!important;
+    transform:none!important;
+    transition:none!important;
+  }
+}
+</style>
+
 </head>
 <body class="wedding-cover-lock">
 
@@ -7104,7 +7402,7 @@ html[data-lang="ta"] .section-heading h2{font-size:clamp(1.95rem,8.5vw,3rem)!imp
            src="assets/images/wedding-invitation-english.jpeg"
            alt="English wedding invitation"
            width="1047" height="1503"
-           loading="lazy" decoding="async">
+           loading="eager" fetchpriority="high" decoding="async">
     </div>
   </div>
 

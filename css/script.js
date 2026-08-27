@@ -338,6 +338,32 @@ $("#calendarBtn")?.addEventListener("click", () => {
   });
 })();
 
+/* Hero viewport boundary: keep the next section completely out of the initial screen.
+   It becomes visible as soon as the user scrolls or taps the down arrow. */
+(function initHeroBoundary() {
+  const hero = document.getElementById("home");
+  const invite = document.getElementById("invite");
+  if (!hero || !invite) return;
+
+  const update = () => {
+    const passedHero = window.scrollY > 8 || window.location.hash === "#invite";
+    document.body.classList.toggle("hero-at-top", !passedHero);
+  };
+
+  document.body.classList.add("hero-at-top");
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("hashchange", update, { passive: true });
+
+  document.querySelectorAll('a[href="#invite"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      // Allow the browser's native anchor scroll to happen immediately.
+      document.body.classList.remove("hero-at-top");
+    }, { passive: true });
+  });
+
+  update();
+})();
+
 /* Premium landing atmosphere — lightweight, CSS-driven particles. */
 (function initLandingAtmosphere() {
   const cover = document.getElementById("welcome");

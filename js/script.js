@@ -95,32 +95,28 @@ if (document.readyState === "loading") {
 /* Love & Marriage quote rotator */
 const LOVE_QUOTES = {
   en: [
-    { category:"LOVE", text:"The best part of forever is having someone to share every little moment with." },
-    { category:"FOREVER", text:"May our love grow deeper, kinder, and sweeter with every passing year." },
-    { category:"MARRIAGE", text:"Marriage is two hearts building one beautiful life, one day at a time." },
-    { category:"CUTE", text:"Home is wherever we are together — especially when there is good food." },
-    { category:"FUNNY", text:"Marriage is sharing everything… including the remote, the snacks, and the last word." },
-    { category:"LAUGHTER", text:"A happy marriage is love, laughter, patience, and knowing when to say, “You are right.”" },
-    { category:"LOVE", text:"Every ordinary day becomes special when it is spent with the right person." },
-    { category:"MARRIAGE", text:"Two hearts, one team, countless memories waiting to be made." },
-    { category:"FUNNY", text:"Behind every happy couple is one person asking, “What should we eat?”" },
-    { category:"FOREVER", text:"Here’s to growing older together while keeping the laughter young." },
-    { category:"CUTE", text:"You are my favourite person to annoy for the rest of my life." },
-    { category:"LOVE", text:"The sweetest love stories are written together, one beautiful day at a time." }
+    { category:"LOVE", text:"Love turns ordinary moments into memories we treasure forever." },
+    { category:"FOREVER", text:"May our hearts grow closer, kinder, and happier with every year we share." },
+    { category:"MARRIAGE", text:"Marriage is two hearts choosing the same beautiful journey, every single day." },
+    { category:"ELEGANCE", text:"A beautiful marriage is built with love, respect, laughter, and little acts of kindness." },
+    { category:"FUNNY", text:"Marriage is teamwork — especially when deciding what to eat tonight." },
+    { category:"LAUGHTER", text:"The secret to a happy marriage: love deeply, laugh often, and occasionally share the last piece of dessert." },
+    { category:"LOVE", text:"Where there is love, even the simplest day feels like a celebration." },
+    { category:"FOREVER", text:"Two souls, one home, countless stories waiting to be written together." },
+    { category:"FUNNY", text:"A perfect match is someone who steals your heart… and still asks what you want for dinner." },
+    { category:"LOVE", text:"Here is to a lifetime of holding hands, sharing dreams, and growing together." }
   ],
   ta: [
-    { category:"அன்பு", text:"வாழ்க்கையின் ஒவ்வொரு சிறிய தருணத்தையும் பகிர்ந்து கொள்ளும் துணை இருப்பதே என்றும் இனிமை." },
-    { category:"என்றும்", text:"ஒவ்வொரு ஆண்டும் நமது அன்பு இன்னும் ஆழமாகவும் இனிமையாகவும் வளரட்டும்." },
-    { category:"திருமணம்", text:"திருமணம் என்பது இரண்டு இதயங்கள் இணைந்து, நாளுக்கு நாள் ஒரு அழகான வாழ்க்கையை உருவாக்குவது." },
-    { category:"அழகு", text:"நாம் ஒன்றாக இருக்கும் இடமெல்லாம் வீடு — குறிப்பாக நல்ல உணவு இருந்தால்!" },
-    { category:"நகைச்சுவை", text:"திருமணம் என்பது எல்லாவற்றையும் பகிர்வது… ரிமோட், ஸ்நாக்ஸ், கடைசி வார்த்தை கூட!" },
-    { category:"சிரிப்பு", text:"இனிய திருமண வாழ்க்கைக்கு அன்பு, சிரிப்பு, பொறுமை… சரியான நேரத்தில் “நீ சொல்வது சரி” என்பதும் தேவை." },
-    { category:"அன்பு", text:"சரியான துணையுடன் கழிக்கும் ஒவ்வொரு சாதாரண நாளும் ஒரு சிறப்பு நாளாக மாறும்." },
-    { category:"திருமணம்", text:"இரண்டு இதயங்கள், ஒரு குழு, உருவாக காத்திருக்கும் எண்ணற்ற நினைவுகள்." },
-    { category:"நகைச்சுவை", text:"மகிழ்ச்சியான தம்பதிகளுக்குப் பின்னால் எப்போதும் ஒரு கேள்வி இருக்கும் — “என்ன சாப்பிடலாம்?”" },
-    { category:"என்றும்", text:"ஒன்றாக வயதாகலாம்; ஆனால் நமது சிரிப்பு என்றும் இளமையாக இருக்கட்டும்." },
-    { category:"அழகு", text:"வாழ்நாள் முழுவதும் கிண்டல் செய்ய எனக்கு மிகவும் பிடித்த மனிதர் நீ தான்!" },
-    { category:"அன்பு", text:"இனிமையான காதல் கதைகள் இருவரும் சேர்ந்து, ஒவ்வொரு அழகான நாளிலும் எழுதப்படுகின்றன." }
+    { category:"அன்பு", text:"அன்பு இருக்கும் இடத்தில் சாதாரண தருணங்களும் வாழ்நாள் நினைவுகளாக மாறுகின்றன." },
+    { category:"என்றும்", text:"ஒவ்வொரு ஆண்டும் நம் இதயங்கள் இன்னும் நெருக்கமாகவும், இனிமையாகவும் மலரட்டும்." },
+    { category:"திருமணம்", text:"திருமணம் என்பது ஒவ்வொரு நாளும் ஒருவரை ஒருவர் தேர்ந்தெடுத்து, ஒரே அழகான பயணத்தை தொடர்வது." },
+    { category:"இனிமை", text:"அன்பு, மரியாதை, சிரிப்பு, அக்கறை — இவையே அழகான இல்லறத்தின் இனிய அடித்தளம்." },
+    { category:"நகைச்சுவை", text:"திருமண வாழ்க்கை என்பது ஒரு குழு வேலை… குறிப்பாக இன்று என்ன சாப்பிடலாம் என்று முடிவு செய்வதில்!" },
+    { category:"சிரிப்பு", text:"இனிய இல்லறத்தின் ரகசியம் — ஆழமான அன்பு, நிறைய சிரிப்பு, கொஞ்சம் பொறுமை, கடைசி இனிப்பையும் பகிர்ந்து கொள்வது." },
+    { category:"அன்பு", text:"அன்புடன் இணைந்த இரு மனங்களுக்கு, சாதாரண நாளும் ஒரு சிறப்பு கொண்டாட்டமே." },
+    { category:"என்றும்", text:"இரு மனங்கள், ஒரு வீடு, எண்ணற்ற கனவுகள் — சேர்ந்து எழுதும் அழகான வாழ்க்கைக் கதை." },
+    { category:"நகைச்சுவை", text:"சரியான துணை என்றால், இதயத்தை திருடிவிட்டு… இரவு உணவுக்கு என்ன வேண்டும் என்றும் கேட்பவர்!" },
+    { category:"காதல்", text:"கைகளைப் பற்றிக் கொண்டு, கனவுகளைப் பகிர்ந்து, வாழ்நாள் முழுவதும் ஒன்றாக வளர்வோம்." }
   ]
 };
 

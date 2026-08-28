@@ -7908,6 +7908,64 @@ html[data-lang="ta"] #quotes .dynamic-quote{
 }
 </style>
 
+
+<style id="final-thank-you-20260828">
+/* Premium closing / thank-you section. Images are not used or modified. */
+.thank-you{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  min-height:clamp(360px,52vh,560px);
+  padding:clamp(58px,9vh,96px) 24px clamp(70px,10vh,105px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    radial-gradient(circle at 50% 35%,rgba(216,177,67,.12),transparent 28%),
+    linear-gradient(145deg,#4a0d23 0%,#300715 55%,#21050f 100%);
+  color:#fff8ed;
+}
+.thank-you::before,.thank-you::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  width:min(760px,88vw);
+  height:1px;
+  transform:translateX(-50%);
+  background:linear-gradient(90deg,transparent,rgba(216,177,67,.65),transparent);
+  opacity:.65;
+  z-index:-1;
+}
+.thank-you::before{top:30px}.thank-you::after{bottom:30px}
+.thank-you__ornament{display:flex;align-items:center;gap:22px;color:#d8b143;font-size:.9rem;margin-bottom:15px;opacity:.9}
+.thank-you__ornament span:nth-child(2){font-size:1.15rem}
+.thank-you__eyebrow{margin:0 0 8px;color:#e1bd68;font:600 clamp(.58rem,1.5vw,.72rem)/1.2 Poppins,sans-serif;letter-spacing:.25em;text-transform:uppercase}
+.thank-you h2{margin:0;font:600 clamp(2.2rem,6vw,4.4rem)/1.05 "Playfair Display",serif;color:#fff8ed}
+.thank-you__hearts{display:flex;justify-content:center;gap:12px;margin:18px 0 15px;font-size:1.25rem}
+.thank-you__hearts span{display:inline-flex;align-items:center;justify-content:center;filter:drop-shadow(0 5px 12px rgba(0,0,0,.2))}
+.thank-you__message{width:min(760px,92vw);margin:0 auto;color:#f6e9df;font:400 clamp(.86rem,2vw,1.08rem)/1.8 Poppins,sans-serif}
+.thank-you__rule{display:flex;align-items:center;justify-content:center;gap:12px;width:min(310px,62vw);margin-top:28px;color:#d8b143}
+.thank-you__rule span{height:1px;flex:1;background:rgba(216,177,67,.48)}
+.thank-you__rule i{font-style:normal;font-size:.75rem}
+html[data-lang="ta"] .thank-you__eyebrow,
+html[data-lang="ta"] .thank-you h2,
+html[data-lang="ta"] .thank-you__message{font-family:"Noto Serif Tamil","Noto Sans Tamil",serif}
+html[data-lang="ta"] .thank-you__eyebrow{letter-spacing:.08em}
+@media(max-width:600px){
+  .thank-you{min-height:390px;padding:58px 20px 72px}
+  .thank-you__ornament{margin-bottom:12px}
+  .thank-you h2{font-size:2.15rem}
+  .thank-you__message{font-size:.82rem;line-height:1.85}
+  .thank-you__hearts{margin:15px 0 12px}
+}
+@media(max-width:390px){
+  .thank-you{min-height:360px;padding-left:17px;padding-right:17px}
+  .thank-you__message{font-size:.76rem;line-height:1.8}
+}
+@media(prefers-reduced-motion:reduce){.thank-you *{animation:none!important;transition:none!important}}
+</style>
 </head>
 <body class="wedding-cover-lock">
 
@@ -8089,7 +8147,14 @@ Kodungaiyur, Chennai – 600118</p><p class="muted" data-key="venueNear">Near Mu
 
 </main>
 
-<footer><p data-key="footerThanks">Thank you for celebrating our special day with us.</p></footer>
+<footer class="thank-you" aria-labelledby="thankYouTitle">
+  <div class="thank-you__ornament" aria-hidden="true"><span>✦</span><span>♥</span><span>✦</span></div>
+  <p class="thank-you__eyebrow" data-key="footerEyebrow">WITH LOVE & GRATITUDE</p>
+  <h2 id="thankYouTitle" data-key="footerTitle">Thank You</h2>
+  <div class="thank-you__hearts" aria-hidden="true"><span>❤️</span><span>🙏</span></div>
+  <p class="thank-you__message" data-key="footerThanks">With hearts full of love and gratitude, thank you for being a part of our beautiful journey. Your presence, blessings and warm wishes mean the world to us. ❤️🙏</p>
+  <div class="thank-you__rule" aria-hidden="true"><span></span><i>♥</i><span></span></div>
+</footer>
 
 <div id="lightbox" class="lightbox"><button id="closeLightbox">×</button><img id="lightboxImg" alt=""></div>
 <audio id="bgMusic" loop preload="metadata" src="assets/music/HemalathaLove.mp3"></audio>

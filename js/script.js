@@ -38,7 +38,7 @@ const LANGUAGE_TEXT = {
     inviteEyebrow:"WITH OUR FAMILIES",inviteTitle:"Wedding Invitation",inviteDescription:"Together with our families, we warmly invite you to celebrate our wedding.",
     journeyTitle:"Our Journey Begins",journeyDescription:"With the blessings of our parents and elders, two families come together for a lifetime of togetherness.",childhood:"Our Memories",journeyStep1Title:"Two Families",journeyStep1Text:"A beautiful union blessed by our families.",journeyStep2Title:"Engagement",journeyStep2Text:"A joyful celebration that brought our families closer.",journeyStep3Title:"A Promise for a Lifetime",journeyStep3Text:"With love, blessings and joy, we begin our new chapter.",journeyStep4Title:"Forever Begins",journeyStep4Text:"07 September 2026",
     eventsEyebrow:"SAVE THE DATE",eventsTitle:"Wedding Celebrations",eventsDescription:"Two beautiful moments, one unforgettable beginning.",receptionDate:"06 SEP 2026",receptionTitle:"Reception",receptionTime:"6:30 PM onwards",weddingDate:"07 SEP 2026",weddingTitle:"Wedding Ceremony",weddingTime:"6:00 AM – 7:30 AM",celebrationVenue:"CELEBRATION VENUE",venueName:"Ramaswamy Mahal / S.R. Sami Party Hall",directions:"📍 Get Directions",celebrationNote:"With the love and blessings of our families, we warmly invite you to celebrate with us.",
-    venueEyebrow:"JOIN US",venueTitle:"The Venue",venueAddress:"8, North Avenue, Muthamizh Nagar, Kodungaiyur, Chennai – 600118",venueNear:"Near Muthamizh Nagar Church",openMaps:"Open in Google Maps",galleryEyebrow:"MOMENTS TO TREASURE",galleryMore:"More memories coming soon",quotesEyebrow:"WORDS FOR YOUR JOURNEY",quotesTitle:"A Few Beautiful Words",quotesDescription:"Thoughts to celebrate togetherness, laughter and a lifetime of memories.",rsvpEyebrow:"WE WOULD LOVE TO HAVE YOU",rsvpTitle:"RSVP",rsvpDescription:"Please share your attendance and wishes with us.",rsvpNameLabel:"Your Name",rsvpGuestsLabel:"Number of Guests",rsvpWishesLabel:"Your Wishes",rsvpSubmit:"Send RSVP",footerThanks:"Thank you for celebrating our special day with us."
+    venueEyebrow:"JOIN US",venueTitle:"The Venue",venueAddress:"8, North Avenue, Muthamizh Nagar, Kodungaiyur, Chennai – 600118",venueNear:"Near Muthamizh Nagar Church",openMaps:"Open in Google Maps",galleryEyebrow:"MOMENTS TO TREASURE",galleryMore:"More memories coming soon",footerEyebrow:"WITH LOVE & GRATITUDE",footerTitle:"Thank You",quotesEyebrow:"WORDS FOR YOUR JOURNEY",quotesTitle:"A Few Beautiful Words",quotesDescription:"Thoughts to celebrate togetherness, laughter and a lifetime of memories.",rsvpEyebrow:"WE WOULD LOVE TO HAVE YOU",rsvpTitle:"RSVP",rsvpDescription:"Please share your attendance and wishes with us.",rsvpNameLabel:"Your Name",rsvpGuestsLabel:"Number of Guests",rsvpWishesLabel:"Your Wishes",rsvpSubmit:"Send RSVP",footerThanks:"With hearts full of love and gratitude, thank you for being a part of our beautiful journey. Your presence, blessings and warm wishes mean the world to us. ❤️🙏"
   },
   ta: {
     brandGroom:"விஜய்",brandBride:"ஹேமலதா",navInvitation:"அழைப்பிதழ்",navJourney:"நமது பயணம்",navEvents:"நிகழ்வுகள்",navVenue:"திருமண இடம்",navGallery:"நினைவுகள்",navRsvp:"வருகை உறுதி",
@@ -46,7 +46,7 @@ const LANGUAGE_TEXT = {
     inviteEyebrow:"எங்கள் குடும்பங்களுடன்",inviteTitle:"திருமண அழைப்பிதழ்",inviteDescription:"எங்கள் குடும்பங்களுடன் இணைந்து, எங்கள் திருமண விழாவை கொண்டாட உங்களை அன்புடன் அழைக்கிறோம்.",
     journeyTitle:"எங்கள் பயணம் தொடங்குகிறது",journeyDescription:"பெற்றோர் மற்றும் பெரியோர்களின் ஆசீர்வாதத்துடன், இரண்டு குடும்பங்கள் வாழ்நாள் உறவாக ஒன்றிணைகின்றன.",childhood:"நமது நினைவுகள்",journeyStep1Title:"இரண்டு குடும்பங்கள்",journeyStep1Text:"எங்கள் குடும்பங்களின் ஆசீர்வாதத்துடன் ஒரு அழகான இணைவு.",journeyStep2Title:"நிச்சயதார்த்தம்",journeyStep2Text:"எங்கள் குடும்பங்களை இன்னும் நெருக்கமாக இணைத்த மகிழ்ச்சியான விழா.",journeyStep3Title:"வாழ்நாள் வாக்குறுதி",journeyStep3Text:"அன்பும், ஆசீர்வாதமும், மகிழ்ச்சியுடனும் எங்கள் புதிய அத்தியாயத்தை தொடங்குகிறோம்.",journeyStep4Title:"என்றென்றும் தொடங்குகிறது",journeyStep4Text:"07 செப்டம்பர் 2026",
     eventsEyebrow:"தேதியை நினைவில் கொள்ளுங்கள்",eventsTitle:"திருமண விழாக்கள்",eventsDescription:"இரண்டு அழகான தருணங்கள், மறக்க முடியாத ஒரு தொடக்கம்.",receptionDate:"06 செப் 2026",receptionTitle:"வரவேற்பு விழா",receptionTime:"மாலை 6:30 மணி முதல்",weddingDate:"07 செப் 2026",weddingTitle:"திருமண விழா",weddingTime:"காலை 6:00 – 7:30 மணி",celebrationVenue:"விழா நடைபெறும் இடம்",venueName:"ராமசாமி மஹால் / எஸ்.ஆர். சாமி பார்ட்டி ஹால்",directions:"📍 வழிகாட்டியைப் பார்க்கவும்",celebrationNote:"எங்கள் குடும்பங்களின் அன்பும் ஆசீர்வாதமும் நிறைந்த இந்த விழாவை எங்களுடன் இணைந்து கொண்டாட உங்களை அன்புடன் அழைக்கிறோம்.",
-    venueEyebrow:"எங்களுடன் இணைந்திடுங்கள்",venueTitle:"திருமண இடம்",venueAddress:"8, நார்த் அவென்யூ, முத்தமிழ் நகர், கொடுங்கையூர், சென்னை – 600118",venueNear:"முத்தமிழ் நகர் தேவாலயம் அருகில்",openMaps:"Google Maps-ல் திறக்கவும்",galleryEyebrow:"மனதில் நிற்கும் நினைவுகள்",galleryMore:"மேலும் நினைவுகள் விரைவில்",quotesEyebrow:"நம் பயணத்திற்கான இனிய வார்த்தைகள்",quotesTitle:"சில அழகான வார்த்தைகள்",quotesDescription:"அன்பு, மகிழ்ச்சி, சிரிப்பு மற்றும் வாழ்நாள் நினைவுகளை கொண்டாடும் இனிய எண்ணங்கள்.",rsvpEyebrow:"உங்கள் வருகையை ஆவலுடன் எதிர்நோக்குகிறோம்",rsvpTitle:"வருகை உறுதி",rsvpDescription:"உங்கள் வருகையையும் வாழ்த்துகளையும் எங்களுடன் பகிர்ந்து கொள்ளுங்கள்.",rsvpNameLabel:"உங்கள் பெயர்",rsvpGuestsLabel:"வரும் விருந்தினர்களின் எண்ணிக்கை",rsvpWishesLabel:"உங்கள் வாழ்த்துகள்",rsvpSubmit:"வருகையை உறுதிப்படுத்துங்கள்",footerThanks:"எங்கள் சிறப்பு நாளை எங்களுடன் கொண்டாடியதற்கு நன்றி."
+    venueEyebrow:"எங்களுடன் இணைந்திடுங்கள்",venueTitle:"திருமண இடம்",venueAddress:"8, நார்த் அவென்யூ, முத்தமிழ் நகர், கொடுங்கையூர், சென்னை – 600118",venueNear:"முத்தமிழ் நகர் தேவாலயம் அருகில்",openMaps:"Google Maps-ல் திறக்கவும்",galleryEyebrow:"மனதில் நிற்கும் நினைவுகள்",galleryMore:"மேலும் நினைவுகள் விரைவில்",footerEyebrow:"அன்பும் நன்றியும்",footerTitle:"நன்றி",quotesEyebrow:"நம் பயணத்திற்கான இனிய வார்த்தைகள்",quotesTitle:"சில அழகான வார்த்தைகள்",quotesDescription:"அன்பு, மகிழ்ச்சி, சிரிப்பு மற்றும் வாழ்நாள் நினைவுகளை கொண்டாடும் இனிய எண்ணங்கள்.",rsvpEyebrow:"உங்கள் வருகையை ஆவலுடன் எதிர்நோக்குகிறோம்",rsvpTitle:"வருகை உறுதி",rsvpDescription:"உங்கள் வருகையையும் வாழ்த்துகளையும் எங்களுடன் பகிர்ந்து கொள்ளுங்கள்.",rsvpNameLabel:"உங்கள் பெயர்",rsvpGuestsLabel:"வரும் விருந்தினர்களின் எண்ணிக்கை",rsvpWishesLabel:"உங்கள் வாழ்த்துகள்",rsvpSubmit:"வருகையை உறுதிப்படுத்துங்கள்",footerThanks:"அன்பும் நன்றியும் நிறைந்த இதயத்துடன், எங்கள் அழகான பயணத்தின் ஒரு பகுதியாக இருந்ததற்கு நன்றி. உங்கள் வருகையும், ஆசீர்வாதங்களும், அன்பான வாழ்த்துகளும் எங்களுக்கு மிகவும் அருமையானவை. ❤️🙏"
   }
 };
 
@@ -412,7 +412,7 @@ $("#calendarBtn")?.addEventListener("click", () => {
 
 
 /* =========================================================
-   Dynamic quotes — language-aware and cross-browser safe
+   Dynamic quotes — single-controller, language-aware and cross-browser safe
    ========================================================= */
 (function initDynamicQuotes(){
   const quoteEl = document.getElementById("dynamicQuote");
@@ -420,6 +420,12 @@ $("#calendarBtn")?.addEventListener("click", () => {
   const numberEl = document.getElementById("quoteNumber");
   const totalEl = document.getElementById("quoteTotal");
   if (!quoteEl || !progressEl || !numberEl || !totalEl) return;
+
+  // Prevent duplicate timers if the script is evaluated more than once.
+  if (window.__weddingQuoteController) {
+    window.__weddingQuoteController.refresh();
+    return;
+  }
 
   const QUOTES = {
     en: [
@@ -444,59 +450,106 @@ $("#calendarBtn")?.addEventListener("click", () => {
     ]
   };
 
+  const INTERVAL = 5000;
   let index = 0;
   let timer = null;
   let animationTimer = null;
-  const INTERVAL = 5000;
+  let destroyed = false;
 
-  function currentLanguage(){
+  function getLanguage() {
     return document.documentElement.dataset.lang === "ta" ? "ta" : "en";
   }
 
-  function renderQuote(nextIndex, animate){
-    const list = QUOTES[currentLanguage()];
-    if (!list.length) return;
-    index = ((nextIndex % list.length) + list.length) % list.length;
-    const update = () => {
-      quoteEl.textContent = list[index];
-      numberEl.textContent = String(index + 1);
-      totalEl.textContent = String(list.length);
-      progressEl.style.width = `${((index + 1) / list.length) * 100}%`;
-    };
+  function prefersReducedMotion() {
+    return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
 
-    if (!animate || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      quoteEl.classList.remove("quote-changing");
-      update();
+  function stopTimer() {
+    if (timer !== null) {
+      window.clearTimeout(timer);
+      timer = null;
+    }
+  }
+
+  function cancelAnimation() {
+    if (animationTimer !== null) {
+      window.clearTimeout(animationTimer);
+      animationTimer = null;
+    }
+    quoteEl.classList.remove("quote-changing");
+  }
+
+  function updateDOM(text, position, total) {
+    quoteEl.textContent = text;
+    numberEl.textContent = String(position + 1);
+    totalEl.textContent = String(total);
+    progressEl.style.width = `${((position + 1) / total) * 100}%`;
+  }
+
+  function render(position, animate) {
+    const list = QUOTES[getLanguage()];
+    if (!list || !list.length) return;
+
+    index = ((position % list.length) + list.length) % list.length;
+    const nextText = list[index];
+
+    cancelAnimation();
+
+    if (!animate || prefersReducedMotion()) {
+      updateDOM(nextText, index, list.length);
       return;
     }
 
-    quoteEl.classList.remove("quote-changing");
-    void quoteEl.offsetWidth;
     quoteEl.classList.add("quote-changing");
-    if (animationTimer) window.clearTimeout(animationTimer);
-    animationTimer = window.setTimeout(update, 130);
+    animationTimer = window.setTimeout(() => {
+      animationTimer = null;
+      if (destroyed) return;
+      updateDOM(nextText, index, list.length);
+      // Keep the class lifecycle explicit: it must be removed after the
+      // content update, otherwise the quote remains permanently invisible.
+      window.requestAnimationFrame(() => quoteEl.classList.remove("quote-changing"));
+    }, 180);
   }
 
-  function stop(){
-    if (timer) { window.clearInterval(timer); timer = null; }
+  function scheduleNext() {
+    stopTimer();
+    if (destroyed || document.hidden) return;
+    timer = window.setTimeout(() => {
+      timer = null;
+      render(index + 1, true);
+      scheduleNext();
+    }, INTERVAL);
   }
 
-  function start(){
-    stop();
-    timer = window.setInterval(() => renderQuote(index + 1, true), INTERVAL);
-  }
-
-  function resetForLanguage(){
+  function refresh() {
     index = 0;
-    renderQuote(0, false);
-    start();
+    render(0, false);
+    scheduleNext();
   }
 
-  renderQuote(0, false);
-  start();
-  window.addEventListener("wedding:languagechange", resetForLanguage);
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) stop();
-    else start();
-  });
+  function handleLanguageChange() {
+    refresh();
+  }
+
+  function handleVisibilityChange() {
+    if (document.hidden) {
+      stopTimer();
+      cancelAnimation();
+    } else {
+      // Resume from the currently displayed quote rather than creating a
+      // second interval/timeout or unexpectedly advancing twice.
+      scheduleNext();
+    }
+  }
+
+  window.__weddingQuoteController = {
+    refresh,
+    stop: stopTimer,
+    getQuotes: () => QUOTES
+  };
+
+  render(0, false);
+  scheduleNext();
+  window.addEventListener("wedding:languagechange", handleLanguageChange, { passive: true });
+  document.addEventListener("visibilitychange", handleVisibilityChange, { passive: true });
 })();

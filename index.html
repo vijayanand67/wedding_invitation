@@ -7549,6 +7549,210 @@ html[data-lang="ta"] #quotes .section-heading>p:not(.eyebrow){font-family:"Noto 
 }
 </style>
 
+
+<style id="cross-browser-viewport-final-20260828">
+/* =============================================================
+   CROSS-BROWSER VIEWPORT / SAFARI FINAL OVERRIDE
+   Existing image files are untouched. The layout uses one responsive
+   implementation for Safari, Chrome and Edge.
+   ============================================================= */
+html,body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+  -webkit-text-size-adjust:100%;
+}
+body{overscroll-behavior-x:none;}
+
+/* Safe-area aware fixed header. */
+.topbar{
+  padding-top:max(14px, env(safe-area-inset-top));
+  padding-bottom:14px;
+  padding-left:max(4vw, env(safe-area-inset-left));
+  padding-right:max(4vw, env(safe-area-inset-right));
+}
+
+/* OPENING COVER: use the supplied artwork as a single full-viewport layer.
+   cover preserves the full vertical composition on narrow portrait screens;
+   only unavoidable horizontal overscan can occur from aspect-ratio mismatch. */
+#welcome.premium-cover,
+#welcome.wedding-cover,
+#welcome.reference-landing{
+  position:fixed!important;
+  inset:0!important;
+  width:100%!important;
+  height:100svh!important;
+  min-height:100svh!important;
+  max-height:none!important;
+  padding:0!important;
+  margin:0!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+  background:#230611!important;
+  padding-bottom:env(safe-area-inset-bottom)!important;
+}
+@supports (height:100dvh){
+  #welcome.premium-cover,
+  #welcome.wedding-cover,
+  #welcome.reference-landing{height:100dvh!important;}
+}
+#welcome .reference-landing__art,
+#welcome .reference-landing__art img,
+#welcome .wedding-cover__art,
+#welcome .wedding-cover__art img{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+}
+#welcome .reference-landing__art,
+#welcome .wedding-cover__art{overflow:hidden!important;}
+#welcome .reference-landing__art img,
+#welcome .wedding-cover__art img{
+  display:block!important;
+  max-width:none!important;
+  max-height:none!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  transform:none!important;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+
+/* One reliable, touch-friendly hit target. */
+#welcome #openInvitation{
+  pointer-events:auto!important;
+  touch-action:manipulation!important;
+  -webkit-user-select:none!important;
+  user-select:none!important;
+}
+
+/* MAIN HERO: exact viewport boundary. No artificial +120px tail. */
+#home.hero{
+  position:relative!important;
+  width:100%!important;
+  height:100svh!important;
+  min-height:100svh!important;
+  max-height:none!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  box-sizing:border-box!important;
+}
+@supports (height:100dvh){
+  #home.hero{
+    height:100dvh!important;
+    min-height:100dvh!important;
+  }
+}
+#home.hero .hero-image,
+#home.hero .hero-overlay{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+}
+#home.hero .hero-image{
+  background-size:cover!important;
+  background-position:center center!important;
+  background-repeat:no-repeat!important;
+  background-attachment:scroll!important;
+}
+#home.hero .hero-content{
+  position:relative!important;
+  z-index:3!important;
+  box-sizing:border-box!important;
+  max-height:100%!important;
+  overflow:visible!important;
+  padding-bottom:max(42px,calc(env(safe-area-inset-bottom) + 34px))!important;
+}
+#home.hero .scroll-cue{
+  bottom:max(14px,calc(env(safe-area-inset-bottom) + 10px))!important;
+  z-index:5!important;
+}
+
+/* Keep Page 2 as a true sibling; it cannot paint into Page 1. */
+#home.hero + #invite{
+  position:relative!important;
+  clear:both!important;
+  margin:0!important;
+  top:auto!important;
+  transform:none!important;
+  min-height:100svh;
+  overflow:visible!important;
+  scroll-margin-top:calc(var(--wedding-header-height,72px) + 12px)!important;
+}
+body.hero-at-top #home.hero + #invite{
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+body:not(.hero-at-top) #home.hero + #invite{
+  visibility:visible!important;
+  pointer-events:auto!important;
+}
+
+/* Mobile composition: slightly smaller type, no forced 120px hero extension. */
+@media (max-width:767px){
+  #home.hero .hero-image{
+    background-size:cover!important;
+    background-position:center center!important;
+  }
+  #home.hero .hero-content{
+    width:100%!important;
+    padding-left:12px!important;
+    padding-right:12px!important;
+    padding-top:max(12px, env(safe-area-inset-top))!important;
+  }
+  #home.hero .premium-couple-name .premium-name{font-size:clamp(1.45rem,6vw,2.35rem)!important;}
+  #home.hero .hero-quote{font-size:clamp(.74rem,2.7vw,1rem)!important;line-height:1.35!important;}
+  #home.hero .hero-sub{font-size:clamp(.61rem,2.05vw,.82rem)!important;line-height:1.45!important;}
+  #home.hero .date-script{font-size:clamp(.9rem,2.9vw,1.35rem)!important;}
+  #home.hero .hero-countdown .unit b{font-size:clamp(.95rem,3vw,1.25rem)!important;}
+  #home.hero .hero-countdown .unit small{font-size:.46rem!important;}
+  #home.hero .hero-actions .gold-btn,
+  #home.hero .hero-actions .outline-btn{font-size:clamp(.63rem,1.9vw,.78rem)!important;}
+}
+
+/* Short mobile screens: compress spacing instead of changing hero height. */
+@media (max-width:767px) and (max-height:760px){
+  #home.hero .hero-content{transform:translateY(0)!important;}
+  #home.hero .premium-couple-name{margin-top:4px!important;}
+  #home.hero .hero-countdown{margin-top:7px!important;margin-bottom:8px!important;}
+  #home.hero .hero-actions{margin-top:7px!important;}
+  #home.hero .scroll-cue{bottom:max(10px,calc(env(safe-area-inset-bottom) + 7px))!important;}
+}
+
+/* Very narrow Android/iPhone screens. */
+@media (max-width:380px){
+  #home.hero .premium-couple-name .premium-name{font-size:clamp(1.32rem,6.3vw,1.9rem)!important;}
+  #home.hero .hero-quote{font-size:.72rem!important;}
+  #home.hero .hero-sub{font-size:.59rem!important;}
+  #home.hero .date-script{font-size:.88rem!important;}
+  #home.hero .hero-actions .gold-btn,
+  #home.hero .hero-actions .outline-btn{min-height:40px!important;padding:8px 6px!important;}
+}
+
+/* Landscape tablets / desktops keep the same structure without mobile hacks. */
+@media (min-width:768px){
+  #home.hero .hero-image{background-position:center center!important;}
+  #home.hero .hero-content{padding-left:28px!important;padding-right:28px!important;}
+}
+
+@supports not (height:100dvh){
+  #welcome.premium-cover, #welcome.wedding-cover, #welcome.reference-landing, #home.hero{
+    height:var(--app-vh,100vh)!important;
+    min-height:var(--app-vh,100vh)!important;
+  }
+}
+
+/* Respect reduced-motion users without disabling interaction. */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;}
+}
+</style>
+
 </head>
 <body class="wedding-cover-lock">
 
@@ -7837,6 +8041,35 @@ document.addEventListener("DOMContentLoaded", function () {
       el.addEventListener('touchend', function () {}, { passive: true });
     });
   });
+})();
+</script>
+
+
+<script id="cross-browser-viewport-final-20260828">
+(function(){
+  /* Safari's visual viewport can differ from CSS 100vh while browser chrome
+     expands/collapses. Keep a measured fallback available without replacing
+     the standard svh/dvh units. */
+  function setViewportUnit(){
+    var vv=window.visualViewport;
+    var h=vv && vv.height ? vv.height : window.innerHeight;
+    if(h && isFinite(h)){
+      document.documentElement.style.setProperty('--app-vh', h+'px');
+    }
+  }
+  function initial(){
+    setViewportUnit();
+    setTimeout(setViewportUnit,80);
+    setTimeout(setViewportUnit,300);
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',initial,{once:true});
+  }else initial();
+  window.addEventListener('orientationchange',function(){setTimeout(setViewportUnit,120);},{passive:true});
+  window.addEventListener('resize',function(){setViewportUnit();},{passive:true});
+  if(window.visualViewport){
+    window.visualViewport.addEventListener('resize',setViewportUnit,{passive:true});
+  }
 })();
 </script>
 

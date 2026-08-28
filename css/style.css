@@ -4106,3 +4106,110 @@ body:not(.hero-at-top) #home.hero + #invite {
     overflow: hidden !important;
   }
 }
+
+
+/* =========================================================
+   Redmi / Android Chrome compatibility patch
+   Local Tamil fonts + vector navigation icons. This avoids
+   relying on Google-font availability or Unicode icon glyphs.
+   No existing images are changed.
+   ========================================================= */
+@font-face{
+  font-family:"WeddingTamilLocal";
+  src:url("../assets/fonts/NotoSansTamil-Regular.ttf") format("truetype");
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+}
+@font-face{
+  font-family:"WeddingTamilLocal";
+  src:url("../assets/fonts/NotoSansTamil-SemiBold.ttf") format("truetype");
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+}
+
+#langToggle{
+  font-family:"WeddingTamilLocal","Noto Sans Tamil","Noto Serif Tamil",sans-serif!important;
+  font-weight:600!important;
+  font-size:clamp(13px,2.8vw,16px)!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+  text-rendering:geometricPrecision;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+html[data-lang="ta"] #langToggle{
+  font-family:"WeddingTamilLocal","Noto Sans Tamil","Noto Serif Tamil",sans-serif!important;
+}
+
+/* Use SVG paths instead of Unicode arrows/menu characters. */
+.nav-svg-icon{
+  display:block!important;
+  width:1.05em!important;
+  height:1.05em!important;
+  min-width:18px;
+  min-height:18px;
+  margin:auto;
+  fill:none!important;
+  stroke:currentColor;
+  overflow:visible;
+  vector-effect:non-scaling-stroke;
+}
+.icon-btn-share,.menu-btn{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:0 0 auto;
+  line-height:0!important;
+  text-rendering:geometricPrecision;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.icon-btn-share .nav-svg-icon{width:20px!important;height:20px!important;}
+.menu-btn .nav-svg-icon{width:19px!important;height:19px!important;}
+
+/* Keep the circular controls stable on narrow Android devices. */
+.top-actions{align-items:center!important;flex-shrink:0!important;}
+.icon-btn{
+  box-sizing:border-box!important;
+  width:clamp(54px,12vw,70px)!important;
+  height:clamp(54px,12vw,70px)!important;
+  min-width:54px!important;
+  min-height:54px!important;
+  padding:0!important;
+  border-radius:50%!important;
+  overflow:visible!important;
+}
+@media(max-width:600px){
+  .topbar{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right));}
+  .top-actions{gap:6px!important;}
+  .icon-btn{width:54px!important;height:54px!important;min-width:54px!important;min-height:54px!important;}
+  #langToggle{font-size:14px!important;}
+  .brand{white-space:nowrap!important;}
+}
+@media(max-width:390px){
+  .top-actions{gap:4px!important;}
+  .icon-btn{width:50px!important;height:50px!important;min-width:50px!important;min-height:50px!important;}
+  #langToggle{font-size:13px!important;}
+  .icon-btn-share .nav-svg-icon{width:18px!important;height:18px!important;}
+  .menu-btn .nav-svg-icon{width:17px!important;height:17px!important;}
+}
+
+/* Android Chrome can synthesize/replace missing glyphs; force local Tamil
+   rendering for every Tamil data node used by the invitation. */
+html[data-lang="ta"] [data-key],
+html[data-lang="ta"] [data-en][data-ta],
+html[data-lang="ta"] .dynamic-quote,
+html[data-lang="ta"] .hero,
+html[data-lang="ta"] .section,
+html[data-lang="ta"] footer{
+  font-family:"WeddingTamilLocal","Noto Sans Tamil","Noto Serif Tamil",sans-serif!important;
+}
+html[data-lang="ta"] .premium-couple-name .premium-name,
+html[data-lang="ta"] .section-heading h2,
+html[data-lang="ta"] .dynamic-quote,
+html[data-lang="ta"] .thank-you h2,
+html[data-lang="ta"] .thank-you__message{
+  font-family:"WeddingTamilLocal","Noto Serif Tamil","Noto Sans Tamil",serif!important;
+}

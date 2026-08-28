@@ -7753,6 +7753,161 @@ body:not(.hero-at-top) #home.hero + #invite{
 }
 </style>
 
+
+<style id="final-user-request-20260828">
+/* =========================================================
+   FINAL REQUEST PATCH — hero balance + quote page + no music icon
+   One responsive implementation for Safari / Chrome / Edge.
+   Existing image files are intentionally untouched.
+   ========================================================= */
+
+/* The music control was intentionally removed from the markup. Keep any
+   legacy music implementation harmless if an older cached DOM is present. */
+#musicToggle{display:none!important;}
+
+/* Hero: use the whole available viewport and keep the couple details slightly
+   lower, using the space that previously sat unused above the arrow. */
+#home.hero{
+  height:100svh!important;
+  min-height:100svh!important;
+  max-height:100svh!important;
+}
+@supports (height:100dvh){
+  #home.hero{
+    height:100dvh!important;
+    min-height:100dvh!important;
+    max-height:100dvh!important;
+  }
+}
+#home.hero .hero-content{
+  transform:translateY(clamp(24px,4vh,52px))!important;
+  padding-top:0!important;
+  padding-bottom:max(54px,calc(env(safe-area-inset-bottom) + 42px))!important;
+}
+#home.hero .scroll-cue{
+  bottom:max(12px,calc(env(safe-area-inset-bottom) + 10px))!important;
+}
+
+/* Compact mobile spacing so moving the content down never pushes controls
+   outside the hero. */
+@media (max-width:767px){
+  #home.hero .hero-content{
+    transform:translateY(clamp(22px,3.8vh,38px))!important;
+    padding-left:12px!important;
+    padding-right:12px!important;
+    padding-bottom:max(52px,calc(env(safe-area-inset-bottom) + 38px))!important;
+  }
+  #home.hero .premium-couple-name{
+    margin-top:4px!important;
+    margin-bottom:10px!important;
+  }
+  #home.hero .hero-quote{margin-top:8px!important;margin-bottom:2px!important;}
+  #home.hero .hero-sub{line-height:1.42!important;}
+  #home.hero .date-script{margin-top:8px!important;margin-bottom:4px!important;}
+  #home.hero .hero-countdown{margin-top:8px!important;margin-bottom:10px!important;}
+  #home.hero .hero-actions{margin-top:7px!important;}
+}
+@media (max-width:390px){
+  #home.hero .hero-content{transform:translateY(20px)!important;}
+  #home.hero .premium-couple-name .premium-name{font-size:clamp(1.45rem,6.4vw,2rem)!important;}
+  #home.hero .hero-sub{font-size:.64rem!important;}
+  #home.hero .hero-countdown .unit b{font-size:15px!important;}
+  #home.hero .hero-actions .gold-btn,
+  #home.hero .hero-actions .outline-btn{font-size:9.5px!important;min-height:40px!important;}
+}
+@media (min-width:768px){
+  #home.hero .hero-content{transform:translateY(clamp(22px,3.2vh,44px))!important;}
+}
+
+/* Quote page: no LOVE & MARRIAGE branding/heading. Keep the page elegant,
+   compact and intentional on phones through large desktop displays. */
+#quotes.quotes-section{
+  min-height:max(620px,100svh)!important;
+  padding:clamp(54px,8vh,92px) clamp(18px,5vw,70px)!important;
+  justify-content:center!important;
+  background:
+    radial-gradient(circle at 50% 16%,rgba(212,168,77,.10),transparent 30%),
+    linear-gradient(180deg,#fffaf3 0%,#f7eadc 100%)!important;
+}
+@supports (height:100dvh){
+  #quotes.quotes-section{min-height:max(620px,100dvh)!important;}
+}
+#quotes.quotes-section::before{display:none!important;}
+#quotes .section-heading{
+  margin:0 auto clamp(22px,4vh,34px)!important;
+  max-width:780px!important;
+}
+#quotes .section-heading .eyebrow{
+  color:#a47a2e!important;
+  font-size:clamp(.58rem,1.2vw,.72rem)!important;
+  letter-spacing:.22em!important;
+}
+#quotes .section-heading h2{
+  font-size:clamp(1.85rem,4.6vw,3.2rem)!important;
+  line-height:1.08!important;
+  margin:6px 0 10px!important;
+}
+#quotes .section-heading>p:not(.eyebrow){
+  max-width:680px!important;
+  margin:0 auto!important;
+  font-size:clamp(.74rem,1.55vw,.95rem)!important;
+  line-height:1.6!important;
+}
+.quote-showcase{
+  width:min(760px,94vw)!important;
+  min-height:250px!important;
+  padding:56px clamp(22px,6vw,68px) 34px!important;
+  border-radius:24px!important;
+  background:rgba(255,253,249,.88)!important;
+  box-shadow:0 22px 60px rgba(73,17,34,.10),inset 0 0 0 5px rgba(216,177,67,.055)!important;
+}
+.quote-mark{font-size:4rem!important;top:8px!important;}
+.dynamic-quote{
+  margin:10px 0 22px!important;
+  max-width:650px!important;
+  font-size:clamp(1.05rem,2.65vw,1.65rem)!important;
+  line-height:1.5!important;
+  transition:opacity .28s ease,transform .28s ease!important;
+}
+.dynamic-quote.quote-changing{opacity:0!important;transform:translateY(8px)!important;}
+.quote-progress{height:3px!important;width:min(420px,76vw)!important;}
+.quote-counter{font-size:.62rem!important;margin-top:11px!important;}
+html[data-lang="ta"] #quotes .section-heading h2,
+html[data-lang="ta"] #quotes .section-heading>p:not(.eyebrow),
+html[data-lang="ta"] #quotes .dynamic-quote{
+  font-family:"Noto Serif Tamil","Noto Sans Tamil",serif!important;
+}
+html[data-lang="ta"] #quotes .dynamic-quote{
+  font-size:clamp(.98rem,2.65vw,1.45rem)!important;
+  line-height:1.8!important;
+}
+@media (max-width:600px){
+  #quotes.quotes-section{
+    min-height:650px!important;
+    padding:64px 16px 72px!important;
+  }
+  #quotes .section-heading{margin-bottom:20px!important;}
+  #quotes .section-heading h2{font-size:clamp(1.65rem,7vw,2.35rem)!important;}
+  #quotes .section-heading>p:not(.eyebrow){font-size:.73rem!important;line-height:1.55!important;}
+  .quote-showcase{min-height:235px!important;padding:50px 20px 30px!important;border-radius:21px!important;}
+  .quote-mark{font-size:3.6rem!important;}
+  .dynamic-quote{font-size:1rem!important;line-height:1.55!important;}
+  html[data-lang="ta"] #quotes .dynamic-quote{font-size:.94rem!important;line-height:1.85!important;}
+}
+@media (max-width:390px){
+  #quotes.quotes-section{min-height:610px!important;padding:54px 13px 62px!important;}
+  #quotes .section-heading h2{font-size:1.55rem!important;}
+  #quotes .section-heading>p:not(.eyebrow){font-size:.69rem!important;}
+  .quote-showcase{min-height:220px!important;padding:48px 16px 26px!important;}
+  .dynamic-quote{font-size:.93rem!important;}
+  html[data-lang="ta"] #quotes .dynamic-quote{font-size:.88rem!important;}
+}
+@media (min-width:1000px){
+  #quotes.quotes-section{min-height:760px!important;}
+  .quote-showcase{min-height:285px!important;}
+}
+</style>
+
 </head>
 <body class="wedding-cover-lock">
 
@@ -7794,7 +7949,6 @@ body:not(.hero-at-top) #home.hero + #invite{
 </nav>
 <div class="top-actions">
 <button id="langToggle" class="icon-btn" aria-label="Switch language">தமிழ்</button>
-<button id="musicToggle" class="icon-btn" aria-label="Play music">♫</button>
 <button id="shareBtn" class="icon-btn" aria-label="Share">↗</button>
 <button id="menuToggle" class="icon-btn menu-btn" aria-label="Menu">☰</button>
 </div>
@@ -7920,9 +8074,9 @@ Kodungaiyur, Chennai – 600118</p><p class="muted" data-key="venueNear">Near Mu
 
 <section id="quotes" class="section quotes-section" aria-labelledby="quotesTitle">
   <div class="section-heading reveal">
-    <p class="eyebrow" data-key="quotesEyebrow">LOVE &amp; MARRIAGE</p>
-    <h2 id="quotesTitle" data-key="quotesTitle">Marriage &amp; Love</h2>
-    <p data-key="quotesDescription">A few little words about love, laughter and growing together.</p>
+    <p class="eyebrow" data-key="quotesEyebrow">WORDS FOR YOUR JOURNEY</p>
+    <h2 id="quotesTitle" data-key="quotesTitle">A Few Beautiful Words</h2>
+    <p data-key="quotesDescription">Thoughts to celebrate togetherness, laughter and a lifetime of memories.</p>
   </div>
   <div class="quote-showcase reveal" role="region" aria-live="polite" aria-label="Marriage and love quotes">
     <span class="quote-mark" aria-hidden="true">“</span>

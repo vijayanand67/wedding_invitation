@@ -4254,3 +4254,15 @@ html[data-lang="en"] .topbar .brand,
 }
 .topbar .brand .brand-name{color:#fff4e7!important;}
 .topbar .brand .brand-heart{color:#d96a72!important;}
+
+/* Final header refinement: nudge the compact V ♥ H brand slightly toward the centre
+   while keeping the Tamil and Share controls anchored on the right. */
+.topbar > .brand {
+  margin-left: clamp(8px, 1.8vw, 18px);
+}
+
+@media (max-width: 500px) {
+  .topbar > .brand {
+    margin-left: clamp(8px, 2.5vw, 14px);
+  }
+}

@@ -8,10 +8,7 @@ const toast = (message) => {
   window.setTimeout(() => t.classList.remove("show"), 3000);
 };
 
-/* Navigation */
-$("#menuToggle")?.addEventListener("click", () => {
-  document.querySelector(".topbar")?.classList.toggle("nav-open");
-});
+/* Navigation: hamburger removed; desktop nav links remain available. */
 document.querySelectorAll("nav a").forEach((a) => {
   a.addEventListener("click", (event) => {
     document.querySelector(".topbar")?.classList.remove("nav-open");
@@ -33,7 +30,7 @@ let lang = localStorage.getItem("weddingLang") === "ta" ? "ta" : "en";
 
 const LANGUAGE_TEXT = {
   en: {
-    brandGroom:"Vijay",brandBride:"Hemalatha",navInvitation:"Invitation",navJourney:"Journey",navEvents:"Events",navVenue:"Venue",navGallery:"Gallery",navRsvp:"RSVP",
+    brandGroom:"Vijay Anand",brandBride:"Hemalatha",navInvitation:"Invitation",navJourney:"Journey",navEvents:"Events",navVenue:"Venue",navGallery:"Gallery",navRsvp:"RSVP",
     heroEyebrow:"A NEW BEGINNING",groomName:"Vijay Anand",brideName:"Hemalatha",heroQuote:"Two families, one beautiful celebration.",heroSub:"With love, blessings, and joy, we begin our forever together.",heroDate:"07 September 2026",viewInvitation:"View Invitation",addCalendar:"＋ Add to Calendar",
     inviteEyebrow:"WITH OUR FAMILIES",inviteTitle:"Wedding Invitation",inviteDescription:"Together with our families, we warmly invite you to celebrate our wedding.",
     journeyTitle:"Our Journey Begins",journeyDescription:"With the blessings of our parents and elders, two families come together for a lifetime of togetherness.",childhood:"Our Memories",journeyStep1Title:"Two Families",journeyStep1Text:"A beautiful union blessed by our families.",journeyStep2Title:"Engagement",journeyStep2Text:"A joyful celebration that brought our families closer.",journeyStep3Title:"A Promise for a Lifetime",journeyStep3Text:"With love, blessings and joy, we begin our new chapter.",journeyStep4Title:"Forever Begins",journeyStep4Text:"07 September 2026",
@@ -41,7 +38,7 @@ const LANGUAGE_TEXT = {
     venueEyebrow:"JOIN US",venueTitle:"The Venue",venueAddress:"8, North Avenue, Muthamizh Nagar, Kodungaiyur, Chennai – 600118",venueNear:"Near Muthamizh Nagar Church",openMaps:"Open in Google Maps",galleryEyebrow:"MOMENTS TO TREASURE",galleryMore:"More memories coming soon",footerEyebrow:"WITH LOVE & GRATITUDE",footerTitle:"Thank You",quotesEyebrow:"WORDS FOR YOUR JOURNEY",quotesTitle:"A Few Beautiful Words",quotesDescription:"Thoughts to celebrate togetherness, laughter and a lifetime of memories.",rsvpEyebrow:"WE WOULD LOVE TO HAVE YOU",rsvpTitle:"RSVP",rsvpDescription:"Please share your attendance and wishes with us.",rsvpNameLabel:"Your Name",rsvpGuestsLabel:"Number of Guests",rsvpWishesLabel:"Your Wishes",rsvpSubmit:"Send RSVP",footerThanks:"With hearts full of love and gratitude, thank you for being a part of our beautiful journey. Your presence, blessings and warm wishes mean the world to us. ❤️🙏"
   },
   ta: {
-    brandGroom:"விஜய்",brandBride:"ஹேமலதா",navInvitation:"அழைப்பிதழ்",navJourney:"நமது பயணம்",navEvents:"நிகழ்வுகள்",navVenue:"திருமண இடம்",navGallery:"நினைவுகள்",navRsvp:"வருகை உறுதி",
+    brandGroom:"விஜய் ஆனந்த்",brandBride:"ஹேமலதா",navInvitation:"அழைப்பிதழ்",navJourney:"நமது பயணம்",navEvents:"நிகழ்வுகள்",navVenue:"திருமண இடம்",navGallery:"நினைவுகள்",navRsvp:"வருகை உறுதி",
     heroEyebrow:"ஒரு புதிய தொடக்கம்",groomName:"விஜய் ஆனந்த்",brideName:"ஹேமலதா",heroQuote:"இரண்டு குடும்பங்கள், ஒரு அழகான கொண்டாட்டம்.",heroSub:"அன்பும், ஆசீர்வாதங்களும், மகிழ்ச்சியுடனும் எங்கள் வாழ்நாள் பயணத்தை தொடங்குகிறோம்.",heroDate:"07 செப்டம்பர் 2026",viewInvitation:"அழைப்பிதழைப் பார்க்கவும்",addCalendar:"＋ காலண்டரில் சேர்க்கவும்",
     inviteEyebrow:"எங்கள் குடும்பங்களுடன்",inviteTitle:"திருமண அழைப்பிதழ்",inviteDescription:"எங்கள் குடும்பங்களுடன் இணைந்து, எங்கள் திருமண விழாவை கொண்டாட உங்களை அன்புடன் அழைக்கிறோம்.",
     journeyTitle:"எங்கள் பயணம் தொடங்குகிறது",journeyDescription:"பெற்றோர் மற்றும் பெரியோர்களின் ஆசீர்வாதத்துடன், இரண்டு குடும்பங்கள் வாழ்நாள் உறவாக ஒன்றிணைகின்றன.",childhood:"நமது நினைவுகள்",journeyStep1Title:"இரண்டு குடும்பங்கள்",journeyStep1Text:"எங்கள் குடும்பங்களின் ஆசீர்வாதத்துடன் ஒரு அழகான இணைவு.",journeyStep2Title:"நிச்சயதார்த்தம்",journeyStep2Text:"எங்கள் குடும்பங்களை இன்னும் நெருக்கமாக இணைத்த மகிழ்ச்சியான விழா.",journeyStep3Title:"வாழ்நாள் வாக்குறுதி",journeyStep3Text:"அன்பும், ஆசீர்வாதமும், மகிழ்ச்சியுடனும் எங்கள் புதிய அத்தியாயத்தை தொடங்குகிறோம்.",journeyStep4Title:"என்றென்றும் தொடங்குகிறது",journeyStep4Text:"07 செப்டம்பர் 2026",

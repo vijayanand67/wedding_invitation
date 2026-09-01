@@ -4215,28 +4215,42 @@ html[data-lang="ta"] .thank-you__message{
 }
 
 
-/* Responsive top brand: use compact V ♥ H on narrow screens. */
-.brand-full{display:inline-flex;align-items:center;gap:.18em;white-space:nowrap}
-.brand-compact{display:none;align-items:center;justify-content:center;white-space:nowrap;font-family:"Cormorant Garamond","Playfair Display",Georgia,serif;font-weight:600;letter-spacing:.02em}
-.brand-compact .brand-heart{display:inline-block;margin:0 .16em}
-
-@media (max-width:600px){
-  .brand-full{display:none!important}
-  .brand-compact{display:inline-flex!important;font-size:clamp(1.15rem,6vw,1.65rem)!important}
-  .topbar{gap:12px!important}
-  .brand{flex:0 1 auto!important;min-width:0!important;font-size:1rem!important}
+/* Final header branding: always show only V ♥ H on every language and viewport. */
+.brand{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  white-space:nowrap!important;
+  flex:0 1 auto!important;
+  min-width:0!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
 }
-
-@media (max-width:390px){
-  .brand-compact{font-size:1.25rem!important}
-  .topbar{gap:8px!important}
+.brand .brand-name{
+  color:#fff4e7!important;
 }
-
-@media (min-width:601px){
-  .brand-full{display:inline-flex!important}
-  .brand-compact{display:none!important}
+.brand .brand-heart{
+  color:#d96a72!important;
+  margin:0 .16em;
+}
+@media(max-width:600px){
+  .topbar{gap:12px!important;}
+  .brand{font-size:1.12rem!important;}
+}
+@media(max-width:390px){
+  .topbar{gap:8px!important;}
+  .brand{font-size:1.05rem!important;}
 }
 
 /* The hamburger navigation control has been intentionally removed. Keep the
    navigation links functional on larger layouts without reserving icon space. */
 .top-actions{margin-left:auto!important}
+
+
+/* V ♥ H header is identical in English and Tamil modes. */
+html[data-lang="ta"] .topbar .brand,
+html[data-lang="en"] .topbar .brand,
+.topbar .brand{
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+}
+.topbar .brand .brand-name{color:#fff4e7!important;}
+.topbar .brand .brand-heart{color:#d96a72!important;}

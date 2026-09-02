@@ -4213,3 +4213,83 @@ html[data-lang="ta"] .thank-you h2,
 html[data-lang="ta"] .thank-you__message{
   font-family:"WeddingTamilLocal","Noto Serif Tamil","Noto Sans Tamil",serif!important;
 }
+
+
+/* =========================================================
+   FINAL HEADER-ONLY UPDATE — compact couple name + unified controls
+   English/Tamil use the same visual scale, weight, color and spacing.
+   Tamil keeps its dedicated local-capable font for correct glyph rendering.
+   ========================================================= */
+.topbar{
+  gap:12px!important;
+  align-items:center!important;
+  min-height:76px!important;
+  padding:12px clamp(16px,4vw,48px)!important;
+}
+.topbar .brand{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  flex:1 1 auto!important;
+  min-width:0!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(.92rem,2.7vw,1.16rem)!important;
+  line-height:1!important;
+  font-weight:600!important;
+  letter-spacing:.01em!important;
+  color:#f7ead0!important;
+  text-shadow:0 1px 8px rgba(0,0,0,.16)!important;
+}
+.topbar .brand-name{color:#f7ead0!important}
+.topbar .brand-heart{color:#d9636d!important;margin-inline:.18em!important}
+.topbar .top-actions{display:flex!important;align-items:center!important;gap:8px!important;flex:0 0 auto!important}
+.topbar .icon-btn{
+  width:clamp(50px,10vw,64px)!important;
+  height:clamp(50px,10vw,64px)!important;
+  min-width:50px!important;
+  min-height:50px!important;
+  border-color:rgba(224,185,75,.72)!important;
+  color:#f7ead0!important;
+  background:rgba(59,10,29,.12)!important;
+  font-family:"Cormorant Garamond","Playfair Display",Georgia,serif!important;
+  font-size:clamp(.78rem,2.5vw,.95rem)!important;
+  font-weight:600!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+  box-shadow:none!important;
+}
+.topbar .icon-btn-share .nav-svg-icon{color:#f7ead0!important}
+/* The navigation links remain hidden; the header now has only the couple name,
+   language switch and share control. */
+.topbar nav{display:none!important}
+.topbar .menu-btn{display:none!important}
+html[data-lang="ta"] .topbar .brand{
+  font-family:"WeddingTamilLocal","Noto Serif Tamil","Noto Sans Tamil",sans-serif!important;
+  font-size:clamp(.92rem,2.7vw,1.16rem)!important;
+  line-height:1.08!important;
+  font-weight:600!important;
+  letter-spacing:0!important;
+}
+html[data-lang="ta"] .topbar .icon-btn{
+  font-family:"WeddingTamilLocal","Noto Sans Tamil","Noto Serif Tamil",sans-serif!important;
+  font-size:clamp(.76rem,2.45vw,.92rem)!important;
+  font-weight:600!important;
+  color:#f7ead0!important;
+}
+@media(max-width:600px){
+  .topbar{min-height:68px!important;padding:10px max(14px,env(safe-area-inset-left)) 10px max(14px,env(safe-area-inset-right))!important;gap:8px!important}
+  .topbar .brand{font-size:clamp(.88rem,4.2vw,1.05rem)!important}
+  .topbar .top-actions{gap:6px!important}
+  .topbar .icon-btn{width:52px!important;height:52px!important;min-width:52px!important;min-height:52px!important}
+  .topbar #langToggle{font-size:13px!important}
+}
+@media(max-width:390px){
+  .topbar .brand{font-size:.88rem!important}
+  .topbar .top-actions{gap:4px!important}
+  .topbar .icon-btn{width:48px!important;height:48px!important;min-width:48px!important;min-height:48px!important}
+  .topbar #langToggle{font-size:12px!important}
+  .topbar .icon-btn-share .nav-svg-icon{width:17px!important;height:17px!important}
+}

@@ -8113,6 +8113,73 @@ html[data-lang="ta"] .topbar .brand-heart{
   .topbar .brand{font-size:clamp(1.55rem,2.35vw,2rem)!important;}
 }
 </style>
+
+<style id="header-name-unified-size-final">
+/* Header-only adjustment: keep English and Tamil names at the exact same
+   responsive font size and visual weight. No page/body/image styles changed. */
+.topbar .brand,
+.topbar .brand-name,
+html[data-lang="ta"] .topbar .brand,
+html[data-lang="ta"] .topbar .brand-name {
+  font-size: clamp(1.12rem, 4.2vw, 1.72rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0 !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.topbar .brand {
+  align-items: center !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+
+.topbar .brand-name {
+  display: inline-block !important;
+  white-space: nowrap !important;
+  flex: 0 1 auto !important;
+}
+
+.topbar .brand-heart {
+  display: inline-block !important;
+  flex: 0 0 auto !important;
+  font-size: .88em !important;
+  line-height: 1 !important;
+  margin-inline: .12em !important;
+}
+
+/* Tamil uses its proper font family but exactly the same CSS font-size as
+   English, preventing the header from becoming oversized on iOS/Android. */
+html[data-lang="ta"] .topbar .brand,
+html[data-lang="ta"] .topbar .brand-name {
+  font-family: "Noto Serif Tamil", "Noto Sans Tamil", "Nirmala UI", "Latha", sans-serif !important;
+  font-size: clamp(1.12rem, 4.2vw, 1.72rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.08 !important;
+}
+
+@media (max-width: 600px) {
+  .topbar .brand,
+  .topbar .brand-name,
+  html[data-lang="ta"] .topbar .brand,
+  html[data-lang="ta"] .topbar .brand-name {
+    font-size: clamp(1rem, 5vw, 1.38rem) !important;
+    line-height: 1.08 !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .topbar .brand,
+  .topbar .brand-name,
+  html[data-lang="ta"] .topbar .brand,
+  html[data-lang="ta"] .topbar .brand-name {
+    font-size: clamp(.92rem, 4.75vw, 1.2rem) !important;
+  }
+}
+</style>
+
 </head>
 <body class="wedding-cover-lock">
 

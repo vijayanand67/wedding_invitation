@@ -4293,3 +4293,145 @@ html[data-lang="ta"] .topbar .icon-btn{
   .topbar #langToggle{font-size:12px!important}
   .topbar .icon-btn-share .nav-svg-icon{width:17px!important;height:17px!important}
 }
+
+
+/* =========================================================
+   SAVE THE DATE VIDEO + PRE-WEDDING PHOTO GALLERY
+   Responsive final pass — all changes are scoped to the new
+   sections so the existing invitation artwork/content remains intact.
+   ========================================================= */
+.save-date-section{
+  max-width:none!important;
+  padding:clamp(72px,8vw,118px) clamp(18px,6vw,72px)!important;
+  background:linear-gradient(180deg,#fbf4e9 0%,#f6e8dc 100%)!important;
+  overflow:hidden!important;
+}
+.save-date-shell{width:min(1080px,100%);margin:0 auto;}
+.save-date-heading{margin-bottom:clamp(28px,4vw,44px)!important;}
+.save-date-heading h2{margin-bottom:12px!important;}
+.save-date-video-card{
+  position:relative!important;
+  width:min(900px,100%)!important;
+  margin:0 auto!important;
+  padding:clamp(14px,2vw,22px)!important;
+  border:1px solid rgba(177,128,49,.42)!important;
+  border-radius:28px!important;
+  background:linear-gradient(145deg,#fffdf8,#f7eadf)!important;
+  box-shadow:0 28px 80px rgba(73,17,34,.14),inset 0 1px 0 rgba(255,255,255,.9)!important;
+}
+.save-date-ornament{
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:10px!important;
+  margin:0 auto 14px!important;
+  color:#9b7330!important;
+  font:600 clamp(15px,2vw,20px)/1 "Cormorant Garamond","Playfair Display",serif!important;
+  letter-spacing:.12em!important;
+}
+.save-date-ornament b{color:#b33b51!important;font-size:1.1em!important;}
+.save-date-video-wrap{
+  position:relative!important;
+  width:100%!important;
+  display:grid!important;
+  place-items:center!important;
+  overflow:hidden!important;
+  border-radius:20px!important;
+  background:#1d0710!important;
+}
+.save-date-video{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:min(78vh,860px)!important;
+  object-fit:contain!important;
+  aspect-ratio:auto!important;
+  background:#1d0710!important;
+}
+.save-date-sound{
+  position:absolute!important;
+  right:14px!important;
+  bottom:14px!important;
+  z-index:2!important;
+  border:1px solid rgba(255,255,255,.55)!important;
+  border-radius:999px!important;
+  padding:9px 13px!important;
+  background:rgba(45,7,21,.72)!important;
+  color:#fff8ec!important;
+  font:600 12px/1.2 "Poppins",sans-serif!important;
+  backdrop-filter:blur(10px)!important;
+  -webkit-backdrop-filter:blur(10px)!important;
+  cursor:pointer!important;
+}
+.save-date-sound:hover{transform:translateY(-1px)!important;}
+.save-date-caption{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:14px!important;
+  margin:17px 8px 4px!important;
+  color:#6a3445!important;
+  text-align:center!important;
+  font:600 clamp(13px,1.8vw,17px)/1.35 "Cormorant Garamond","Playfair Display",serif!important;
+}
+.save-date-caption p{margin:0!important;}
+.save-date-caption-line{height:1px!important;flex:1 1 80px!important;max-width:170px!important;background:linear-gradient(90deg,transparent,rgba(177,128,49,.55),transparent)!important;}
+
+.prewedding-section{max-width:none!important;padding-left:clamp(18px,6vw,72px)!important;padding-right:clamp(18px,6vw,72px)!important;}
+.prewedding-grid{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:clamp(12px,2vw,22px)!important;
+  align-items:start!important;
+}
+.prewedding-grid .gallery-item{
+  min-height:0!important;
+  aspect-ratio:2/3!important;
+  width:100%!important;
+  border:1px solid rgba(177,128,49,.28)!important;
+  border-radius:20px!important;
+  padding:0!important;
+  overflow:hidden!important;
+  background:#ead8c8!important;
+  box-shadow:0 16px 45px rgba(73,17,34,.10)!important;
+  cursor:zoom-in!important;
+}
+.prewedding-grid .gallery-item img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  transition:transform .55s ease,filter .35s ease!important;
+}
+.prewedding-grid .gallery-item:hover img{transform:scale(1.035)!important;filter:saturate(1.03)!important;}
+.prewedding-grid .gallery-item:focus-visible{outline:2px solid #b17f31!important;outline-offset:4px!important;}
+
+@media (max-width:1100px){
+  .prewedding-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+}
+@media (max-width:760px){
+  .save-date-section{padding-top:64px!important;padding-bottom:78px!important;}
+  .save-date-video-card{border-radius:22px!important;padding:11px!important;}
+  .save-date-video-wrap{border-radius:16px!important;}
+  .save-date-sound{right:10px!important;bottom:10px!important;padding:8px 11px!important;font-size:11px!important;}
+  .prewedding-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;}
+  .prewedding-grid .gallery-item{border-radius:15px!important;}
+  .save-date-caption{gap:8px!important;margin-top:13px!important;}
+  .save-date-caption-line{display:none!important;}
+}
+@media (max-width:430px){
+  .save-date-section{padding-left:14px!important;padding-right:14px!important;}
+  .save-date-heading{margin-bottom:24px!important;}
+  .save-date-video-card{padding:8px!important;border-radius:18px!important;}
+  .save-date-ornament{margin-bottom:9px!important;}
+  .save-date-sound{font-size:10px!important;padding:7px 9px!important;}
+  .prewedding-section{padding-left:14px!important;padding-right:14px!important;}
+  .prewedding-grid{gap:9px!important;}
+  .prewedding-grid .gallery-item{border-radius:12px!important;}
+}
+@media (prefers-reduced-motion:reduce){
+  .prewedding-grid .gallery-item img{transition:none!important;}
+  .save-date-sound:hover{transform:none!important;}
+}

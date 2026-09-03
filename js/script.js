@@ -35,7 +35,7 @@ const LANGUAGE_TEXT = {
     inviteEyebrow:"WITH OUR FAMILIES",inviteTitle:"Wedding Invitation",inviteDescription:"Together with our families, we warmly invite you to celebrate our wedding.",
     journeyTitle:"Our Journey Begins",journeyDescription:"With the blessings of our parents and elders, two families come together for a lifetime of togetherness.",childhood:"Our Memories",journeyStep1Title:"Two Families",journeyStep1Text:"A beautiful union blessed by our families.",journeyStep2Title:"Engagement",journeyStep2Text:"A joyful celebration that brought our families closer.",journeyStep3Title:"A Promise for a Lifetime",journeyStep3Text:"With love, blessings and joy, we begin our new chapter.",journeyStep4Title:"Forever Begins",journeyStep4Text:"07 September 2026",
     eventsEyebrow:"SAVE THE DATE",eventsTitle:"Wedding Celebrations",eventsDescription:"Two beautiful moments, one unforgettable beginning.",receptionDate:"06 SEP 2026",receptionTitle:"Reception",receptionTime:"6:30 PM onwards",weddingDate:"07 SEP 2026",weddingTitle:"Wedding Ceremony",weddingTime:"6:00 AM – 7:30 AM",celebrationVenue:"CELEBRATION VENUE",venueName:"Ramaswamy Mahal / S.R. Sami Party Hall",directions:"📍 Get Directions",celebrationNote:"With the love and blessings of our families, we warmly invite you to celebrate with us.",
-    venueEyebrow:"JOIN US",venueTitle:"The Venue",venueAddress:"8, North Avenue, Muthamizh Nagar, Kodungaiyur, Chennai – 600118",venueNear:"Near Muthamizh Nagar Church",openMaps:"Open in Google Maps",galleryEyebrow:"MOMENTS TO TREASURE",galleryMore:"More memories coming soon",footerEyebrow:"WITH LOVE & GRATITUDE",footerTitle:"Thank You",quotesEyebrow:"WORDS FOR YOUR JOURNEY",quotesTitle:"A Few Beautiful Words",quotesDescription:"Thoughts to celebrate togetherness, laughter and a lifetime of memories.",rsvpEyebrow:"WE WOULD LOVE TO HAVE YOU",rsvpTitle:"RSVP",rsvpDescription:"Please share your attendance and wishes with us.",rsvpNameLabel:"Your Name",rsvpGuestsLabel:"Number of Guests",rsvpWishesLabel:"Your Wishes",rsvpSubmit:"Send RSVP",footerThanks:"With hearts full of love and gratitude, thank you for being a part of our beautiful journey. Your presence, blessings and warm wishes mean the world to us. ❤️🙏"
+    saveDateEyebrow:"SAVE THE DATE",saveDateTitle:"Our Save The Date",saveDateDescription:"A little glimpse of our special day, made with love for everyone we cherish.",saveDateSoundOn:"Tap for sound",saveDateCaption:"Vijay ❤️ Hemalatha · 07 September 2026",venueEyebrow:"JOIN US",venueTitle:"The Venue",venueAddress:"8, North Avenue, Muthamizh Nagar, Kodungaiyur, Chennai – 600118",venueNear:"Near Muthamizh Nagar Church",openMaps:"Open in Google Maps",galleryEyebrow:"PRE-WEDDING MEMORIES",galleryTitle:"Pre-Wedding Photos",galleryDescription:"A collection of our favourite moments together, captured before our wedding day.",galleryMore:"More memories coming soon",footerEyebrow:"WITH LOVE & GRATITUDE",footerTitle:"Thank You",quotesEyebrow:"WORDS FOR YOUR JOURNEY",quotesTitle:"A Few Beautiful Words",quotesDescription:"Thoughts to celebrate togetherness, laughter and a lifetime of memories.",rsvpEyebrow:"WE WOULD LOVE TO HAVE YOU",rsvpTitle:"RSVP",rsvpDescription:"Please share your attendance and wishes with us.",rsvpNameLabel:"Your Name",rsvpGuestsLabel:"Number of Guests",rsvpWishesLabel:"Your Wishes",rsvpSubmit:"Send RSVP",footerThanks:"With hearts full of love and gratitude, thank you for being a part of our beautiful journey. Your presence, blessings and warm wishes mean the world to us. ❤️🙏"
   },
   ta: {
     brandGroom:"விஜய்",brandBride:"ஹேமலதா",navInvitation:"அழைப்பிதழ்",navJourney:"நமது பயணம்",navEvents:"நிகழ்வுகள்",navVenue:"திருமண இடம்",navGallery:"நினைவுகள்",navRsvp:"வருகை உறுதி",
@@ -43,7 +43,7 @@ const LANGUAGE_TEXT = {
     inviteEyebrow:"எங்கள் குடும்பங்களுடன்",inviteTitle:"திருமண அழைப்பிதழ்",inviteDescription:"எங்கள் குடும்பங்களுடன் இணைந்து, எங்கள் திருமண விழாவை கொண்டாட உங்களை அன்புடன் அழைக்கிறோம்.",
     journeyTitle:"எங்கள் பயணம் தொடங்குகிறது",journeyDescription:"பெற்றோர் மற்றும் பெரியோர்களின் ஆசீர்வாதத்துடன், இரண்டு குடும்பங்கள் வாழ்நாள் உறவாக ஒன்றிணைகின்றன.",childhood:"நமது நினைவுகள்",journeyStep1Title:"இரண்டு குடும்பங்கள்",journeyStep1Text:"எங்கள் குடும்பங்களின் ஆசீர்வாதத்துடன் ஒரு அழகான இணைவு.",journeyStep2Title:"நிச்சயதார்த்தம்",journeyStep2Text:"எங்கள் குடும்பங்களை இன்னும் நெருக்கமாக இணைத்த மகிழ்ச்சியான விழா.",journeyStep3Title:"வாழ்நாள் வாக்குறுதி",journeyStep3Text:"அன்பும், ஆசீர்வாதமும், மகிழ்ச்சியுடனும் எங்கள் புதிய அத்தியாயத்தை தொடங்குகிறோம்.",journeyStep4Title:"என்றென்றும் தொடங்குகிறது",journeyStep4Text:"07 செப்டம்பர் 2026",
     eventsEyebrow:"தேதியை நினைவில் கொள்ளுங்கள்",eventsTitle:"திருமண விழாக்கள்",eventsDescription:"இரண்டு அழகான தருணங்கள், மறக்க முடியாத ஒரு தொடக்கம்.",receptionDate:"06 செப் 2026",receptionTitle:"வரவேற்பு விழா",receptionTime:"மாலை 6:30 மணி முதல்",weddingDate:"07 செப் 2026",weddingTitle:"திருமண விழா",weddingTime:"காலை 6:00 – 7:30 மணி",celebrationVenue:"விழா நடைபெறும் இடம்",venueName:"ராமசாமி மஹால் / எஸ்.ஆர். சாமி பார்ட்டி ஹால்",directions:"📍 வழிகாட்டியைப் பார்க்கவும்",celebrationNote:"எங்கள் குடும்பங்களின் அன்பும் ஆசீர்வாதமும் நிறைந்த இந்த விழாவை எங்களுடன் இணைந்து கொண்டாட உங்களை அன்புடன் அழைக்கிறோம்.",
-    venueEyebrow:"எங்களுடன் இணைந்திடுங்கள்",venueTitle:"திருமண இடம்",venueAddress:"8, நார்த் அவென்யூ, முத்தமிழ் நகர், கொடுங்கையூர், சென்னை – 600118",venueNear:"முத்தமிழ் நகர் தேவாலயம் அருகில்",openMaps:"Google Maps-ல் திறக்கவும்",galleryEyebrow:"மனதில் நிற்கும் நினைவுகள்",galleryMore:"மேலும் நினைவுகள் விரைவில்",footerEyebrow:"அன்பும் நன்றியும்",footerTitle:"நன்றி",quotesEyebrow:"நம் பயணத்திற்கான இனிய வார்த்தைகள்",quotesTitle:"சில அழகான வார்த்தைகள்",quotesDescription:"அன்பு, மகிழ்ச்சி, சிரிப்பு மற்றும் வாழ்நாள் நினைவுகளை கொண்டாடும் இனிய எண்ணங்கள்.",rsvpEyebrow:"உங்கள் வருகையை ஆவலுடன் எதிர்நோக்குகிறோம்",rsvpTitle:"வருகை உறுதி",rsvpDescription:"உங்கள் வருகையையும் வாழ்த்துகளையும் எங்களுடன் பகிர்ந்து கொள்ளுங்கள்.",rsvpNameLabel:"உங்கள் பெயர்",rsvpGuestsLabel:"வரும் விருந்தினர்களின் எண்ணிக்கை",rsvpWishesLabel:"உங்கள் வாழ்த்துகள்",rsvpSubmit:"வருகையை உறுதிப்படுத்துங்கள்",footerThanks:"அன்பும் நன்றியும் நிறைந்த இதயத்துடன், எங்கள் அழகான பயணத்தின் ஒரு பகுதியாக இருந்ததற்கு நன்றி. உங்கள் வருகையும், ஆசீர்வாதங்களும், அன்பான வாழ்த்துகளும் எங்களுக்கு மிகவும் அருமையானவை. ❤️🙏"
+    saveDateEyebrow:"தேதியை நினைவில் கொள்ளுங்கள்",saveDateTitle:"எங்கள் சேவ் தி டேட்",saveDateDescription:"எங்கள் சிறப்பு நாளின் சிறிய முன்னோட்டம் — நாம் நேசிக்கும் அனைவருக்காக அன்புடன் உருவாக்கப்பட்டது.",saveDateSoundOn:"ஒலிக்க தட்டவும்",saveDateCaption:"விஜய் ❤️ ஹேமலதா · 07 செப்டம்பர் 2026",venueEyebrow:"எங்களுடன் இணைந்திடுங்கள்",venueTitle:"திருமண இடம்",venueAddress:"8, நார்த் அவென்யூ, முத்தமிழ் நகர், கொடுங்கையூர், சென்னை – 600118",venueNear:"முத்தமிழ் நகர் தேவாலயம் அருகில்",openMaps:"Google Maps-ல் திறக்கவும்",galleryEyebrow:"திருமணத்திற்கு முன் நினைவுகள்",galleryTitle:"திருமணத்திற்கு முன் புகைப்படங்கள்",galleryDescription:"எங்கள் திருமண நாளுக்கு முன் பதிவு செய்யப்பட்ட எங்களுக்கு பிடித்த அழகான தருணங்களின் தொகுப்பு.",galleryMore:"மேலும் நினைவுகள் விரைவில்",footerEyebrow:"அன்பும் நன்றியும்",footerTitle:"நன்றி",quotesEyebrow:"நம் பயணத்திற்கான இனிய வார்த்தைகள்",quotesTitle:"சில அழகான வார்த்தைகள்",quotesDescription:"அன்பு, மகிழ்ச்சி, சிரிப்பு மற்றும் வாழ்நாள் நினைவுகளை கொண்டாடும் இனிய எண்ணங்கள்.",rsvpEyebrow:"உங்கள் வருகையை ஆவலுடன் எதிர்நோக்குகிறோம்",rsvpTitle:"வருகை உறுதி",rsvpDescription:"உங்கள் வருகையையும் வாழ்த்துகளையும் எங்களுடன் பகிர்ந்து கொள்ளுங்கள்.",rsvpNameLabel:"உங்கள் பெயர்",rsvpGuestsLabel:"வரும் விருந்தினர்களின் எண்ணிக்கை",rsvpWishesLabel:"உங்கள் வாழ்த்துகள்",rsvpSubmit:"வருகையை உறுதிப்படுத்துங்கள்",footerThanks:"அன்பும் நன்றியும் நிறைந்த இதயத்துடன், எங்கள் அழகான பயணத்தின் ஒரு பகுதியாக இருந்ததற்கு நன்றி. உங்கள் வருகையும், ஆசீர்வாதங்களும், அன்பான வாழ்த்துகளும் எங்களுக்கு மிகவும் அருமையானவை. ❤️🙏"
   }
 };
 
@@ -127,6 +127,34 @@ $("#closeLightbox")?.addEventListener("click", () => $("#lightbox")?.classList.r
 $("#lightbox")?.addEventListener("click", (e) => {
   if (e.target.id === "lightbox") e.currentTarget.classList.remove("open");
 });
+
+/* Save The Date video: autoplay is muted for browser policy compatibility.
+   Sound can be enabled by a direct user gesture. */
+(() => {
+  const video = $("#saveDateVideo");
+  const soundBtn = $("#saveDateSound");
+  if (!video) return;
+
+  const tryPlay = () => {
+    const promise = video.play();
+    if (promise && typeof promise.catch === "function") promise.catch(() => {});
+  };
+
+  video.addEventListener("loadedmetadata", tryPlay, { once: true });
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) tryPlay();
+  });
+  tryPlay();
+
+  soundBtn?.addEventListener("click", () => {
+    video.muted = !video.muted;
+    video.setAttribute("aria-pressed", String(!video.muted));
+    soundBtn.setAttribute("aria-label", video.muted ? "Enable video sound" : "Mute video sound");
+    const label = soundBtn.querySelector("[data-key]");
+    if (label) label.textContent = video.muted ? (lang === "ta" ? "ஒலிக்க தட்டவும்" : "Tap for sound") : (lang === "ta" ? "ஒலியை நிறுத்தவும்" : "Mute sound");
+    tryPlay();
+  });
+})();
 
 /* Music */
 const music = $("#bgMusic");

@@ -4309,6 +4309,16 @@ html[data-lang="ta"] .topbar .icon-btn{
 .save-date-shell{width:min(1080px,100%);margin:0 auto;}
 .save-date-heading{margin-bottom:clamp(28px,4vw,44px)!important;}
 .save-date-heading h2{margin-bottom:12px!important;}
+
+.save-date-quote{
+  margin:0 auto 16px!important;
+  max-width:760px!important;
+  color:#7a3046!important;
+  text-align:center!important;
+  font:700 clamp(17px,2.5vw,26px)/1.35 "Cormorant Garamond","Playfair Display",serif!important;
+  letter-spacing:.01em!important;
+  text-wrap:balance!important;
+}
 .save-date-video-card{
   position:relative!important;
   width:min(900px,100%)!important;
